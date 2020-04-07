@@ -1,0 +1,265 @@
+---
+title: "Research Collaboration Planning"
+author: "Emily Robinson"
+date: "April 8, 2020"
+output:
+  xaringan::moon_reader:
+    includes:
+      # after_body:
+        # "js-addins.html"
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    css: ["tamu"]
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+
+---
+
+
+```{r, include = F, eval = T}
+knitr::opts_chunk$set(echo=F, dpi=300, eval = FALSE)
+library(tidyverse)
+```
+
+class:primary
+## Outline
+
+- CASNR Data: Student Success
+
+- Visual Inference
+
+- Future Thoughts
+
+- Brainstorming & Collaboration Discussion
+
+- Progress Report & Program of Studies
+
+- *Moth Flight Data*
+
+- *Impossible & Insane Idea*
+
+---
+class:primary
+## Student Success
+
+- Met with Dr. Tiffany Heng-Moss (Dean of CASNR)
+- Sense of Belonging:
+  - Sense of belonging: A sense of belonging is “a basic human need and motivation, sufficient to influence behavior. In terms of college, sense of belonging refers to students’ perceived social support on campus, a feeling or sensation of connectedness, the experience of mattering or feeling cared about, accepted, respected, valued by, and important to the group (e.g., campus community) or others on campus (e.g., faculty, peers).” (Strayhorn, 2012, p. 3)
+  - There are many reasons that sense of belonging matters within higher education. Two key areas are retention and persistence and mental health.
+  - Do first-year students experience peer belonging and institutional acceptance differently by socio-demographic student characteristics (race or ethnicity, parental education, or gender)?
+  - Are students’ sense of peer belonging and institutional acceptance positively accepted by first-year participation in HIPs (research with faculty, service learning, learning community, and student leadership)?
+- Matriculation Success (i.e. time to graduation)
+  - Survival modeling
+- Retention Rates
+
+---
+class:primary
+## P.O.W.E.R Survey
+
+- P.O.W.E.R Survey (Purpose, Ownership, Wellness, Engagement, Relationships)
+  - Sent to all UNL Freshman in the fourth week of the Fall 2019 semeseter (1788 responses, 38.3% response rate)
+  - 11 Binary Questions 
+  - Outreach to Res Life, Student Inolvement, Big Red Resilience, Office of Academic Success & intercultural Services (OASIS), First-Year Experience and Transition Programs (FYETP), Husker Hub, University Advising
+
+.center[
+  <img class="mw" src="images/POWERsurvey.png" width="100%" alt="power survey"/>
+]
+---
+class:primary
+## Student Demographic Data
+- Academic Management Information System (AMIS Database) [https://iea.unl.edu/]
+  - Snapshot of UNL's data taken each semeseter (Fall, Spring, Summer)
+  - *e.g. age, gender, first time freshman, honors, first gen, athlete, scholarship athlete, resident status, full time or part time, college, degree, department, AP credit, ACT test, HS GPA, transfer student, sections enrolled, final GPA, 2nd year college, 3rd year college, degree in number of years, term graduated, etc.*
+  
+- National Survey of Student Engagement (NSSE) Survey [http://nsse.indiana.edu/]
+  - Five levels: Level of academic challenge, active and collaborative learning, student-faculty interaction, enriching educational experiences, and supportive campus environment.
+  - UNL participated in the NSSE in 2007, 2010, 2011 (Pilot study), 2012 (Pilot study), 2013, 2016 [response rate: 27% for freshman & 23% for seniors), and 2019 [HIP’s, Inclusiveness and Engagement with Cultural Diversity, Association of American Universities Data Exchange - AAUDE] [https://www.unl.edu/nsse/]
+
+---
+class:primary
+## Past Studies & Overarching Themes
+
+- Strayhorn (2012) developed a model for sense of belonging within higher education that is similar to Maslow’s hierarchy of needs. 
+  - See his $\text{Ted}^\text{X}$ talk, "Inalienable Rights: Life, Liberty, and the Pursuit of Belonging: Terrell Strayhorn at TEDxColumbus" at https://www.youtube.com/watch?v=Ak6T9kw0H28 
+  
+- Astin’s (1991) input-environment-outcome (I-E-O) model: inputs should describe qualities of the student prior to being exposed to the college environment and exposure to the environment is known to precede the assessment of the outcome performance.
+- A students’ sense of belonging declines over the course of an academic year.
+- Race / Ethnicity are important predictors.
+- First Generation students are impacted.
+- Student involvement / High Impact Practices.
+
+<font size="1">(Advisors Fostering a Sense of Belongning—Dissertation.pdf, n.d.; Dixon & Kurpius, 2008; Gullan et al., 2016; Hausmann et al., 2007; Johnson et al., 2007; Krause & Coates, 2008; Olivera-Aguilar et al., 2017; Posselt & Lipson, 2016; Ribera et al., 2017; Vaccaro & Newman, 2016; Yorke, 2016)</font>
+
+---
+class:primary
+## Introduction to Visual Inference
+
+1. Data plots $\equiv$ test statistics
+
+2. Plots of data generated from a null hypothesis (e.g. bootstrapping) using a lineup.
+3. A lineup contians one "guilty" plot randomly placed among a field of "innocent" or null plots.
+4. If the null hypothesis is true then the plot of the data will not be distinguishable
+from the plots of null data.
+
+5. Viewers asked to identify the plot that is the most different.
+
+6.  If the viewer identifies the suspect, it lends statistical significance to the conclusion that the data is not consistent with the null data.
+
+7. Implement study with Amazon Mechanical Turk, a crowd sourcing website.
+8. Using a Binomial Distriution, expect to see the "guilty" plot selected $\frac{1}{\text{Number of Plots}}$ times by random chance.
+
+- Think 218 with simulated p-values in Chapters 5 and 6.
+
+.right[<font size="1">Based on: Hofmann et al., 2012</font>]
+---
+class:primary
+## Introduction to Visual Inference
+
+.center[
+  <img class="mw" src="images/lineupExample2.png" width="50%" alt="exampleLineup"/>
+]
+.right[<font size="1">Image taken from: Buja et al., 2009</font>]
+
+---
+class:primary
+## Introduction to Visual Inference
+
+.center[
+  <img class="mw" src="images/lineupExample1.png" width="55%" alt="exampleLineup"/>
+]
+.right[<font size="1">Image taken from: Hofmann et al., 2012</font>]
+
+---
+class:primary
+## Introduction to Visual Inference
+
+.center[
+  <img class="mw" src="images/visualInferenceFlowChart.png" width="75%" alt="exampleLineup"/>
+]
+.right[<font size="1">Image taken from: Buja et al., 2009</font>]
+
+---
+class:primary
+## Past Visual Inference Studies
+
+- Evaluating competting designs (e.g. Polar Charts vs Barcharts)
+
+- Applications to linear models (and LMM's)
+  - Inferential testing
+  - Diagnostics (e.g. Q-Q Plots)
+  
+- Graphical tasks and the association with certain visual skills
+
+- The effect of preceptual principles
+
+- Using image similarity to evaluate the discriminability of a data visualization
+
+- Possible distortions of visualizations (e.g. gaps, outliers, spikes, etc.)
+
+- **Many of the studies implement some sort of experimental design (e.g. fractional factorial, incomplete block design, etc.) in the Amazon Mechanical Turk to collect data.**
+
+<font size="1">(Budrus et al., 2013; Buja et al., 2009; Cook et al., 2016; Correll et al., 2019; Hofmann et al., 2012; Kijmongkolchai et al., 2017; Loy et al., 2016, 2017; Majumder et al., 2013, 2014; Rutter et al., 2019; Vance, 2015; S. VanderPlas & Hofmann, 2015, 2016, 2017; S. R. VanderPlas, 2015; Veras & Collins, 2019)</font>
+---
+class:primary
+## Future Thoughts
+- I have found that I enjoy spending my time on:
+  - Experimental Design
+  - Communicating Statistics (e.g. Consulting and Teaching)
+  - Data Science
+  - Nonlinear Analysis
+  - Structural Equation Modleing (SEM)
+  
+- Considerations with Sense of Belonging:
+  - Reliability & validity of survey.
+  - The survey is binary.
+  - The questions target different aspects of a student's sense of belonging, can we tie them all together with psychometrics to come up with one measure?
+  
+- Possible directions:
+  - Combine visual inference and survey data (item response theroy - IRT).
+  - Detecting bias due to missing data (or correcting for non-response rates)
+  - Mainstream visual inference into consulting practices.
+  - Model evaluation / diagnostics of GLMM, Nonlinear Models, and Nonlinear Mixed models using Visual Inference
+
+---
+class:primary
+## References
+<font size="1">
+.small[
+- Blumenstock, J., Cadamuro, G., & On, R. (2015). Predicting poverty and wealth from mobile phone metadata. Science, 350(6264), 1073–1076. https://doi.org/10.1126/science.aac4420
+- Buja, A., Cook, D., Hofmann, H., Lawrence, M., Lee, E.-K., Swayne, D. F., & Wickham, H. (2009). Statistical inference for exploratory data analysis and model diagnostics. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 367(1906), 4361–4383. https://doi.org/10.1098/rsta.2009.0120
+- Cook, D., Lee, E.-K., & Majumder, M. (2016). Data Visualization and Statistical Graphics in Big Data Analysis. Annual Review of Statistics and Its Application, 3(1), 133–159. https://doi.org/10.1146/annurev-statistics-041715-033420
+- Correll, M., Li, M., Kindlmann, G., & Scheidegger, C. (2019). Looks Good To Me: Visualizations As Sanity Checks. IEEE Transactions on Visualization and Computer Graphics, 25(1), 830–839. https://doi.org/10.1109/TVCG.2018.2864907
+- Hofmann, H., Follett, L., Majumder, M., & Cook, D. (2012). Graphical Tests for Power Comparison of Competing Designs. IEEE Transactions on Visualization and Computer Graphics, 18(12), 2441–2448. https://doi.org/10.1109/TVCG.2012.230
+- Kijmongkolchai, N., Abdul‐Rahman, A., & Chen, M. (2017). Empirically Measuring Soft Knowledge in Visualization. Computer Graphics Forum, 36(3), 73–85. https://doi.org/10.1111/cgf.13169
+- Krause, K.-L., & Coates, H. (2008, October 5). Students' engagement in first‐year university. Retrieved from https://www.tandfonline.com/doi/full/10.1080/02602930701698892 
+- Loy, A., Follett, L., & Hofmann, H. (2016). Variations of Q – Q Plots: The Power of Our Eyes! The American Statistician, 70(2), 202–214. https://doi.org/10.1080/00031305.2015.1077728
+- Loy, A., Hofmann, H., & Cook, D. (2017). Model Choice and Diagnostics for Linear Mixed-Effects Models Using Statistics on Street Corners. Journal of Computational and Graphical Statistics, 26(3), 478–492. https://doi.org/10.1080/10618600.2017.1330207
+- Majumder, M., Hofmann, H., & Cook, D. (2013). Validation of Visual Statistical Inference, Applied to Linear Models. Journal of the American Statistical Association, 108(503), 942–956. https://doi.org/10.1080/01621459.2013.808157
+- Majumder, M., Hofmann, H., & Cook, D. (2014). Human Factors Influencing Visual Statistical Inference. ArXiv:1408.1974 [Stat]. http://arxiv.org/abs/1408.1974
+- Ribera, A. K., Miller, A. L., & Dumford, A. D. (2017). Sense of Peer Belonging and Institutional Acceptance in the First Year: The Role of High-Impact Practices. Journal of College Student Development, 58(4), 545–563. doi:10.1353/csd.2017.0042
+- Rutter, L., VanderPlas, S., Cook, D., & Graham, M. A. (2019). ggenealogy: An R Package for Visualizing Genealogical Data. Journal of Statistical Software, 89(13). https://doi.org/10.18637/jss.v089.i13
+- Strayhorn, Terrell. (2012). College students' sense of belonging: A key to educational success for all students. College Students' Sense of Belonging: A Key to Educational Success for All Students. 1-141. 10.4324/9780203118924. 
+- Vance, E. A. (2015). Recent Developments and Their Implications for the Future of Academic Statistical Consulting Centers. The American Statistician, 69(2), 127–137. https://doi.org/10.1080/00031305.2015.1033990
+- VanderPlas, S., & Hofmann, H. (2015). Signs of the Sine Illusion—Why We Need to Care. Journal of Computational and Graphical Statistics, 24(4), 1170–1190. https://doi.org/10.1080/10618600.2014.951547
+- VanderPlas, S., & Hofmann, H. (2016). Spatial Reasoning and Data Displays. IEEE Transactions on Visualization and Computer Graphics, 22(1), 459–468. https://doi.org/10.1109/TVCG.2015.2469125
+- VanderPlas, S., & Hofmann, H. (2017). Clusters Beat Trend!? Testing Feature Hierarchy in Statistical Graphics. Journal of Computational and Graphical Statistics, 26(2), 231–242. https://doi.org/10.1080/10618600.2016.1209116
+- VanderPlas, S. R. (2015). Perception in statistical graphics (p. 7936091) [Doctor of Philosophy, Iowa State University, Digital Repository]. https://doi.org/10.31274/etd-180810-3989
+- Veras, R., & Collins, C. (2019). Discriminability Tests for Visualization Effectiveness and Scalability. IEEE Transactions on Visualization and Computer Graphics, 1–1. https://doi.org/10.1109/TVCG.2019.2934432
+]
+</font>
+
+---
+class:inverse
+# Brainstorming & Collaboration Discussion
+
+---
+class:inverse
+# Other
+- Progress Report
+
+- Program of Studies
+- Summer Course Enrollment (Dissertation Hours)
+
+---
+class:primary
+## Moth Flight Data
+
+<img class="mw" src="images/flightPatternPercent.png" width="100%" alt="moth flight ggridge plot"/>
+
+---
+class:primary
+## Moth Flight Data
+.center[
+<img class="mw" src="images/mothflightPathDiagram.png" width="80%" alt="moth flight ggridge plot"/>
+]
+
+---
+class:primary
+## Impossible and Insane Idea
+- Blumenstock, J., Cadamuro, G., & On, R. (2015). Predicting poverty and wealth from mobile phone metadata. Science, 350(6264), 1073–1076. https://doi.org/10.1126/science.aac4420
+
+- Accurate and timely estimates of population characteristics are a critical input to social
+and economic research and policy. In industrialized economies, novel sources of data are
+enabling new approaches to demographic profiling, but in developing countries, fewer
+sources of big data exist. We show that **an individual’s past history of mobile phone use can
+be used to infer his or her socioeconomic status**. Furthermore, we demonstrate that the
+**predicted attributes of millions of individuals can, in turn, accurately reconstruct the
+distribution of wealth of an entire nation or to infer the asset distribution of microregions
+composed of just a few households**. In resource-constrained environments where censuses
+and household surveys are rare, this approach creates an option for gathering localized
+and timely information at a fraction of the cost of traditional methods.
+
+---
+class:primary
+## Impossible and Insane Idea
+
+- Amigos for Christ (https://amigosforchrist.org/solutions/)
+.center[
+<img class="mw" src="images/AmigosForChrist.png" width="80%" alt="moth flight ggridge plot"/>
+]
+- **Research Question: Estimate the number of households in rural Nicaragua without running water.**
+
+- They have been collecting data via offline ipads on each community, household, and individuals they have worked with.
+
+- Brian Peters, Data Analyst & Field Engineer
+  - Environmental scientist with significant experience in the non-profit sector and university laboratory setting. Skilled in data analysis, water quality management, stable isotope analysis, Matlab, R, and SQL. Doctor of Philosophy (PhD) focused in Earth Science from Stanford University.  
