@@ -1,0 +1,224 @@
+---
+title: "Western Bean Cutworm Flight Pattern"
+author:
+  - Emily Robinson 
+  - Katharine Swoboda Bhattarai 
+date: "April 30, 2020"
+subtitle: Structural Equation Modeling (EDSP 971)
+output:
+  xaringan::moon_reader:
+    includes:
+      # after_body:
+        # "js-addins.html"
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    css: ["default","metropolis"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+
+---
+
+```{r, include = F, eval = T}
+knitr::opts_chunk$set(echo=F, dpi=300, eval = T)
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(emo)
+library(dplyr)
+library(tidyr)
+library(lavaan)
+library(readr)
+library(ggplot2)
+library(plotly)
+library(lavaanPlot)
+library(semPlot)
+wbcDat_LGC <- read_csv("wbcDat_LGC.csv")
+wbcDat_LGC$Site <- as.factor(wbcDat_LGC$Site)
+```
+
+class:primary
+## Outline
+
+- Motivation
+
+- Ridgeline Plot
+
+- Spaghetti Plot
+
+- Latent Growth Model
+
+- Path Diagram
+
+- Year to Year Change
+
+- Results & Conclusions
+
+---
+class:primary
+## Motivation
+
+.center[
+<img class="mw" src="images/lifecycle.png" width="100%" alt="moth flight ggridge plot"/>
+]
+
+.bottom[
+<font size="3">Image Source: Pioneer. (2019, May 9). Western Bean Cutworm. Retrieved from https://www.pioneer.com/us/agronomy/western_bean_cutworm_cropfocus.html</font>
+]
+---
+class:primary
+## Data Visualization
+
+.center[
+<img class="mw" src="images/flightPatternPercent.png" width="100%" alt="moth flight ggridge plot"/>
+]
+
+---
+class:primary
+## Data
+
+- Site (Aurora, Clay Center, Concord, North Platte)
+- Year (1980 - 2020)
+- DOTYfirst - DOTYlast (*Time Component*)
+- Covariates
+    - Total Moths
+    - Peak Moths
+    - Peak/Total Moths Ratio
+    - Average Temperature (Summer)
+    - Total Precipitation (Summer)
+
+---
+class:primary
+## Spaghetti Plot
+
+.center[
+<img class="mw" src="images/spaghettiPlot.png" width="100%" alt="moth flight spaghetti plot"/>
+]
+
+---
+class:primary
+## Latent Growth Model
+
+```{r lgm, eval = T, echo = T, warning = F, message = F}
+lgcMod <- 'Start =~  1*DOTYfirst + 1*DOTY25pct + 1*DOTY50pct + 1*DOTY75pct + 1*DOTYlast
+           Length =~ 0*DOTYfirst +   DOTY25pct +   DOTY50pct +   DOTY75pct + 1*DOTYlast 
+             
+           DOTYfirst ~~ c(rA, rCC, rC, rNP)*DOTYfirst
+           DOTY25pct ~~ c(rA, rCC, rC, rNP)*DOTY25pct
+           DOTY50pct ~~ c(rA, rCC, rC, rNP)*DOTY50pct
+           DOTY75pct ~~ c(rA, rCC, rC, rNP)*DOTY75pct
+           DOTYlast  ~~ c(rA, rCC, rC, rNP)*DOTYlast
+             
+           DOTYfirst ~ 0*1; DOTY25pct ~ 0*1; DOTY50pct ~ 0*1; DOTY75pct ~ 0*1; DOTYlast  ~ 0*1
+           Start  ~ c(iiA, iiCC, iiC, iiNP)*1
+           Length ~ c(isA, isCC, isC, isNP)*1
+           Start ~~ 0*Length
+                         
+           Start  ~ avgTemp + totalPrecipitation + totalMoths + peakMoths + peak_totalMoths
+           Length ~ avgTemp + totalPrecipitation + totalMoths + peakMoths + peak_totalMoths
+          '
+```
+
+---
+class:primary
+## Latent Growth Fit `r emo::ji("deadpan")`
+
+```{r lgcFit, eval = T, echo = T, message = F, warning=F}
+lgcFit <- cfa(lgcMod, 
+              data = wbcDat_LGC, 
+              std.lv = F,
+              group = "Site",
+              check.gradient = FALSE)
+```
+
+```{r fitMeasures, eval=T, echo=F, message=FALSE, warning=FALSE}
+t(fitmeasures(lgcFit)[c("chisq", "df", "pvalue","cfi","rmsea","srmr")]) %>%
+  as.data.frame() %>%
+  kable(format = "html", digits = 3)
+```
+
+---
+class:primary
+## Final Path Diagram
+
+.center[
+<img class="mw" src="images/mothflightPathDiagram.png" width="100%" alt="Path Diagram plot"/>
+]
+
+
+---
+class:primary
+## Results
+
+```{r results, eval = T, echo = F}
+lvmeans <- parameterEstimates(lgcFit, standardized=TRUE) %>% 
+  filter(op == "~1", lhs %in% c("Start", "Length"), est != 0) %>% 
+  mutate(Group = ifelse(group == 1, "Aurora",                          
+                        ifelse(group == 2, "ClayCenter",                                
+                               ifelse(group == 3, "Concord", "NorthPlatte")))) %>%
+  mutate(stars = ifelse(pvalue < .001, "***", 
+                        ifelse(pvalue < .01, "**", 
+                               ifelse(pvalue < .05, "*", "")))) %>%
+  select(Group, LV=lhs, Est=est, SE=se, Z=z, "Std. Est"=std.all, Sig=stars) %>%
+  arrange(desc(LV))
+
+lvmeans %>%
+  kable(format = "html", digits = 2, caption = "Latent Means")
+```
+
+---
+class:primary
+## Results
+
+```{r lvvariances, eval = T, echo = F}
+lvariances <- parameterEstimates(lgcFit, standardized=TRUE) %>% 
+  filter(op == "~~", lhs %in% c("Start", "Length"), est != 0) %>% 
+  mutate(Group = ifelse(group == 1, "Aurora",                          
+                        ifelse(group == 2, "ClayCenter",                                
+                               ifelse(group == 3, "Concord", "NorthPlatte")))) %>%
+  mutate(stars = ifelse(pvalue < .001, "***", 
+                        ifelse(pvalue < .01, "**", 
+                               ifelse(pvalue < .05, "*", "")))) %>%
+  select(Group, LV=lhs, Est=est, SE=se, Z=z, "Std. Est"=std.all, Sig=stars) %>%
+  arrange(desc(LV))
+
+lvariances %>%
+  kable(format = "html", digits = 2, caption = "Latent Variances")
+```
+
+---
+class:primary
+## Year to Year Change
+
+.center[
+<img class="mw" src="images/year-over-year-change.png" width="100%" alt="Yearly Changes"/>
+]
+
+---
+class:primary
+## Conclusions
+
+- The flight does not follow a linear relationship, most of the moths are captured in the middle of the flight with a few stragglers at the beginning and end.
+- Based on the latent means:
+  - Concord and North Platte tend to have later start dates.
+  - Aurora has a shorter flight and Clay Center tends to have a longer flight.
+- Based on the latent variances:
+  - North Platte tends to have a more variable start date.
+- The total moths for that flight are negatively associated with the start date and positively associated to the length of the flight.
+- The peak moths are positively associated with the start date and for some locations, negatively associated with the length.
+- According to farmers, the flight in North Platte has been lasting later in the season, based on the time series plot, we can see that the start date has been later and the length of the flight has been increasing over the most recent years.
+---
+class:primary
+count: false
+## References & Acknowledgements
+
+- Da Luz, P. M. C., Swoboda Bhattarai, K. A., Montezano, D. G., Hunt, T. E., Write, R. J., & Peterson, J. A. (n.d.).
+- Pioneer. (2019, May 9). Western Bean Cutworm. Retrieved from https://www.pioneer.com/us/agronomy/western_bean_cutworm_cropfocus.html
+- Scouting and Treating Western Bean Cutworm. (2019, July 22). Retrieved from https://cropwatch.unl.edu/scouting-and-treating-western-bean-cutworm
+- Western Bean Cutworm. (n.d.). Retrieved from https://cropwatch.unl.edu/tags/western-bean-cutworm
+- Thank you to all of the people involved in collecting data in different locations over a period of more than thirty years.
+
+---
+class: inverse
+count: false
+## Questions?

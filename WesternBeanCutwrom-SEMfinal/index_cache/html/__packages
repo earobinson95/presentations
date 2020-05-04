@@ -1,0 +1,10 @@
+base
+dplyr
+tidyr
+lavaan
+readr
+ggplot2
+plotly
+knitr
+readxl
+ggridges

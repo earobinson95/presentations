@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Western Bean Cutworm Flight Pattern</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emily Robinson" />
+    <meta name="author" content="Katharine Swoboda Bhattarai" />
+    <meta name="date" content="2020-04-30" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Western Bean Cutworm Flight Pattern
+## Structural Equation Modeling (EDSP 971)
+### Emily Robinson
+### Katharine Swoboda Bhattarai
+### April 30, 2020
+
+---
+
+
+
+
+class:primary
+## Outline
+
+- Motivation
+
+- Ridgeline Plot
+
+- Spaghetti Plot
+
+- Latent Growth Model
+
+- Path Diagram
+
+- Year to Year Change
+
+- Results &amp; Conclusions
+
+---
+class:primary
+## Motivation
+
+.center[
+&lt;img class="mw" src="images/lifecycle.png" width="100%" alt="moth flight ggridge plot"/&gt;
+]
+
+.bottom[
+&lt;font size="3"&gt;Image Source: Pioneer. (2019, May 9). Western Bean Cutworm. Retrieved from https://www.pioneer.com/us/agronomy/western_bean_cutworm_cropfocus.html&lt;/font&gt;
+]
+---
+class:primary
+## Data Visualization
+
+.center[
+&lt;img class="mw" src="images/flightPatternPercent.png" width="100%" alt="moth flight ggridge plot"/&gt;
+]
+
+---
+class:primary
+## Data
+
+- Site (Aurora, Clay Center, Concord, North Platte)
+- Year (1980 - 2020)
+- DOTYfirst - DOTYlast (*Time Component*)
+- Covariates
+    - Total Moths
+    - Peak Moths
+    - Peak/Total Moths Ratio
+    - Average Temperature (Summer)
+    - Total Precipitation (Summer)
+
+---
+class:primary
+## Spaghetti Plot
+
+.center[
+&lt;img class="mw" src="images/spaghettiPlot.png" width="100%" alt="moth flight spaghetti plot"/&gt;
+]
+
+---
+class:primary
+## Latent Growth Model
+
+
+```r
+lgcMod &lt;- 'Start =~  1*DOTYfirst + 1*DOTY25pct + 1*DOTY50pct + 1*DOTY75pct + 1*DOTYlast
+           Length =~ 0*DOTYfirst +   DOTY25pct +   DOTY50pct +   DOTY75pct + 1*DOTYlast 
+             
+           DOTYfirst ~~ c(rA, rCC, rC, rNP)*DOTYfirst
+           DOTY25pct ~~ c(rA, rCC, rC, rNP)*DOTY25pct
+           DOTY50pct ~~ c(rA, rCC, rC, rNP)*DOTY50pct
+           DOTY75pct ~~ c(rA, rCC, rC, rNP)*DOTY75pct
+           DOTYlast  ~~ c(rA, rCC, rC, rNP)*DOTYlast
+             
+           DOTYfirst ~ 0*1; DOTY25pct ~ 0*1; DOTY50pct ~ 0*1; DOTY75pct ~ 0*1; DOTYlast  ~ 0*1
+           Start  ~ c(iiA, iiCC, iiC, iiNP)*1
+           Length ~ c(isA, isCC, isC, isNP)*1
+           Start ~~ 0*Length
+                         
+           Start  ~ avgTemp + totalPrecipitation + totalMoths + peakMoths + peak_totalMoths
+           Length ~ avgTemp + totalPrecipitation + totalMoths + peakMoths + peak_totalMoths
+          '
+```
+
+---
+class:primary
+## Latent Growth Fit 😐
+
+
+```r
+lgcFit &lt;- cfa(lgcMod, 
+              data = wbcDat_LGC, 
+              std.lv = F,
+              group = "Site",
+              check.gradient = FALSE)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; chisq &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; df &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; pvalue &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; cfi &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; rmsea &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; srmr &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 501.888 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 108 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.751 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.142 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class:primary
+## Final Path Diagram
+
+.center[
+&lt;img class="mw" src="images/mothflightPathDiagram.png" width="100%" alt="Path Diagram plot"/&gt;
+]
+
+
+---
+class:primary
+## Results
+
+&lt;table&gt;
+&lt;caption&gt;Latent Means&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Group &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LV &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Est &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Z &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Est &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Sig &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aurora &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 162.48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 98.57 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.65 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.91 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ClayCenter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 213.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80.16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.66 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.93 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Concord &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 344.16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53.77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.60 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; *** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NorthPlatte &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 235.68 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; *** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aurora &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -133.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 98.72 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -12.17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ClayCenter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 148.23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81.19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.83 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.87 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Concord &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NorthPlatte &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.46 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class:primary
+## Results
+
+&lt;table&gt;
+&lt;caption&gt;Latent Variances&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Group &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; LV &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Est &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Z &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Std. Est &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Sig &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aurora &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.88 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.42 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; * &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ClayCenter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 34.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.47 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.52 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Concord &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.96 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.08 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.39 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NorthPlatte &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Start &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.72 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; *** &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aurora &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.57 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.17 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.53 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ClayCenter &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.29 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Concord &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39.14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.82 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.98 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.42 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; * &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NorthPlatte &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Length &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.77 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.38 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class:primary
+## Year to Year Change
+
+.center[
+&lt;img class="mw" src="images/year-over-year-change.png" width="100%" alt="Yearly Changes"/&gt;
+]
+
+---
+class:primary
+## Conclusions
+
+- The flight does not follow a linear relationship, most of the moths are captured in the middle of the flight with a few stragglers at the beginning and end.
+- Based on the latent means:
+  - Concord and North Platte tend to have later start dates.
+  - Aurora has a shorter flight and Clay Center tends to have a longer flight.
+- Based on the latent variances:
+  - North Platte tends to have a more variable start date.
+- The total moths for that flight are negatively associated with the start date and positively associated to the length of the flight.
+- The peak moths are positively associated with the start date and for some locations, negatively associated with the length.
+- According to farmers, the flight in North Platte has been lasting later in the season, based on the time series plot, we can see that the start date has been later and the length of the flight has been increasing over the most recent years.
+---
+class:primary
+count: false
+## References &amp; Acknowledgements
+
+- Da Luz, P. M. C., Swoboda Bhattarai, K. A., Montezano, D. G., Hunt, T. E., Write, R. J., &amp; Peterson, J. A. (n.d.).
+- Pioneer. (2019, May 9). Western Bean Cutworm. Retrieved from https://www.pioneer.com/us/agronomy/western_bean_cutworm_cropfocus.html
+- Scouting and Treating Western Bean Cutworm. (2019, July 22). Retrieved from https://cropwatch.unl.edu/scouting-and-treating-western-bean-cutworm
+- Western Bean Cutworm. (n.d.). Retrieved from https://cropwatch.unl.edu/tags/western-bean-cutworm
+- Thank you to all of the people involved in collecting data in different locations over a period of more than thirty years.
+
+---
+class: inverse
+count: false
+## Questions?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
