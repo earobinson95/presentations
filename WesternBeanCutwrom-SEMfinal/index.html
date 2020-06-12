@@ -116,8 +116,7 @@ class:primary
 lgcFit &lt;- cfa(lgcMod, 
               data = wbcDat_LGC, 
               std.lv = F,
-              group = "Site",
-              check.gradient = FALSE)
+              group = "Site")
 ```
 
 &lt;table&gt;
@@ -359,6 +358,14 @@ class:primary
 - The total moths for that flight are negatively associated with the start date and positively associated to the length of the flight.
 - The peak moths are positively associated with the start date and for some locations, negatively associated with the length.
 - According to farmers, the flight in North Platte has been lasting later in the season, based on the time series plot, we can see that the start date has been later and the length of the flight has been increasing over the most recent years.
+
+---
+class:primary
+## Future Work
+
+- Daily weather (e.g. number of days until consistent Growing Degree Days)
+- AR(1) Structure
+- Sine/Cosine Nonlinear Fit
 
 ---
 class:primary

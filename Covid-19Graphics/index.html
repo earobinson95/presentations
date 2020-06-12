@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Covid-19 Graphics: The good, the bad, and the somewhat useful</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emily Robinson and Susan Vanderplaus" />
+    <meta name="date" content="2020-05-15" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css\modal.css" type="text/css" />
+    <link rel="stylesheet" href="css\this-presentation.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class:inverse,middle,center
+# Covid-19 Graphics: &lt;br/&gt; The good, the bad, and the somewhat useful
+## Emily Robinson and Susan Vanderplas&lt;br/&gt;May 15, 2020
+
+---
+class:primary
+## Data Visualizations Breakthrough Moment
+
+.pull-left[
+![Tip of the Iceberg](images/TipOfTheIceberg.png)
+
+*“The complexity and importance of COVID-19 has put **data visualization center stage** in worldwide discussions.”*
+-Ben Shneiderman, Nightingale
+
+].pull-right[
+
+- During the 1854 cholera epidemic in London, John Snow drew a map showing deaths in the Broad Street area, revealing a concentration around the local water pump.
+
+- Being able to understand and communicate information about data, models, and outcomes is important for informing the public and guiding decision-makers
+
+- The early academic research on data visualization triggered a growing number of commercial successes.
+]
+
+---
+class:primary
+## "Flatten the Curve"
+.pull-left[
+What made this illistration (aka cartoon) so popular?
+
+- Clear and straightforward message
+- Foundation on Science
+- Clear tagline, *actionable*
+- Enough visual elements to be informative without getting overwhelming
+].pull-right[
+&lt;img src="images/FlattenTheCurve.gif" width="100%" /&gt;
+]
+
+--
+![Flatten the Curve Simulation](images/FlattenTheCurve-simulation.png)
+
+Check out this [flatten the curve simulation](https://www.washingtonpost.com/graphics/2020/world/corona-simulator/) by the Washington Post.
+
+---
+class:primary
+## This Isn’t the Flattened Curve We Were Promised
+.pull-left[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;These charts suggested that the &amp;quot;flattened&amp;quot; curve would last longer—that after a few months the flattened curve would have more daily infections than the unflattened curve would have. They implicitly assume that everyone is going to get infected, it&amp;#39;s just a question of when.&lt;/p&gt;&amp;mdash; Timothy B. Lee (@binarybits) &lt;a href="https://twitter.com/binarybits/status/1259553070968721410?ref_src=twsrc%5Etfw"&gt;May 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-5"&gt;&lt;/script&gt;
+].pull-right[
+
+*"They’re all symmetrical, indicating that once a population has reached the peak, the disease will taper away just as quickly as it grew."*
+
+by [Bloomberg Opinion](https://www.bloomberg.com/opinion/articles/2020-04-16/coronavirus-this-isn-t-the-flattened-curve-we-were-promised/) April 16, 2020
+
+![Spain](images/NotTheCurveWeWerePromised-Spain.png)
+
+
+Check out the post, [Don’t “Flatten the Curve,” squash it!](https://medium.com/@joschabach/flattening-the-curve-is-a-deadly-delusion-eea324fe9727)
+]
+
+---
+class:primary
+## Case Counts
+.center[
+&lt;img src="images/CaseCounts-StickFigure.png" width="80%" /&gt;
+]
+---
+class:primary
+## Leading visuals
+
+- [John Burn-Murdoch Data Viz with the Financial Times](https://www.ft.com/content/a26fbf7e-48f8-11ea-aeb3-955839e06441)
+- [91-DOVIC](http://91-divoc.com/pages/covid-visualization/)
+- [Our World in Data](https://slides.ourworldindata.org/2020_pandemic/2020_pandemic#/title-slide)
+
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgFinancialTimesCumulativeCasesLinear' src='images/FinancialTimes-CumulativeCases-Linear.PNG' alt='Raw Linear' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgFinancialTimesCumulativeCasesLog' src='images/FinancialTimes-CumulativeCases-Log.PNG' alt='Raw Log' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgFinancialTimesCumulativeCasesperMillionLinear' src='images/FinancialTimes-CumulativeCases-perMillion-Linear.PNG' alt='Per Million Linear' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgFinancialTimesCumulativeCasesperMillionLog' src='images/FinancialTimes-CumulativeCases-perMillion-Log.PNG' alt='Per Million Log' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalFinancialTimesCumulativeCasesLinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalFinancialTimesCumulativeCasesLinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionFinancialTimesCumulativeCasesLinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalFinancialTimesCumulativeCasesLog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalFinancialTimesCumulativeCasesLog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionFinancialTimesCumulativeCasesLog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalFinancialTimesCumulativeCasesperMillionLinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalFinancialTimesCumulativeCasesperMillionLinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionFinancialTimesCumulativeCasesperMillionLinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalFinancialTimesCumulativeCasesperMillionLog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalFinancialTimesCumulativeCasesperMillionLog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionFinancialTimesCumulativeCasesperMillionLog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+Nice interactive features of these graphics.
+- Toggle between linear and log scales
+-	Population standardizing
+
+Other nice design features
+- Aligned x-axis to be number of days since a specified number of cases or deaths
+- Rolling 3 day or 7 day averages
+  - Cases are not being logged on the weekends
+]
+
+---
+class:primary
+## Probably not leading visuals
+
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgWeirdAndOriginal2' src='images/WeirdAndOriginal2.png' alt=' ' width='100%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgScatterBubbleChart' src='images/ScatterBubbleChart.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalWeirdAndOriginal2' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalWeirdAndOriginal2'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionWeirdAndOriginal2' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalScatterBubbleChart' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalScatterBubbleChart'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionScatterBubbleChart' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Hard agree. There&amp;#39;s a subculture in the dataviz community that loves dunking on anything that goes against dataviz dogma and I really dislike it. &lt;br&gt;&lt;br&gt;Not every experiment will be a homerun, but at least it&amp;#39;s pushing things forward. Keep an open mind and keep criticism constructive. &lt;a href="https://t.co/vtXq4uwCbP"&gt;https://t.co/vtXq4uwCbP&lt;/a&gt;&lt;/p&gt;&amp;mdash; Will Chase (@W_R_Chase) &lt;a href="https://twitter.com/W_R_Chase/status/1255299978903334913?ref_src=twsrc%5Etfw"&gt;April 29, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+]
+
+---
+class:primary
+## Trendlines
+.center[
+&lt;img src="images/Trendlines-Deaths.png" width="100%" /&gt;
+]
+
+---
+class:primary
+## Trajectory
+
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgTrajectoryCasesPerMillionLog' src='images/Trajectory-Cases-PerMillion-Log.GIF' alt='Case Growth' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalTrajectoryCasesPerMillionLog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalTrajectoryCasesPerMillionLog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionTrajectoryCasesPerMillionLog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+Watch [How coronavirus charts can mislead us](https://ourworldindata.org/how-to-read-the-famous-coronavirus-trajectory-chart-video-explainer) by Our World in Data.
+
+1) Only showing us confirmed cases, **not** all coronavirus cases.
+  - Hidden variable: Testing
+  
+2) Logaraithmic Scale
+&lt;!-- - No fixed space on chart for a certain number of cases. --&gt;
+&lt;!-- - Shows the virus is spreading at a slower rate than before. --&gt;
+
+3) Adjusting for population size.
+&lt;!-- - Moves larger countries down and smaller countries up. --&gt;
+
+4) x-axis plots by number of days since country recorded X number of cases, not by date. 
+]
+---
+class:primary
+## Trajectory
+
+.center[
+&lt;img src="images/TrajectoryofUS.GIF" width="100%" /&gt;
+]
+
+- Maybe not super useful.
+- It's a lot of fun to watch though!
+
+---
+class:primary
+## Case Growth
+
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgCaseGrowthSample' src='images/CaseGrowth-Sample.png' alt='Case Growth' width='100%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgCaseGrowthAmes' src='images/CaseGrowth-Ames.png' alt='Story County Case Growth' width='100%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgCaseGrowthNebraska' src='images/CaseGrowth-Nebraska.png' alt='Lancaster County Case Growth' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalCaseGrowthSample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalCaseGrowthSample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionCaseGrowthSample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalCaseGrowthAmes' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalCaseGrowthAmes'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionCaseGrowthAmes' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalCaseGrowthNebraska' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalCaseGrowthNebraska'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionCaseGrowthNebraska' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+
+Published by [New York Times](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html)
+- Less confusing than bar charts.
+- Focus on growth rate over nominal case count.
+- Implicitly shows the ebb and flow of cases, without requiring the cognitive load of interpreting log graphs, etc.
+]
+
+---
+class:primary
+## Exponential Growth
+
+What is it?
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExponentialGrowthLinear' src='images/ExponentialGrowth-Linear.png' alt='Linear Scale' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExponentialGrowthLog' src='images/ExponentialGrowth-Log.png' alt='Log Scale' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExponentialGrowthDoublingTimes' src='images/ExponentialGrowth-DoublingTimes.png' alt='Log Scale' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExponentialGrowthExample' src='images/ExponentialGrowth-Example.png' alt='Log Scale' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExponentialGrowthPiecewiseLinear' src='images/ExponentialGrowth-PiecewiseLinear.png' alt='Log Scale' width='15%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExponentialGrowthLinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExponentialGrowthLinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExponentialGrowthLinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExponentialGrowthLog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExponentialGrowthLog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExponentialGrowthLog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExponentialGrowthDoublingTimes' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExponentialGrowthDoublingTimes'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExponentialGrowthDoublingTimes' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExponentialGrowthExample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExponentialGrowthExample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExponentialGrowthExample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExponentialGrowthPiecewiseLinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExponentialGrowthPiecewiseLinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExponentialGrowthPiecewiseLinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+--
+Why is it a problem
+
+On the linear scale:
+- Makes some countries look way worse.
+
+On the log scale:
+- No fixed space on chart for a certain number of cases.
+- Shows the virus is spreading at a slower rate than before.
+
+--
+
+What can we do to mitigate it?
+- Toggle between log/linear scales
+- Add trendlines
+
+---
+class:primary
+## Visualizing `\(R_t\)`
+
+.center[
+&lt;img src="images/VisualizingRt.GIF" width="80%" /&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgVisualizingRtIowa' src='images/VisualizingRt-Iowa.png' alt=' ' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgVisualizingRtNebraska' src='images/VisualizingRt-Nebraska.png' alt=' ' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalVisualizingRtIowa' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalVisualizingRtIowa'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionVisualizingRtIowa' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalVisualizingRtNebraska' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalVisualizingRtNebraska'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionVisualizingRtNebraska' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+---
+class:primary
+## Visualizing `\(R_0\)`, this is really pretty
+.center[
+![Weird and Original](images/Polar_R0.png)
+]
+
+---
+class:primary
+
+.center[
+&lt;img src="images/FinancialTimes-DeathToll-BeeswarmPlot.PNG" width="100%" /&gt;
+]
+
+---
+class:primary
+## Excess Death
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExcessDeaths' src='images/ExcessDeaths.jpg' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgExcessDeaths2' src='images/ExcessDeaths2.jpg' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExcessDeaths' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExcessDeaths'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExcessDeaths' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalExcessDeaths2' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalExcessDeaths2'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionExcessDeaths2' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+## Mapping COVID-19
+
+Read [Evan M Peck's Twitter Thread](https://twitter.com/EvanMPeck/status/1235568532840120321) discussing the problems of creating data-driven maps of COVID-19.
+
+1) What do you do when your numbers probably don't reflect reality?
+
+2) How do you make small numbers seem meaningful?
+
+3) People beleive the story of the viz they see.
+
+4) Tensions in audiences (local vs global maps).
+
+5) We are going to see many out-of-date vis about COVID19 from people who grabbed a static snapshot of the data X days ago. 
+
+---
+class:primary
+## Chloropleth Maps
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaMapRed' src='images/ChinaMap-Red.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaMapBlue' src='images/ChinaMap-Blue.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaMapRed' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaMapRed'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaMapRed' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaMapBlue' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaMapBlue'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaMapBlue' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+- You cannot map **totals** using a choropleth thematic mapping technique. Standardize to population.
+- Color matters! Don't scare people
+
+---
+class:primary
+## Stay away from the stoplights 🚸
+
+.center[
+&lt;img src="images/Ohio-Deaths-ColorMatters.png" width="65%" /&gt;
+]
+
+---
+class:primary
+## That's a lot of...pink. 
+.center[
+&lt;img src="images/PinkColorMap.png" width="100%" /&gt;
+]
+
+---
+class:primary
+## Symbol Maps
+
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaMapSymbolLinearScale' src='images/ChinaMap-Symbol-LinearScale.png' alt='Linear Scale' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaMapSymbolLogScale' src='images/ChinaMap-Symbol-LogScale.png' alt='Log Scale' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaMapSymbolLinearScale' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaMapSymbolLinearScale'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaMapSymbolLinearScale' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaMapSymbolLogScale' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaMapSymbolLogScale'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaMapSymbolLogScale' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+---
+class:primary
+## Pay attention to your legend
+
+.center[
+&lt;img src="images/LegendMatters.png" width="80%" /&gt;
+]
+
+---
+class:primary:
+## Dot Maps
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaMapDotmap' src='images/ChinaMap-Dotmap.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaMapDotmap' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaMapDotmap'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaMapDotmap' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+The Good
+- Dots are positioned randomly and it emphasizes the large outlier in Hubei.
+
+
+The Bad
+- Some might infer a dot locates an individual case. 
+- Consider restricting the zoom scale
+]
+
+---
+class:primary
+## Heat Map..please don't.
+
+.pull-left[
+![China Heatmap](images/ChinaMap-HeatMap.png)
+]
+--
+.pull-right[
+![Birdbox Meme](images/BirdboxMeme.jpg)
+]
+
+---
+class:primary
+## Interactive vs Static Graphics
+
+---
+class:primary
+## Visualizing Uncertainty
+
+---
+class:primary
+## Forecasting 🔮
+
+.pull-left[
+&lt;img src="images/forecastingComic.jpeg" width="100%" /&gt;
+].pull-right[
+*"Instead of thinking about projections that show us our destiny, we can consider them as a way to see our **potential futures** ahead of time, and how that interacts with the choices we make today."*
+
+-Dr. Zeynep Tufekci
+
+]
+
+&lt;!-- --- --&gt;
+&lt;!-- class:primary --&gt;
+&lt;!-- ## Other things to visualize besides case counts --&gt;
+
+&lt;!-- Based on the [Nightengale blog post](https://medium.com/nightingale/thirteen-things-to-visualize-about-covid-19-besides-case-loads-581fa90348dd) --&gt;
+
+&lt;!-- - Emotional well being --&gt;
+&lt;!-- - Lifestyle changes  --&gt;
+&lt;!-- - Routine health care 💊 --&gt;
+&lt;!-- - Jobs/industries 👩‍🏭 👩‍⚕ --&gt;
+&lt;!-- - Educational impact ⚡ --&gt;
+&lt;!-- - Utility usage 🏠 ⚡ --&gt;
+&lt;!-- - Internet infrastructure --&gt;
+&lt;!-- - Environmental factors 🌳 🌷 --&gt;
+&lt;!-- - Traffic patterns 🚸 --&gt;
+&lt;!-- - What we eat and how we eat (e.g. have you noticed everyone is baking bread? 🍞) --&gt;
+&lt;!-- - Mobility 🚗 🚲 --&gt;
+&lt;!-- - Local support systems (e.g. food banks) --&gt;
+&lt;!-- - Supplies of products 🚽 --&gt;
+
+---
+class:primary
+## Testing Covid
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgStatesReccommendedTestingLevel' src='images/States-ReccommendedTestingLevel.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgTestingRates' src='images/TestingRates.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalStatesReccommendedTestingLevel' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalStatesReccommendedTestingLevel'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionStatesReccommendedTestingLevel' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalTestingRates' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalTestingRates'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionTestingRates' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+## Governent Resitrictions
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgLockdownsAroundTheWorldSimulation' src='images/LockdownsAroundTheWorld-Simulation.gif' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgGovernmentResponseStringencyIndex' src='images/GovernmentResponse-StringencyIndex.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgStayAtHomeMapLattice' src='images/StayAtHome-MapLattice.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalLockdownsAroundTheWorldSimulation' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalLockdownsAroundTheWorldSimulation'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionLockdownsAroundTheWorldSimulation' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalGovernmentResponseStringencyIndex' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalGovernmentResponseStringencyIndex'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionGovernmentResponseStringencyIndex' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalStayAtHomeMapLattice' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalStayAtHomeMapLattice'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionStayAtHomeMapLattice' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+### Covid Masks
+
+.pull-left[
+![Searching Covid - Zoom](images/CovidMasks-Infographic.png)
+].pull-right[
+![Searching Covid - Zoom](images/COVIDMasks_4_21_2020.png)
+]
+
+---
+class:
+## Searching Covid
+
+Check out this [Searching Covid Dashboard](https://searchingcovid19.com/) showing Google Trends search data related to the Covid-19 pandemic.
+
+
+![Searching Covid - Zoom](images/SearchingCovid-Zoom.png)
+
+---
+class:primary
+## Environmental Factors
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaEnvironmentPink' src='images/China-Environment-Pink.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgChinaEnvironmentBlue' src='images/China-Environment-Blue.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaEnvironmentPink' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaEnvironmentPink'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaEnvironmentPink' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalChinaEnvironmentBlue' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalChinaEnvironmentBlue'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionChinaEnvironmentBlue' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+## Related Blog Posts
+
+- [Thirteen Things to Visualize abou Covid-19 besides case loads](https://medium.com/nightingale/thirteen-things-to-visualize-about-covid-19-besides-case-loads-581fa90348dd)
+- [Ten Considerations Before You Create Another Chart About COVID-19](https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8)
+- [Communication Themes from Coronavirus Outbreak](https://www.visualisingdata.com/2020/03/communication-themes-from-coronavirus-outbreak/)
+- [COVID-19 Data Literacy is for Everyone](https://medium.com/nightingale/covid-19-data-literacy-is-for-everyone-46120b58cec9)
+
+---
+class:primary middle, center
+.center[
+![Weird and Original](images/GraphComic.png)
+]
+
+---
+class:primary
+## References
+&lt;font size="1"&gt;
+.small[
+- 
+]
+&lt;/font&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+        /* Get the modal*/
+          var modalFinancialTimesCumulativeCasesLinear = document.getElementById('modalFinancialTimesCumulativeCasesLinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgFinancialTimesCumulativeCasesLinear = document.getElementById('imgFinancialTimesCumulativeCasesLinear');
+          var modalImgFinancialTimesCumulativeCasesLinear = document.getElementById('imgmodalFinancialTimesCumulativeCasesLinear');
+          var captionTextFinancialTimesCumulativeCasesLinear = document.getElementById('captionFinancialTimesCumulativeCasesLinear');
+          imgFinancialTimesCumulativeCasesLinear.onclick = function(){
+            modalFinancialTimesCumulativeCasesLinear.style.display = 'block';
+            modalImgFinancialTimesCumulativeCasesLinear.src = this.src;
+            captionTextFinancialTimesCumulativeCasesLinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgFinancialTimesCumulativeCasesLinear.onclick = function() {
+            modalFinancialTimesCumulativeCasesLinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalFinancialTimesCumulativeCasesLog = document.getElementById('modalFinancialTimesCumulativeCasesLog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgFinancialTimesCumulativeCasesLog = document.getElementById('imgFinancialTimesCumulativeCasesLog');
+          var modalImgFinancialTimesCumulativeCasesLog = document.getElementById('imgmodalFinancialTimesCumulativeCasesLog');
+          var captionTextFinancialTimesCumulativeCasesLog = document.getElementById('captionFinancialTimesCumulativeCasesLog');
+          imgFinancialTimesCumulativeCasesLog.onclick = function(){
+            modalFinancialTimesCumulativeCasesLog.style.display = 'block';
+            modalImgFinancialTimesCumulativeCasesLog.src = this.src;
+            captionTextFinancialTimesCumulativeCasesLog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgFinancialTimesCumulativeCasesLog.onclick = function() {
+            modalFinancialTimesCumulativeCasesLog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalFinancialTimesCumulativeCasesperMillionLinear = document.getElementById('modalFinancialTimesCumulativeCasesperMillionLinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgFinancialTimesCumulativeCasesperMillionLinear = document.getElementById('imgFinancialTimesCumulativeCasesperMillionLinear');
+          var modalImgFinancialTimesCumulativeCasesperMillionLinear = document.getElementById('imgmodalFinancialTimesCumulativeCasesperMillionLinear');
+          var captionTextFinancialTimesCumulativeCasesperMillionLinear = document.getElementById('captionFinancialTimesCumulativeCasesperMillionLinear');
+          imgFinancialTimesCumulativeCasesperMillionLinear.onclick = function(){
+            modalFinancialTimesCumulativeCasesperMillionLinear.style.display = 'block';
+            modalImgFinancialTimesCumulativeCasesperMillionLinear.src = this.src;
+            captionTextFinancialTimesCumulativeCasesperMillionLinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgFinancialTimesCumulativeCasesperMillionLinear.onclick = function() {
+            modalFinancialTimesCumulativeCasesperMillionLinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalFinancialTimesCumulativeCasesperMillionLog = document.getElementById('modalFinancialTimesCumulativeCasesperMillionLog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgFinancialTimesCumulativeCasesperMillionLog = document.getElementById('imgFinancialTimesCumulativeCasesperMillionLog');
+          var modalImgFinancialTimesCumulativeCasesperMillionLog = document.getElementById('imgmodalFinancialTimesCumulativeCasesperMillionLog');
+          var captionTextFinancialTimesCumulativeCasesperMillionLog = document.getElementById('captionFinancialTimesCumulativeCasesperMillionLog');
+          imgFinancialTimesCumulativeCasesperMillionLog.onclick = function(){
+            modalFinancialTimesCumulativeCasesperMillionLog.style.display = 'block';
+            modalImgFinancialTimesCumulativeCasesperMillionLog.src = this.src;
+            captionTextFinancialTimesCumulativeCasesperMillionLog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgFinancialTimesCumulativeCasesperMillionLog.onclick = function() {
+            modalFinancialTimesCumulativeCasesperMillionLog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalWeirdAndOriginal2 = document.getElementById('modalWeirdAndOriginal2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgWeirdAndOriginal2 = document.getElementById('imgWeirdAndOriginal2');
+          var modalImgWeirdAndOriginal2 = document.getElementById('imgmodalWeirdAndOriginal2');
+          var captionTextWeirdAndOriginal2 = document.getElementById('captionWeirdAndOriginal2');
+          imgWeirdAndOriginal2.onclick = function(){
+            modalWeirdAndOriginal2.style.display = 'block';
+            modalImgWeirdAndOriginal2.src = this.src;
+            captionTextWeirdAndOriginal2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgWeirdAndOriginal2.onclick = function() {
+            modalWeirdAndOriginal2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalScatterBubbleChart = document.getElementById('modalScatterBubbleChart');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgScatterBubbleChart = document.getElementById('imgScatterBubbleChart');
+          var modalImgScatterBubbleChart = document.getElementById('imgmodalScatterBubbleChart');
+          var captionTextScatterBubbleChart = document.getElementById('captionScatterBubbleChart');
+          imgScatterBubbleChart.onclick = function(){
+            modalScatterBubbleChart.style.display = 'block';
+            modalImgScatterBubbleChart.src = this.src;
+            captionTextScatterBubbleChart.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgScatterBubbleChart.onclick = function() {
+            modalScatterBubbleChart.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalTrajectoryCasesPerMillionLog = document.getElementById('modalTrajectoryCasesPerMillionLog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgTrajectoryCasesPerMillionLog = document.getElementById('imgTrajectoryCasesPerMillionLog');
+          var modalImgTrajectoryCasesPerMillionLog = document.getElementById('imgmodalTrajectoryCasesPerMillionLog');
+          var captionTextTrajectoryCasesPerMillionLog = document.getElementById('captionTrajectoryCasesPerMillionLog');
+          imgTrajectoryCasesPerMillionLog.onclick = function(){
+            modalTrajectoryCasesPerMillionLog.style.display = 'block';
+            modalImgTrajectoryCasesPerMillionLog.src = this.src;
+            captionTextTrajectoryCasesPerMillionLog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgTrajectoryCasesPerMillionLog.onclick = function() {
+            modalTrajectoryCasesPerMillionLog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalCaseGrowthSample = document.getElementById('modalCaseGrowthSample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgCaseGrowthSample = document.getElementById('imgCaseGrowthSample');
+          var modalImgCaseGrowthSample = document.getElementById('imgmodalCaseGrowthSample');
+          var captionTextCaseGrowthSample = document.getElementById('captionCaseGrowthSample');
+          imgCaseGrowthSample.onclick = function(){
+            modalCaseGrowthSample.style.display = 'block';
+            modalImgCaseGrowthSample.src = this.src;
+            captionTextCaseGrowthSample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgCaseGrowthSample.onclick = function() {
+            modalCaseGrowthSample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalCaseGrowthAmes = document.getElementById('modalCaseGrowthAmes');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgCaseGrowthAmes = document.getElementById('imgCaseGrowthAmes');
+          var modalImgCaseGrowthAmes = document.getElementById('imgmodalCaseGrowthAmes');
+          var captionTextCaseGrowthAmes = document.getElementById('captionCaseGrowthAmes');
+          imgCaseGrowthAmes.onclick = function(){
+            modalCaseGrowthAmes.style.display = 'block';
+            modalImgCaseGrowthAmes.src = this.src;
+            captionTextCaseGrowthAmes.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgCaseGrowthAmes.onclick = function() {
+            modalCaseGrowthAmes.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalCaseGrowthNebraska = document.getElementById('modalCaseGrowthNebraska');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgCaseGrowthNebraska = document.getElementById('imgCaseGrowthNebraska');
+          var modalImgCaseGrowthNebraska = document.getElementById('imgmodalCaseGrowthNebraska');
+          var captionTextCaseGrowthNebraska = document.getElementById('captionCaseGrowthNebraska');
+          imgCaseGrowthNebraska.onclick = function(){
+            modalCaseGrowthNebraska.style.display = 'block';
+            modalImgCaseGrowthNebraska.src = this.src;
+            captionTextCaseGrowthNebraska.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgCaseGrowthNebraska.onclick = function() {
+            modalCaseGrowthNebraska.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExponentialGrowthLinear = document.getElementById('modalExponentialGrowthLinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExponentialGrowthLinear = document.getElementById('imgExponentialGrowthLinear');
+          var modalImgExponentialGrowthLinear = document.getElementById('imgmodalExponentialGrowthLinear');
+          var captionTextExponentialGrowthLinear = document.getElementById('captionExponentialGrowthLinear');
+          imgExponentialGrowthLinear.onclick = function(){
+            modalExponentialGrowthLinear.style.display = 'block';
+            modalImgExponentialGrowthLinear.src = this.src;
+            captionTextExponentialGrowthLinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExponentialGrowthLinear.onclick = function() {
+            modalExponentialGrowthLinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExponentialGrowthLog = document.getElementById('modalExponentialGrowthLog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExponentialGrowthLog = document.getElementById('imgExponentialGrowthLog');
+          var modalImgExponentialGrowthLog = document.getElementById('imgmodalExponentialGrowthLog');
+          var captionTextExponentialGrowthLog = document.getElementById('captionExponentialGrowthLog');
+          imgExponentialGrowthLog.onclick = function(){
+            modalExponentialGrowthLog.style.display = 'block';
+            modalImgExponentialGrowthLog.src = this.src;
+            captionTextExponentialGrowthLog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExponentialGrowthLog.onclick = function() {
+            modalExponentialGrowthLog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExponentialGrowthDoublingTimes = document.getElementById('modalExponentialGrowthDoublingTimes');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExponentialGrowthDoublingTimes = document.getElementById('imgExponentialGrowthDoublingTimes');
+          var modalImgExponentialGrowthDoublingTimes = document.getElementById('imgmodalExponentialGrowthDoublingTimes');
+          var captionTextExponentialGrowthDoublingTimes = document.getElementById('captionExponentialGrowthDoublingTimes');
+          imgExponentialGrowthDoublingTimes.onclick = function(){
+            modalExponentialGrowthDoublingTimes.style.display = 'block';
+            modalImgExponentialGrowthDoublingTimes.src = this.src;
+            captionTextExponentialGrowthDoublingTimes.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExponentialGrowthDoublingTimes.onclick = function() {
+            modalExponentialGrowthDoublingTimes.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExponentialGrowthExample = document.getElementById('modalExponentialGrowthExample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExponentialGrowthExample = document.getElementById('imgExponentialGrowthExample');
+          var modalImgExponentialGrowthExample = document.getElementById('imgmodalExponentialGrowthExample');
+          var captionTextExponentialGrowthExample = document.getElementById('captionExponentialGrowthExample');
+          imgExponentialGrowthExample.onclick = function(){
+            modalExponentialGrowthExample.style.display = 'block';
+            modalImgExponentialGrowthExample.src = this.src;
+            captionTextExponentialGrowthExample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExponentialGrowthExample.onclick = function() {
+            modalExponentialGrowthExample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExponentialGrowthPiecewiseLinear = document.getElementById('modalExponentialGrowthPiecewiseLinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExponentialGrowthPiecewiseLinear = document.getElementById('imgExponentialGrowthPiecewiseLinear');
+          var modalImgExponentialGrowthPiecewiseLinear = document.getElementById('imgmodalExponentialGrowthPiecewiseLinear');
+          var captionTextExponentialGrowthPiecewiseLinear = document.getElementById('captionExponentialGrowthPiecewiseLinear');
+          imgExponentialGrowthPiecewiseLinear.onclick = function(){
+            modalExponentialGrowthPiecewiseLinear.style.display = 'block';
+            modalImgExponentialGrowthPiecewiseLinear.src = this.src;
+            captionTextExponentialGrowthPiecewiseLinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExponentialGrowthPiecewiseLinear.onclick = function() {
+            modalExponentialGrowthPiecewiseLinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalVisualizingRtIowa = document.getElementById('modalVisualizingRtIowa');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgVisualizingRtIowa = document.getElementById('imgVisualizingRtIowa');
+          var modalImgVisualizingRtIowa = document.getElementById('imgmodalVisualizingRtIowa');
+          var captionTextVisualizingRtIowa = document.getElementById('captionVisualizingRtIowa');
+          imgVisualizingRtIowa.onclick = function(){
+            modalVisualizingRtIowa.style.display = 'block';
+            modalImgVisualizingRtIowa.src = this.src;
+            captionTextVisualizingRtIowa.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgVisualizingRtIowa.onclick = function() {
+            modalVisualizingRtIowa.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalVisualizingRtNebraska = document.getElementById('modalVisualizingRtNebraska');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgVisualizingRtNebraska = document.getElementById('imgVisualizingRtNebraska');
+          var modalImgVisualizingRtNebraska = document.getElementById('imgmodalVisualizingRtNebraska');
+          var captionTextVisualizingRtNebraska = document.getElementById('captionVisualizingRtNebraska');
+          imgVisualizingRtNebraska.onclick = function(){
+            modalVisualizingRtNebraska.style.display = 'block';
+            modalImgVisualizingRtNebraska.src = this.src;
+            captionTextVisualizingRtNebraska.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgVisualizingRtNebraska.onclick = function() {
+            modalVisualizingRtNebraska.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExcessDeaths = document.getElementById('modalExcessDeaths');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExcessDeaths = document.getElementById('imgExcessDeaths');
+          var modalImgExcessDeaths = document.getElementById('imgmodalExcessDeaths');
+          var captionTextExcessDeaths = document.getElementById('captionExcessDeaths');
+          imgExcessDeaths.onclick = function(){
+            modalExcessDeaths.style.display = 'block';
+            modalImgExcessDeaths.src = this.src;
+            captionTextExcessDeaths.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExcessDeaths.onclick = function() {
+            modalExcessDeaths.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalExcessDeaths2 = document.getElementById('modalExcessDeaths2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgExcessDeaths2 = document.getElementById('imgExcessDeaths2');
+          var modalImgExcessDeaths2 = document.getElementById('imgmodalExcessDeaths2');
+          var captionTextExcessDeaths2 = document.getElementById('captionExcessDeaths2');
+          imgExcessDeaths2.onclick = function(){
+            modalExcessDeaths2.style.display = 'block';
+            modalImgExcessDeaths2.src = this.src;
+            captionTextExcessDeaths2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgExcessDeaths2.onclick = function() {
+            modalExcessDeaths2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaMapRed = document.getElementById('modalChinaMapRed');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaMapRed = document.getElementById('imgChinaMapRed');
+          var modalImgChinaMapRed = document.getElementById('imgmodalChinaMapRed');
+          var captionTextChinaMapRed = document.getElementById('captionChinaMapRed');
+          imgChinaMapRed.onclick = function(){
+            modalChinaMapRed.style.display = 'block';
+            modalImgChinaMapRed.src = this.src;
+            captionTextChinaMapRed.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaMapRed.onclick = function() {
+            modalChinaMapRed.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaMapBlue = document.getElementById('modalChinaMapBlue');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaMapBlue = document.getElementById('imgChinaMapBlue');
+          var modalImgChinaMapBlue = document.getElementById('imgmodalChinaMapBlue');
+          var captionTextChinaMapBlue = document.getElementById('captionChinaMapBlue');
+          imgChinaMapBlue.onclick = function(){
+            modalChinaMapBlue.style.display = 'block';
+            modalImgChinaMapBlue.src = this.src;
+            captionTextChinaMapBlue.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaMapBlue.onclick = function() {
+            modalChinaMapBlue.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaMapSymbolLinearScale = document.getElementById('modalChinaMapSymbolLinearScale');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaMapSymbolLinearScale = document.getElementById('imgChinaMapSymbolLinearScale');
+          var modalImgChinaMapSymbolLinearScale = document.getElementById('imgmodalChinaMapSymbolLinearScale');
+          var captionTextChinaMapSymbolLinearScale = document.getElementById('captionChinaMapSymbolLinearScale');
+          imgChinaMapSymbolLinearScale.onclick = function(){
+            modalChinaMapSymbolLinearScale.style.display = 'block';
+            modalImgChinaMapSymbolLinearScale.src = this.src;
+            captionTextChinaMapSymbolLinearScale.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaMapSymbolLinearScale.onclick = function() {
+            modalChinaMapSymbolLinearScale.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaMapSymbolLogScale = document.getElementById('modalChinaMapSymbolLogScale');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaMapSymbolLogScale = document.getElementById('imgChinaMapSymbolLogScale');
+          var modalImgChinaMapSymbolLogScale = document.getElementById('imgmodalChinaMapSymbolLogScale');
+          var captionTextChinaMapSymbolLogScale = document.getElementById('captionChinaMapSymbolLogScale');
+          imgChinaMapSymbolLogScale.onclick = function(){
+            modalChinaMapSymbolLogScale.style.display = 'block';
+            modalImgChinaMapSymbolLogScale.src = this.src;
+            captionTextChinaMapSymbolLogScale.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaMapSymbolLogScale.onclick = function() {
+            modalChinaMapSymbolLogScale.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaMapDotmap = document.getElementById('modalChinaMapDotmap');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaMapDotmap = document.getElementById('imgChinaMapDotmap');
+          var modalImgChinaMapDotmap = document.getElementById('imgmodalChinaMapDotmap');
+          var captionTextChinaMapDotmap = document.getElementById('captionChinaMapDotmap');
+          imgChinaMapDotmap.onclick = function(){
+            modalChinaMapDotmap.style.display = 'block';
+            modalImgChinaMapDotmap.src = this.src;
+            captionTextChinaMapDotmap.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaMapDotmap.onclick = function() {
+            modalChinaMapDotmap.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalStatesReccommendedTestingLevel = document.getElementById('modalStatesReccommendedTestingLevel');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgStatesReccommendedTestingLevel = document.getElementById('imgStatesReccommendedTestingLevel');
+          var modalImgStatesReccommendedTestingLevel = document.getElementById('imgmodalStatesReccommendedTestingLevel');
+          var captionTextStatesReccommendedTestingLevel = document.getElementById('captionStatesReccommendedTestingLevel');
+          imgStatesReccommendedTestingLevel.onclick = function(){
+            modalStatesReccommendedTestingLevel.style.display = 'block';
+            modalImgStatesReccommendedTestingLevel.src = this.src;
+            captionTextStatesReccommendedTestingLevel.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgStatesReccommendedTestingLevel.onclick = function() {
+            modalStatesReccommendedTestingLevel.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalTestingRates = document.getElementById('modalTestingRates');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgTestingRates = document.getElementById('imgTestingRates');
+          var modalImgTestingRates = document.getElementById('imgmodalTestingRates');
+          var captionTextTestingRates = document.getElementById('captionTestingRates');
+          imgTestingRates.onclick = function(){
+            modalTestingRates.style.display = 'block';
+            modalImgTestingRates.src = this.src;
+            captionTextTestingRates.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgTestingRates.onclick = function() {
+            modalTestingRates.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalLockdownsAroundTheWorldSimulation = document.getElementById('modalLockdownsAroundTheWorldSimulation');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgLockdownsAroundTheWorldSimulation = document.getElementById('imgLockdownsAroundTheWorldSimulation');
+          var modalImgLockdownsAroundTheWorldSimulation = document.getElementById('imgmodalLockdownsAroundTheWorldSimulation');
+          var captionTextLockdownsAroundTheWorldSimulation = document.getElementById('captionLockdownsAroundTheWorldSimulation');
+          imgLockdownsAroundTheWorldSimulation.onclick = function(){
+            modalLockdownsAroundTheWorldSimulation.style.display = 'block';
+            modalImgLockdownsAroundTheWorldSimulation.src = this.src;
+            captionTextLockdownsAroundTheWorldSimulation.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgLockdownsAroundTheWorldSimulation.onclick = function() {
+            modalLockdownsAroundTheWorldSimulation.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalGovernmentResponseStringencyIndex = document.getElementById('modalGovernmentResponseStringencyIndex');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgGovernmentResponseStringencyIndex = document.getElementById('imgGovernmentResponseStringencyIndex');
+          var modalImgGovernmentResponseStringencyIndex = document.getElementById('imgmodalGovernmentResponseStringencyIndex');
+          var captionTextGovernmentResponseStringencyIndex = document.getElementById('captionGovernmentResponseStringencyIndex');
+          imgGovernmentResponseStringencyIndex.onclick = function(){
+            modalGovernmentResponseStringencyIndex.style.display = 'block';
+            modalImgGovernmentResponseStringencyIndex.src = this.src;
+            captionTextGovernmentResponseStringencyIndex.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgGovernmentResponseStringencyIndex.onclick = function() {
+            modalGovernmentResponseStringencyIndex.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalStayAtHomeMapLattice = document.getElementById('modalStayAtHomeMapLattice');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgStayAtHomeMapLattice = document.getElementById('imgStayAtHomeMapLattice');
+          var modalImgStayAtHomeMapLattice = document.getElementById('imgmodalStayAtHomeMapLattice');
+          var captionTextStayAtHomeMapLattice = document.getElementById('captionStayAtHomeMapLattice');
+          imgStayAtHomeMapLattice.onclick = function(){
+            modalStayAtHomeMapLattice.style.display = 'block';
+            modalImgStayAtHomeMapLattice.src = this.src;
+            captionTextStayAtHomeMapLattice.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgStayAtHomeMapLattice.onclick = function() {
+            modalStayAtHomeMapLattice.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaEnvironmentPink = document.getElementById('modalChinaEnvironmentPink');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaEnvironmentPink = document.getElementById('imgChinaEnvironmentPink');
+          var modalImgChinaEnvironmentPink = document.getElementById('imgmodalChinaEnvironmentPink');
+          var captionTextChinaEnvironmentPink = document.getElementById('captionChinaEnvironmentPink');
+          imgChinaEnvironmentPink.onclick = function(){
+            modalChinaEnvironmentPink.style.display = 'block';
+            modalImgChinaEnvironmentPink.src = this.src;
+            captionTextChinaEnvironmentPink.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaEnvironmentPink.onclick = function() {
+            modalChinaEnvironmentPink.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalChinaEnvironmentBlue = document.getElementById('modalChinaEnvironmentBlue');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgChinaEnvironmentBlue = document.getElementById('imgChinaEnvironmentBlue');
+          var modalImgChinaEnvironmentBlue = document.getElementById('imgmodalChinaEnvironmentBlue');
+          var captionTextChinaEnvironmentBlue = document.getElementById('captionChinaEnvironmentBlue');
+          imgChinaEnvironmentBlue.onclick = function(){
+            modalChinaEnvironmentBlue.style.display = 'block';
+            modalImgChinaEnvironmentBlue.src = this.src;
+            captionTextChinaEnvironmentBlue.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgChinaEnvironmentBlue.onclick = function() {
+            modalChinaEnvironmentBlue.style.display = 'none';
+          }
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
