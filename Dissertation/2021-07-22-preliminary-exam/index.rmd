@@ -1,0 +1,151 @@
+---
+title: "HUMAN PERCEPTION OF EXPONENTIALLY INCREASING DATA DISPLAYED ON A LOG SCALE EVALUATED THROUGH EXPERIMENTAL GRAPHICS TASKS"
+subtitle: "Department of Statistics, University of Nebraska - Lincoln"
+author: "Emily Anna Robinson"
+date: "July 22, 2021"
+output:
+  xaringan::moon_reader:
+    # seal: true
+    includes:
+      after_body:
+        "js-addins.html"
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    # css: ["default", "rladies-fonts", "css/modal.css", "css/this-presentation.css"]
+    css: ["default", "metropolis-fonts", "metropolis" ,"css/modal.css", "css/sizeformat.css"]
+    # css: [default, metropolis, metropolis-fonts]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightlines: true
+      countIncrementalSlides: true
+---
+
+```{r, child = "style.Rmd"}
+```
+
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+
+# Packages
+library(emo)
+library(purrr)
+library(tidyverse)
+library(gridExtra)
+library(nullabor)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(RefManageR)
+library(iconr)
+# download_fontawesome()
+
+# References
+bib <- ReadBib("bib/thesis.bib", check = FALSE)
+ui <- "- "
+
+# R markdown options
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      cache = FALSE,
+                      dpi = 300, 
+                      htmltools.dir.version = FALSE,
+                      knitr.kable.NA = '')
+# options(htmltools.dir.version = FALSE)
+# options(knitr.kable.NA = '')
+```
+
+```{r, echo = F, eval = T, cache = F}
+clean_file_name <- function(x) {
+  basename(x) %>% str_remove("\\..*?$") %>% str_remove_all("[^[A-z0-9_]]")
+}
+img_modal <- function(src, alt = "", id = clean_file_name(src), other = "") {
+  
+  other_arg <- paste0("'", as.character(other), "'") %>%
+    paste(names(other), ., sep = "=") %>%
+    paste(collapse = " ")
+  
+  js <- glue::glue("<script>
+        /* Get the modal*/
+          var modal{id} = document.getElementById('modal{id}');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var img{id} = document.getElementById('img{id}');
+          var modalImg{id} = document.getElementById('imgmodal{id}');
+          var captionText{id} = document.getElementById('caption{id}');
+          img{id}.onclick = function(){{
+            modal{id}.style.display = 'block';
+            modalImg{id}.src = this.src;
+            captionText{id}.innerHTML = this.alt;
+          }}
+          /* When the user clicks on the modalImg, close it*/
+          modalImg{id}.onclick = function() {{
+            modal{id}.style.display = 'none';
+          }}
+</script>")
+  
+  html <- glue::glue(
+     " <!-- Trigger the Modal -->
+<img id='img{id}' src='{src}' alt='{alt}' {other_arg}>
+<!-- The Modal -->
+<div id='modal{id}' class='modal'>
+  <!-- Modal Content (The Image) -->
+  <img class='modal-content' id='imgmodal{id}'>
+  <!-- Modal Caption (Image Text) -->
+  <div id='caption{id}' class='modal-caption'></div>
+</div>
+"
+  )
+  write(js, file = "js-addins.html", append = T)
+  return(html)
+}
+# Clean the file out at the start of the compilation
+write("", file = "js-addins.html")
+```
+
+# Outline
+
+1. Background
+    + Introduction to Graphics
+    + Perception and Psychophysics
+    + Testing Graphics
+    + Logarithmic Scales and Mapping
+    + Underestimation of Exponential Growth
+2. Perception of Logarithmic Scales
+3. Prediction with You Draw It
+4. Eye Fitting Straight Lines in the Modern Era
+5. Prediction of Exponential Trends
+6. Future Work
+7. Conclusion
+8. Questions and Discussion
+
+---
+class:inverse
+.middle[
+# Background
+]
+
+---
+class:primary
+# Introduction to Graphics
+
+---
+class:primary
+# Perception and Pyschophysics
+
+---
+class:primary
+# Logarithmic Perception
+
+---
+class:primary
+# Graphics Testing
+
+---
+class:primary
+# Logarithmic Scales and Mapping
+
+---
+class:primary
+# References
+
+
