@@ -5,7 +5,7 @@ author: "Emily Anna Robinson"
 date: "July 22, 2021"
 output:
   xaringan::moon_reader:
-    # seal: true
+    seal: true
     includes:
       after_body:
         "js-addins.html"
@@ -53,7 +53,7 @@ options(htmltools.dir.version = FALSE)
 options(knitr.kable.NA = '')
 ```
 
-```{r, echo = F, eval = T, include = F, cache = F}
+```{r, include = F, eval = T, cache = F}
 clean_file_name <- function(x) {
   basename(x) %>% str_remove("\\..*?$") %>% str_remove_all("[^[A-z0-9_]]")
 }
