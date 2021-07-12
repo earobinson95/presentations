@@ -32,9 +32,9 @@ a, a > code {
 .inverse {
   background-color: #8B0000;
   <!-- border-top: 20px solid #696969; -->
-  background-image: none;
-	background-position: 50% 75%;
-  background-size: 150px;
+  <!-- background-image: none; -->
+	<!-- background-position: 50% 75%; -->
+  <!-- background-size: 150px; -->
 }
 
 .remark-slide-content > h1 {
