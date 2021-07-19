@@ -9,6 +9,8 @@
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/modal.css" type="text/css" />
     <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
   </head>
@@ -190,6 +192,25 @@ Data visualization is a central tool in modern data science and defined as the a
 + News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
 + Today, graphics are found in scientific publications and mass media (Aisch et al., 2016; Gouretski &amp; Koltermann, 2007; Silver, 2020).
 
+&lt;!-- .center[ --&gt;
+&lt;!-- ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE} --&gt;
+&lt;!-- i1 &lt;- img_modal(src = "images/statistical-atlas-state-population.jpg", alt = "Governement (Harms, 1991)", other=list(width="23%")) --&gt;
+&lt;!-- i2 &lt;- img_modal(src = "images/ATandT-revenue.png", alt = "Companies (Chandar, Collier, &amp; Miranti, 2012)", other=list(width="23%")) --&gt;
+&lt;!-- i3 &lt;- img_modal(src = "images/ATandT-revenue.png", alt = "Scientific publications, (Aisch et al., 2016)", other=list(width="23%")) --&gt;
+&lt;!-- i4 &lt;- img_modal(src = "images/ATandT-revenue.png", alt = "Mass media (Silver, 2020)", other=list(width="23%")) --&gt;
+
+&lt;!-- c(str_split(i1, "\\n", simplify = T)[1:2], --&gt;
+&lt;!--   str_split(i2, "\\n", simplify = T)[1:2], --&gt;
+&lt;!--   str_split(i3, "\\n", simplify = T)[1:2], --&gt;
+&lt;!--   str_split(i4, "\\n", simplify = T)[1:2], --&gt;
+&lt;!--   str_split(i1, "\\n", simplify = T)[3:9], --&gt;
+&lt;!--   str_split(i2, "\\n", simplify = T)[3:9], --&gt;
+&lt;!--   str_split(i3, "\\n", simplify = T)[3:9], --&gt;
+&lt;!--   str_split(i4, "\\n", simplify = T)[3:9] --&gt;
+&lt;!--   ) %&gt;% paste(collapse = "\n") %&gt;% cat() --&gt;
+&lt;!-- ``` --&gt;
+&lt;!-- ] --&gt;
+
 ---
 class:primary
 # Grammar of Graphics (Wilkinson, 2012)
@@ -264,7 +285,15 @@ When interacting with charts, a viewer must: (Shah &amp; Carpenter, 1995)
 + translate to the variables defined in the data set.
 ]
 .pull-right[
-&lt;img src="index_files/figure-html/decreasing-population-1.png" width="80%" /&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgdecreasingpopulation' src='images/decreasing-population.png' alt=' ' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaldecreasingpopulation' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaldecreasingpopulation'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiondecreasingpopulation' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
 
 ???
@@ -283,8 +312,6 @@ the physiological response (automatic reaction) is related to the behavioral res
 class:primary
 # Logarithmic Perception
 
-Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli; known as the “Just Noticeable Difference”) and the magnitude of a stimulus.
-
 **Weber’s law** states we do not notice absolute changes in stimuli,
 but instead that we notice the relative change (Fechner, 1860). Discovered by Ernst Weber, an early psychophysics researcher.
 
@@ -299,14 +326,14 @@ Numerically, Weber’s Law is defined as:
 + `\(K\)` is called Weber’s contrast which remains constant as the magnitude
 of `\(S\)` changes. 
 
+???
+Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli; known as the “Just Noticeable Difference”) and the magnitude of a stimulus.
+
 ---
 class:primary
 # Logarithmic Perception
 
-Gustav Fechner, a founder of psychophysics, provided further
-extension to Weber’s law by discovering the relationship between the perceived
-intensity is logarithmic to the stimulus intensity when observed above a minimal
-threshold of perception (Fechner, 1860).
+Extending Weber's law, Gustav Fechner discovered the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
 
 Formally known as the **Weber-Fechner law**, it is derived from Weber’s law as:
 `\begin{equation}
@@ -316,6 +343,9 @@ P = K \ln \frac{S}{S_0}
 + `\(K\)` represents Weber’s contrast
 + `\(S\)` represents the initial stimulus intensity
 + `\(S_0\)` represents the minimal threshold of perception.
+
+???
+Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
 
 ---
 class:primary
@@ -340,52 +370,85 @@ class:primary
 
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
 
-  + Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, &amp; Guidi, 2020).
-  + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-  + Facilitated communication with the public to increase compliance (Bavel et al., 2020).
-
 .pull-left[
-&lt;img src="images/91dovic-cases-july2021.png" width="80%"/&gt;
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, &amp; Guidi, 2020).
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance (Bavel et al., 2020).
 
-(Fagen-Ulmschneider, 2020)
 ].pull-right[
-&lt;img src="images/covid19-summer2020-risk-map.png" width="80%"/&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='img91divoccasesjuly2021' src='images/91divoc-cases-july2021.png' alt='(Fagen-Ulmschneider, 2020)' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modal91divoccasesjuly2021' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodal91divoccasesjuly2021'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='caption91divoccasesjuly2021' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-(“Risk levels,” 2021).
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19summer2020riskmap' src='images/covid19-summer2020-risk-map.png' alt='(“Risk levels,” 2021)' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19summer2020riskmap' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19summer2020riskmap'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19summer2020riskmap' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
-
 ---
 class:primary
 # Logarithmic Scales
 
-When faced with data which spans several orders of magnitude, we must decide
-whether to show the data on its original scale (compressing the smaller magnitudes
-into relatively little area) or to transform the scale and alter the contextual
-appearance of the data.
-
-One common solution is to use a log scale transformation to display data over several orders of magnitude within one graph.
-
 .pull-left[
-&lt;img src="images/log-scale-comic.png" width="80%"/&gt;
-] .pull-right[
-&lt;img src="index_files/figure-html/log-scale-example-1.png" width="100%" /&gt;
+**Problem:** Data which spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
+
+**Solution:** Use a log scale transformation; alters the contextual appearance of the data.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt=' ' width='70%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallogscalecomic' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallogscalecomic'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlogscalecomic' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='50%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallogscaleexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallogscaleexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+
 
 ---
 class:primary
 # Logarithmic Mapping
 
-+ When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
-
-+ Research suggests our perception and mapping of numbers to a number line is logarithmic at first, but transitions to a linear scale later in development, with formal mathematics education (Dehaene, Izard, Spelke, &amp; Pica, 2008; Siegler &amp; Braithwaite, 2017, 2017; Varshney &amp; Sun, 2013).
-
-.center[
-&lt;img src="index_files/figure-html/log-number-line-1.png" width="100%" /&gt;
-]
-
++ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, &amp; Pica, 2008; Siegler &amp; Braithwaite, 2017, 2017; Varshney &amp; Sun, 2013).
 + A kindergartner asked to place numbers one through ten along a number
 line would place three close to the middle, following the logarithmic perspective
 (Varshney &amp; Sun, 2013)
+
+.center[
+&lt;img src="images/log-numberline.png" width="90%"/&gt;
+]
+
+
++ **Assumption:** If we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+???
+
++ When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
 
 + Assuming there is a direct relationship between perceptual and cognitive
 processes, it is reasonable to assume numerical representations should also be
@@ -440,28 +503,42 @@ class:primary
 
 .pull-left[
 Exponential growth is often misjudged:
-+ early stage appears to have a small growth rate
-+ middle stage appears to be growing, but not at an astounding rate, appearing more quadratic.
-+ late stages exponential growth when it is quite apparent
++ **early stage** appears to have a small growth rate.
++ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
++ **late stages** exponential growth when it is quite apparent.
 ].pull-right[
-&lt;img src="images/exponential-stages-comic.jpg" width="100%"/&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgexponentialstagescomic' src='images/exponential-stages-comic.jpg' alt='Exponential Stages' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalexponentialstagescomic' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalexponentialstagescomic'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionexponentialstagescomic' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
 
-Estimation and prediction of exponential growth and is underestimated when presented both numerically and graphically (Jones, 1977; Mackinnon &amp;
-Wearing, 1991; Wagenaar &amp; Sagaria, 1975).
+---
+class:primary
+# Underestimation of Exponential Growth
 
-Our inability to accurately predict exponential growth might also be addressed by log transforming the data, however, this transformation introduces new complexities; most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1977; Mackinnon &amp; Wearing, 1991; Wagenaar &amp; Sagaria, 1975).
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves. 
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation (Jones, 1977; Wagenaar &amp; Sagaria, 1975). 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon &amp; Wearing, 1991).
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ???
-Results indicated that numerical
-estimation is more accurate than graphical estimation for exponential curves.
-Experimental studies were conducted in order to determine strategies to improve
-the accuracy of estimation of exponential growth (Jones, 1977; Mackinnon &amp;
-Wearing, 1991; Wagenaar &amp; Sagaria, 1975). There was no improvement in
-estimation found when participants had contextual knowledge or experience with
-exponential growth, but instruction on exponential growth reduced the
+
++ Results indicated that numerical estimation is more accurate than graphical estimation for exponential curves. Experimental studies were conducted in order to determine strategies to improve the accuracy of estimation of exponential growth (Jones, 1977; Mackinnon &amp; Wearing, 1991; Wagenaar &amp; Sagaria, 1975). There was no improvement in estimation found when participants had contextual knowledge or experience with exponential growth, but instruction on exponential growth reduced the
 underestimation; participants adjusted their initial starting value but not their
 perception of the growth rate (Jones, 1977; Wagenaar &amp; Sagaria, 1975). Mackinnon
 &amp; Wearing (1991) found that estimation was improved by providing immediate
@@ -483,13 +560,14 @@ class:inverse
 
 ---
 class:primary
-# Subjective Judgment, Finney (1951)
+# Subjective Judgment in Statistical Analysis
+## Finney (1951)
 
 .pull-left[
-+ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration.
++ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected iwth dose-response relationships.
 + **Method:** Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay. Sent out by mail, asked to "rule two lines."
 + **Sample:** 21 scientists
-+ **Findings:** One cycle of iteration was sufficient.
++ **Findings:** One cycle of iterations for calculating the relative potency was sufficient based on the starting values provided by eye from the participants.
 ].pull-right[
 &lt;img src="images/subjective-judgement-plot.png" width="75%"/&gt;
 ]
@@ -500,7 +578,7 @@ class:primary
 ---
 class:primary
 # Scientistis have always had sass!
-[(Subjective Judgment in Statistical Analysis: An Experimental Study; 1951; D. J. Finney; *Journal of the Royal Statistical Society*)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
+[(Subjective Judgment in Statistical Analysis: An Experimental Study; D. J. Finney, 1951)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
 &lt;font size="6"&gt;
 .small[
 + "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.)
@@ -520,17 +598,17 @@ class:primary
 
 ---
 class:primary
-# Eye Fitting Straight Lines, Mosteller et al. (1981)
-
+# Eye Fitting Straight Lines
+## Mosteller et al. (1981)
 .pull-left[
 + **Big Idea:** Students fitted lines by eye to four sets of points.
 + **Method:** 8.5 x 11 inch transparency with a straight line etched completely across the
 middle.
 + **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
 + **Experimental Design:** Latin square with packets stapled in four different orders.
-+ **Findings:** Students tended to fit the slope of the first principal component.
++ **Findings:** Students tended to fit the slope of the first principal component over the slope of the ordinary least squares regression line.
 ].pull-right[
-&lt;img src="images/eyefitting-straight-lines-plots.png" width="85%"/&gt;
+&lt;img src="images/eyefitting-straight-lines-plots.png" width="95%"/&gt;
 ]
 
 ???
@@ -544,9 +622,10 @@ middle.
 
 ---
 class:primary
-# New York Times You Draw It Feature (2015)
+# You Draw It Feature 
+## New York Times (2015)
 .pull-left[
-&lt;img src="images/nyt-caraccidents-frame4.png" width="100%"/&gt;
+&lt;img src="images/nyt-caraccidents-frame4.png" width="95%"/&gt;
 &lt;font size="2"&gt;Image Source: Katz (2017) &lt;/font&gt;
 ].pull-right[
 
@@ -557,56 +636,100 @@ compare how these assumptions relate to reality.
 + [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html)
 + [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0)
 
-The New York Times team utilizes Data Driven Documents (D3) that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
 ]
 
 ---
 class:primary
-# Data Driven Documents (D3.js)
+# Background of D3
 
-
-+ **What?** D3 is an open-source JavaScript based graphing framework created by Mike Bostock during his time working on graphics at the New York Times.
-  + D3 is to JavaScript as ggplot2 is to R. 
+**Who?** [Mike Bostock](https://observablehq.com/@mbostock) created D3 during his time working on graphics at the New York Times.
   
-Similar to geometric objects and style choices in ggplot2, the grammar of D3 also includes elements such as circles, paths, and rectangles with choices of attributes and styles such as color and size.
+**What?** Open-source JavaScript based graphing framework
++ D3 = "Data Driven Documents"
++ `D3` is to JavaScript as `ggplot2` is to R
++ Framework for binding objects and layers to plotting area
+  + framework for movement and user interaction
 
-+ **How?** Depends on Extensible Markup Language (XML) to generate graphics and images by binding objects and layers to the plotting area as Scalable Vector Graphics (SVG) in order to preserve the shapes rather than the pixels.
+**When?** D3 v1.0 released in 2011, D3.js recently celebrated it's 10th anniversary!
 
-+ **Why?** Advantages of using D3 include animation and allowing for movement and user interaction such as hovering, clicking, and brushing. 
+**Where?** The internet!
 
-&lt;div class="figure"&gt;
-&lt;img src="images/raster-vs-vector.png" alt="SVG vs Raster" width="50%" /&gt;
-&lt;p class="caption"&gt;SVG vs Raster&lt;/p&gt;
-&lt;/div&gt;
+**Why?** Advantages of using D3 include animation and allowing for movement and user interaction such as hovering, clicking, and brushing. 
+
+**How?** `r2d3`!
+
+
 
 ???
 
 + Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
 + In June 2020, the New York Times released a front page displaying figures that represent each of the 100,000 lives lost from the COVID-19 pandemic until this point in time [@NYTrememberinglives]; this visualization was meant to bring about a visceral reaction and resonate with readers. 
 + During 2021 March Madness, FiveThirtyEight created a roster-shuffling machine which allowed readers to build their own NBA contender through interactivity [@ryanabest_2021].
++ Similar to geometric objects and style choices in ggplot2, the grammar of D3 also includes elements such as circles, paths, and rectangles with choices of attributes and styles such as color and size.
 
 ---
 class:primary
-# r2d3
-.pull-left[
-A challenge of working with D3 is the environment necessary to display the graphics and images. 
-The r2d3 package in R provides an efficient integration of D3 visuals and R by displaying them in familiar HTML output formats such as RMarkdown or Shiny applications [@r2d3].
-The creator of the graphic applies D3.js source code to visualize data which has previously been processed within an R setting. 
+# Relationship between D3 and R
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
 
-The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
-A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code. 
-[Appendix A](#youdrawit-with-shiny) outlines the development of the you draw interactive plots used in this study through the use of r2d3 and R shiny applications. 
-\cref{fig:youdrawit-example} provides an example of a you draw it interactive plot as seen by participants during the study. 
-The first frame shows what the participant sees along with the prompt, "Use your mouse to fill in the trend in the yellow box region". 
-Next, the yellow box region moves along as the participant draws their trend-line until the yellow region disappears, indicating the participant has filled in the entire domain.
-]
-.right-plot[
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+--
+&lt;!-- The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. --&gt;
+&lt;!-- A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code.  --&gt;
+.pull-left[
+**How?**
++ Converts data in R to JSON that can be interpreted by JavaScript
++ Sources D3 code library
++ Creates plot container (svg is default)
++ Renders plot object using JavaScript and CSS files called in r2d3 call
+].right-plot[
 
 ```r
 r2d3(data = data,
      script = "d3-source-code.js",
      d3_version= "5")
 ```
+]
+
+???
+A challenge of working with D3 is the environment necessary to display the graphics and images. 
+
++ Converts data in R to JSON that can be interpreted by JavaScript
+  + Object is named 'data'
+  + Columns can be accessed
++ Sources D3 code library
+  + Grabs version specified in function
++ Creates plot container (svg is default)
+  + Or different container if specified
+  + specifies width and height of plot container
++ Renders plot object using JavaScript and CSS files called in r2d3 call
+
+---
+class:primary
+# Getting Started with D3
+
+`D3.js` is to JavaScript as `ggplot2` is to R
+
+.pull-left[
+<i class="fab fa-js" role="presentation" aria-label="js icon"></i> [Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+<i class="fa fa-image" role="presentation" aria-label="image icon"></i> Understand [SVG](http://tutorials.jenkov.com/svg/g-element.html) elements: inspect elements in web browser!
+
+<i class="fa fa-book-open" role="presentation" aria-label="book-open icon"></i> Amelia Wattenberger's [Full Stack D3 and Data Visualization Book](https://www.newline.co/fullstack-d3)
+
+<i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i> Build a basic graphic using [r2d3](https://rstudio.github.io/r2d3/articles/introduction.html)
+
+<i class="fa fa-grimace" role="presentation" aria-label="grimace icon"></i> Modify `D3.js` code until it does what you want!
+]
+.pull-right[
+**Additional Resources**
+
+<i class="fa fa-code" role="presentation" aria-label="code icon"></i> [How to learn D3 with no coding experience](https://www.heshameissa.com/blog/learn-d3)
+
+<i class="fab fa-twitter" role="presentation" aria-label="twitter icon"></i> Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger)
 ]
 
 ---
@@ -620,6 +743,11 @@ Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box
 ].pull-right[
 &lt;img src="images/exponential_example.gif" width="100%"/&gt;
 ]
+
+???
+Example of a you draw it interactive plot as seen by participants during the study. 
+The first frame shows what the participant sees along with the prompt, "Use your mouse to fill in the trend in the yellow box region". 
+Next, the yellow box region moves along as the participant draws their trend-line until the yellow region disappears, indicating the participant has filled in the entire domain.
 
 ---
 class:primary
@@ -660,46 +788,84 @@ class:inverse
 class:primary
 # Data Simulation
 
-&lt;!-- + `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)` --&gt;
-Data were simulated based on linear model with additive errors: 
+**Point data:** `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
+
+Data were simulated based on linear model with additive errors:
 `\begin{equation}
 y_i = \beta_0 + \beta_1 x_i + e_i
 \end{equation}`
 
 where `\(e_i \sim N(0, \sigma^2).\)`
 
-Where `\(\beta_0\)` and `\(\beta_1\)` are selected to replicate Mosteller et al. (1981) with `\(e_i\)` generated by rejection sampling in order to guarantee the points shown align with that of the fitted line. 
+**Line data:** `\(k = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_k, \hat y_{k,OLS})\)`
 
-An ordinary least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, `\((x_k, \hat y_{k,OLS}), k = 1, ..., 4 x_{max} +1\)`.
-The data simulation function then outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
+An ordinary least squares regression is then fit to the simulated points:
+`\begin{equation}
+\hat y_{k,OLS} = \hat\beta_{0,OLS} + \hat\beta_{1,OLS} x_k
+\end{equation}`
+
+Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
 
 ---
 class:primary
 # Treatment Design
 .pull-left[
-Simulated model equation parameters were selected to reflect the four data sets (F, N, S, and V) used in Mosteller et al. (1981).
+Replicated the data sets from Mosteller et al. (1981).
 + **F:** positive slope; a large variance; `\(x \in [0, 20]\)`. 
 + **N:** negative slope; large variance; `\(x \in [0, 20]\)`. 
 + **S:** positive slope; small variance; `\(x \in [0, 20]\)`. 
 + **V:** steep positive slope; small variance; `\(x \in [4, 16]\)`. 
+
+Consistent aesthetic design choices:
++ aspect ratio set to one.
++ y-range extended `\(10\%\)` beyond the range of the simulated data points.
 ].pull-right[
-&lt;img src="index_files/figure-html/eyefitting-simplot-1.png" width="100%" /&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingexamplesimplot' src='images/eyefitting-example-simplot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingexamplesimplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingexamplesimplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingexamplesimplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
 ]
 
-Aesthetic design choices were made consistent across each of the interactive you draw it plots:
-aspect ratio, defining the `\(x\)` to `\(y\)` axis ratio was set to one y-axis range extended `\(10%\)` beyond (above and below) the range of the simulated data points to allow for users to draw outside the simulated data set range. 
 ---
 class:primary
 # Slope of First Principal Component
 
-&lt;!-- In addition to the participant drawn points, `\((x_k, y_{k,drawn})\)`, and the ordinary least squares (OLS) regression fitted values, `\((x_k, \hat y_{k,OLS})\)`, a regression equation with a slope based on the first principal component (PCA) was used to calculate fitted values, `\((x_k, \hat y_{k,PCA})\)`. --&gt;
-&lt;!-- For each set of simulated data and parameter choice, the PCA regression equation was determined by using the princomp function in the stats package in base R to obtain the rotation of the coordinate axes from the first principal component (direction which captures the most variance). --&gt;
-&lt;!-- The estimated slope, `\(\hat\beta_{1,PCA}\)`, is determined by the ratio of the axis rotation in y and axis rotation in x of the first principal component with the y-intercept, `\(\hat\beta_{0,PCA}\)` calculated by the point-slope equation of a line using the mean of of the simulated points, `\((\bar x_i, \bar y_i)\)`. --&gt;
-&lt;!-- &lt;!-- \rh{Please explain x-rotation and y-rotation of PC1. Maybe the first paragraph of section 3.3.2 could be extended.} --&gt; --&gt;
-&lt;!-- Fitted values, `\(\hat y_{k,PCA}\)` are then obtained every 0.25 increment across the domain from the PCA regression equation, `\(\hat y_{k,PCA} = \hat\beta_{0,PCA} + \hat\beta_{1,PCA} x_k\)`. --&gt;
-&lt;!-- \cref{fig:ols-vs-pca-example} illustrates the difference between an OLS regression equation which minimizes the vertical distance of points from the line and a regression equation with a slope calculated by the first principal component which minimizes the smallest distance of points from the line. --&gt;
+.pull-left[
 
-&lt;img src="index_files/figure-html/ols-vs-pca-example-1.png" width="50%" /&gt;
+Fitted points, `\((x_k, \hat y_{k,PCA})\)` are calculated every 0.25 increment across the domain from the PCA regression equation:
+`\begin{equation}
+\hat y_{k,PCA} = \hat\beta_{0,PCA} + \hat\beta_{1,PCA} x_k
+\end{equation}`
+
+where
++ rotation of coordinate axes from `princomp`
++ `\(\hat\beta_{1,PCA} = \frac{\text{PC1 Rotation in y-axis}}{\text{PC1 Rotation in x-axis}}\)`
++ `\(\hat\beta_{0,PCA}\)` calculated by the point-slope equation of a line using the mean of of the simulated points, `\((\bar x_i, \bar y_i)\)`.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgpcaplot' src='images/pca-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalpcaplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalpcaplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionpcaplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+]
+
+
+
+???
 
 ---
 class:primary
@@ -713,10 +879,21 @@ for parameter choice `\(i = 1,2,3,4\)`, j = `\(1,...N_{participant}\)`, and `\(x
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + `\(e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}\)`
-+ `\(e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}\)`
++ `\(e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}\)`.
 
 ].pull-right[
-&lt;img src="index_files/figure-html/eyefitting-example-plot-1.png" width="100%" /&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingtrialplot' src='images/eyefitting-trial-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingtrialplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingtrialplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingtrialplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
 ]
 
 ???
@@ -726,9 +903,8 @@ Analyses:
 + Sum of Squares Analysis
 ---
 class:primary
-# Linear Mixed Model (LMM)
-
-Using the lmer function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
+# Linear Mixed Model
+Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
 
 The LMM equation for each fit (OLS and PCA) residuals is given by:
 `\begin{equation}
@@ -749,17 +925,24 @@ where
 class:primary
 # LMM Results
 
-.center[
-&lt;div class="figure"&gt;
-&lt;img src="index_files/figure-html/eyefitting-lmer-residualplots-1.png" alt="Eye Fitting Straight Lines in the Modern Era LMM results" width="70%" /&gt;
-&lt;p class="caption"&gt;Eye Fitting Straight Lines in the Modern Era LMM results&lt;/p&gt;
+.pull-left[
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittinglmerplot' src='images/eyefitting-lmer-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittinglmerplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittinglmerplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittinglmerplot' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
 
+
+
 ---
 class:primary
-# Generalized Additive Mixed Model (GAMM)
-
+# Generalized Additive Mixed Model
 Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
 
 The GAMM equation for each fit (OLS and PCA) residuals is given by:
@@ -779,12 +962,19 @@ where
 class:primary
 # GAMM Results
 
-.center[
-&lt;div class="figure"&gt;
-&lt;img src="index_files/figure-html/eyefitting-gamm-residualplots-1.png" alt="Eye Fitting Straight Lines in the Modern Era GAMM results" width="70%" /&gt;
-&lt;p class="caption"&gt;Eye Fitting Straight Lines in the Modern Era GAMM results&lt;/p&gt;
+.pull-left[
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittinggammplot' src='images/eyefitting-gamm-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittinggammplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittinggammplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittinggammplot' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
+
 ---
 class:primary
 # Sum of Squares Analysis
@@ -810,9 +1000,20 @@ The LMM equation is given by:
 class:primary 
 # Sum of Squares Results
 
-.center[
-&lt;img src="index_files/figure-html/eyefitting-ss-oddsratio-1.png" width="75%" /&gt;
+.pull-left[
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingssplot' src='images/eyefitting-ss-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingssplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingssplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingssplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
+
+
 
 ---
 class:primary
@@ -848,26 +1049,103 @@ class:inverse
 class:primary 
 # Data Simulation
 
-&lt;!-- All data processing was conducted in R before being passed to the D3.js source code.  --&gt;
+&lt;!-- All data processing was conducted in R before being passed to the D3.js source code. --&gt;
 &lt;!-- A total of `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i\in [x_{min}, x_{max}]\)` where `\(x\)` and `\(y\)` have an exponential relationship. --&gt;
-Data were simulated based on a one parameter exponential model with multiplicative errors:
-`\begin{equation}
-y_i = e^{\beta x_i + e_i}
-\end{equation} 
-with `\(e_i \sim N(0, \sigma^2).\)`
-+ `\(\beta\)`, determines the rate of exponential growth
-+ `\(e_i\)` generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame. 
-A nonlinear least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS}), k = 1, ..., 4 x_{max} +1\)`.
+&lt;!-- Data were simulated based on a one parameter exponential model with multiplicative errors: --&gt;
+&lt;!-- \begin{equation} --&gt;
+&lt;!-- y_i = e^{\beta x_i + e_i} --&gt;
+&lt;!-- \end{equation}  --&gt;
+
+&lt;!-- with `\(e_i \sim N(0, \sigma^2).\)` --&gt;
+&lt;!-- + `\(\beta\)`, determines the rate of exponential growth --&gt;
+&lt;!-- + `\(e_i\)` generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.  --&gt;
+&lt;!-- A nonlinear least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS}), k = 1, ..., 4 x_{max} +1\)`. --&gt;
 
 ---
 class:primary 
 # Treatment Design
 
-Each growth rate parameter was used to simulate data across a domain of 0 to 20.
-The two simulated data sets (low and high exponential growth rates) were then shown four times each by truncating the points shown at both `\(50%\)` and `\(75%\)` of the domain as well as on both the log and linear scales for a total of eight interactive plots reflecting a factorial treatment design. 
+&lt;!-- Each growth rate parameter was used to simulate data across a domain of 0 to 20. --&gt;
+&lt;!-- The two simulated data sets (low and high exponential growth rates) were then shown four times each by truncating the points shown at both `\(50%\)` and `\(75%\)` of the domain as well as on both the log and linear scales for a total of eight interactive plots reflecting a factorial treatment design.  --&gt;
 
-Aesthetic design choices were made consistent across each of the interactive you draw it plots; the aspect ratio, defining the `\(x\)` to `\(y\)` axis ratio was set to one, the y-axis extended `\(50%\)` below the lower limit of the simulated data range and `\(200%\)` beyond the upper limit of the simulated data range to allow for users to draw outside the data set range, and participants were asked to start drawing at `\(50%\)` of the domain (for example, at `\(x = 10\)`).
-Reflecting the treatment design for each plot, the y-axis was assigned to be displayed on either the linear scale or log scale.
+&lt;!-- Aesthetic design choices were made consistent across each of the interactive you draw it plots; the aspect ratio, defining the `\(x\)` to `\(y\)` axis ratio was set to one, the y-axis extended `\(50%\)` below the lower limit of the simulated data range and `\(200%\)` beyond the upper limit of the simulated data range to allow for users to draw outside the data set range, and participants were asked to start drawing at `\(50%\)` of the domain (for example, at `\(x = 10\)`). --&gt;
+&lt;!-- Reflecting the treatment design for each plot, the y-axis was assigned to be displayed on either the linear scale or log scale. --&gt;
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10linear' src='images/low-10-linear.png' alt='Low Growth Rate, 50% Truncation, Linear Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15linear' src='images/low-15-linear.png' alt='Low Growth Rate, 75% Truncation, Linear Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10linear' src='images/high-10-linear.png' alt='High Growth Rate, 50% Truncation, Linear Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15linear' src='images/high-15-linear.png' alt='High Growth Rate, 75% Truncation, Linear Scale' width='10%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10log' src='images/low-10-log.png' alt='Low Growth Rate, 50% Truncation, Log Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15log' src='images/low-15-log.png' alt='Low Growth Rate, 75% Truncation, Log Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10log' src='images/high-10-log.png' alt='High Growth Rate, 50% Truncation, Log Scale' width='10%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15log' src='images/high-15-log.png' alt='High Growth Rate, 75% Truncation, Log Scale' width='10%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
 
 ---
 class:primary 
@@ -917,7 +1195,77 @@ class:primary
 ---
 class:primary
 # References
+&lt;font size="1"&gt;
+&lt;p&gt;&lt;cite&gt;Best, L. A., L. D. Smith, and D. A. Stubbs
+(2007).
+&amp;ldquo;Perception of Linear and Nonlinear Trends: Using Slope and Curvature Information to Make Trend Discriminations&amp;rdquo;.
+In: &lt;em&gt;Perceptual and Motor Skills&lt;/em&gt; 104.3. Publisher: SAGE Publications Inc, pp. 707&amp;ndash;721.
+ISSN: 0031-5125.
+DOI: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;10.2466/pms.104.3.707-721&lt;/a&gt;.
+URL: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;https://doi.org/10.2466/pms.104.3.707-721&lt;/a&gt; (visited on Jul. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;cite&gt;Buja, A., D. Cook, H. Hofmann, et al.
+(2009).
+&amp;ldquo;Statistical inference for exploratory data analysis and model diagnostics&amp;rdquo;.
+En.
+In: &lt;em&gt;Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences&lt;/em&gt; 367.1906, pp. 4361&amp;ndash;4383.
+ISSN: 1364-503X, 1471-2962.
+DOI: &lt;a href="https://doi.org/10.1098/rsta.2009.0120"&gt;10.1098/rsta.2009.0120&lt;/a&gt;.
+URL: &lt;a href="https://royalsocietypublishing.org/doi/10.1098/rsta.2009.0120"&gt;https://royalsocietypublishing.org/doi/10.1098/rsta.2009.0120&lt;/a&gt; (visited on Oct. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Hofmann, H., L. Follett, M. Majumder, et al.
+(2012).
+&amp;ldquo;Graphical Tests for Power Comparison of Competing Designs&amp;rdquo;.
+En.
+In: &lt;em&gt;IEEE Transactions on Visualization and Computer Graphics&lt;/em&gt; 18.12, pp. 2441&amp;ndash;2448.
+ISSN: 1077-2626.
+DOI: &lt;a href="https://doi.org/10.1109/TVCG.2012.230"&gt;10.1109/TVCG.2012.230&lt;/a&gt;.
+URL: &lt;a href="http://ieeexplore.ieee.org/document/6327249/"&gt;http://ieeexplore.ieee.org/document/6327249/&lt;/a&gt; (visited on Apr. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Romano, A., C. Sotis, G. Dominioni, et al.
+(2020).
+&lt;em&gt;The Scale of COVID-19 Graphs Affects Understanding, Attitudes, and Policy Preferences&lt;/em&gt;.
+En.
+SSRN Scholarly Paper ID 3588511.
+Rochester, NY: Social Science Research Network.
+DOI: &lt;a href="https://doi.org/10.2139/ssrn.3588511"&gt;10.2139/ssrn.3588511&lt;/a&gt;.
+URL: &lt;a href="https://papers.ssrn.com/abstract=3588511"&gt;https://papers.ssrn.com/abstract=3588511&lt;/a&gt; (visited on Nov. 30, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Siegler, R. S. and D. W. Braithwaite
+(2017).
+&amp;ldquo;Numerical Development&amp;rdquo;.
+En.
+In: &lt;em&gt;Annual Review of Psychology&lt;/em&gt; 68.1, pp. 187&amp;ndash;213.
+ISSN: 0066-4308, 1545-2085.
+DOI: &lt;a href="https://doi.org/10.1146/annurev-psych-010416-044101"&gt;10.1146/annurev-psych-010416-044101&lt;/a&gt;.
+URL: &lt;a href="http://www.annualreviews.org/doi/10.1146/annurev-psych-010416-044101"&gt;http://www.annualreviews.org/doi/10.1146/annurev-psych-010416-044101&lt;/a&gt; (visited on May. 19, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Unwin, A.
+(2020).
+&amp;ldquo;Why is Data Visualization Important? What is Important in Data Visualization?&amp;rdquo;
+En.
+In: &lt;em&gt;Harvard Data Science Review&lt;/em&gt;.
+DOI: &lt;a href="https://doi.org/10.1162/99608f92.8ae4d525"&gt;10.1162/99608f92.8ae4d525&lt;/a&gt;.
+URL: &lt;a href="https://hdsr.mitpress.mit.edu/pub/zok97i7p"&gt;https://hdsr.mitpress.mit.edu/pub/zok97i7p&lt;/a&gt; (visited on Apr. 27, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;VanderPlas, S. and H. Hofmann
+(2017).
+&amp;ldquo;Clusters Beat Trend!? Testing Feature Hierarchy in Statistical Graphics&amp;rdquo;.
+En.
+In: &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt; 26.2, pp. 231&amp;ndash;242.
+ISSN: 1061-8600, 1537-2715.
+DOI: &lt;a href="https://doi.org/10.1080/10618600.2016.1209116"&gt;10.1080/10618600.2016.1209116&lt;/a&gt;.
+URL: &lt;a href="https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116"&gt;https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116&lt;/a&gt; (visited on Feb. 28, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Varshney, L. R. and J. Z. Sun
+(2013).
+&amp;ldquo;Why do we perceive logarithmically?&amp;rdquo;
+En.
+In: &lt;em&gt;Significance&lt;/em&gt; 10.1, pp. 28&amp;ndash;31.
+ISSN: 17409705.
+DOI: &lt;a href="https://doi.org/10.1111/j.1740-9713.2013.00636.x"&gt;10.1111/j.1740-9713.2013.00636.x&lt;/a&gt;.
+URL: &lt;a href="http://doi.wiley.com/10.1111/j.1740-9713.2013.00636.x"&gt;http://doi.wiley.com/10.1111/j.1740-9713.2013.00636.x&lt;/a&gt; (visited on May. 07, 2020).&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
 ---
 class:inverse
 &lt;br&gt;
@@ -1006,6 +1354,346 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
 })();</script>
 
+<script>
+        /* Get the modal*/
+          var modaldecreasingpopulation = document.getElementById('modaldecreasingpopulation');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgdecreasingpopulation = document.getElementById('imgdecreasingpopulation');
+          var modalImgdecreasingpopulation = document.getElementById('imgmodaldecreasingpopulation');
+          var captionTextdecreasingpopulation = document.getElementById('captiondecreasingpopulation');
+          imgdecreasingpopulation.onclick = function(){
+            modaldecreasingpopulation.style.display = 'block';
+            modalImgdecreasingpopulation.src = this.src;
+            captionTextdecreasingpopulation.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgdecreasingpopulation.onclick = function() {
+            modaldecreasingpopulation.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modal91divoccasesjuly2021 = document.getElementById('modal91divoccasesjuly2021');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var img91divoccasesjuly2021 = document.getElementById('img91divoccasesjuly2021');
+          var modalImg91divoccasesjuly2021 = document.getElementById('imgmodal91divoccasesjuly2021');
+          var captionText91divoccasesjuly2021 = document.getElementById('caption91divoccasesjuly2021');
+          img91divoccasesjuly2021.onclick = function(){
+            modal91divoccasesjuly2021.style.display = 'block';
+            modalImg91divoccasesjuly2021.src = this.src;
+            captionText91divoccasesjuly2021.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImg91divoccasesjuly2021.onclick = function() {
+            modal91divoccasesjuly2021.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19summer2020riskmap = document.getElementById('modalcovid19summer2020riskmap');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19summer2020riskmap = document.getElementById('imgcovid19summer2020riskmap');
+          var modalImgcovid19summer2020riskmap = document.getElementById('imgmodalcovid19summer2020riskmap');
+          var captionTextcovid19summer2020riskmap = document.getElementById('captioncovid19summer2020riskmap');
+          imgcovid19summer2020riskmap.onclick = function(){
+            modalcovid19summer2020riskmap.style.display = 'block';
+            modalImgcovid19summer2020riskmap.src = this.src;
+            captionTextcovid19summer2020riskmap.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19summer2020riskmap.onclick = function() {
+            modalcovid19summer2020riskmap.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallogscalecomic = document.getElementById('modallogscalecomic');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglogscalecomic = document.getElementById('imglogscalecomic');
+          var modalImglogscalecomic = document.getElementById('imgmodallogscalecomic');
+          var captionTextlogscalecomic = document.getElementById('captionlogscalecomic');
+          imglogscalecomic.onclick = function(){
+            modallogscalecomic.style.display = 'block';
+            modalImglogscalecomic.src = this.src;
+            captionTextlogscalecomic.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglogscalecomic.onclick = function() {
+            modallogscalecomic.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallogscaleexample = document.getElementById('modallogscaleexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglogscaleexample = document.getElementById('imglogscaleexample');
+          var modalImglogscaleexample = document.getElementById('imgmodallogscaleexample');
+          var captionTextlogscaleexample = document.getElementById('captionlogscaleexample');
+          imglogscaleexample.onclick = function(){
+            modallogscaleexample.style.display = 'block';
+            modalImglogscaleexample.src = this.src;
+            captionTextlogscaleexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglogscaleexample.onclick = function() {
+            modallogscaleexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialstagescomic = document.getElementById('modalexponentialstagescomic');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialstagescomic = document.getElementById('imgexponentialstagescomic');
+          var modalImgexponentialstagescomic = document.getElementById('imgmodalexponentialstagescomic');
+          var captionTextexponentialstagescomic = document.getElementById('captionexponentialstagescomic');
+          imgexponentialstagescomic.onclick = function(){
+            modalexponentialstagescomic.style.display = 'block';
+            modalImgexponentialstagescomic.src = this.src;
+            captionTextexponentialstagescomic.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialstagescomic.onclick = function() {
+            modalexponentialstagescomic.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingexamplesimplot = document.getElementById('modaleyefittingexamplesimplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingexamplesimplot = document.getElementById('imgeyefittingexamplesimplot');
+          var modalImgeyefittingexamplesimplot = document.getElementById('imgmodaleyefittingexamplesimplot');
+          var captionTexteyefittingexamplesimplot = document.getElementById('captioneyefittingexamplesimplot');
+          imgeyefittingexamplesimplot.onclick = function(){
+            modaleyefittingexamplesimplot.style.display = 'block';
+            modalImgeyefittingexamplesimplot.src = this.src;
+            captionTexteyefittingexamplesimplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingexamplesimplot.onclick = function() {
+            modaleyefittingexamplesimplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalpcaplot = document.getElementById('modalpcaplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgpcaplot = document.getElementById('imgpcaplot');
+          var modalImgpcaplot = document.getElementById('imgmodalpcaplot');
+          var captionTextpcaplot = document.getElementById('captionpcaplot');
+          imgpcaplot.onclick = function(){
+            modalpcaplot.style.display = 'block';
+            modalImgpcaplot.src = this.src;
+            captionTextpcaplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgpcaplot.onclick = function() {
+            modalpcaplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingtrialplot = document.getElementById('modaleyefittingtrialplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingtrialplot = document.getElementById('imgeyefittingtrialplot');
+          var modalImgeyefittingtrialplot = document.getElementById('imgmodaleyefittingtrialplot');
+          var captionTexteyefittingtrialplot = document.getElementById('captioneyefittingtrialplot');
+          imgeyefittingtrialplot.onclick = function(){
+            modaleyefittingtrialplot.style.display = 'block';
+            modalImgeyefittingtrialplot.src = this.src;
+            captionTexteyefittingtrialplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingtrialplot.onclick = function() {
+            modaleyefittingtrialplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittinglmerplot = document.getElementById('modaleyefittinglmerplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittinglmerplot = document.getElementById('imgeyefittinglmerplot');
+          var modalImgeyefittinglmerplot = document.getElementById('imgmodaleyefittinglmerplot');
+          var captionTexteyefittinglmerplot = document.getElementById('captioneyefittinglmerplot');
+          imgeyefittinglmerplot.onclick = function(){
+            modaleyefittinglmerplot.style.display = 'block';
+            modalImgeyefittinglmerplot.src = this.src;
+            captionTexteyefittinglmerplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittinglmerplot.onclick = function() {
+            modaleyefittinglmerplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittinggammplot = document.getElementById('modaleyefittinggammplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittinggammplot = document.getElementById('imgeyefittinggammplot');
+          var modalImgeyefittinggammplot = document.getElementById('imgmodaleyefittinggammplot');
+          var captionTexteyefittinggammplot = document.getElementById('captioneyefittinggammplot');
+          imgeyefittinggammplot.onclick = function(){
+            modaleyefittinggammplot.style.display = 'block';
+            modalImgeyefittinggammplot.src = this.src;
+            captionTexteyefittinggammplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittinggammplot.onclick = function() {
+            modaleyefittinggammplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingssplot = document.getElementById('modaleyefittingssplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingssplot = document.getElementById('imgeyefittingssplot');
+          var modalImgeyefittingssplot = document.getElementById('imgmodaleyefittingssplot');
+          var captionTexteyefittingssplot = document.getElementById('captioneyefittingssplot');
+          imgeyefittingssplot.onclick = function(){
+            modaleyefittingssplot.style.display = 'block';
+            modalImgeyefittingssplot.src = this.src;
+            captionTexteyefittingssplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingssplot.onclick = function() {
+            modaleyefittingssplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10linear = document.getElementById('modallow10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10linear = document.getElementById('imglow10linear');
+          var modalImglow10linear = document.getElementById('imgmodallow10linear');
+          var captionTextlow10linear = document.getElementById('captionlow10linear');
+          imglow10linear.onclick = function(){
+            modallow10linear.style.display = 'block';
+            modalImglow10linear.src = this.src;
+            captionTextlow10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10linear.onclick = function() {
+            modallow10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15linear = document.getElementById('modallow15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15linear = document.getElementById('imglow15linear');
+          var modalImglow15linear = document.getElementById('imgmodallow15linear');
+          var captionTextlow15linear = document.getElementById('captionlow15linear');
+          imglow15linear.onclick = function(){
+            modallow15linear.style.display = 'block';
+            modalImglow15linear.src = this.src;
+            captionTextlow15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15linear.onclick = function() {
+            modallow15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10linear = document.getElementById('modalhigh10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10linear = document.getElementById('imghigh10linear');
+          var modalImghigh10linear = document.getElementById('imgmodalhigh10linear');
+          var captionTexthigh10linear = document.getElementById('captionhigh10linear');
+          imghigh10linear.onclick = function(){
+            modalhigh10linear.style.display = 'block';
+            modalImghigh10linear.src = this.src;
+            captionTexthigh10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10linear.onclick = function() {
+            modalhigh10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15linear = document.getElementById('modalhigh15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15linear = document.getElementById('imghigh15linear');
+          var modalImghigh15linear = document.getElementById('imgmodalhigh15linear');
+          var captionTexthigh15linear = document.getElementById('captionhigh15linear');
+          imghigh15linear.onclick = function(){
+            modalhigh15linear.style.display = 'block';
+            modalImghigh15linear.src = this.src;
+            captionTexthigh15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15linear.onclick = function() {
+            modalhigh15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10log = document.getElementById('modallow10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10log = document.getElementById('imglow10log');
+          var modalImglow10log = document.getElementById('imgmodallow10log');
+          var captionTextlow10log = document.getElementById('captionlow10log');
+          imglow10log.onclick = function(){
+            modallow10log.style.display = 'block';
+            modalImglow10log.src = this.src;
+            captionTextlow10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10log.onclick = function() {
+            modallow10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15log = document.getElementById('modallow15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15log = document.getElementById('imglow15log');
+          var modalImglow15log = document.getElementById('imgmodallow15log');
+          var captionTextlow15log = document.getElementById('captionlow15log');
+          imglow15log.onclick = function(){
+            modallow15log.style.display = 'block';
+            modalImglow15log.src = this.src;
+            captionTextlow15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15log.onclick = function() {
+            modallow15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10log = document.getElementById('modalhigh10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10log = document.getElementById('imghigh10log');
+          var modalImghigh10log = document.getElementById('imgmodalhigh10log');
+          var captionTexthigh10log = document.getElementById('captionhigh10log');
+          imghigh10log.onclick = function(){
+            modalhigh10log.style.display = 'block';
+            modalImghigh10log.src = this.src;
+            captionTexthigh10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10log.onclick = function() {
+            modalhigh10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15log = document.getElementById('modalhigh15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15log = document.getElementById('imghigh15log');
+          var modalImghigh15log = document.getElementById('imgmodalhigh15log');
+          var captionTexthigh15log = document.getElementById('captionhigh15log');
+          imghigh15log.onclick = function(){
+            modalhigh15log.style.display = 'block';
+            modalImghigh15log.src = this.src;
+            captionTexthigh15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15log.onclick = function() {
+            modalhigh15log.style.display = 'none';
+          }
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {

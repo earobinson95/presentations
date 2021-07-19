@@ -37,6 +37,7 @@ library(knitr)
 library(kableExtra)
 library(RefManageR)
 library(iconr)
+library(fontawesome)
 # download_fontawesome()
 
 # References
@@ -146,6 +147,25 @@ Data visualization is a central tool in modern data science and defined as the a
 + News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
 + Today, graphics are found in scientific publications and mass media (Aisch et al., 2016; Gouretski & Koltermann, 2007; Silver, 2020).
 
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+# i1 <- img_modal(src = "images/statistical-atlas-state-population.jpg", alt = "Governement (Harms, 1991)", other=list(width="23%"))
+# i2 <- img_modal(src = "images/ATandT-revenue.png", alt = "Companies (Chandar, Collier, & Miranti, 2012)", other=list(width="23%"))
+# i3 <- img_modal(src = "images/ATandT-revenue.png", alt = "Scientific publications, (Aisch et al., 2016)", other=list(width="23%"))
+# i4 <- img_modal(src = "images/ATandT-revenue.png", alt = "Mass media (Silver, 2020)", other=list(width="23%"))
+# 
+# c(str_split(i1, "\\n", simplify = T)[1:2],
+#   str_split(i2, "\\n", simplify = T)[1:2],
+#   str_split(i3, "\\n", simplify = T)[1:2],
+#   str_split(i4, "\\n", simplify = T)[1:2],
+#   str_split(i1, "\\n", simplify = T)[3:9],
+#   str_split(i2, "\\n", simplify = T)[3:9],
+#   str_split(i3, "\\n", simplify = T)[3:9],
+#   str_split(i4, "\\n", simplify = T)[3:9]
+#   ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
 ---
 class:primary
 # Grammar of Graphics (Wilkinson, 2012)
@@ -220,14 +240,19 @@ When interacting with charts, a viewer must: (Shah & Carpenter, 1995)
 + translate to the variables defined in the data set.
 ]
 .pull-right[
-```{r decreasing-population, fig.height = 6, fig.width = 6, out.width = "80%"}
-data <- tibble(year = seq(1980, 2020),
-               population = 10000 - 5*year)
-data %>%
-  ggplot(aes(x = year, y = population)) +
-  geom_line() +
-  theme_bw() +
-  theme(aspect.ratio = 1)
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+# decreasing_population <- tibble(Year = seq(1980, 2020, 1),
+#                                 Population = 1000 - 10*(Year-1980)) %>%
+#   ggplot(aes(x = Year, y = Population)) +
+#   geom_line() +
+#   theme_bw() +
+#   theme(aspect.ratio = 1)
+# ggsave(decreasing_population, filename = "images/decreasing-population.png")
+i1 <- img_modal(src = "images/decreasing-population.png", alt = " ", other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
 
@@ -247,8 +272,6 @@ the physiological response (automatic reaction) is related to the behavioral res
 class:primary
 # Logarithmic Perception
 
-Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli; known as the “Just Noticeable Difference”) and the magnitude of a stimulus.
-
 **Weber’s law** states we do not notice absolute changes in stimuli,
 but instead that we notice the relative change (Fechner, 1860). Discovered by Ernst Weber, an early psychophysics researcher.
 
@@ -263,14 +286,14 @@ Numerically, Weber’s Law is defined as:
 + $K$ is called Weber’s contrast which remains constant as the magnitude
 of $S$ changes. 
 
+???
+Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli; known as the “Just Noticeable Difference”) and the magnitude of a stimulus.
+
 ---
 class:primary
 # Logarithmic Perception
 
-Gustav Fechner, a founder of psychophysics, provided further
-extension to Weber’s law by discovering the relationship between the perceived
-intensity is logarithmic to the stimulus intensity when observed above a minimal
-threshold of perception (Fechner, 1860).
+Extending Weber's law, Gustav Fechner discovered the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
 
 Formally known as the **Weber-Fechner law**, it is derived from Weber’s law as:
 \begin{equation}
@@ -280,6 +303,9 @@ P = K \ln \frac{S}{S_0}
 + $K$ represents Weber’s contrast
 + $S$ represents the initial stimulus intensity
 + $S_0$ represents the minimal threshold of perception.
+
+???
+Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
 
 ---
 class:primary
@@ -304,98 +330,123 @@ class:primary
 
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
 
-  + Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, & Guidi, 2020).
-  + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-  + Facilitated communication with the public to increase compliance (Bavel et al., 2020).
-
 .pull-left[
-<img src="images/91dovic-cases-july2021.png" width="80%"/>
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, & Guidi, 2020).
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance (Bavel et al., 2020).
 
-(Fagen-Ulmschneider, 2020)
 ].pull-right[
-<img src="images/covid19-summer2020-risk-map.png" width="80%"/>
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/91divoc-cases-july2021.png", alt = "(Fagen-Ulmschneider, 2020)", other=list(width="80%"))
 
-(“Risk levels,” 2021).
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-summer2020-risk-map.png", alt = "(“Risk levels,” 2021)", other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
 ]
-
 ---
 class:primary
 # Logarithmic Scales
 
-When faced with data which spans several orders of magnitude, we must decide
-whether to show the data on its original scale (compressing the smaller magnitudes
-into relatively little area) or to transform the scale and alter the contextual
-appearance of the data.
-
-One common solution is to use a log scale transformation to display data over several orders of magnitude within one graph.
-
 .pull-left[
-<img src="images/log-scale-comic.png" width="80%"/>
-] .pull-right[
-```{r log-scale-example, eval = T, echo = F, out.width = "100%"}
-data <- tibble(x = seq(0,10, by = 0.1), y = exp(x))
+**Problem:** Data which spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
 
-linear_scale <- data %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_line() +
-  theme_bw() +
-  theme(aspect.ratio = 1) +
-  ggtitle("Linear Scale")
+**Solution:** Use a log scale transformation; alters the contextual appearance of the data.
 
-log_scale <- data %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_line() +
-  theme_bw() +
-  theme(aspect.ratio = 1) +
-  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x)) +
-  ggtitle("Log Scale")
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/log-scale-comic.png", alt = " ", other=list(width="70%"))
 
-grid.arrange(linear_scale,log_scale, ncol = 2)
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/log-scale-example.png", alt = " ", other=list(width="50%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+```{r log-scale-example, eval = T, echo = F, out.width = "100%"}
+# data <- tibble(x = seq(0,10, by = 0.1), y = exp(x))
+# 
+# linear_scale <- data %>%
+#   ggplot(aes(x = x, y = y)) +
+#   geom_line() +
+#   theme_bw() +
+#   theme(aspect.ratio = 1) +
+#   ggtitle("Linear Scale")
+# 
+# log_scale <- data %>%
+#   ggplot(aes(x = x, y = y)) +
+#   geom_line() +
+#   theme_bw() +
+#   theme(aspect.ratio = 1) +
+#   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x)) +
+#   ggtitle("Log Scale")
+# 
+# grid.arrange(linear_scale,log_scale, ncol = 2)
+```
 
 ---
 class:primary
 # Logarithmic Mapping
 
-+ When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
-
-+ Research suggests our perception and mapping of numbers to a number line is logarithmic at first, but transitions to a linear scale later in development, with formal mathematics education (Dehaene, Izard, Spelke, & Pica, 2008; Siegler & Braithwaite, 2017, 2017; Varshney & Sun, 2013).
-
-.center[
-```{r log-number-line, fig.height = 1, fig.width = 10, message=FALSE, warning=FALSE, out.width = "100%"}
-tibble(x = seq(1,10, 0.25),
-       y = 1,
-       text = c("1", NA, NA, NA, 
-                NA, NA, NA, NA,
-                NA, NA, NA, "2",
-                NA, NA, NA, NA,
-                NA, "3", NA, NA, 
-                NA, "4", NA, NA,
-                NA, "5", NA, NA,
-                "6", NA, NA, NA,
-                "7", NA, "8", "9",
-                "10")
-       ) %>%
-  ggplot(aes(x = x, y = y, label = text)) +
-  # geom_line() +
-  geom_text() + 
-  theme_classic() +
-  theme(aspect.ratio = 0.1,
-        axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank()
-        ) +
-  labs(x = NULL,
-       y = NULL
-       ) +
-  scale_x_continuous(breaks = c(1,10))
-```
-]
-
++ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, & Pica, 2008; Siegler & Braithwaite, 2017, 2017; Varshney & Sun, 2013).
 + A kindergartner asked to place numbers one through ten along a number
 line would place three close to the middle, following the logarithmic perspective
 (Varshney & Sun, 2013)
+
+.center[
+<img src="images/log-numberline.png" width="90%"/>
+]
+```{r log-number-line, fig.height = 1, fig.width = 10, message=FALSE, warning=FALSE, out.width = "100%", eval = F}
+# log_numberline <- tibble(x = seq(1,10, 0.25),
+#        y = 1,
+#        text = c("1", NA, NA, NA, 
+#                 NA, NA, NA, NA,
+#                 NA, NA, NA, "2",
+#                 NA, NA, NA, NA,
+#                 NA, "3", NA, NA, 
+#                 NA, "4", NA, NA,
+#                 NA, "5", NA, NA,
+#                 "6", NA, NA, NA,
+#                 "7", NA, "8", "9",
+#                 "10")
+#        ) %>%
+#   ggplot(aes(x = x, y = y, label = text)) +
+#   # geom_line() +
+#   geom_text() + 
+#   theme_classic() +
+#   theme(aspect.ratio = 0.1,
+#         axis.line.y = element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.text.y = element_blank()
+#         ) +
+#   labs(x = NULL,
+#        y = NULL
+#        ) +
+#   scale_x_continuous(breaks = c(1,10))
+```
+
++ **Assumption:** If we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+???
+
++ When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
 
 + Assuming there is a direct relationship between perceptual and cognitive
 processes, it is reasonable to assume numerical representations should also be
@@ -450,28 +501,40 @@ class:primary
 
 .pull-left[
 Exponential growth is often misjudged:
-+ early stage appears to have a small growth rate
-+ middle stage appears to be growing, but not at an astounding rate, appearing more quadratic.
-+ late stages exponential growth when it is quite apparent
++ **early stage** appears to have a small growth rate.
++ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
++ **late stages** exponential growth when it is quite apparent.
 ].pull-right[
-<img src="images/exponential-stages-comic.jpg" width="100%"/>
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/exponential-stages-comic.jpg", alt = "Exponential Stages", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
 ]
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
 
-Estimation and prediction of exponential growth and is underestimated when presented both numerically and graphically (Jones, 1977; Mackinnon &
-Wearing, 1991; Wagenaar & Sagaria, 1975).
+---
+class:primary
+# Underestimation of Exponential Growth
 
-Our inability to accurately predict exponential growth might also be addressed by log transforming the data, however, this transformation introduces new complexities; most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1977; Mackinnon & Wearing, 1991; Wagenaar & Sagaria, 1975).
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves. 
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation (Jones, 1977; Wagenaar & Sagaria, 1975). 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon & Wearing, 1991).
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ???
-Results indicated that numerical
-estimation is more accurate than graphical estimation for exponential curves.
-Experimental studies were conducted in order to determine strategies to improve
-the accuracy of estimation of exponential growth (Jones, 1977; Mackinnon &
-Wearing, 1991; Wagenaar & Sagaria, 1975). There was no improvement in
-estimation found when participants had contextual knowledge or experience with
-exponential growth, but instruction on exponential growth reduced the
+
++ Results indicated that numerical estimation is more accurate than graphical estimation for exponential curves. Experimental studies were conducted in order to determine strategies to improve the accuracy of estimation of exponential growth (Jones, 1977; Mackinnon & Wearing, 1991; Wagenaar & Sagaria, 1975). There was no improvement in estimation found when participants had contextual knowledge or experience with exponential growth, but instruction on exponential growth reduced the
 underestimation; participants adjusted their initial starting value but not their
 perception of the growth rate (Jones, 1977; Wagenaar & Sagaria, 1975). Mackinnon
 & Wearing (1991) found that estimation was improved by providing immediate
@@ -493,13 +556,14 @@ class:inverse
 
 ---
 class:primary
-# Subjective Judgment, Finney (1951)
+# Subjective Judgment in Statistical Analysis
+## Finney (1951)
 
 .pull-left[
-+ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration.
++ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected iwth dose-response relationships.
 + **Method:** Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay. Sent out by mail, asked to "rule two lines."
 + **Sample:** 21 scientists
-+ **Findings:** One cycle of iteration was sufficient.
++ **Findings:** One cycle of iterations for calculating the relative potency was sufficient based on the starting values provided by eye from the participants.
 ].pull-right[
 <img src="images/subjective-judgement-plot.png" width="75%"/>
 ]
@@ -510,7 +574,7 @@ class:primary
 ---
 class:primary
 # Scientistis have always had sass!
-[(Subjective Judgment in Statistical Analysis: An Experimental Study; 1951; D. J. Finney; *Journal of the Royal Statistical Society*)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
+[(Subjective Judgment in Statistical Analysis: An Experimental Study; D. J. Finney, 1951)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
 <font size="6">
 .small[
 + "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.)
@@ -530,17 +594,17 @@ class:primary
 
 ---
 class:primary
-# Eye Fitting Straight Lines, Mosteller et al. (1981)
-
+# Eye Fitting Straight Lines
+## Mosteller et al. (1981)
 .pull-left[
 + **Big Idea:** Students fitted lines by eye to four sets of points.
 + **Method:** 8.5 x 11 inch transparency with a straight line etched completely across the
 middle.
 + **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
 + **Experimental Design:** Latin square with packets stapled in four different orders.
-+ **Findings:** Students tended to fit the slope of the first principal component.
++ **Findings:** Students tended to fit the slope of the first principal component over the slope of the ordinary least squares regression line.
 ].pull-right[
-<img src="images/eyefitting-straight-lines-plots.png" width="85%"/>
+<img src="images/eyefitting-straight-lines-plots.png" width="95%"/>
 ]
 
 ???
@@ -554,9 +618,10 @@ middle.
 
 ---
 class:primary
-# New York Times You Draw It Feature (2015)
+# You Draw It Feature 
+## New York Times (2015)
 .pull-left[
-<img src="images/nyt-caraccidents-frame4.png" width="100%"/>
+<img src="images/nyt-caraccidents-frame4.png" width="95%"/>
 <font size="2">Image Source: Katz (2017) </font>
 ].pull-right[
 
@@ -567,25 +632,31 @@ compare how these assumptions relate to reality.
 + [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html)
 + [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0)
 
-The New York Times team utilizes Data Driven Documents (D3) that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
 ]
 
 ---
 class:primary
-# Data Driven Documents (D3.js)
+# Background of D3
 
-
-+ **What?** D3 is an open-source JavaScript based graphing framework created by Mike Bostock during his time working on graphics at the New York Times.
-  + D3 is to JavaScript as ggplot2 is to R. 
+**Who?** [Mike Bostock](https://observablehq.com/@mbostock) created D3 during his time working on graphics at the New York Times.
   
-Similar to geometric objects and style choices in ggplot2, the grammar of D3 also includes elements such as circles, paths, and rectangles with choices of attributes and styles such as color and size.
+**What?** Open-source JavaScript based graphing framework
++ D3 = "Data Driven Documents"
++ `D3` is to JavaScript as `ggplot2` is to R
++ Framework for binding objects and layers to plotting area
+  + framework for movement and user interaction
 
-+ **How?** Depends on Extensible Markup Language (XML) to generate graphics and images by binding objects and layers to the plotting area as Scalable Vector Graphics (SVG) in order to preserve the shapes rather than the pixels.
+**When?** D3 v1.0 released in 2011, D3.js recently celebrated it's 10th anniversary!
 
-+ **Why?** Advantages of using D3 include animation and allowing for movement and user interaction such as hovering, clicking, and brushing. 
+**Where?** The internet!
+
+**Why?** Advantages of using D3 include animation and allowing for movement and user interaction such as hovering, clicking, and brushing. 
+
+**How?** `r2d3`!
 
 ```{r raster-vs-vector, fig.cap = "SVG vs Raster", out.width="50%"}
-knitr::include_graphics("images/raster-vs-vector.png")
+# knitr::include_graphics("images/raster-vs-vector.png")
 # https://commons.wikimedia.org/wiki/File:Bitmap_VS_SVG.svg
 # https://creativecommons.org/licenses/by-sa/2.5/legalcode
 ```
@@ -595,28 +666,69 @@ knitr::include_graphics("images/raster-vs-vector.png")
 + Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
 + In June 2020, the New York Times released a front page displaying figures that represent each of the 100,000 lives lost from the COVID-19 pandemic until this point in time [@NYTrememberinglives]; this visualization was meant to bring about a visceral reaction and resonate with readers. 
 + During 2021 March Madness, FiveThirtyEight created a roster-shuffling machine which allowed readers to build their own NBA contender through interactivity [@ryanabest_2021].
++ Similar to geometric objects and style choices in ggplot2, the grammar of D3 also includes elements such as circles, paths, and rectangles with choices of attributes and styles such as color and size.
 
 ---
 class:primary
-# r2d3
-.pull-left[
-A challenge of working with D3 is the environment necessary to display the graphics and images. 
-The r2d3 package in R provides an efficient integration of D3 visuals and R by displaying them in familiar HTML output formats such as RMarkdown or Shiny applications [@r2d3].
-The creator of the graphic applies D3.js source code to visualize data which has previously been processed within an R setting. 
+# Relationship between D3 and R
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
 
-The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
-A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code. 
-[Appendix A](#youdrawit-with-shiny) outlines the development of the you draw interactive plots used in this study through the use of r2d3 and R shiny applications. 
-\cref{fig:youdrawit-example} provides an example of a you draw it interactive plot as seen by participants during the study. 
-The first frame shows what the participant sees along with the prompt, "Use your mouse to fill in the trend in the yellow box region". 
-Next, the yellow box region moves along as the participant draws their trend-line until the yellow region disappears, indicating the participant has filled in the entire domain.
-]
-.right-plot[
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+--
+<!-- The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. -->
+<!-- A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code.  -->
+.pull-left[
+**How?**
++ Converts data in R to JSON that can be interpreted by JavaScript
++ Sources D3 code library
++ Creates plot container (svg is default)
++ Renders plot object using JavaScript and CSS files called in r2d3 call
+].right-plot[
 ```{r r2d3-example, echo = T, eval = F}
 r2d3(data = data,
      script = "d3-source-code.js",
      d3_version= "5")
 ```
+]
+
+???
+A challenge of working with D3 is the environment necessary to display the graphics and images. 
+
++ Converts data in R to JSON that can be interpreted by JavaScript
+  + Object is named 'data'
+  + Columns can be accessed
++ Sources D3 code library
+  + Grabs version specified in function
++ Creates plot container (svg is default)
+  + Or different container if specified
+  + specifies width and height of plot container
++ Renders plot object using JavaScript and CSS files called in r2d3 call
+
+---
+class:primary
+# Getting Started with D3
+
+`D3.js` is to JavaScript as `ggplot2` is to R
+
+.pull-left[
+`r fa_i("js")` [Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+`r fa_i("image")` Understand [SVG](http://tutorials.jenkov.com/svg/g-element.html) elements: inspect elements in web browser!
+
+`r fa_i("book-open")` Amelia Wattenberger's [Full Stack D3 and Data Visualization Book](https://www.newline.co/fullstack-d3)
+
+`r fa_i("chart-bar")` Build a basic graphic using [r2d3](https://rstudio.github.io/r2d3/articles/introduction.html)
+
+`r fa_i("grimace")` Modify `D3.js` code until it does what you want!
+]
+.pull-right[
+**Additional Resources**
+
+`r fa_i("code")` [How to learn D3 with no coding experience](https://www.heshameissa.com/blog/learn-d3)
+
+`r fa_i("twitter")` Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger)
 ]
 
 ---
@@ -630,6 +742,11 @@ Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box
 ].pull-right[
 <img src="images/exponential_example.gif" width="100%"/>
 ]
+
+???
+Example of a you draw it interactive plot as seen by participants during the study. 
+The first frame shows what the participant sees along with the prompt, "Use your mouse to fill in the trend in the yellow box region". 
+Next, the yellow box region moves along as the participant draws their trend-line until the yellow region disappears, indicating the participant has filled in the entire domain.
 
 ---
 class:primary
@@ -673,136 +790,173 @@ eyefitting_model_data <- read.csv("data/youdrawit/youdrawit-eyefitting-model-dat
 class:primary
 # Data Simulation
 
-<!-- + $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$ -->
-Data were simulated based on linear model with additive errors: 
+**Point data:** $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$.
+
+Data were simulated based on linear model with additive errors:
 \begin{equation}
 y_i = \beta_0 + \beta_1 x_i + e_i
 \end{equation}
 
 where $e_i \sim N(0, \sigma^2).$
 
-Where $\beta_0$ and $\beta_1$ are selected to replicate Mosteller et al. (1981) with $e_i$ generated by rejection sampling in order to guarantee the points shown align with that of the fitted line. 
+**Line data:** $k = 1,....4x_{max} + 1$ fitted values in 0.25 increments across the domain, $(x_k, \hat y_{k,OLS})$
 
-An ordinary least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, $(x_k, \hat y_{k,OLS}), k = 1, ..., 4 x_{max} +1$.
-The data simulation function then outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
+An ordinary least squares regression is then fit to the simulated points:
+\begin{equation}
+\hat y_{k,OLS} = \hat\beta_{0,OLS} + \hat\beta_{1,OLS} x_k
+\end{equation}
+
+Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
 
 ---
 class:primary
 # Treatment Design
 .pull-left[
-Simulated model equation parameters were selected to reflect the four data sets (F, N, S, and V) used in Mosteller et al. (1981).
+Replicated the data sets from Mosteller et al. (1981).
 + **F:** positive slope; a large variance; $x \in [0, 20]$. 
 + **N:** negative slope; large variance; $x \in [0, 20]$. 
 + **S:** positive slope; small variance; $x \in [0, 20]$. 
 + **V:** steep positive slope; small variance; $x \in [4, 16]$. 
-].pull-right[
-```{r eyefitting-simplot, out.width="100%"}
-eyefitting_example_sim <- read.csv("data/youdrawit/youdrawit-eyefitting-simdata-example.csv")
-eyefitting_example_simplot <- eyefitting_example_sim %>%
-  filter(data == "point_data") %>%
-  filter(dataset %in% c("F", "N", "S") | (x < 16 & x > 4)) %>%
-  mutate(dataset = factor(dataset, levels = c("S", "F", "V", "N"))) %>%
-  dplyr::rename(`Parameter Choice` = dataset) %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_point(size = 1) +
-  facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), ncol = 2) +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 1,
-        legend.position = "none",
-        plot.title   = element_text(size = 12, hjust = 0),
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        legend.text  = element_text(size = 12),
-        # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
-        # strip.background = element_rect(size = 0.5),
-        legend.key.size = unit(1, "line")
-        ) 
 
-eyefitting_example_simplot
+Consistent aesthetic design choices:
++ aspect ratio set to one.
++ y-range extended $10\%$ beyond the range of the simulated data points.
+].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/eyefitting-example-simplot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r eyefitting-simplot, out.width="100%", eval = F}
+# eyefitting_example_sim <- read.csv("data/youdrawit/youdrawit-eyefitting-simdata-example.csv")
+# eyefitting_example_simplot <- eyefitting_example_sim %>%
+#   filter(data == "point_data") %>%
+#   filter(dataset %in% c("F", "N", "S") | (x < 16 & x > 4)) %>%
+#   mutate(dataset = factor(dataset, levels = c("S", "F", "V", "N"))) %>%
+#   dplyr::rename(`Parameter Choice` = dataset) %>%
+#   ggplot(aes(x = x, y = y)) +
+#   geom_point(size = 1) +
+#   facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), ncol = 2) +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 1,
+#         legend.position = "none",
+#         plot.title   = element_text(size = 12, hjust = 0),
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_text(size = 12),
+#         legend.text  = element_text(size = 12),
+#         # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
+#         # strip.background = element_rect(size = 0.5),
+#         legend.key.size = unit(1, "line")
+#         )
+# 
+# eyefitting_example_simplot
+# ggsave(eyefitting_example_simplot, filename = "images/eyefitting-example-simplot.png")
 ```
 ]
 
-Aesthetic design choices were made consistent across each of the interactive you draw it plots:
-aspect ratio, defining the $x$ to $y$ axis ratio was set to one y-axis range extended $10%$ beyond (above and below) the range of the simulated data points to allow for users to draw outside the simulated data set range. 
 ---
 class:primary
 # Slope of First Principal Component
 
-<!-- In addition to the participant drawn points, $(x_k, y_{k,drawn})$, and the ordinary least squares (OLS) regression fitted values, $(x_k, \hat y_{k,OLS})$, a regression equation with a slope based on the first principal component (PCA) was used to calculate fitted values, $(x_k, \hat y_{k,PCA})$. -->
-<!-- For each set of simulated data and parameter choice, the PCA regression equation was determined by using the princomp function in the stats package in base R to obtain the rotation of the coordinate axes from the first principal component (direction which captures the most variance). -->
-<!-- The estimated slope, $\hat\beta_{1,PCA}$, is determined by the ratio of the axis rotation in y and axis rotation in x of the first principal component with the y-intercept, $\hat\beta_{0,PCA}$ calculated by the point-slope equation of a line using the mean of of the simulated points, $(\bar x_i, \bar y_i)$. -->
-<!-- <!-- \rh{Please explain x-rotation and y-rotation of PC1. Maybe the first paragraph of section 3.3.2 could be extended.} --> -->
-<!-- Fitted values, $\hat y_{k,PCA}$ are then obtained every 0.25 increment across the domain from the PCA regression equation, $\hat y_{k,PCA} = \hat\beta_{0,PCA} + \hat\beta_{1,PCA} x_k$. -->
-<!-- \cref{fig:ols-vs-pca-example} illustrates the difference between an OLS regression equation which minimizes the vertical distance of points from the line and a regression equation with a slope calculated by the first principal component which minimizes the smallest distance of points from the line. -->
+.pull-left[
 
-```{r ols-vs-pca-example, fig.width = 8, fig.height = 4, message=FALSE, warning=FALSE, out.width="50%"}
-library(ggplot2)
-library(magrittr)
-library(plyr)
+Fitted points, $(x_k, \hat y_{k,PCA})$ are calculated every 0.25 increment across the domain from the PCA regression equation:
+\begin{equation}
+\hat y_{k,PCA} = \hat\beta_{0,PCA} + \hat\beta_{1,PCA} x_k
+\end{equation}
 
-set.seed(2)
-corrCoef = 0.5 # sample from a multivariate normal, 10 datapoints
-dat = MASS::mvrnorm(10,c(0,0),Sigma = matrix(c(1,corrCoef,2,corrCoef),2,2))
-dat[,1] = dat[,1] - mean(dat[,1]) # it makes life easier for the princomp
-dat[,2] = dat[,2] - mean(dat[,2])
+where
++ rotation of coordinate axes from `princomp`
++ $\hat\beta_{1,PCA} = \frac{\text{PC1 Rotation in y-axis}}{\text{PC1 Rotation in x-axis}}$
++ $\hat\beta_{0,PCA}$ calculated by the point-slope equation of a line using the mean of of the simulated points, $(\bar x_i, \bar y_i)$.
 
-dat = data.frame(x1 = dat[,1],x2 = dat[,2])
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/pca-plot.png", alt = " ", other=list(width="100%"))
 
-# Calculate the first principle component
-# see http://stats.stackexchange.com/questions/13152/how-to-perform-orthogonal-regression-total-least-squares-via-pca
-v = dat%>%prcomp%$%rotation
-x1x2cor = bCor = v[2,1]/v[1,1]
-
-x1tox2 = coef(lm(x1~x2,dat))
-x2tox1 = coef(lm(x2~x1,dat))
-slopeData = data.frame(slope = c(x1x2cor,x2tox1[2]),
-                       type=c("Principal Component", "Ordinary Least Squares"))
-
-# We want this to draw the neat orthogonal lines.
-pointOnLine = function(inp){
-  # y = a*x + c (c=0)
-  # yOrth = -(1/a)*x + d
-  # yOrth = b*x + d
-  x0 = inp[1] 
-  y0 = inp[2] 
-  a = x1x2cor
-  b = -(1/a)
-  c = 0
-  d = y0 - b*x0
-  x = (d-c)/(a-b)
-  y = -(1/a)*x+d
-  return(c(x,y))
-}
-
-points = apply(dat,1,FUN=pointOnLine)
-
-segmeData = rbind(data.frame(x=dat[,1],y=dat[,2],xend=points[1,],yend=points[2,],type = "Principal Component"),
-                  data.frame(x=dat[,1],y=dat[,2],yend=dat[,1]*x2tox1[2],xend=dat[,1],type="Ordinary Least Squares"))
-
-dat %>%
-ggplot(aes(x1,x2))+
-  geom_point()+
-  geom_abline(data=slopeData,aes(slope = slope,intercept=0,color=type, linetype=type), size = 1.2)+
-  geom_segment(data=segmeData,aes(x=x,y=y,xend=xend,yend=yend,color=type, linetype=type))+
-  facet_grid(.~type)+
-  coord_equal()+
-  scale_x_continuous("x") +
-  scale_y_continuous("y") +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 1,
-        legend.position = "none",
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_blank(),
-        # legend.text  = element_text(size = 10),
-        # strip.text = element_text(size = 8, margin = margin(0.1,0,0.1,0, "cm")),
-        # strip.background = element_rect(size = 0.8),
-        legend.key.size = unit(1, "line")
-        ) +
-  scale_color_manual(values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
-  scale_linetype_manual(values = c("solid", "dashed"), labels = c("OLS", "PCA"))
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
+
+]
+
+```{r ols-vs-pca-example, eval = F, fig.width = 8, fig.height = 4, message=FALSE, warning=FALSE, out.width="50%"}
+# library(ggplot2)
+# library(magrittr)
+# library(plyr)
+# 
+# set.seed(2)
+# corrCoef = 0.5 # sample from a multivariate normal, 10 datapoints
+# dat = MASS::mvrnorm(10,c(0,0),Sigma = matrix(c(1,corrCoef,2,corrCoef),2,2))
+# dat[,1] = dat[,1] - mean(dat[,1]) # it makes life easier for the princomp
+# dat[,2] = dat[,2] - mean(dat[,2])
+# 
+# dat = data.frame(x1 = dat[,1],x2 = dat[,2])
+# 
+# # Calculate the first principle component
+# # see http://stats.stackexchange.com/questions/13152/how-to-perform-orthogonal-regression-total-least-squares-via-pca
+# v = dat%>%prcomp%$%rotation
+# x1x2cor = bCor = v[2,1]/v[1,1]
+# 
+# x1tox2 = coef(lm(x1~x2,dat))
+# x2tox1 = coef(lm(x2~x1,dat))
+# slopeData = data.frame(slope = c(x1x2cor,x2tox1[2]),
+#                        type=c("Principal Component", "Ordinary Least Squares"))
+# 
+# # We want this to draw the neat orthogonal lines.
+# pointOnLine = function(inp){
+#   # y = a*x + c (c=0)
+#   # yOrth = -(1/a)*x + d
+#   # yOrth = b*x + d
+#   x0 = inp[1] 
+#   y0 = inp[2] 
+#   a = x1x2cor
+#   b = -(1/a)
+#   c = 0
+#   d = y0 - b*x0
+#   x = (d-c)/(a-b)
+#   y = -(1/a)*x+d
+#   return(c(x,y))
+# }
+# 
+# points = apply(dat,1,FUN=pointOnLine)
+# 
+# segmeData = rbind(data.frame(x=dat[,1],y=dat[,2],xend=points[1,],yend=points[2,],type = "Principal Component"),
+#                   data.frame(x=dat[,1],y=dat[,2],yend=dat[,1]*x2tox1[2],xend=dat[,1],type="Ordinary Least Squares"))
+# 
+# pca_plot <- dat %>%
+# ggplot(aes(x1,x2))+
+#   geom_point()+
+#   geom_abline(data=slopeData,aes(slope = slope,intercept=0,color=type, linetype=type), size = 1.2)+
+#   geom_segment(data=segmeData,aes(x=x,y=y,xend=xend,yend=yend,color=type, linetype=type))+
+#   facet_grid(.~type)+
+#   coord_equal()+
+#   scale_x_continuous("x") +
+#   scale_y_continuous("y") +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 1,
+#         legend.position = "none",
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_blank(),
+#         # legend.text  = element_text(size = 10),
+#         # strip.text = element_text(size = 8, margin = margin(0.1,0,0.1,0, "cm")),
+#         # strip.background = element_rect(size = 0.8),
+#         legend.key.size = unit(1, "line")
+#         ) +
+#   scale_color_manual(values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
+#   scale_linetype_manual(values = c("solid", "dashed"), labels = c("OLS", "PCA"))
+# pca_plot
+# ggsave(pca_plot, filename = "images/pca-plot.png")
+```
+
+???
 
 ---
 class:primary
@@ -816,36 +970,46 @@ for parameter choice $i = 1,2,3,4$, j = $1,...N_{participant}$, and $x_{ijk}$ va
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + $e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}$
-+ $e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}$
++ $e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}$.
 
 ].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/eyefitting-trial-plot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
 ```{r eyefitting-example-plot, fig.height = 4, fig.width = 4, out.width="100%"}
-trial.feedback <- read.csv("data/youdrawit/youdrawit-eyefitting-example-feedback.csv") %>%
-    mutate(`Parameter Choice` = "F")
-trial.sim <- read.csv("data/youdrawit/youdrawit-eyefitting-example-simulated.csv") %>%
-    mutate(`Parameter Choice` = "F")
-    
-trial.feedback %>%
-  ggplot(aes(x = x)) +
-  geom_line(aes(y = y, color = "OLS", linetype = "OLS")) +
-  geom_line(aes(y = ypca, color = "PCA", linetype = "PCA")) +
-  geom_line(aes(y = ydrawn, color = "Drawn", linetype = "Drawn")) +
-  geom_point(data = trial.sim, aes(y = y)) +
-  facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both)) +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 1,
-        legend.position = "bottom",
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        legend.text  = element_text(size = 12),
-        # strip.text = element_text(size = 8, margin = margin(0.1,0,0.1,0, "cm")),
-        # strip.background = element_rect(size = 0.8),
-        legend.key.size = unit(1, "line")
-        ) +
-  scale_x_continuous(limits = c(0,20)) +
-  scale_color_manual("", values = c("black", "steelblue", "orange")) +
-  scale_linetype_manual("", values = c("dashed", "solid", "solid"))
+# trial.feedback <- read.csv("data/youdrawit/youdrawit-eyefitting-example-feedback.csv") %>%
+#     mutate(`Parameter Choice` = "F")
+# trial.sim <- read.csv("data/youdrawit/youdrawit-eyefitting-example-simulated.csv") %>%
+#     mutate(`Parameter Choice` = "F")
+#     
+# trial_feedback_plot <- trial.feedback %>%
+#   ggplot(aes(x = x)) +
+#   geom_line(aes(y = y, color = "OLS", linetype = "OLS")) +
+#   geom_line(aes(y = ypca, color = "PCA", linetype = "PCA")) +
+#   geom_line(aes(y = ydrawn, color = "Drawn", linetype = "Drawn")) +
+#   geom_point(data = trial.sim, aes(y = y)) +
+#   facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both)) +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 1,
+#         legend.position = "bottom",
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_text(size = 12),
+#         legend.text  = element_text(size = 12),
+#         # strip.text = element_text(size = 8, margin = margin(0.1,0,0.1,0, "cm")),
+#         # strip.background = element_rect(size = 0.8),
+#         legend.key.size = unit(1, "line")
+#         ) +
+#   scale_x_continuous(limits = c(0,20)) +
+#   scale_color_manual("", values = c("black", "steelblue", "orange")) +
+#   scale_linetype_manual("", values = c("dashed", "solid", "solid"))
+# ggsave(trial_feedback_plot, filename = "images/eyefitting-trial-plot.png")
 ```
 ]
 
@@ -856,9 +1020,8 @@ Analyses:
 + Sum of Squares Analysis
 ---
 class:primary
-# Linear Mixed Model (LMM)
-
-Using the lmer function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
+# Linear Mixed Model
+Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
 
 The LMM equation for each fit (OLS and PCA) residuals is given by:
 \begin{equation}
@@ -879,47 +1042,56 @@ where
 class:primary
 # LMM Results
 
-.center[
-```{r eyefitting-lmer-residualplots, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era LMM results"}
-eyefitting.preds.lmer <- read.csv("data/youdrawit/youdrawit-eyefitting-lmerpred-data.csv")
-# Plot Predictions
-eyefitting.lmer.plot <- eyefitting.preds.lmer %>%
-  filter((parm_id %in% c("F", "N", "S") | (x <= 16 & x >= 4))) %>%
-  mutate(parm_id = factor(parm_id, levels = c("S", "F", "V", "N"))) %>%
-  dplyr::rename(`Parameter Choice` = parm_id) %>%
-  ggplot(aes(x = x)) +
-  geom_line(data = eyefitting_model_data, aes(x = x, y = residualols, group = plotID, color = "OLS"), alpha = 0.1) +
-  geom_line(data = eyefitting_model_data, aes(x = x, y = residualpca, group = plotID, color = "PCA"), alpha = 0.1) +
-  geom_ribbon(aes(ymin = asymp.LCL.ols, ymax = asymp.UCL.ols, fill = "OLS"), color = NA, alpha = 0.7) +
-  geom_line(aes(y = emmean.ols, color = "OLS")) +
-  geom_ribbon(aes(ymin = asymp.LCL.pca, ymax = asymp.UCL.pca, fill = "PCA"), color = NA, alpha = 0.7) +
-  geom_line(aes(y = emmean.pca, color = "PCA")) +
-  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
-  facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), scales = "free") +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 1,
-        legend.position = "right",
-        plot.title   = element_text(size = 12, hjust = 0),
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        legend.text  = element_text(size = 12),
-        # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
-        # strip.background = element_rect(size = 0.5),
-        legend.key.size = unit(1, "line")
-        ) +
-  scale_y_continuous("Residual") +
-  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
-  scale_fill_manual("LMER fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
+.pull-left[
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/eyefitting-lmer-plot.png", alt = " ", other=list(width="100%"))
 
-eyefitting.lmer.plot
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
 
+```{r eyefitting-lmer-residualplots, eval = F, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era LMM results"}
+# eyefitting.preds.lmer <- read.csv("data/youdrawit/youdrawit-eyefitting-lmerpred-data.csv")
+# # Plot Predictions
+# eyefitting.lmer.plot <- eyefitting.preds.lmer %>%
+#   filter((parm_id %in% c("F", "N", "S") | (x <= 16 & x >= 4))) %>%
+#   mutate(parm_id = factor(parm_id, levels = c("S", "F", "V", "N"))) %>%
+#   dplyr::rename(`Parameter Choice` = parm_id) %>%
+#   ggplot(aes(x = x)) +
+#   geom_line(data = eyefitting_model_data, aes(x = x, y = residualols, group = plotID, color = "OLS"), alpha = 0.1) +
+#   geom_line(data = eyefitting_model_data, aes(x = x, y = residualpca, group = plotID, color = "PCA"), alpha = 0.1) +
+#   geom_ribbon(aes(ymin = asymp.LCL.ols, ymax = asymp.UCL.ols, fill = "OLS"), color = NA, alpha = 0.7) +
+#   geom_line(aes(y = emmean.ols, color = "OLS")) +
+#   geom_ribbon(aes(ymin = asymp.LCL.pca, ymax = asymp.UCL.pca, fill = "PCA"), color = NA, alpha = 0.7) +
+#   geom_line(aes(y = emmean.pca, color = "PCA")) +
+#   geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+#   facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), scales = "free") +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 1,
+#         legend.position = "right",
+#         plot.title   = element_text(size = 12, hjust = 0),
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_text(size = 12),
+#         legend.text  = element_text(size = 12),
+#         # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
+#         # strip.background = element_rect(size = 0.5),
+#         legend.key.size = unit(1, "line")
+#         ) +
+#   scale_y_continuous("Residual") +
+#   scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
+#   scale_fill_manual("LMER fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
+# 
+# eyefitting.lmer.plot
+# ggsave(eyefitting.lmer.plot, filename = "images/eyefitting-lmer-plot.png")
+```
+
 ---
 class:primary
-# Generalized Additive Mixed Model (GAMM)
-
+# Generalized Additive Mixed Model
 Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
 
 The GAMM equation for each fit (OLS and PCA) residuals is given by:
@@ -939,40 +1111,49 @@ where
 class:primary
 # GAMM Results
 
-.center[
-```{r eyefitting-gamm-residualplots, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era GAMM results"}
-eyefitting.grid.gamm <- read.csv("data/youdrawit/youdrawit-eyefitting-gammpred-data.csv")
-eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
-  filter((parm_id %in% c("F", "N", "S") | (x <= 16 & x >= 4))) %>%
-  mutate(parm_id = factor(parm_id, levels = c("S", "F", "V", "N"))) %>%
-  dplyr::rename(`Parameter Choice` = parm_id) %>%
-  ggplot(aes(x = x)) +
-  geom_line(data = eyefitting_model_data, aes(x = x, y = residualols, group = plotID, color = "OLS"), alpha = 0.1) +
-  geom_line(data = eyefitting_model_data, aes(x = x, y = residualpca, group = plotID, color = "PCA"), alpha = 0.1) +
-  geom_ribbon(aes(ymin = ols.lower, ymax = ols.upper, fill = "OLS"), color = NA, alpha = 0.5) +
-  geom_line(aes(y = ols.pred, color = "OLS")) +
-  geom_ribbon(aes(ymin = pca.lower, ymax = pca.upper, fill = "PCA"), color = NA, alpha = 0.5) +
-  geom_line(aes(y = pca.pred, color = "PCA")) +
-  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
-  facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), scales = "free") +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 1,
-        legend.position = "right",
-        plot.title   = element_text(size = 12, hjust = 0),
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        legend.text  = element_text(size = 12),
-        # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
-        # strip.background = element_rect(size = 0.5),
-        legend.key.size = unit(1, "line")
-        ) +
-  scale_y_continuous("Residual") +
-  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
-  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
-eyefitting.gamm.plot
+.pull-left[
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/eyefitting-gamm-plot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+```{r eyefitting-gamm-residualplots, eval = F, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era GAMM results"}
+# eyefitting.grid.gamm <- read.csv("data/youdrawit/youdrawit-eyefitting-gammpred-data.csv")
+# eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
+#   filter((parm_id %in% c("F", "N", "S") | (x <= 16 & x >= 4))) %>%
+#   mutate(parm_id = factor(parm_id, levels = c("S", "F", "V", "N"))) %>%
+#   dplyr::rename(`Parameter Choice` = parm_id) %>%
+#   ggplot(aes(x = x)) +
+#   geom_line(data = eyefitting_model_data, aes(x = x, y = residualols, group = plotID, color = "OLS"), alpha = 0.1) +
+#   geom_line(data = eyefitting_model_data, aes(x = x, y = residualpca, group = plotID, color = "PCA"), alpha = 0.1) +
+#   geom_ribbon(aes(ymin = ols.lower, ymax = ols.upper, fill = "OLS"), color = NA, alpha = 0.5) +
+#   geom_line(aes(y = ols.pred, color = "OLS")) +
+#   geom_ribbon(aes(ymin = pca.lower, ymax = pca.upper, fill = "PCA"), color = NA, alpha = 0.5) +
+#   geom_line(aes(y = pca.pred, color = "PCA")) +
+#   geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+#   facet_wrap(~`Parameter Choice`, labeller = labeller(`Parameter Choice` = label_both), scales = "free") +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 1,
+#         legend.position = "right",
+#         plot.title   = element_text(size = 12, hjust = 0),
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_text(size = 12),
+#         legend.text  = element_text(size = 12),
+#         # strip.text = element_text(size = 5, margin = margin(0.05,0,0.05,0, "cm")),
+#         # strip.background = element_rect(size = 0.5),
+#         legend.key.size = unit(1, "line")
+#         ) +
+#   scale_y_continuous("Residual") +
+#   scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
+#   scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
+# eyefitting.gamm.plot
+# ggsave(eyefitting.gamm.plot, filename = "images/eyefitting-gamm-plot.png")
+```
 ---
 class:primary
 # Sum of Squares Analysis
@@ -998,25 +1179,36 @@ The LMM equation is given by:
 class:primary 
 # Sum of Squares Results
 
-.center[
-```{r eyefitting-ss-oddsratio, out.width="75%"}
-ss.slicediffs <- read.csv("data/youdrawit/youdrawit-ssSlicediffs-lmer.csv")
-ss.slicediffs %>%
-  ggplot(aes(x = ratio, y = parm_id)) +
-  geom_point() +
-  geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), width = 0.5) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
-  theme_bw(base_size = 14) +
-  theme(aspect.ratio = 0.5,
-        axis.text    = element_text(size = 12),
-        axis.title   = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        legend.text  = element_text(size = 12)
-        ) +
-  scale_x_continuous("Sum of Squares Odds Ratio \n (OLS vs PCA)", limits = c(0,2.5), breaks = seq(0,2.5,0.5)) +
-  scale_y_discrete("Data Set")
+.pull-left[
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/eyefitting-ss-plot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+
+```{r eyefitting-ss-oddsratio, eval = F, out.width="75%"}
+# ss.slicediffs <- read.csv("data/youdrawit/youdrawit-ssSlicediffs-lmer.csv")
+# eyefitting_ss_plot <- ss.slicediffs %>%
+#   ggplot(aes(x = ratio, y = parm_id)) +
+#   geom_point() +
+#   geom_errorbar(aes(xmin = lower.CL, xmax = upper.CL), width = 0.5) +
+#   geom_vline(xintercept = 1, linetype = "dashed") +
+#   theme_bw(base_size = 14) +
+#   theme(aspect.ratio = 0.5,
+#         axis.text    = element_text(size = 12),
+#         axis.title   = element_text(size = 12),
+#         legend.title = element_text(size = 12),
+#         legend.text  = element_text(size = 12)
+#         ) +
+#   scale_x_continuous("Sum of Squares Odds Ratio \n (OLS vs PCA)", limits = c(0,2.5), breaks = seq(0,2.5,0.5)) +
+#   scale_y_discrete("Data Set")
+# eyefitting_ss_plot
+# ggsave(eyefitting_ss_plot, filename = "images/eyefitting-ss-plot.png")
+```
 
 ---
 class:primary
@@ -1052,26 +1244,63 @@ class:inverse
 class:primary 
 # Data Simulation
 
-<!-- All data processing was conducted in R before being passed to the D3.js source code.  -->
+<!-- All data processing was conducted in R before being passed to the D3.js source code. -->
 <!-- A total of $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i\in [x_{min}, x_{max}]$ where $x$ and $y$ have an exponential relationship. -->
-Data were simulated based on a one parameter exponential model with multiplicative errors:
-\begin{equation}
-y_i = e^{\beta x_i + e_i}
-\end{equation} 
-with $e_i \sim N(0, \sigma^2).$
-+ $\beta$, determines the rate of exponential growth
-+ $e_i$ generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame. 
-A nonlinear least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, $(x_m, \hat y_{m,NLS}), k = 1, ..., 4 x_{max} +1$.
+<!-- Data were simulated based on a one parameter exponential model with multiplicative errors: -->
+<!-- \begin{equation} -->
+<!-- y_i = e^{\beta x_i + e_i} -->
+<!-- \end{equation}  -->
+
+<!-- with $e_i \sim N(0, \sigma^2).$ -->
+<!-- + $\beta$, determines the rate of exponential growth -->
+<!-- + $e_i$ generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.  -->
+<!-- A nonlinear least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, $(x_m, \hat y_{m,NLS}), k = 1, ..., 4 x_{max} +1$. -->
 
 ---
 class:primary 
 # Treatment Design
 
-Each growth rate parameter was used to simulate data across a domain of 0 to 20.
-The two simulated data sets (low and high exponential growth rates) were then shown four times each by truncating the points shown at both $50%$ and $75%$ of the domain as well as on both the log and linear scales for a total of eight interactive plots reflecting a factorial treatment design. 
+<!-- Each growth rate parameter was used to simulate data across a domain of 0 to 20. -->
+<!-- The two simulated data sets (low and high exponential growth rates) were then shown four times each by truncating the points shown at both $50%$ and $75%$ of the domain as well as on both the log and linear scales for a total of eight interactive plots reflecting a factorial treatment design.  -->
 
-Aesthetic design choices were made consistent across each of the interactive you draw it plots; the aspect ratio, defining the $x$ to $y$ axis ratio was set to one, the y-axis extended $50%$ below the lower limit of the simulated data range and $200%$ beyond the upper limit of the simulated data range to allow for users to draw outside the data set range, and participants were asked to start drawing at $50%$ of the domain (for example, at $x = 10$).
-Reflecting the treatment design for each plot, the y-axis was assigned to be displayed on either the linear scale or log scale.
+<!-- Aesthetic design choices were made consistent across each of the interactive you draw it plots; the aspect ratio, defining the $x$ to $y$ axis ratio was set to one, the y-axis extended $50%$ below the lower limit of the simulated data range and $200%$ beyond the upper limit of the simulated data range to allow for users to draw outside the data set range, and participants were asked to start drawing at $50%$ of the domain (for example, at $x = 10$). -->
+<!-- Reflecting the treatment design for each plot, the y-axis was assigned to be displayed on either the linear scale or log scale. -->
+
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/low-10-linear.png", alt = "Low Growth Rate, 50% Truncation, Linear Scale", other=list(width="10%"))
+i2 <- img_modal(src = "images/low-15-linear.png", alt = "Low Growth Rate, 75% Truncation, Linear Scale", other=list(width="10%"))
+i3 <- img_modal(src = "images/high-10-linear.png", alt = "High Growth Rate, 50% Truncation, Linear Scale", other=list(width="10%"))
+i4 <- img_modal(src = "images/high-15-linear.png", alt = "High Growth Rate, 75% Truncation, Linear Scale", other=list(width="10%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i3, "\\n", simplify = T)[1:2],
+  str_split(i4, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9],
+  str_split(i3, "\\n", simplify = T)[3:9],
+  str_split(i4, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/low-10-log.png", alt = "Low Growth Rate, 50% Truncation, Log Scale", other=list(width="10%"))
+i2 <- img_modal(src = "images/low-15-log.png", alt = "Low Growth Rate, 75% Truncation, Log Scale", other=list(width="10%"))
+i3 <- img_modal(src = "images/high-10-log.png", alt = "High Growth Rate, 50% Truncation, Log Scale", other=list(width="10%"))
+i4 <- img_modal(src = "images/high-15-log.png", alt = "High Growth Rate, 75% Truncation, Log Scale", other=list(width="10%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i3, "\\n", simplify = T)[1:2],
+  str_split(i4, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9],
+  str_split(i3, "\\n", simplify = T)[3:9],
+  str_split(i4, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
 
 ---
 class:primary 
@@ -1151,7 +1380,13 @@ class:primary
 ---
 class:primary
 # References
-
+<font size="1">
+```{r, print_refs, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("unwin_why_2020", "lisa_charlotte_2020", "romano_scale_2020", "best_perception_2007", "varshney_why_2013", "siegler_numerical_2017", "dehaeneLogLinearDistinct2008", "wagenaarMisperceptionExponentialGrowth1975", "vanderplas_clusters_2017", "hofmann_graphical_2012", "loyVariationsQQPlots2016","buja_statistical_2009", "new_york_times_2017")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
 ---
 class:inverse
 <br>

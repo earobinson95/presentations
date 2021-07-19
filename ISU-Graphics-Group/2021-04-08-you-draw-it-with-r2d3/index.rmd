@@ -183,7 +183,7 @@ class:primary
 
 ---
 class:primary
-## Getting Started with D3.js
+## Getting Started with D3
 
 `D3.js` is to JavaScript as `ggplot2` is to R
 
