@@ -322,10 +322,6 @@ All of these types of tests require different levels of use and manipulation of 
 
 ---
 class:primary
-# Early Graphics Research
-
----
-class:primary
 # Motivation
 
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
@@ -361,18 +357,17 @@ class:primary
 
 **Solution:** Use a log scale transformation; alters the contextual appearance of the data.
 
-].pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/log-scale-comic.png", alt = " ", other=list(width="70%"))
+i1 <- img_modal(src = "images/log-scale-example.png", alt = " ", other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
-]
-.center[
+
+].pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/log-scale-example.png", alt = " ", other=list(width="50%"))
+i1 <- img_modal(src = "images/log-scale-comic.png", alt = " ", other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -454,17 +449,56 @@ displayed on a nonlinear, compressed number scale. Therefore, if we perceive
 logarithmically by default, it is a natural (and presumably low effort) way to display
 information and should be easy to read and understand/use.
 
+
+---
+class:primary
+# Benefits and Pitfalls of Log Scales
+
+.pull-left[
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = " ", other=list(width="70%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
++ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
++ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
+
+].pull-right[
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i2 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-linear.png", alt = " ", other=list(width="45%"))
+i3 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-log.png", alt = " ", other=list(width="45%"))
+
+c(str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i3, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[3:9],
+  str_split(i3, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
++ Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
++ The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
+]
+
 ---
 class:primary
 # Research Objectives
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
 
-1. Perception through Lineups `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+1. [Perception through Lineups](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
 
     - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
     
-2. Prediction with You Draw It `r emo::ji("pencil2")`
+2. [Prediction with You Draw It](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
     
     - Tests an individuals ability to make predictions for exponentially increasing data.
         + Eye Fitting Straight Lines in the Modern Era
@@ -480,11 +514,11 @@ class:primary
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
 
-1. Perception through Lineups `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+1. [Perception through Lineups](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
 
     - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
     
-2. **Prediction with You Draw It** `r emo::ji("pencil2")`
+2. [**Prediction with You Draw It**](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
     
     - **Tests an individuals ability to make predictions for exponentially increasing data.**
         + **Eye Fitting Straight Lines in the Modern Era**
@@ -622,7 +656,6 @@ class:primary
 ## New York Times (2015)
 .pull-left[
 <img src="images/nyt-caraccidents-frame4.png" width="95%"/>
-<font size="2">Image Source: Katz (2017) </font>
 ].pull-right[
 
 Readers are asked to input their own assumptions about various metrics and
@@ -1037,21 +1070,44 @@ where
 + $x_{ijk}$ is the x-value for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment
 + $p_{j} \sim N(0, \sigma^2_{participant})$ is the random error due to the $j^{th}$ participant's characteristics
 + $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
+---
+class:primary
+# Generalized Additive Mixed Model
+Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
+
+The GAMM equation for each fit (OLS and PCA) residuals is given by:
+\begin{equation}
+e_{ijk,fit} = \alpha_i + s_{i}(x_{ijk}) + p_{j} + s_{j}(x_{ijk})
+\end{equation}
+where
+
++ $e_{ijk,fit}$ is the residual between the drawn and fitted y-values for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment of x-value corresponding to either the OLS or PCA fit
++ $\alpha_i$ is the intercept for the parameter choice $i$
++ $s_{i}$ is the smoothing spline for the $i^{th}$ parameter choice
++ $x_{ijk}$ is the x-value for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment
++ $p_{j} \sim N(0, \sigma^2_{participant})$ is the error due to participant variation
++ $s_{j}$ is the random smoothing spline for each participant.
 
 ---
 class:primary
-# LMM Results
+# Results
 
-.pull-left[
-].pull-right[
+.center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/eyefitting-lmer-plot.png", alt = " ", other=list(width="100%"))
+i1 <- img_modal(src = "images/eyefitting-lmer-plot.png", alt = " ", other=list(width="45%"))
+i2 <- img_modal(src = "images/eyefitting-gamm-plot.png", alt = " ", other=list(width="45%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9]
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+
++ Estimated trends from PCA residuals (orange) appear to align closer to the $y=0$ horizontal (dashed) line than the OLS residuals (blue). 
++ More prominent in parameter choices with large variances (F and N).
++ Consistent to results found in Mosteller et al. (1981).
 
 ```{r eyefitting-lmer-residualplots, eval = F, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era LMM results"}
 # eyefitting.preds.lmer <- read.csv("data/youdrawit/youdrawit-eyefitting-lmerpred-data.csv")
@@ -1089,38 +1145,6 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 # ggsave(eyefitting.lmer.plot, filename = "images/eyefitting-lmer-plot.png")
 ```
 
----
-class:primary
-# Generalized Additive Mixed Model
-Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
-
-The GAMM equation for each fit (OLS and PCA) residuals is given by:
-\begin{equation}
-e_{ijk,fit} = \alpha_i + s_{i}(x_{ijk}) + p_{j} + s_{j}(x_{ijk})
-\end{equation}
-where
-
-+ $e_{ijk,fit}$ is the residual between the drawn and fitted y-values for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment of x-value corresponding to either the OLS or PCA fit
-+ $\alpha_i$ is the intercept for the parameter choice $i$
-+ $s_{i}$ is the smoothing spline for the $i^{th}$ parameter choice
-+ $x_{ijk}$ is the x-value for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment
-+ $p_{j} \sim N(0, \sigma^2_{participant})$ is the error due to participant variation
-+ $s_{j}$ is the random smoothing spline for each participant.
-
----
-class:primary
-# GAMM Results
-
-.pull-left[
-].pull-right[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/eyefitting-gamm-plot.png", alt = " ", other=list(width="100%"))
-
-c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9]
-  ) %>% paste(collapse = "\n") %>% cat()
-```
-]
 ```{r eyefitting-gamm-residualplots, eval = F, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Eye Fitting Straight Lines in the Modern Era GAMM results"}
 # eyefitting.grid.gamm <- read.csv("data/youdrawit/youdrawit-eyefitting-gammpred-data.csv")
 # eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
@@ -1179,10 +1203,11 @@ The LMM equation is given by:
 class:primary 
 # Sum of Squares Results
 
-.pull-left[
-].pull-right[
++ No significant effect of fit for any parameter choices.
++ Indication of the trend previously shown in the residual LMM and GAMM; not enough power to detect.
+.center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/eyefitting-ss-plot.png", alt = " ", other=list(width="100%"))
+i1 <- img_modal(src = "images/eyefitting-ss-plot.jpg", alt = " ", other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -1214,17 +1239,15 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 class:primary
 # Conclusion
 
-Examining the plots, the estimated trends of PCA residuals (orange) appear to align closer to the $y=0$ horizontal (dashed) line than the OLS residuals (blue). 
-In particular, this trend is more prominent in parameter choices with large variances (F and N).
-These results are consistent to those found in @mosteller_eye_1981 indicating participants fit a trend line closer to the estimated regression line with the slope of the first principal component than the estimated OLS regression line.
+**Goal:** Establish you draw it as a tool for testing graphics.
++ Replicate results found in Eye Fitting Straight Lines (Mosteller et al., 1981). 
 
-While there is no significant effect of fit for any parameter choices, there is indication of the trend found previously in the residual regression models indicating that participants tend to fit the slope of the first principal component over the slope of the ordinary least squares regression line, particularly for trends with large variation (parameter choices N and F). 
+**Results:**
++ Estimated drawn trend-lines by participants followed closer to the regression line based on the slope of the first principle component than that of the ordinary least squares regression.
++ Most prominent in parameter choices with large variances.
++ Consistent to those found in the previous study, indicating participants fit a trend line closer to the estimated regression line with the slope of the first principal component than the estimated OLS regression line.
 
-The intent of this chapter was to establish you draw it as a tool for testing graphics then use this tool to determine the cognitive implications of displaying data on the log scale.
-Eye Fitting Straight Lines in the Modern Era replicated the results found in Mosteller et al. (1981). 
-When shown points following a linear trend, participants tended to fit the slope of the first principal component over the slope of the least squares regression line.
-This trend was most prominent when shown data simulated with larger variances. 
-The reproducibility of these results serve as evidence of the reliability of the you draw it method.
+**The reproducibility of these results serve as evidence of the reliability of the you draw it method.**
 
 ---
 class:inverse
@@ -1244,120 +1267,214 @@ class:inverse
 class:primary 
 # Data Simulation
 
-<!-- All data processing was conducted in R before being passed to the D3.js source code. -->
-<!-- A total of $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i\in [x_{min}, x_{max}]$ where $x$ and $y$ have an exponential relationship. -->
-<!-- Data were simulated based on a one parameter exponential model with multiplicative errors: -->
-<!-- \begin{equation} -->
-<!-- y_i = e^{\beta x_i + e_i} -->
-<!-- \end{equation}  -->
+**Point data:** $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$.
 
-<!-- with $e_i \sim N(0, \sigma^2).$ -->
-<!-- + $\beta$, determines the rate of exponential growth -->
-<!-- + $e_i$ generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.  -->
-<!-- A nonlinear least squares regression is then fit to the simulated points in order to obtain the best fit line and fitted values in 0.25 increments across the domain, $(x_m, \hat y_{m,NLS}), k = 1, ..., 4 x_{max} +1$. -->
+Data were simulated based on a one parameter exponential model with multiplicative errors:
+\begin{equation}
+y_i = e^{\beta x_i + e_i}
+\end{equation}
+
+where $\beta$, determines the rate of exponential growth, and $e_i \sim N(0, \sigma^2)$ are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
+
+**Line data:** $m = 1,....4x_{max} + 1$ fitted values in 0.25 increments across the domain, $(x_m, \hat y_{m,NLS})$
+
+A nonlinear least squares regression is then fit to the simulated points:
+\begin{equation}
+\hat y_{m,NLS} = = e^{\hat \beta_{NLS} x_m}
+\end{equation}
+
+Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
 
 ---
 class:primary 
 # Treatment Design
 
-<!-- Each growth rate parameter was used to simulate data across a domain of 0 to 20. -->
-<!-- The two simulated data sets (low and high exponential growth rates) were then shown four times each by truncating the points shown at both $50%$ and $75%$ of the domain as well as on both the log and linear scales for a total of eight interactive plots reflecting a factorial treatment design.  -->
+.pull-left[
+Total of eight interactive plots:
++ each **growth rate** parameter (low and high) was used to simulate data for $x\in [0,20]$ then plotted with,
++ **points truncated** at $50%$ and $75%$ of the domain and
++ log and linear **scale**.
 
-<!-- Aesthetic design choices were made consistent across each of the interactive you draw it plots; the aspect ratio, defining the $x$ to $y$ axis ratio was set to one, the y-axis extended $50%$ below the lower limit of the simulated data range and $200%$ beyond the upper limit of the simulated data range to allow for users to draw outside the data set range, and participants were asked to start drawing at $50%$ of the domain (for example, at $x = 10$). -->
-<!-- Reflecting the treatment design for each plot, the y-axis was assigned to be displayed on either the linear scale or log scale. -->
+Consistent aesthetic design choices:
++ aspect ratio of one
++ y-axis extended $50\%$ below and $200\%$ above the simulated data range
++ participants begin drawing at $50%$ of the domain
++ y-axis displayed on either the linear scale or log scale.
 
+].pull-right[
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/low-10-linear.png", alt = "Low Growth Rate, 50% Truncation, Linear Scale", other=list(width="10%"))
-i2 <- img_modal(src = "images/low-15-linear.png", alt = "Low Growth Rate, 75% Truncation, Linear Scale", other=list(width="10%"))
-i3 <- img_modal(src = "images/high-10-linear.png", alt = "High Growth Rate, 50% Truncation, Linear Scale", other=list(width="10%"))
-i4 <- img_modal(src = "images/high-15-linear.png", alt = "High Growth Rate, 75% Truncation, Linear Scale", other=list(width="10%"))
+i1 <- img_modal(src = "images/low-10-linear.png", alt = "Low Growth Rate, 50% Truncation, Linear Scale", other=list(width="30%"))
+i2 <- img_modal(src = "images/low-10-log.png", alt = "Low Growth Rate, 50% Truncation, Log Scale", other=list(width="30%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i2, "\\n", simplify = T)[1:2],
-  str_split(i3, "\\n", simplify = T)[1:2],
-  str_split(i4, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9],
-  str_split(i2, "\\n", simplify = T)[3:9],
-  str_split(i3, "\\n", simplify = T)[3:9],
-  str_split(i4, "\\n", simplify = T)[3:9]
+  str_split(i2, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/low-10-log.png", alt = "Low Growth Rate, 50% Truncation, Log Scale", other=list(width="10%"))
-i2 <- img_modal(src = "images/low-15-log.png", alt = "Low Growth Rate, 75% Truncation, Log Scale", other=list(width="10%"))
-i3 <- img_modal(src = "images/high-10-log.png", alt = "High Growth Rate, 50% Truncation, Log Scale", other=list(width="10%"))
-i4 <- img_modal(src = "images/high-15-log.png", alt = "High Growth Rate, 75% Truncation, Log Scale", other=list(width="10%"))
+i1 <- img_modal(src = "images/low-15-linear.png", alt = "Low Growth Rate, 75% Truncation, Linear Scale", other=list(width="30%"))
+i2 <- img_modal(src = "images/low-15-log.png", alt = "Low Growth Rate, 75% Truncation, Log Scale", other=list(width="30%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i2, "\\n", simplify = T)[1:2],
-  str_split(i3, "\\n", simplify = T)[1:2],
-  str_split(i4, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9],
-  str_split(i2, "\\n", simplify = T)[3:9],
-  str_split(i3, "\\n", simplify = T)[3:9],
-  str_split(i4, "\\n", simplify = T)[3:9]
+  str_split(i2, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
-]
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/high-10-linear.png", alt = "High Growth Rate, 50% Truncation, Linear Scale", other=list(width="30%"))
+i2 <- img_modal(src = "images/high-10-log.png", alt = "High Growth Rate, 50% Truncation, Log Scale", other=list(width="30%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/high-15-linear.png", alt = "High Growth Rate, 75% Truncation, Linear Scale", other=list(width="30%"))
+i2 <- img_modal(src = "images/high-15-log.png", alt = "High Growth Rate, 75% Truncation, Log Scale", other=list(width="30%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]]
 
 ---
 class:primary 
 # Feedback Data
 
-.center[
-```{r exponential-yloess-spaghetti-plot, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Exponential Prediction Spaghetti Plot"}
-exp_data <- read.csv("data/youdrawit/youdrawit-exponential-prediction-model-data.csv") %>%
-  mutate(`Points Truncated` = ifelse(points_end == 10, "50%", "75%")) %>%
-  mutate(`Growth Rate` = ifelse(beta == 0.1, "Low", "High")) %>%
-  mutate(`Growth Rate` = factor(`Growth Rate`, levels = c("Low", "High")))
+.pull-left[
+For each participant, the final data set used for analysis contains:
++ $x_{ijklm}$, $y_{ijklm,drawn}$, and $\hat y_{ijklm,NLS}$  
 
-exp_data %>%
-  ggplot(aes(x = x)) +
-  geom_line(aes(y = yloess, group = plotID, color = scale), alpha = 0.5) +
-  geom_line(alpha = 0.1, aes(y = y, group = participantID, color = "Fitted NLS")) +
-  facet_grid(`Growth Rate` ~ `Points Truncated`, scales = "free", labeller = labeller(`Growth Rate` = label_both, `Points Truncated` = label_both)) +
-  theme_bw() +
-  theme(aspect.ratio = 1,
-        legend.position = "bottom"
-        ) +
-  scale_color_manual("", values = c("black", "steelblue", "orange"), labels = c("Fitted \n (NLS)", "Linear Scale \n (drawn, loess)", "Log Scale \n (drawn, loess)")) +
-  scale_x_continuous(limits = c(10, 20)) +
-  scale_y_continuous("y")
+for:
++ growth rate $i = 1,2$,
++ point truncation $j = 1,2$,
++ scale $k = 1,2$,
++ participant  $l = 1,...N_{participant}$, and 
++ $x_{ijklm}$ value $m = 1, ...,4 x_{max} + 1$.
+
+Vertical residuals between the drawn and fitted values were calculated as: 
++ $e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}$.
+
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/exp-spaghetti-plot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+
+```{r exponential-yloess-spaghetti-plot, eval = F, fig.height = 8, fig.width = 8, out.width = "70%", fig.cap = "Exponential Prediction Spaghetti Plot"}
+# exp_data <- read.csv("data/youdrawit/youdrawit-exponential-prediction-model-data.csv") %>%
+#   mutate(`Points Truncated` = ifelse(points_end == 10, "50%", "75%")) %>%
+#   mutate(`Growth Rate` = ifelse(beta == 0.1, "Low", "High")) %>%
+#   mutate(`Growth Rate` = factor(`Growth Rate`, levels = c("Low", "High")))
+# 
+# exp_spaghetti_plot <- exp_data %>%
+#   ggplot(aes(x = x)) +
+#   geom_line(aes(y = yloess, group = plotID, color = scale), alpha = 0.5) +
+#   geom_line(alpha = 0.1, aes(y = y, group = participantID, color = "Fitted NLS")) +
+#   facet_grid(`Growth Rate` ~ `Points Truncated`, scales = "free", labeller = labeller(`Growth Rate` = label_both, `Points Truncated` = label_both)) +
+#   theme_bw() +
+#   theme(aspect.ratio = 1,
+#         legend.position = "bottom"
+#         ) +
+#   scale_color_manual("", values = c("black", "steelblue", "orange"), labels = c("Fitted \n (NLS)", "Linear Scale \n (drawn, loess)", "Log Scale \n (drawn, loess)")) +
+#   scale_x_continuous(limits = c(10, 20)) +
+#   scale_y_continuous("y")
+# ggsave(exp_spaghetti_plot, filename = "images/exp-spaghetti-plot.png")
+```
 ---
 class:primary 
-# Generalized Additive Mixed Model (GAMM)
+# Generalized Additive Mixed Model
+
+Allowing for flexibility, the bam function in the `mgcv` package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
+
+The GAMM equation for residuals is given by:
+\begin{equation}
+e_{ijklm,nls} = \tau_{ijk} + s_{ijk}(x_{ijklm}) + p_{l} + s_{l}(x_{ijklm})
+\end{equation}
+
+where
+
++ $e_{ijklm,NLS}$ is the residual between the drawn y-value and fitted y-value for the $l^{th}$ participant, $m^{th}$ increment, and $ijk^{th}$ treatment combination 
++ $\tau_{ijk}$ is the intercept for the $i^{th}$ growth rate, $j^{th}$ point truncation, and $k^{th}$ scale treatment combination
++ $s_{ijk}$ is the smoothing spline for the $ijk^{th}$ treatment combination
++ $x_{ijklm}$ is the x-value for the $l^{th}$ participant, $m^{th}$ increment, and $ijk^{th}$ treatment combination 
++ $p_{l} \sim N(0, \sigma^2_{participant})$ is the error due to the $l^{th}$ participant's characteristics 
++ $s_{l}$ is the random smoothing spline for the $l^{th}$ participant.
 
 ---
 class:primary 
 # GAMM Results
 
-```{r exponential-prediction-gamm-preds, fig.height = 8, fig.width = 8, out.width = "90%", fig.cap = "Exponential Prediction GAMM Results"}
-grid_data.exp.reduced <- read.csv(file = "data/youdrawit/youdrawit-exponential-prediction-gamm-preds.csv")
+.pull-left[
+Predictions made on the **linear scale** (blue) deviate from the  $y=0$ horizontal (dashed) line $\implies$ **underestimation** of exponential growth.
 
-grid_data.exp.reduced %>%
-  mutate(`Points Truncated` = ifelse(points_end == 10, "50%", "75%")) %>%
-  mutate(`Growth Rate` = ifelse(beta == 0.1, "Low", "High")) %>%
-  mutate(`Growth Rate` = factor(`Growth Rate`, levels = c("Low", "High"))) %>%
-  ggplot(aes(x = x, y = estimate, group = scale, color = scale, fill = scale)) +
-  geom_line(data = exp_data, aes(x = x, y = residualdrawn, group = plotID), alpha = 0.1) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), color = NA, alpha = 0.5) +
-  geom_line() +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  facet_grid(`Growth Rate` ~ `Points Truncated`, scales = "free", labeller = labeller(`Growth Rate` = label_both, `Points Truncated` = label_both)) +
-  theme_bw() +
-  theme(aspect.ratio = 1) +
-  scale_y_continuous("Residual \n (ydrawn - ynls)") +
-  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("Linear scale", "Log scale")) +
-  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("Linear scale", "Log scale"))
+Predictions made on the **log scale** (orange) follow closely to the $y=0$ horizontal (dashed) line $\implies$ **more accurate** than trends predicted on the linear scale.
+
+More prominent in high exponential growth rates.
+
+Underestimation begins after the aid of points is removed.
+
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/exp-gamm-plot.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+```{r exponential-prediction-gamm-preds, eval = F, fig.height = 8, fig.width = 8, out.width = "90%", fig.cap = "Exponential Prediction GAMM Results"}
+# grid_data.exp.reduced <- read.csv(file = "data/youdrawit/youdrawit-exponential-prediction-gamm-preds.csv")
+# 
+# exp_gamm_plot <- grid_data.exp.reduced %>%
+#   mutate(`Points Truncated` = ifelse(points_end == 10, "50%", "75%")) %>%
+#   mutate(`Growth Rate` = ifelse(beta == 0.1, "Low", "High")) %>%
+#   mutate(`Growth Rate` = factor(`Growth Rate`, levels = c("Low", "High"))) %>%
+#   ggplot(aes(x = x, y = estimate, group = scale, color = scale, fill = scale)) +
+#   geom_line(data = exp_data, aes(x = x, y = residualdrawn, group = plotID), alpha = 0.1) +
+#   geom_ribbon(aes(ymin = lower, ymax = upper), color = NA, alpha = 0.5) +
+#   geom_line() +
+#   geom_hline(yintercept = 0, linetype = "dashed") +
+#   facet_grid(`Growth Rate` ~ `Points Truncated`, scales = "free", labeller = labeller(`Growth Rate` = label_both, `Points Truncated` = label_both)) +
+#   theme_bw() +
+#   theme(aspect.ratio = 1) +
+#   scale_y_continuous("Residual \n (ydrawn - ynls)") +
+#   scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("Linear scale", "Log scale")) +
+#   scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("Linear scale", "Log scale"))
+# ggsave(exp_gamm_plot, filename = "images/exp-gamm-plot.png")
 ```
 
 ---
 class:primary 
 # Conclusion
+
+**Goal:** Using the 'You Draw It' method, test an individual's ability to make predictions for exponentially increasing data.
+
+**Results:**
++ Improvement in predictions were made for trends when participants were asked to draw a trend line on the log scale compared to the linear scale. 
++ Strongly supported for high exponential growth rates.
++ Improvement in predictions are made when points along the exponential trend are shown
+  + Indicated by the discrepancy in results for treatments with points truncated at $50\%$ compared to $75\%$ of the domain. 
+
+**The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
+
+Further investigation is necessary to determine the implications of using log scales when translating exponential graphs to numerical values. 
 
 ---
 class:inverse
@@ -1375,14 +1492,115 @@ class:inverse
 
 ---
 class:primary
+# Research Objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+1. [Perception through Lineups](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+
+    - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+    
+2. [Prediction with You Draw It](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
+    
+    - Tests an individuals ability to make predictions for exponentially increasing data.
+        + Eye Fitting Straight Lines in the Modern Era
+        + Prediction of Exponentially Increasing Trends
+        
+3. **Estimation by Numerical Translation** `r emo::ji("straight_ruler")`
+
+    - **Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.**
+    
+---
+class:primary
 # Phrasing of Estimation Questions
+
+Spence (1990) presents four example questions for comparing the sizes of individual graphical elements:
++ **How much greater** was the rainfall in September than May? 
+  + $\implies$ *estimate numeric change*
++ Is the price of oil in constant dollars **increasing or decreasing** from year to year? 
+  + $\implies$ *determine increasing or decreasing*
++ **Do more** people subscribe **to** Time **than** Newsweek? 
+  + $\implies$ *determine yes or no*
++ **Did** the ABC Corporation pay the largest dividends last year, **or** did XYZ? 
+  + $\implies$ *determine ABC or XYZ*
+
+---
+class:primary
+# Phrasing of Estimation Questions
+
+.pull-left[
+Amer (2005) demonstrates that visual illusion may bias decision making and graph comprehension, even if the graphs are constructed according to best practice.
+
+Participants were presented a cost volume profit graph with two crossing lines (revenue and cost) and asked to **estimate** three values: 
+].pull-right[
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/amer-poggendorff-illusion.png", alt = " ", other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+]
++ the **amount** of total revenues on the ordinate **corresponding to the endpoint** of the total-revenue line plotted on the graph. 
+  + $\implies$ *estimate numeric value for a given x-value*.
++ the **amount** of total costs on the ordinate **corresponding to the endpoint** of the total-cost line plotted on the graph.
+  + $\implies$ *estimate numeric value for a given x-value*.
++ the **amount** of costs/revenues on the ordinate at the **break even point**—the point where the two lines cross.
+  + $\implies$ *estimate numeric value based on a visual cue (lines crossing)*.
+
+---
+class:primary
+# Phrasing of Estimation Questions
+Dunn (1988), assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
++ informed that the experiment was designed to test the ability of individuals to "read" or "decode" statistical maps.
++ shown two maps, an unclassed choropleth map and a framed rectangle chart, indicating the murder rate of each US state.
++ asked to **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
+  + $\implies$ *judge color shade or component part to estimate numeric value.*
+
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/framed-murder-rate-map.png", alt = " ", other=list(width="60%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+---
+class:primary
+# Prolific Data Collection
+
+1. Develop and complete the pilot study for estimation task.
+2. Make any necessary adjustments to the experimental tasks based on pilot studies.
+3. Collect final data via [Prolific](https://app.prolific.co/studies) *(a crowd sourcing website similar to Amazon Turk)* for:
+  + a representative sample.
+  + consistency in participants across all studies.
+3. Analyze final data sets of all three studies.
+
+.center[
+<img src="images/drawing.gif" width="60%"/>
+]
 
 ---
 class:primary
 # References
-<font size="1">
+<font size="2">
 ```{r, print_refs, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("unwin_why_2020", "lisa_charlotte_2020", "romano_scale_2020", "best_perception_2007", "varshney_why_2013", "siegler_numerical_2017", "dehaeneLogLinearDistinct2008", "wagenaarMisperceptionExponentialGrowth1975", "vanderplas_clusters_2017", "hofmann_graphical_2012", "loyVariationsQQPlots2016","buja_statistical_2009", "new_york_times_2017")]], 
+print(bib[[c("vanderplas_clusters_2017", "hofmann_graphical_2012", "loyVariationsQQPlots2016","buja_statistical_2009", "new_york_times_2017", "finney_subjective_1951", "mosteller_eye_1981", "burnmurdoch_2020", "lewandowsky_perception_1989")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs2, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("unwin_why_2020", "rost_2020", "romano_scale_2020", "best_perception_2007", "varshney_why_2013", "siegler_numerical_2017", "dehaeneLogLinearDistinct2008", "wagenaarMisperceptionExponentialGrowth1975")]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
@@ -1401,3 +1619,120 @@ class:inverse
 # Questions and Discussion
 ]
 
+---
+class:primary
+# Research Objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+1. [**Perception through Lineups**](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+
+    - **Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.**
+    
+2. [Prediction with You Draw It](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
+    
+    - Tests an individuals ability to make predictions for exponentially increasing data.
+        + Eye Fitting Straight Lines in the Modern Era
+        + Prediction of Exponentially Increasing Trends
+        
+3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
+
+    - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
+    
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Perception through lineups
+]
+
+---
+class:primary
+# Lineup Experimental Task 
+
+Study Participant Prompt: *Which plot is most different?*
+
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/linear-lineup-example.png", alt = " ", other=list(width="45%"))
+i2 <- img_modal(src = "images/log-lineup-example.png", alt = " ", other=list(width="45%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+
+---
+class:primary
+# Study Design
+
+**Curvature:**
++ High Curvature
++ Medium  Curvature
++  Low Curvature
+
+**Treatment Design:** Target Panel gets model A and Null Panels get model B
+
+$3!\cdot 2!= 6$ curvature combinations
+
+$\times 2$ lineup data sets per combination $=$ **12 test data sets**
+
+$\times 2$ scales (log & linear) $=$ **24 different lineup plots**
+
+**Experimental Design:** 13 lineup plots per participant
+
+$6$ test parameter combinations per participant $\times 2$ scales $= 12$ test lineups
+
+$1$ rorschach parameter combination per participant
+
+---
+class:primary
+# Generalized Linear Mixed Model
+
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function.
+
+Define $Y_{ijkl}$ to be the event that participant $l$ correctly identifies the target plot for data set $k$ with curvature $j$ plotted on scale $i$.
+
+$$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$
+where
+- $\eta$ is the beaseline average probability of selecting the target plot. 
+- $\delta_i$ is the effect of the log/linear scale.
+- $\gamma_j$ is the effect of the curvature combination.
+- $\delta\gamma_{ij}$is the two-way interaction effect of the scale and curvature.
+- $s_l \sim N(0,\sigma^2_\text{participant})$, random effect for participant characteristics.
+- $d_k \sim N(0,\sigma^2_{\text{data}})$, random effect for data specific characteristics. 
+
+We assume that random effects for data set and participant are independent.
+
+---
+class:primary
+# Results
+
+.pull-left[
++ The choice of scale has no impact if curvature differences are
+large. 
+
++ Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
+
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, 2007). 
+]
+.pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/lineup-results.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
