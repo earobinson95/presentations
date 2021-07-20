@@ -185,7 +185,7 @@ class:inverse
 class:primary
 # Introduction to Graphics
 
-Data visualization is a central tool in modern data science and defined as the art of drawing **graphical charts** in order to display data (Unwin, 2020).
+Data visualization is defined as the art of drawing **graphical charts** in order to display data (Unwin, 2020).
 
 **What are graphics useful for?** (Lewandowsky and Spence, 1989)
 + Data cleaning.
@@ -193,26 +193,22 @@ Data visualization is a central tool in modern data science and defined as the a
 + Communicating information.
 
 **Who uses graphics?**
-+ Governments use graphics to understand population and economic interests (Harms, 1991; Playfair, 1801; Walker, 2013).
-+ Companies use graphics to understand mechanics and support business decisions (Chandar, Collier, and Miranti, 2012; Yates, 1985).
-+ News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
-+ Today, graphics are found in scientific publications and mass media (Aisch, Cohn, Cox, et al., 2016; Gouretski and Koltermann, 2007; Silver, 2020).
++ Governments (Harms, 1991; Playfair, 1801; Walker, 2013).
++ Companies (Chandar, Collier, and Miranti, 2012; Yates, 1985).
++ News sources and mass media (Aisch, Cohn, Cox, et al., 2016).
++ Scientific publications (Gouretski and Koltermann, 2007).
 
 ???
 
-To get started, we are first going to lay the foundation of graphics. Data visualization has become a pretty key component in data science and statistics. Unwin 2020 defines data visualization as the art of drawing graphical charts in order to display data.
+To get started, we are first going to lay the foundation of graphics. Data visualization has become central tool in modern data science and statistics. Unwin 2020 defines data visualization as the art of drawing graphical charts in order to display data.
 
 Graphics are useful for data cleaning, exploring data structure, and communicating information. While working at the consulting desk, one of the first things I do when I receive a clients data is to plot the raw data points they have given me. This often leads to the detection of typos when recording data and guides discussion with the client in order to clarify their research questions. After an analysis has been conducted, I then use charts and graphs to display the results and find this is more effective at helping them with interpretation. 
 
 In the 18th and 19th century, governments began using graphics to understand population and economic interests. In the 20th century, we saw companies using graphics to understand the inner workings of their business and support their business decision. We often see news source displaying graphics of weather forecasts such as hurricane trajectories. Today, we see graphics everywhere from scientific journals to mass media in the newspapers, TV, and internet.
 
----
-class:primary
-# Introduction to Graphics
-
-
 Despite the popularity of graphics, we are too accepting of them as default without asking critical questions about the graphics we create or view (Unwin, 2020). 
 + **How effective is this graph at communicating useful information?** (Vanderplas, Cook, &amp; Hofmann, 2020)
++ An effective graphic accurately shows the data through the appropriate chart selection, axes and scales, and aesthetic design choices in order to successfully communicate the intended result.
 
 Higher quality of technology has influenced the creation, replication, and
 complexity of graphics. We now have an infinitely many number design choices:
@@ -221,18 +217,15 @@ complexity of graphics. We now have an infinitely many number design choices:
 
 There is a need for an established set of concepts and terminology to build their graphics from so they can actively choose which of many possible graphics to draw in order to ensure their charts are effective at communicating the intended result.
 
-??? 
-An effective graphic accurately shows the data through the appropriate chart selection, axes and scales, and aesthetic design choices in order to successfully communicate the intended result.
-
 ---
 class:primary
 # Grammar of Graphics
 .pull-left[
-**Big Idea:** Graphics are built from the ground up by specifying exactly how to create a particular graph from a given data set (Wilkinson, 2012).
+**Big Idea:** Graphics are built from the ground up (Wilkinson, 2012).
 
 Graphics are viewed as a mapping
-+ **from variables** in the data set (or statistics computed from the data) 
-+ **to visual attributes** such as the axes, colors, shapes, or facets on the page/screen
++ **from variables** in the data set
++ **to visual attributes** on the page/screen.
  
 ].pull-right[
 &lt;img src="images/graphic-flowchart.png" width="85%"/&gt;
@@ -240,6 +233,12 @@ Graphics are viewed as a mapping
 ]
 
 ???
+
+Graphics are build from the ground up by specifying exactly how to create a particular graph from a given data set.
+
+Graphics are viewed as a mapping
++ **from variables** in the data set (or statistics computed from the data) 
++ **to visual attributes** such as the axes, colors, shapes, or facets on the page/screen
 
 The figure illustrates the process of creating a graphic from a data set through the use of variable mapping, data transformations, coordinate systems, and aesthetic features (Vanderplas, Cook, &amp; Hofmann, 2020) 
 
@@ -250,20 +249,24 @@ class:primary
 # Perceptual Process
 
 .pull-left[
-The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus
-(Goldstein and Brockmole, 2016).
-
-+ **Sensation:** simple processes that occur right at the beginning of a
-sensory system (Carlson, 2010).
-+ **Perception:** higher-order mechanisms and identified with more complex processes (Myers and DeWall, 2021).
-].pull-right[
 &lt;img src="images/perceptual-process-goldsein-pg5.png" width="100%"/&gt;
 .center[(Goldstein and Brockmole, 2016)
-] 
+]
+].pull-right[
+**Sensation:** simple processes that occur right at the beginning of a
+sensory system (Carlson, 2010).
+
+**Perception:** higher-order mechanisms and identified with more complex processes (Myers and DeWall, 2021).
++ Preattentive stage
++ Direct attention
 ]
 
 ???
 + In order to develop guiding principles for generating graphics effective in communication, we must first understand the basic mechanics of the human perceptual system and the biases we are vulnerable to (Goldstein &amp; Brockmole, 2017).
+
++ The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus
+(Goldstein and Brockmole, 2016).
+
 
 + The perceptual process begins when there is a stimulus in the environment and
 light is reflected and focused back into the viewer’s eyes. Within the eye, the light
@@ -282,55 +285,23 @@ more of a cyclic nature where a person may go through many iterations of stimuli
 perception, recognition, and action before the final image is identified and
 understood (M. A. Peterson, 1994).
 
----
-class:primary
-# Perceptual Process
+**Sensation:** simple processes that occur right at the beginning of a
+sensory system (Carlson, 2010).
 
-When perception occurs, we experience:
-  + **preattentive stage** in which we observe color, shape, size, and other basic information about the stimuli being perceived.
-  + **direct attention** is required for additional processing to allow us to draw connections between components that assist in our interpretation of the stimuli. 
-
-&lt;!-- Graph interpretation involves: (Shah, Mayer, &amp; Hegarty, 1999) --&gt;
-&lt;!-- + relatively simple pattern perception and association processes in which viewers can associate graphic patterns to quantitative referents --&gt;
-&lt;!-- + more complex and error-prone inferential processes in which viewers must mentally transform data.  --&gt;
-.pull-left[
-When interacting with charts (Shah and Carpenter, 1995), a viewer must: 
-+ identifying meaningful visual features.
-+ classify the quantitative measures and relationships.
-+ translate to the variables defined in the data set.
-]
-.pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgdecreasingpopulation' src='images/decreasing-population.png' alt=' ' width='80%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modaldecreasingpopulation' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodaldecreasingpopulation'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captiondecreasingpopulation' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-]
-
-???
+**Perception:** higher-order mechanisms and identified with more complex processes (Myers and DeWall, 2021).
++ preattentive stage in which we observe color, shape, size, and other basic information about the stimuli being perceived.
++ direct attention is required for additional processing to allow us to draw connections between components that assist in our interpretation of the stimuli. 
 
 + When viewing a chart or graph, most insights we gain are due to the cognitive processes that occur after attention is focused on specific aspects of the graph.
 
-+ Shah &amp; Carpenter (1995) established the process in which viewers interact with charts by first observing the visual features and later translating to cognitive
-processing of the information depicted by those features. 
-
-+ The relationship between physiology and perception can provide us information
-about how graphics may be understood and interpreted. Through experimentation,
-the physiological response (automatic reaction) is related to the behavioral response
-(perception, recognition, and action).
++ The relationship between physiology and perception can provide us information about how graphics may be understood and interpreted. Through experimentation, the physiological response (automatic reaction) is related to the behavioral response (perception, recognition, and action).
 
 ---
 class:primary
 # Logarithmic Perception
 
 **Weber’s law** states we do not notice absolute changes in stimuli,
-but instead that we notice the relative change (Fechner, 1860). Discovered by Ernst Weber, an early psychophysics researcher.
-
-Numerically, Weber’s Law is defined as:
+but instead that we notice the relative change (Fechner, 1860). Numerically:
 
 `\begin{equation*}
 \frac{\Delta S}{S} = K
@@ -348,9 +319,7 @@ Ernst Weber, an early psychophysics researcher discovered the relationship betwe
 class:primary
 # Logarithmic Perception
 
-Extending Weber's law, Gustav Fechner discovered the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
-
-Formally known as the **Weber-Fechner law**, it is derived from Weber’s law as:
+**Weber-Fechner law** states the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860). Derived from Weber’s law:
 `\begin{equation}
 P = K \ln \frac{S}{S_0}
 \end{equation}`
@@ -379,12 +348,13 @@ All of these types of tests require different levels of use and manipulation of 
 class:primary
 # Motivation
 
-Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
-
 .pull-left[
-+ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, et al., 2020).
-+ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-+ Facilitated communication with the public to increase compliance (Van Bavel, Baicker, Boggio, et al., 2020).  
+Data visualizations played an important role in during the **COVID-19 pandemic** (Rost, 2020; Romano, Sotis, Dominioni, et al., 2020; Van Bavel, Baicker, Boggio, et al., 2020).
+
+Dashboards displayed:
++ case counts.
++ transmission rates.
++ outbreak regions.
 
 ].pull-right[
 &lt;!-- Trigger the Modal --&gt;
@@ -407,15 +377,20 @@ Data visualizations played an important role in during the COVID-19 pandemic in 
   &lt;div id='captioncovid19summer2020riskmap' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
+???
+
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
+
+.pull-left[
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, et al., 2020).
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance (Van Bavel, Baicker, Boggio, et al., 2020).  
+
 ---
 class:primary
 # Logarithmic Scales
 
 .pull-left[
-**Problem:** Data which spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
-
-**Solution:** Use a log scale transformation; alters the contextual appearance of the data.
-
 &lt;!-- Trigger the Modal --&gt;
 &lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='100%'&gt;
 &lt;!-- The Modal --&gt;
@@ -425,7 +400,6 @@ class:primary
   &lt;!-- Modal Caption (Image Text) --&gt;
   &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
-
 ].pull-right[
 &lt;!-- Trigger the Modal --&gt;
 &lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt='(Munroe, 2005)' width='100%'&gt;
@@ -438,28 +412,34 @@ class:primary
 &lt;/div&gt;
 ]
 
+???
 
++ Problem: Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
++ Solution: Use of a log scale transformation; alters the contextual appearance of the data.
++ The usefulness of the log scale in science is illustrated showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
 ---
 class:primary
 # Logarithmic Mapping
 
-+ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
-
-+ A kindergartner asked to place numbers one through ten along a number
-line would place three close to the middle, following the logarithmic perspective
-(Varshney and Sun, 2013).
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
 
 .center[
 &lt;img src="images/log-numberline.png" width="90%"/&gt;
 ]
 
 
-+ **Assumption:** If we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
++ **Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
 
 ???
 
 + When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
+
+Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
+
++ A kindergartner asked to place numbers one through ten along a number
+line would place three close to the middle, following the logarithmic perspective
+(Varshney and Sun, 2013).
 
 + Assuming there is a direct relationship between perceptual and cognitive
 processes, it is reasonable to assume numerical representations should also be
@@ -477,7 +457,7 @@ class:primary
 **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='70%'&gt;
+&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='100%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19FT03' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -487,24 +467,13 @@ class:primary
 &lt;/div&gt;
 ]
 
-+ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
-+ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
-
 ].pull-right[
 
 **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
 
+.center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='45%'&gt;
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='45%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalcovid19FTcasecount06'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captioncovid19FTcasecount06' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -513,9 +482,29 @@ class:primary
   &lt;div id='captioncovid19FTcasecount06' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-log.PNG' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTcasecount06'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FTcasecount06' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+]
+
+???
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+
++ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
++ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
 + Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
 + The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
-]
 
 ---
 class:primary
@@ -530,8 +519,6 @@ class:primary
 2. [Prediction with You Draw It](https://shiny.srvanderplas.com/you-draw-it/) ✏️
     
     - Tests an individuals ability to make predictions for exponentially increasing data.
-        + Eye Fitting Straight Lines in the Modern Era
-        + Prediction of Exponentially Increasing Trends
         
 3. Estimation by Numerical Translation 📏
 
@@ -550,8 +537,6 @@ class:primary
 2. [**Prediction with You Draw It**](https://shiny.srvanderplas.com/you-draw-it/) ✏️
     
     - **Tests an individuals ability to make predictions for exponentially increasing data.**
-        + **Eye Fitting Straight Lines in the Modern Era**
-        + **Prediction of Exponentially Increasing Trends**
         
 3. Estimation by Numerical Translation 📏
 
@@ -562,22 +547,18 @@ class:primary
 class:primary
 # Underestimation of Exponential Growth
 
-.pull-left[
+.center[
+&lt;img src="images/exponential-stages-comic.jpg", width="85%"/&gt;
+
+(Von
+Bergmann, 2021)
+]
+
+???
 Exponential growth is often misjudged:
 + **early stage** appears to have a small growth rate.
 + **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
 + **late stages** exponential growth when it is quite apparent.
-].pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgexponentialstagescomic' src='images/exponential-stages-comic.jpg' alt='(Von
-Bergmann, 2021)' width='100%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modalexponentialstagescomic' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalexponentialstagescomic'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionexponentialstagescomic' class='modal-caption'&gt;&lt;/div&gt;
-]
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
 
@@ -1923,23 +1904,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 
 <script>
         /* Get the modal*/
-          var modaldecreasingpopulation = document.getElementById('modaldecreasingpopulation');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgdecreasingpopulation = document.getElementById('imgdecreasingpopulation');
-          var modalImgdecreasingpopulation = document.getElementById('imgmodaldecreasingpopulation');
-          var captionTextdecreasingpopulation = document.getElementById('captiondecreasingpopulation');
-          imgdecreasingpopulation.onclick = function(){
-            modaldecreasingpopulation.style.display = 'block';
-            modalImgdecreasingpopulation.src = this.src;
-            captionTextdecreasingpopulation.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgdecreasingpopulation.onclick = function() {
-            modaldecreasingpopulation.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
           var modal91divoccasesjuly2021 = document.getElementById('modal91divoccasesjuly2021');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
           var img91divoccasesjuly2021 = document.getElementById('img91divoccasesjuly2021');
@@ -2055,23 +2019,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgcovid19FTcasecount06.onclick = function() {
             modalcovid19FTcasecount06.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modalexponentialstagescomic = document.getElementById('modalexponentialstagescomic');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgexponentialstagescomic = document.getElementById('imgexponentialstagescomic');
-          var modalImgexponentialstagescomic = document.getElementById('imgmodalexponentialstagescomic');
-          var captionTextexponentialstagescomic = document.getElementById('captionexponentialstagescomic');
-          imgexponentialstagescomic.onclick = function(){
-            modalexponentialstagescomic.style.display = 'block';
-            modalImgexponentialstagescomic.src = this.src;
-            captionTextexponentialstagescomic.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgexponentialstagescomic.onclick = function() {
-            modalexponentialstagescomic.style.display = 'none';
           }
 </script>
 <script>
