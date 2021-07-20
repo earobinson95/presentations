@@ -142,7 +142,7 @@ Data visualization is a central tool in modern data science and defined as the a
 + Communicating information.
 
 **Who uses graphics?**
-  + Governments use graphics to understand population and economic interests `r Citep(bib[[c("harms1991august", "playfair1801statistical", "walker2013statistical")]])`.
++ Governments use graphics to understand population and economic interests `r Citep(bib[[c("harms1991august", "playfair1801statistical", "walker2013statistical")]])`.
 + Companies use graphics to understand mechanics and support business decisions `r Citep(bib[[c("chandar2012graph", "yates1985graphs")]])`.
 + News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
 + Today, graphics are found in scientific publications and mass media `r Citep(bib[[c("Aisch_NYTimes_presidential_forecast", "gouretski2007much", "silver538_2020")]])`.
