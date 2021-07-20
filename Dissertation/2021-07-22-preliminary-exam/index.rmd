@@ -134,18 +134,18 @@ class:inverse
 class:primary
 # Introduction to Graphics
 
-Data visualization is a central tool in modern data science and defined as the art of drawing **graphical charts** in order to display data (Unwin, 2020).
+Data visualization is a central tool in modern data science and defined as the art of drawing **graphical charts** in order to display data `r Citep(bib[[c("unwin_why_2020")]])`.
 
-**What are graphics useful for?** (Lewandowsky & Spence, 1989)
+**What are graphics useful for?** `r Citep(bib[[c("lewandowsky_perception_1989")]])`
 + Data cleaning.
 + Exploring data structure.
 + Communicating information.
 
 **Who uses graphics?**
-+ Governments use graphics to understand population and economic interests (Harms, 1991; Playfair, 1801; Walker & others, 2013).
-+ Companies use graphics to understand mechanics and support business decisions (Chandar, Collier, & Miranti, 2012; Yates, 1985).
+  + Governments use graphics to understand population and economic interests `r Citep(bib[[c("harms1991august", "playfair1801statistical", "walker2013statistical")]])`.
++ Companies use graphics to understand mechanics and support business decisions `r Citep(bib[[c("chandar2012graph", "yates1985graphs")]])`.
 + News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
-+ Today, graphics are found in scientific publications and mass media (Aisch et al., 2016; Gouretski & Koltermann, 2007; Silver, 2020).
++ Today, graphics are found in scientific publications and mass media `r Citep(bib[[c("Aisch_NYTimes_presidential_forecast", "gouretski2007much", "silver538_2020")]])`.
 
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
@@ -168,18 +168,17 @@ Data visualization is a central tool in modern data science and defined as the a
 
 ---
 class:primary
-# Grammar of Graphics (Wilkinson, 2012)
-
+# Grammar of Graphics
 .pull-left[
-**Big Idea:** Graphics are built from the ground up by specifying exactly how to create a particular graph from a given data set.
+**Big Idea:** Graphics are built from the ground up by specifying exactly how to create a particular graph from a given data set `r Citep(bib[[c("wilkinson2012grammar")]])`.
 
 Graphics are viewed as a mapping
-+ **from variables** in the data set (or statistics computed from the data)
++ **from variables** in the data set (or statistics computed from the data) 
 + **to visual attributes** such as the axes, colors, shapes, or facets on the page/screen
-
+ 
 ].pull-right[
 <img src="images/graphic-flowchart.png" width="85%"/>
-(Vanderplas, Cook, & Hofmann, 2020)
+`r Citep(bib[[c("vanderplas2020testing")]])`
 ]
 
 ???
@@ -193,13 +192,16 @@ class:primary
 # Perceptual Process
 
 .pull-left[
-The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus (Goldstein & Brockmole, 2017).
+The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus
+`r Citep(bib[[c("goldstein2016sensation")]])`.
 
 + **Sensation:** simple processes that occur right at the beginning of a
-sensory system (Carlson, 2010) 
-+ **Perception:** higher-order mechanisms and identified with more complex processes (Myers & DeWall, 2021).
+sensory system `r Citep(bib[[c("carlson2010psychology")]])`.
++ **Perception:** higher-order mechanisms and identified with more complex processes `r Citep(bib[[c("myers_dewall_2021")]])`.
 ].pull-right[
 <img src="images/perceptual-process-goldsein-pg5.png" width="100%"/>
+.center[`r Citep(bib[[c("goldstein2016sensation")]])`
+] 
 ]
 
 ???
@@ -234,7 +236,7 @@ When perception occurs, we experience:
 <!-- + relatively simple pattern perception and association processes in which viewers can associate graphic patterns to quantitative referents -->
 <!-- + more complex and error-prone inferential processes in which viewers must mentally transform data.  -->
 .pull-left[
-When interacting with charts, a viewer must: (Shah & Carpenter, 1995)
+When interacting with charts `r Citep(bib[[c("shah1995conceptual")]])`, a viewer must: 
 + identifying meaningful visual features.
 + classify the quantitative measures and relationships.
 + translate to the variables defined in the data set.
@@ -272,8 +274,10 @@ the physiological response (automatic reaction) is related to the behavioral res
 class:primary
 # Logarithmic Perception
 
+fechner1860elemente
+
 **Weber’s law** states we do not notice absolute changes in stimuli,
-but instead that we notice the relative change (Fechner, 1860). Discovered by Ernst Weber, an early psychophysics researcher.
+but instead that we notice the relative change `r Citep(bib[[c("fechner1860elemente")]])`. Discovered by Ernst Weber, an early psychophysics researcher.
 
 Numerically, Weber’s Law is defined as:
 
@@ -293,7 +297,7 @@ Ernst Weber, an early psychophysics researcher discovered the relationship betwe
 class:primary
 # Logarithmic Perception
 
-Extending Weber's law, Gustav Fechner discovered the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
+Extending Weber's law, Gustav Fechner discovered the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception `r Citep(bib[[c("fechner1860elemente")]])`.
 
 Formally known as the **Weber-Fechner law**, it is derived from Weber’s law as:
 \begin{equation}
@@ -324,24 +328,24 @@ All of these types of tests require different levels of use and manipulation of 
 class:primary
 # Motivation
 
-Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions `r Citep(bib[[c("rost_2020")]])`.
 
 .pull-left[
-+ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, & Guidi, 2020).
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic `r Citep(bib[[c("romano_scale_2020")]])`.
 + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-+ Facilitated communication with the public to increase compliance (Bavel et al., 2020).
++ Facilitated communication with the public to increase compliance `r Citep(bib[[c("bavel_using_2020")]])`.  
 
 ].pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/91divoc-cases-july2021.png", alt = "(Fagen-Ulmschneider, 2020)", other=list(width="80%"))
+i1 <- img_modal(src = "images/91divoc-cases-july2021.png", alt = Citep(bib[[c("fagen-ulmschneider_2020")]]), other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
-```
+``` 
 
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/covid19-summer2020-risk-map.png", alt = "(“Risk levels,” 2021)", other=list(width="80%"))
+i1 <- img_modal(src = "images/covid19-summer2020-risk-map.png", alt = Citep(bib[[c("global_epidemics_2021")]]), other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -367,7 +371,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ].pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/log-scale-comic.png", alt = " ", other=list(width="100%"))
+i1 <- img_modal(src = "images/log-scale-comic.png", alt = Citep(bib[[c("munroe_2005")]]), other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -400,10 +404,11 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 class:primary
 # Logarithmic Mapping
 
-+ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, & Pica, 2008; Siegler & Braithwaite, 2017, 2017; Varshney & Sun, 2013).
++ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
+
 + A kindergartner asked to place numbers one through ten along a number
 line would place three close to the middle, following the logarithmic perspective
-(Varshney & Sun, 2013)
+`r Citep(bib[[c("varshney_why_2013")]])`.
 
 .center[
 <img src="images/log-numberline.png" width="90%"/>
@@ -459,13 +464,14 @@ class:primary
 **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = " ", other=list(width="70%"))
+i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="70%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+
 + Large magnitude discrepancies in case counts at a given time point between different geographic regions.
 + Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
 
@@ -474,13 +480,13 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
 
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i2 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-linear.png", alt = " ", other=list(width="45%"))
-i3 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-log.png", alt = " ", other=list(width="45%"))
+i1 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-linear.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="45%"))
+i2 <- img_modal(src = "images/covid19-FT-case-count-06.30.2020-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="45%"))
 
-c(str_split(i2, "\\n", simplify = T)[1:2],
-  str_split(i3, "\\n", simplify = T)[1:2],
-  str_split(i2, "\\n", simplify = T)[3:9],
-  str_split(i3, "\\n", simplify = T)[3:9]
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
@@ -540,7 +546,7 @@ Exponential growth is often misjudged:
 + **late stages** exponential growth when it is quite apparent.
 ].pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/exponential-stages-comic.jpg", alt = "Exponential Stages", other=list(width="100%"))
+i1 <- img_modal(src = "images/exponential-stages-comic.jpg", alt = Citep(bib[[c("vonbergmann_2021")]]), other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -554,12 +560,12 @@ This misinterpretation can lead to decisions made under inaccurate understanding
 class:primary
 # Underestimation of Exponential Growth
 
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1977; Mackinnon & Wearing, 1991; Wagenaar & Sagaria, 1975).
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975")]])`.
 
 + Numerical estimation is more accurate than graphical estimation for exponential curves. 
 + No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
-+ Instruction on exponential growth reduced the underestimation (Jones, 1977; Wagenaar & Sagaria, 1975). 
-+ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon & Wearing, 1991).
++ Instruction on exponential growth reduced the underestimation `r Citep(bib[[c("jones_generalized_1979", "wagenaar_misperception_1975")]])`. 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions `r Citep(bib[[c("mackinnon_feedback_1991")]])`.
 
 **Can log transforming the data help?**
 
@@ -591,7 +597,7 @@ class:inverse
 ---
 class:primary
 # Subjective Judgment in Statistical Analysis
-## Finney (1951)
+## `r Citep(bib[[c("finney_subjective_1951")]])`
 
 .pull-left[
 + **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected iwth dose-response relationships.
@@ -608,7 +614,7 @@ class:primary
 ---
 class:primary
 # Scientistis have always had sass!
-[(Subjective Judgment in Statistical Analysis: An Experimental Study; D. J. Finney, 1951)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
+## `r Citep(bib[[c("finney_subjective_1951")]])`
 <font size="6">
 .small[
 + "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.)
@@ -629,7 +635,7 @@ class:primary
 ---
 class:primary
 # Eye Fitting Straight Lines
-## Mosteller et al. (1981)
+## `r Citep(bib[[c("mosteller_eye_1981")]])`
 .pull-left[
 + **Big Idea:** Students fitted lines by eye to four sets of points.
 + **Method:** 8.5 x 11 inch transparency with a straight line etched completely across the
@@ -653,17 +659,20 @@ middle.
 ---
 class:primary
 # You Draw It Feature 
-## New York Times (2015)
+## (New York Times, 2015)
 .pull-left[
 <img src="images/nyt-caraccidents-frame4.png" width="95%"/>
+.center[
+`r Citep(bib[[c("katz_2017")]])`
+]
 ].pull-right[
 
 Readers are asked to input their own assumptions about various metrics and
 compare how these assumptions relate to reality.
 
-+ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html)
-+ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html)
-+ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0)
++ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) `r Citep(bib[[c("aisch_cox_quealy_2015")]])`
++ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) `r Citep(bib[[c("katz_2017")]])`
++ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) `r Citep(bib[[c("buchanan_park_pearce_2017")]])`
 
 The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
 ]
@@ -703,12 +712,21 @@ class:primary
 
 ---
 class:primary
-# Relationship between D3 and R
-The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
+# Relationship between D3 and R 
+
+.pull-left[
+The `r2d3` package `r Citep(bib[[c("luraschi_r2d3")]])` in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
 + RMarkdown with HTML output
 + Shiny applications (amazing!)
 
+].pull-right[
+.center[ 
+ <img src="images/r2d3-hex.png" width="40%"/>
+]
+]
+
 `r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
 --
 <!-- The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. -->
 <!-- A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code.  -->
@@ -716,8 +734,8 @@ The `r2d3` package in R provides an efficient integration of D3 visuals and R by
 **How?**
 + Converts data in R to JSON that can be interpreted by JavaScript
 + Sources D3 code library
-+ Creates plot container (svg is default)
-+ Renders plot object using JavaScript and CSS files called in r2d3 call
++ Creates plot container (svg)
++ Renders plot using source code
 ].right-plot[
 ```{r r2d3-example, echo = T, eval = F}
 r2d3(data = data,
@@ -1280,7 +1298,7 @@ where $\beta$, determines the rate of exponential growth, and $e_i \sim N(0, \si
 
 A nonlinear least squares regression is then fit to the simulated points:
 \begin{equation}
-\hat y_{m,NLS} = = e^{\hat \beta_{NLS} x_m}
+\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
 \end{equation}
 
 Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
@@ -1514,7 +1532,7 @@ class:primary
 class:primary
 # Phrasing of Estimation Questions
 
-Spence (1990) presents four example questions for comparing the sizes of individual graphical elements:
+`r Citet(bib[[c("spence_visual_1990")]])` presents four example questions for comparing the sizes of individual graphical elements:
 + **How much greater** was the rainfall in September than May? 
   + $\implies$ *estimate numeric change*
 + Is the price of oil in constant dollars **increasing or decreasing** from year to year? 
@@ -1529,13 +1547,13 @@ class:primary
 # Phrasing of Estimation Questions
 
 .pull-left[
-Amer (2005) demonstrates that visual illusion may bias decision making and graph comprehension, even if the graphs are constructed according to best practice.
+`r Citet(bib[[c("amer2005bias")]])` demonstrates that visual illusion may bias decision making and graph comprehension, even if the graphs are constructed according to best practice.
 
 Participants were presented a cost volume profit graph with two crossing lines (revenue and cost) and asked to **estimate** three values: 
 ].pull-right[
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/amer-poggendorff-illusion.png", alt = " ", other=list(width="80%"))
+i1 <- img_modal(src = "images/amer-poggendorff-illusion.png", alt = Citep(bib[[c("amer2005bias")]]), other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -1553,7 +1571,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ---
 class:primary
 # Phrasing of Estimation Questions
-Dunn (1988), assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
+`r Citet(bib[[c("dunn1988framed")]])` assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
 + informed that the experiment was designed to test the ability of individuals to "read" or "decode" statistical maps.
 + shown two maps, an unclassed choropleth map and a framed rectangle chart, indicating the murder rate of each US state.
 + asked to **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
@@ -1561,7 +1579,7 @@ Dunn (1988), assessed the relative accuracy with which quantitative information 
 
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/framed-murder-rate-map.png", alt = " ", other=list(width="60%"))
+i1 <- img_modal(src = "images/framed-murder-rate-map.png", alt = Citep(bib[[c("dunn1988framed")]]), other=list(width="60%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -1581,15 +1599,27 @@ class:primary
 3. Analyze final data sets of all three studies.
 
 .center[
-<img src="images/drawing.gif" width="60%"/>
+<img src="images/drawing.gif" width="55%"/>
+<font size="2">
+Image source: https://coreyegbert.com/
+</font>
 ]
 
 ---
 class:primary
 # References
 <font size="2">
-```{r, print_refs, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("vanderplas_clusters_2017", "hofmann_graphical_2012", "loyVariationsQQPlots2016","buja_statistical_2009", "new_york_times_2017", "finney_subjective_1951", "mosteller_eye_1981", "burnmurdoch_2020", "lewandowsky_perception_1989")]], 
+```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c('aisch_cox_quealy_2015',
+'Aisch_NYTimes_presidential_forecast',
+'amer2005bias',
+'bavel_using_2020',
+'best_perception_2007',
+'buchanan_park_pearce_2017',
+'burnmurdoch_2020',
+'carlson2010psychology',
+'chandar2012graph',
+'dehaene2008log')]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
@@ -1600,11 +1630,62 @@ class:primary
 # References
 <font size="2">
 ```{r, print_refs2, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("unwin_why_2020", "rost_2020", "romano_scale_2020", "best_perception_2007", "varshney_why_2013", "siegler_numerical_2017", "dehaeneLogLinearDistinct2008", "wagenaarMisperceptionExponentialGrowth1975")]], 
+print(bib[[c('dunn1988framed',
+'fagen-ulmschneider_2020',
+'fechner1860elemente',
+'finney_subjective_1951',
+'global_epidemics_2021',
+'goldstein2016sensation',
+'gouretski2007much',
+'harms1991august',
+'jones_generalized_1979',
+'katz_2017',
+'lewandowsky_perception_1989')]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
 </font>
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs3, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c('luraschi_r2d3',
+'mackinnon_feedback_1991',
+'mosteller_eye_1981',
+'munroe_2005',
+'myers_dewall_2021',
+'playfair1801statistical',
+'romano_scale_2020',
+'rost_2020',
+'shah1995conceptual',
+'siegler_numerical_2017')]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs4, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c('silver538_2020',
+'spence_visual_1990',
+'unwin_why_2020',
+'vanderplas2020testing',
+'varshney_why_2013',
+'vonbergmann_2021',
+'wagenaar_misperception_1975',
+'walker2013statistical',
+'wilkinson2012grammar',
+'yates1985graphs')]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
 ---
 class:inverse
 <br>
@@ -1725,7 +1806,7 @@ large.
 
 + Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
 
-+ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, 2007). 
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature `r Citep(bib[[c("best_perception_2007")]])`.
 ]
 .pull-right[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}

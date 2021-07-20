@@ -181,16 +181,16 @@ class:primary
 
 Data visualization is a central tool in modern data science and defined as the art of drawing **graphical charts** in order to display data (Unwin, 2020).
 
-**What are graphics useful for?** (Lewandowsky &amp; Spence, 1989)
+**What are graphics useful for?** (Lewandowsky and Spence, 1989)
 + Data cleaning.
 + Exploring data structure.
 + Communicating information.
 
 **Who uses graphics?**
-+ Governments use graphics to understand population and economic interests (Harms, 1991; Playfair, 1801; Walker &amp; others, 2013).
-+ Companies use graphics to understand mechanics and support business decisions (Chandar, Collier, &amp; Miranti, 2012; Yates, 1985).
+  + Governments use graphics to understand population and economic interests (Harms, 1991; Playfair, 1801; Walker, 2013).
++ Companies use graphics to understand mechanics and support business decisions (Chandar, Collier, and Miranti, 2012; Yates, 1985).
 + News sources display graphics of weather forecasts to communicate critical information and aid in decision making.
-+ Today, graphics are found in scientific publications and mass media (Aisch et al., 2016; Gouretski &amp; Koltermann, 2007; Silver, 2020).
++ Today, graphics are found in scientific publications and mass media (Aisch, Cohn, Cox, et al., 2016; Gouretski and Koltermann, 2007; Silver, 2020).
 
 .center[
 
@@ -198,18 +198,17 @@ Data visualization is a central tool in modern data science and defined as the a
 
 ---
 class:primary
-# Grammar of Graphics (Wilkinson, 2012)
-
+# Grammar of Graphics
 .pull-left[
-**Big Idea:** Graphics are built from the ground up by specifying exactly how to create a particular graph from a given data set.
+**Big Idea:** Graphics are built from the ground up by specifying exactly how to create a particular graph from a given data set (Wilkinson, 2012).
 
 Graphics are viewed as a mapping
-+ **from variables** in the data set (or statistics computed from the data)
++ **from variables** in the data set (or statistics computed from the data) 
 + **to visual attributes** such as the axes, colors, shapes, or facets on the page/screen
-
+ 
 ].pull-right[
 &lt;img src="images/graphic-flowchart.png" width="85%"/&gt;
-(Vanderplas, Cook, &amp; Hofmann, 2020)
+(Vanderplas, Cook, and Hofmann, 2020)
 ]
 
 ???
@@ -223,13 +222,16 @@ class:primary
 # Perceptual Process
 
 .pull-left[
-The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus (Goldstein &amp; Brockmole, 2017).
+The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus
+(Goldstein and Brockmole, 2016).
 
 + **Sensation:** simple processes that occur right at the beginning of a
-sensory system (Carlson, 2010) 
-+ **Perception:** higher-order mechanisms and identified with more complex processes (Myers &amp; DeWall, 2021).
+sensory system (Carlson, 2010).
++ **Perception:** higher-order mechanisms and identified with more complex processes (Myers and DeWall, 2021).
 ].pull-right[
 &lt;img src="images/perceptual-process-goldsein-pg5.png" width="100%"/&gt;
+.center[(Goldstein and Brockmole, 2016)
+] 
 ]
 
 ???
@@ -264,7 +266,7 @@ When perception occurs, we experience:
 &lt;!-- + relatively simple pattern perception and association processes in which viewers can associate graphic patterns to quantitative referents --&gt;
 &lt;!-- + more complex and error-prone inferential processes in which viewers must mentally transform data.  --&gt;
 .pull-left[
-When interacting with charts, a viewer must: (Shah &amp; Carpenter, 1995)
+When interacting with charts (Shah and Carpenter, 1995), a viewer must: 
 + identifying meaningful visual features.
 + classify the quantitative measures and relationships.
 + translate to the variables defined in the data set.
@@ -296,6 +298,8 @@ the physiological response (automatic reaction) is related to the behavioral res
 ---
 class:primary
 # Logarithmic Perception
+
+fechner1860elemente
 
 **Weber’s law** states we do not notice absolute changes in stimuli,
 but instead that we notice the relative change (Fechner, 1860). Discovered by Ernst Weber, an early psychophysics researcher.
@@ -352,9 +356,9 @@ class:primary
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
 
 .pull-left[
-+ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, &amp; Guidi, 2020).
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, et al., 2020).
 + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-+ Facilitated communication with the public to increase compliance (Bavel et al., 2020).
++ Facilitated communication with the public to increase compliance (Van Bavel, Baicker, Boggio, et al., 2020).  
 
 ].pull-right[
 &lt;!-- Trigger the Modal --&gt;
@@ -368,7 +372,7 @@ Data visualizations played an important role in during the COVID-19 pandemic in 
 &lt;/div&gt;
 
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19summer2020riskmap' src='images/covid19-summer2020-risk-map.png' alt='(“Risk levels,” 2021)' width='80%'&gt;
+&lt;img id='imgcovid19summer2020riskmap' src='images/covid19-summer2020-risk-map.png' alt='(Global Epidemics, 2021)' width='80%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19summer2020riskmap' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -398,7 +402,7 @@ class:primary
 
 ].pull-right[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt=' ' width='100%'&gt;
+&lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt='(Munroe, 2005)' width='100%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modallogscalecomic' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -414,10 +418,11 @@ class:primary
 class:primary
 # Logarithmic Mapping
 
-+ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, &amp; Pica, 2008; Siegler &amp; Braithwaite, 2017, 2017; Varshney &amp; Sun, 2013).
++ Research suggests our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
+
 + A kindergartner asked to place numbers one through ten along a number
 line would place three close to the middle, following the logarithmic perspective
-(Varshney &amp; Sun, 2013)
+(Varshney and Sun, 2013).
 
 .center[
 &lt;img src="images/log-numberline.png" width="90%"/&gt;
@@ -446,7 +451,7 @@ class:primary
 **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt=' ' width='70%'&gt;
+&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='70%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19FT03' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -455,6 +460,7 @@ class:primary
   &lt;div id='captioncovid19FT03' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
+
 + Large magnitude discrepancies in case counts at a given time point between different geographic regions.
 + Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
 
@@ -463,9 +469,9 @@ class:primary
 **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
 
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-linear.png' alt=' ' width='45%'&gt;
+&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='45%'&gt;
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-log.png' alt=' ' width='45%'&gt;
+&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='45%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -537,14 +543,14 @@ Exponential growth is often misjudged:
 + **late stages** exponential growth when it is quite apparent.
 ].pull-right[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgexponentialstagescomic' src='images/exponential-stages-comic.jpg' alt='Exponential Stages' width='100%'&gt;
+&lt;img id='imgexponentialstagescomic' src='images/exponential-stages-comic.jpg' alt='(Von
+Bergmann, 2021)' width='100%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalexponentialstagescomic' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
   &lt;img class='modal-content' id='imgmodalexponentialstagescomic'&gt;
   &lt;!-- Modal Caption (Image Text) --&gt;
   &lt;div id='captionexponentialstagescomic' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
 ]
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
@@ -553,12 +559,12 @@ This misinterpretation can lead to decisions made under inaccurate understanding
 class:primary
 # Underestimation of Exponential Growth
 
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1977; Mackinnon &amp; Wearing, 1991; Wagenaar &amp; Sagaria, 1975).
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1979; Mackinnon and Wearing, 1991; Wagenaar and Sagaria, 1975).
 
 + Numerical estimation is more accurate than graphical estimation for exponential curves. 
 + No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
-+ Instruction on exponential growth reduced the underestimation (Jones, 1977; Wagenaar &amp; Sagaria, 1975). 
-+ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon &amp; Wearing, 1991).
++ Instruction on exponential growth reduced the underestimation (Jones, 1979; Wagenaar and Sagaria, 1975). 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon and Wearing, 1991).
 
 **Can log transforming the data help?**
 
@@ -590,7 +596,7 @@ class:inverse
 ---
 class:primary
 # Subjective Judgment in Statistical Analysis
-## Finney (1951)
+## (Finney, 1951)
 
 .pull-left[
 + **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected iwth dose-response relationships.
@@ -607,7 +613,7 @@ class:primary
 ---
 class:primary
 # Scientistis have always had sass!
-[(Subjective Judgment in Statistical Analysis: An Experimental Study; D. J. Finney, 1951)](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1951.tb00093.x)
+## (Finney, 1951)
 &lt;font size="6"&gt;
 .small[
 + "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.)
@@ -628,7 +634,7 @@ class:primary
 ---
 class:primary
 # Eye Fitting Straight Lines
-## Mosteller et al. (1981)
+## (Mosteller, Siegel, Trapido, et al., 1981)
 .pull-left[
 + **Big Idea:** Students fitted lines by eye to four sets of points.
 + **Method:** 8.5 x 11 inch transparency with a straight line etched completely across the
@@ -652,17 +658,20 @@ middle.
 ---
 class:primary
 # You Draw It Feature 
-## New York Times (2015)
+## (New York Times, 2015)
 .pull-left[
 &lt;img src="images/nyt-caraccidents-frame4.png" width="95%"/&gt;
+.center[
+(Katz, 2017)
+]
 ].pull-right[
 
 Readers are asked to input their own assumptions about various metrics and
 compare how these assumptions relate to reality.
 
-+ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html)
-+ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html)
-+ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0)
++ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) (Aisch, Cox, and Quealy, 2015)
++ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) (Katz, 2017)
++ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) (Buchanan, Park, and Pearce, 2017)
 
 The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their computer mouse.
 ]
@@ -698,12 +707,21 @@ class:primary
 
 ---
 class:primary
-# Relationship between D3 and R
-The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
+# Relationship between D3 and R 
+
+.pull-left[
+The `r2d3` package (Luraschi and Allaire, 2018) in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
 + RMarkdown with HTML output
 + Shiny applications (amazing!)
 
+].pull-right[
+.center[ 
+ &lt;img src="images/r2d3-hex.png" width="40%"/&gt;
+]
+]
+
 `r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
 --
 &lt;!-- The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. --&gt;
 &lt;!-- A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code.  --&gt;
@@ -711,8 +729,8 @@ The `r2d3` package in R provides an efficient integration of D3 visuals and R by
 **How?**
 + Converts data in R to JSON that can be interpreted by JavaScript
 + Sources D3 code library
-+ Creates plot container (svg is default)
-+ Renders plot object using JavaScript and CSS files called in r2d3 call
++ Creates plot container (svg)
++ Renders plot using source code
 ].right-plot[
 
 ```r
@@ -1084,7 +1102,7 @@ where `\(\beta\)`, determines the rate of exponential growth, and `\(e_i \sim N(
 
 A nonlinear least squares regression is then fit to the simulated points:
 `\begin{equation}
-\hat y_{m,NLS} = = e^{\hat \beta_{NLS} x_m}
+\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
 \end{equation}`
 
 Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
@@ -1337,7 +1355,7 @@ Participants were presented a cost volume profit graph with two crossing lines (
 ].pull-right[
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgamerpoggendorffillusion' src='images/amer-poggendorff-illusion.png' alt=' ' width='80%'&gt;
+&lt;img id='imgamerpoggendorffillusion' src='images/amer-poggendorff-illusion.png' alt='(Amer, 2005)' width='80%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalamerpoggendorffillusion' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -1357,7 +1375,7 @@ Participants were presented a cost volume profit graph with two crossing lines (
 ---
 class:primary
 # Phrasing of Estimation Questions
-Dunn (1988), assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
+Dunn (1988) assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
 + informed that the experiment was designed to test the ability of individuals to "read" or "decode" statistical maps.
 + shown two maps, an unclassed choropleth map and a framed rectangle chart, indicating the murder rate of each US state.
 + asked to **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
@@ -1365,7 +1383,7 @@ Dunn (1988), assessed the relative accuracy with which quantitative information 
 
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgframedmurderratemap' src='images/framed-murder-rate-map.png' alt=' ' width='60%'&gt;
+&lt;img id='imgframedmurderratemap' src='images/framed-murder-rate-map.png' alt='(Dunn, 1988)' width='60%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalframedmurderratemap' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -1387,72 +1405,32 @@ class:primary
 3. Analyze final data sets of all three studies.
 
 .center[
-&lt;img src="images/drawing.gif" width="60%"/&gt;
+&lt;img src="images/drawing.gif" width="55%"/&gt;
+&lt;font size="2"&gt;
+Image source: https://coreyegbert.com/
+&lt;/font&gt;
 ]
 
 ---
 class:primary
 # References
 &lt;font size="2"&gt;
-&lt;p&gt;&lt;cite&gt;Buja, A., D. Cook, H. Hofmann, et al.
-(2009).
-&amp;ldquo;Statistical inference for exploratory data analysis and model diagnostics&amp;rdquo;.
-En.
-In: &lt;em&gt;Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences&lt;/em&gt; 367.1906, pp. 4361&amp;ndash;4383.
-ISSN: 1364-503X, 1471-2962.
-DOI: &lt;a href="https://doi.org/10.1098/rsta.2009.0120"&gt;10.1098/rsta.2009.0120&lt;/a&gt;.
-URL: &lt;a href="https://royalsocietypublishing.org/doi/10.1098/rsta.2009.0120"&gt;https://royalsocietypublishing.org/doi/10.1098/rsta.2009.0120&lt;/a&gt; (visited on Oct. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-Aisch_NYTimes_presidential_forecast'&gt;&lt;/a&gt;&lt;a href="#cite-Aisch_NYTimes_presidential_forecast"&gt;Aisch, G., N. Cohn, A. Cox, et al.&lt;/a&gt;
+(2016).
+&lt;em&gt;Live Presidential Forecast&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/elections/2016/forecast/president"&gt;https://www.nytimes.com/elections/2016/forecast/president&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Burn-Murdoch, J., C. Nevitt, C. Tilford, et al.
-(2020).
-&lt;em&gt;Coronavirus tracked: has the epidemic peaked near you?&lt;/em&gt;
-URL: &lt;a href="https://ig.ft.com/coronavirus-chart/?areas=eur"&gt;https://ig.ft.com/coronavirus-chart/?areas=eur&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-aisch_cox_quealy_2015'&gt;&lt;/a&gt;&lt;a href="#cite-aisch_cox_quealy_2015"&gt;Aisch, G., A. Cox, and K. Quealy&lt;/a&gt;
+(2015).
+&lt;em&gt;You Draw It: How Family Income Predicts Children's College Chances&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html"&gt;https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Finney, D. J.
-(1951).
-&amp;ldquo;Subjective Judgment in Statistical Analysis: An Experimental Study&amp;rdquo;.
-In: &lt;em&gt;Journal of the Royal Statistical Society. Series B (Methodological)&lt;/em&gt; 13.2. Publisher: [Royal Statistical Society, Wiley], pp. 284&amp;ndash;297.
-ISSN: 0035-9246.
-URL: &lt;a href="https://www.jstor.org/stable/2984070"&gt;https://www.jstor.org/stable/2984070&lt;/a&gt; (visited on Mar. 31, 2021).&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-amer2005bias'&gt;&lt;/a&gt;&lt;a href="#cite-amer2005bias"&gt;Amer, T.&lt;/a&gt;
+(2005).
+&amp;ldquo;Bias due to visual illusion in the graphical presentation of accounting information&amp;rdquo;.
+In: &lt;em&gt;Journal of Information Systems&lt;/em&gt; 19.1, pp. 1&amp;ndash;18.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Hofmann, H., L. Follett, M. Majumder, et al.
-(2012).
-&amp;ldquo;Graphical Tests for Power Comparison of Competing Designs&amp;rdquo;.
-En.
-In: &lt;em&gt;IEEE Transactions on Visualization and Computer Graphics&lt;/em&gt; 18.12, pp. 2441&amp;ndash;2448.
-ISSN: 1077-2626.
-DOI: &lt;a href="https://doi.org/10.1109/TVCG.2012.230"&gt;10.1109/TVCG.2012.230&lt;/a&gt;.
-URL: &lt;a href="http://ieeexplore.ieee.org/document/6327249/"&gt;http://ieeexplore.ieee.org/document/6327249/&lt;/a&gt; (visited on Apr. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;cite&gt;Lewandowsky, S. and I. Spence
-(1989).
-&amp;ldquo;The Perception of Statistical Graphs&amp;rdquo;.
-En.
-In: &lt;em&gt;Sociological Methods &amp;amp; Research&lt;/em&gt; 18.2-3, pp. 200&amp;ndash;242.
-ISSN: 0049-1241, 1552-8294.
-DOI: &lt;a href="https://doi.org/10.1177/0049124189018002002"&gt;10.1177/0049124189018002002&lt;/a&gt;.
-URL: &lt;a href="http://journals.sagepub.com/doi/10.1177/0049124189018002002"&gt;http://journals.sagepub.com/doi/10.1177/0049124189018002002&lt;/a&gt; (visited on May. 29, 2020).&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;cite&gt;Mosteller, F., A. F. Siegel, E. Trapido, et al.
-(1981).
-&amp;ldquo;Eye fitting straight lines&amp;rdquo;.
-In: &lt;em&gt;The American Statistician&lt;/em&gt; 35.3, pp. 150&amp;ndash;152.&lt;/cite&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;cite&gt;VanderPlas, S. and H. Hofmann
-(2017).
-&amp;ldquo;Clusters Beat Trend!? Testing Feature Hierarchy in Statistical Graphics&amp;rdquo;.
-En.
-In: &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt; 26.2, pp. 231&amp;ndash;242.
-ISSN: 1061-8600, 1537-2715.
-DOI: &lt;a href="https://doi.org/10.1080/10618600.2016.1209116"&gt;10.1080/10618600.2016.1209116&lt;/a&gt;.
-URL: &lt;a href="https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116"&gt;https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116&lt;/a&gt; (visited on Feb. 28, 2020).&lt;/cite&gt;&lt;/p&gt;
-&lt;/font&gt;
-
----
-class:primary
-# References
-&lt;font size="2"&gt;
-&lt;p&gt;&lt;cite&gt;Best, L. A., L. D. Smith, and D. A. Stubbs
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-best_perception_2007'&gt;&lt;/a&gt;&lt;a href="#cite-best_perception_2007"&gt;Best, L. A., L. D. Smith, and D. A. Stubbs&lt;/a&gt;
 (2007).
 &amp;ldquo;Perception of Linear and Nonlinear Trends: Using Slope and Curvature Information to Make Trend Discriminations&amp;rdquo;.
 In: &lt;em&gt;Perceptual and Motor Skills&lt;/em&gt; 104.3. Publisher: SAGE Publications Inc, pp. 707&amp;ndash;721.
@@ -1460,7 +1438,148 @@ ISSN: 0031-5125.
 DOI: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;10.2466/pms.104.3.707-721&lt;/a&gt;.
 URL: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;https://doi.org/10.2466/pms.104.3.707-721&lt;/a&gt; (visited on Jul. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Romano, A., C. Sotis, G. Dominioni, et al.
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-buchanan_park_pearce_2017'&gt;&lt;/a&gt;&lt;a href="#cite-buchanan_park_pearce_2017"&gt;Buchanan, L., H. Park, and A. Pearce&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: What Got Better or Worse During Obama's Presidency&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"&gt;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-burnmurdoch_2020'&gt;&lt;/a&gt;&lt;a href="#cite-burnmurdoch_2020"&gt;Burn-Murdoch, J., C. Nevitt, C. Tilford, et al.&lt;/a&gt;
+(2020).
+&lt;em&gt;Coronavirus tracked: has the epidemic peaked near you?&lt;/em&gt;
+URL: &lt;a href="https://ig.ft.com/coronavirus-chart/?areas=eur"&gt;https://ig.ft.com/coronavirus-chart/?areas=eur&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-carlson2010psychology'&gt;&lt;/a&gt;&lt;a href="#cite-carlson2010psychology"&gt;Carlson, N. R.&lt;/a&gt;
+(2010).
+&lt;em&gt;Psychology: The science of behaviour&lt;/em&gt;.
+Pearson Education.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-chandar2012graph'&gt;&lt;/a&gt;&lt;a href="#cite-chandar2012graph"&gt;Chandar, N., D. Collier, and P. Miranti&lt;/a&gt;
+(2012).
+&amp;ldquo;Graph standardization and management accounting at AT&amp;amp;T during the 1920s&amp;rdquo;.
+In: &lt;em&gt;Accounting History&lt;/em&gt; 17.1, pp. 35&amp;ndash;62.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-dehaene2008log'&gt;&lt;/a&gt;&lt;a href="#cite-dehaene2008log"&gt;Dehaene, S., V. Izard, E. Spelke, et al.&lt;/a&gt;
+(2008).
+&amp;ldquo;Log or linear? Distinct intuitions of the number scale in Western and Amazonian indigene cultures&amp;rdquo;.
+In: &lt;em&gt;science&lt;/em&gt; 320.5880, pp. 1217&amp;ndash;1220.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-bavel_using_2020'&gt;&lt;/a&gt;&lt;a href="#cite-bavel_using_2020"&gt;Van Bavel, J. J., K. Baicker, P. S. Boggio, et al.&lt;/a&gt;
+(2020).
+&amp;ldquo;Using social and behavioural science to support COVID-19 pandemic response&amp;rdquo;.
+In: &lt;em&gt;Nature human behaviour&lt;/em&gt; 4.5, pp. 460&amp;ndash;471.&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-dunn1988framed'&gt;&lt;/a&gt;&lt;a href="#cite-dunn1988framed"&gt;Dunn, R.&lt;/a&gt;
+(1988).
+&amp;ldquo;Framed rectangle charts or statistical maps with shading: An experiment in graphical perception&amp;rdquo;.
+In: &lt;em&gt;The American Statistician&lt;/em&gt; 42.2, pp. 123&amp;ndash;129.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-fagen-ulmschneider_2020'&gt;&lt;/a&gt;&lt;a href="#cite-fagen-ulmschneider_2020"&gt;Fagen-Ulmschneider, W.&lt;/a&gt;
+(2020).
+&lt;em&gt;91-DIVOC&lt;/em&gt;.
+URL: &lt;a href="https://91-divoc.com/pages/covid-visualization/"&gt;https://91-divoc.com/pages/covid-visualization/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-fechner1860elemente'&gt;&lt;/a&gt;&lt;a href="#cite-fechner1860elemente"&gt;Fechner, G. T.&lt;/a&gt;
+(1860).
+&lt;em&gt;Elemente der psychophysik&lt;/em&gt;.
+Vol. 2.
+Breitkopf u. HÃ¤rtel.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-finney_subjective_1951'&gt;&lt;/a&gt;&lt;a href="#cite-finney_subjective_1951"&gt;Finney, D. J.&lt;/a&gt;
+(1951).
+&amp;ldquo;Subjective Judgment in Statistical Analysis: An Experimental Study&amp;rdquo;.
+In: &lt;em&gt;Journal of the Royal Statistical Society. Series B (Methodological)&lt;/em&gt; 13.2. Publisher: [Royal Statistical Society, Wiley], pp. 284&amp;ndash;297.
+ISSN: 0035-9246.
+URL: &lt;a href="https://www.jstor.org/stable/2984070"&gt;https://www.jstor.org/stable/2984070&lt;/a&gt; (visited on Mar. 31, 2021).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-global_epidemics_2021'&gt;&lt;/a&gt;&lt;a href="#cite-global_epidemics_2021"&gt;Global Epidemics&lt;/a&gt;
+(2021).
+&lt;em&gt;Risk Levels&lt;/em&gt;.
+URL: &lt;a href="https://globalepidemics.org/key-metrics-for-covid-suppression/"&gt;https://globalepidemics.org/key-metrics-for-covid-suppression/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-goldstein2016sensation'&gt;&lt;/a&gt;&lt;a href="#cite-goldstein2016sensation"&gt;Goldstein, E. B. and J. Brockmole&lt;/a&gt;
+(2016).
+&lt;em&gt;Sensation and perception&lt;/em&gt;.
+Cengage Learning.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-gouretski2007much'&gt;&lt;/a&gt;&lt;a href="#cite-gouretski2007much"&gt;Gouretski, V. and K. P. Koltermann&lt;/a&gt;
+(2007).
+&amp;ldquo;How much is the ocean really warming?&amp;rdquo;
+In: &lt;em&gt;Geophysical Research Letters&lt;/em&gt; 34.1.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-harms1991august'&gt;&lt;/a&gt;&lt;a href="#cite-harms1991august"&gt;Harms, H.&lt;/a&gt;
+(1991).
+&amp;ldquo;August Friedrich Wilhelm Crome (1753-1833) Autor begehrter Wirtschaftskarten&amp;rdquo;.
+In: &lt;em&gt;Cartographica Helvetica&lt;/em&gt; 3, pp. 33&amp;ndash;38.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-jones_generalized_1979'&gt;&lt;/a&gt;&lt;a href="#cite-jones_generalized_1979"&gt;Jones, G. V.&lt;/a&gt;
+(1979).
+&amp;ldquo;A generalized polynomial model for perception of exponential series&amp;rdquo;.
+En.
+In: &lt;em&gt;Perception &amp;amp; Psychophysics&lt;/em&gt; 25.3, pp. 232&amp;ndash;234.
+ISSN: 0031-5117, 1532-5962.
+DOI: &lt;a href="https://doi.org/10.3758/BF03202992"&gt;10.3758/BF03202992&lt;/a&gt;.
+URL: &lt;a href="http://link.springer.com/10.3758/BF03202992"&gt;http://link.springer.com/10.3758/BF03202992&lt;/a&gt; (visited on May. 19, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-katz_2017'&gt;&lt;/a&gt;&lt;a href="#cite-katz_2017"&gt;Katz, J.&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: Just How Bad Is the Drug Overdose Epidemic?&lt;/em&gt;
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html"&gt;https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-lewandowsky_perception_1989'&gt;&lt;/a&gt;&lt;a href="#cite-lewandowsky_perception_1989"&gt;Lewandowsky, S. and I. Spence&lt;/a&gt;
+(1989).
+&amp;ldquo;The Perception of Statistical Graphs&amp;rdquo;.
+En.
+In: &lt;em&gt;Sociological Methods &amp;amp; Research&lt;/em&gt; 18.2-3, pp. 200&amp;ndash;242.
+ISSN: 0049-1241, 1552-8294.
+DOI: &lt;a href="https://doi.org/10.1177/0049124189018002002"&gt;10.1177/0049124189018002002&lt;/a&gt;.
+URL: &lt;a href="http://journals.sagepub.com/doi/10.1177/0049124189018002002"&gt;http://journals.sagepub.com/doi/10.1177/0049124189018002002&lt;/a&gt; (visited on May. 29, 2020).&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-luraschi_r2d3'&gt;&lt;/a&gt;&lt;a href="#cite-luraschi_r2d3"&gt;Luraschi, J. and J. Allaire&lt;/a&gt;
+(2018).
+&lt;em&gt;r2d3: Interface to 'D3' Visualizations&lt;/em&gt;.
+R package version 0.2.3.
+URL: &lt;a href="https://CRAN.R-project.org/package=r2d3"&gt;https://CRAN.R-project.org/package=r2d3&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-mackinnon_feedback_1991'&gt;&lt;/a&gt;&lt;a href="#cite-mackinnon_feedback_1991"&gt;Mackinnon, A. J. and A. J. Wearing&lt;/a&gt;
+(1991).
+&amp;ldquo;Feedback and the forecasting of exponential change&amp;rdquo;.
+En.
+In: &lt;em&gt;Acta Psychologica&lt;/em&gt; 76.2, pp. 177&amp;ndash;191.
+ISSN: 00016918.
+DOI: &lt;a href="https://doi.org/10.1016/0001-6918(91)90045-2"&gt;10.1016/0001-6918(91)90045-2&lt;/a&gt;.
+URL: &lt;a href="https://linkinghub.elsevier.com/retrieve/pii/0001691891900452"&gt;https://linkinghub.elsevier.com/retrieve/pii/0001691891900452&lt;/a&gt; (visited on May. 19, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-mosteller_eye_1981'&gt;&lt;/a&gt;&lt;a href="#cite-mosteller_eye_1981"&gt;Mosteller, F., A. F. Siegel, E. Trapido, et al.&lt;/a&gt;
+(1981).
+&amp;ldquo;Eye fitting straight lines&amp;rdquo;.
+In: &lt;em&gt;The American Statistician&lt;/em&gt; 35.3, pp. 150&amp;ndash;152.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-munroe_2005'&gt;&lt;/a&gt;&lt;a href="#cite-munroe_2005"&gt;Munroe, R.&lt;/a&gt;
+(2005).
+&lt;em&gt;Log Scale&lt;/em&gt;.
+URL: &lt;a href="https://xkcd.com/1162/"&gt;https://xkcd.com/1162/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-myers_dewall_2021'&gt;&lt;/a&gt;&lt;a href="#cite-myers_dewall_2021"&gt;Myers, D. G. and C. N. DeWall&lt;/a&gt;
+(2021).
+&lt;em&gt;Psychology&lt;/em&gt;.
+Worth Publishers.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-playfair1801statistical'&gt;&lt;/a&gt;&lt;a href="#cite-playfair1801statistical"&gt;Playfair, W.&lt;/a&gt;
+(1801).
+&amp;ldquo;The statistical breviary; shewing, on a principle entirely new, the resources of every state and kingdom in Europe, Wallis, Londres&amp;rdquo;.
+In: &lt;em&gt;Press, Chicago&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-romano_scale_2020'&gt;&lt;/a&gt;&lt;a href="#cite-romano_scale_2020"&gt;Romano, A., C. Sotis, G. Dominioni, et al.&lt;/a&gt;
 (2020).
 &lt;em&gt;The Scale of COVID-19 Graphs Affects Understanding, Attitudes, and Policy Preferences&lt;/em&gt;.
 En.
@@ -1469,12 +1588,17 @@ Rochester, NY: Social Science Research Network.
 DOI: &lt;a href="https://doi.org/10.2139/ssrn.3588511"&gt;10.2139/ssrn.3588511&lt;/a&gt;.
 URL: &lt;a href="https://papers.ssrn.com/abstract=3588511"&gt;https://papers.ssrn.com/abstract=3588511&lt;/a&gt; (visited on Nov. 30, 2020).&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Rost, L. C.
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-rost_2020'&gt;&lt;/a&gt;&lt;a href="#cite-rost_2020"&gt;Rost, L. C.&lt;/a&gt;
 (2020).
 &lt;em&gt;You've informed the public with visualizations about the coronavirus. Thank you.&lt;/em&gt;
 URL: &lt;a href="https://blog.datawrapper.de/coronavirus-data-visualization-effect-datawrapper/"&gt;https://blog.datawrapper.de/coronavirus-data-visualization-effect-datawrapper/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Siegler, R. S. and D. W. Braithwaite
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-shah1995conceptual'&gt;&lt;/a&gt;&lt;a href="#cite-shah1995conceptual"&gt;Shah, P. and P. A. Carpenter&lt;/a&gt;
+(1995).
+&amp;ldquo;Conceptual limitations in comprehending line graphs.&amp;rdquo;
+In: &lt;em&gt;Journal of Experimental Psychology: General&lt;/em&gt; 124.1, p. 43.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-siegler_numerical_2017'&gt;&lt;/a&gt;&lt;a href="#cite-siegler_numerical_2017"&gt;Siegler, R. S. and D. W. Braithwaite&lt;/a&gt;
 (2017).
 &amp;ldquo;Numerical Development&amp;rdquo;.
 En.
@@ -1482,8 +1606,27 @@ In: &lt;em&gt;Annual Review of Psychology&lt;/em&gt; 68.1, pp. 187&amp;ndash;213
 ISSN: 0066-4308, 1545-2085.
 DOI: &lt;a href="https://doi.org/10.1146/annurev-psych-010416-044101"&gt;10.1146/annurev-psych-010416-044101&lt;/a&gt;.
 URL: &lt;a href="http://www.annualreviews.org/doi/10.1146/annurev-psych-010416-044101"&gt;http://www.annualreviews.org/doi/10.1146/annurev-psych-010416-044101&lt;/a&gt; (visited on May. 19, 2020).&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
 
-&lt;p&gt;&lt;cite&gt;Unwin, A.
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-silver538_2020'&gt;&lt;/a&gt;&lt;a href="#cite-silver538_2020"&gt;Silver, N.&lt;/a&gt;
+(2020).
+&lt;em&gt;2020 Election Forecast&lt;/em&gt;.
+URL: &lt;a href="https://projects.fivethirtyeight.com/2020-election-forecast/"&gt;https://projects.fivethirtyeight.com/2020-election-forecast/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-spence_visual_1990'&gt;&lt;/a&gt;&lt;a href="#cite-spence_visual_1990"&gt;Spence, I.&lt;/a&gt;
+(1990).
+&amp;ldquo;Visual psychophysics of simple graphical elements.&amp;rdquo;
+En.
+In: &lt;em&gt;Journal of Experimental Psychology: Human Perception and Performance&lt;/em&gt; 16.4, pp. 683&amp;ndash;692.
+ISSN: 1939-1277, 0096-1523.
+DOI: &lt;a href="https://doi.org/10.1037/0096-1523.16.4.683"&gt;10.1037/0096-1523.16.4.683&lt;/a&gt;.
+URL: &lt;a href="http://doi.apa.org/getdoi.cfm?doi=10.1037/0096-1523.16.4.683"&gt;http://doi.apa.org/getdoi.cfm?doi=10.1037/0096-1523.16.4.683&lt;/a&gt; (visited on May. 29, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-unwin_why_2020'&gt;&lt;/a&gt;&lt;a href="#cite-unwin_why_2020"&gt;Unwin, A.&lt;/a&gt;
 (2020).
 &amp;ldquo;Why is Data Visualization Important? What is Important in Data Visualization?&amp;rdquo;
 En.
@@ -1491,7 +1634,12 @@ In: &lt;em&gt;Harvard Data Science Review&lt;/em&gt;.
 DOI: &lt;a href="https://doi.org/10.1162/99608f92.8ae4d525"&gt;10.1162/99608f92.8ae4d525&lt;/a&gt;.
 URL: &lt;a href="https://hdsr.mitpress.mit.edu/pub/zok97i7p"&gt;https://hdsr.mitpress.mit.edu/pub/zok97i7p&lt;/a&gt; (visited on Apr. 27, 2020).&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;Varshney, L. R. and J. Z. Sun
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-vanderplas2020testing'&gt;&lt;/a&gt;&lt;a href="#cite-vanderplas2020testing"&gt;Vanderplas, S., D. Cook, and H. Hofmann&lt;/a&gt;
+(2020).
+&amp;ldquo;Testing Statistical Charts: What makes a good graph?&amp;rdquo;
+In: &lt;em&gt;Annual Review of Statistics and Its Application&lt;/em&gt; 7, pp. 61&amp;ndash;88.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-varshney_why_2013'&gt;&lt;/a&gt;&lt;a href="#cite-varshney_why_2013"&gt;Varshney, L. R. and J. Z. Sun&lt;/a&gt;
 (2013).
 &amp;ldquo;Why do we perceive logarithmically?&amp;rdquo;
 En.
@@ -1499,7 +1647,39 @@ In: &lt;em&gt;Significance&lt;/em&gt; 10.1, pp. 28&amp;ndash;31.
 ISSN: 17409705.
 DOI: &lt;a href="https://doi.org/10.1111/j.1740-9713.2013.00636.x"&gt;10.1111/j.1740-9713.2013.00636.x&lt;/a&gt;.
 URL: &lt;a href="http://doi.wiley.com/10.1111/j.1740-9713.2013.00636.x"&gt;http://doi.wiley.com/10.1111/j.1740-9713.2013.00636.x&lt;/a&gt; (visited on May. 07, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-vonbergmann_2021'&gt;&lt;/a&gt;&lt;a href="#cite-vonbergmann_2021"&gt;Von
+Bergmann, J.&lt;/a&gt;
+(2021).
+&lt;em&gt;xkcd_exponential: Public Health vs Scientists&lt;/em&gt;.
+URL: &lt;a href="https://github.com/mountainMath/xkcd_exponential"&gt;https://github.com/mountainMath/xkcd_exponential&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-wagenaar_misperception_1975'&gt;&lt;/a&gt;&lt;a href="#cite-wagenaar_misperception_1975"&gt;Wagenaar, W. A. and S. D. Sagaria&lt;/a&gt;
+(1975).
+&amp;ldquo;Misperception of exponential growth&amp;rdquo;.
+En.
+In: &lt;em&gt;Perception &amp;amp; Psychophysics&lt;/em&gt; 18.6, pp. 416&amp;ndash;422.
+ISSN: 0031-5117, 1532-5962.
+DOI: &lt;a href="https://doi.org/10.3758/BF03204114"&gt;10.3758/BF03204114&lt;/a&gt;.
+URL: &lt;a href="http://link.springer.com/10.3758/BF03204114"&gt;http://link.springer.com/10.3758/BF03204114&lt;/a&gt; (visited on Jul. 07, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-walker2013statistical'&gt;&lt;/a&gt;&lt;a href="#cite-walker2013statistical"&gt;Walker, F. A.&lt;/a&gt;
+(2013).
+&lt;em&gt;Statistical atlas of the United States based on the results of the ninth census 1870 with contributions from many eminent men of science and several departments of the government&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-wilkinson2012grammar'&gt;&lt;/a&gt;&lt;a href="#cite-wilkinson2012grammar"&gt;Wilkinson, L.&lt;/a&gt;
+(2012).
+&amp;ldquo;The grammar of graphics&amp;rdquo;.
+In: 
+&lt;em&gt;Handbook of computational statistics&lt;/em&gt;.
+Springer, pp. 375&amp;ndash;414.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-yates1985graphs'&gt;&lt;/a&gt;&lt;a href="#cite-yates1985graphs"&gt;Yates, J.&lt;/a&gt;
+(1985).
+&amp;ldquo;Graphs as a managerial tool: A case study of Du Pont's use of graphs in the early twentieth century&amp;rdquo;.
+In: &lt;em&gt;The Journal of Business Communication (1973)&lt;/em&gt; 22.1, pp. 5&amp;ndash;33.&lt;/cite&gt;&lt;/p&gt;
 &lt;/font&gt;
+
 ---
 class:inverse
 &lt;br&gt;
@@ -1628,7 +1808,7 @@ large.
 
 + Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
 
-+ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, 2007). 
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, Smith, and Stubbs, 2007).
 ]
 .pull-right[
 &lt;!-- Trigger the Modal --&gt;
