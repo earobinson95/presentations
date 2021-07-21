@@ -349,7 +349,7 @@ class:primary
 # Motivation
 
 .pull-left[
-Data visualizations played an important role in during the **COVID-19 pandemic** (Rost, 2020; Romano, Sotis, Dominioni, et al., 2020; Van Bavel, Baicker, Boggio, et al., 2020).
+Data visualizations played an important role in during the **COVID-19 pandemic** (Rost, 2020; Romano, Alessandro, Sotis, Chiara, Dominioni, Goran, et al., 2020; Van Bavel, Jay J, Baicker, Katherine, Boggio, Paulo S, et al., 2020).
 
 Dashboards displayed:
 + case counts.
@@ -382,9 +382,9 @@ Dashboards displayed:
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions (Rost, 2020).
 
 .pull-left[
-+ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Sotis, Dominioni, et al., 2020).
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic (Romano, Alessandro, Sotis, Chiara, Dominioni, Goran, et al., 2020).
 + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-+ Facilitated communication with the public to increase compliance (Van Bavel, Baicker, Boggio, et al., 2020).  
++ Facilitated communication with the public to increase compliance (Van Bavel, Jay J, Baicker, Katherine, Boggio, Paulo S, et al., 2020).  
 
 ---
 class:primary
@@ -425,11 +425,10 @@ class:primary
 Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
 
 .center[
-&lt;img src="images/log-numberline.png" width="90%"/&gt;
+&lt;img src="images/log-numberline.png" width="100%"/&gt;
 ]
 
-
-+ **Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
+**Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
 
 ???
 
@@ -473,23 +472,23 @@ class:primary
 
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
+&lt;img id='imgcovid19FTlinear' src='images/covid19-FT-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
 &lt;!-- The Modal --&gt;
-&lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
+&lt;div id='modalcovid19FTlinear' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalcovid19FTcasecount06'&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlinear'&gt;
   &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captioncovid19FTcasecount06' class='modal-caption'&gt;&lt;/div&gt;
+  &lt;div id='captioncovid19FTlinear' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FTcasecount06' src='images/covid19-FT-case-count-06.30.2020-log.PNG' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
+&lt;img id='imgcovid19FTlog' src='images/covid19-FT-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
 &lt;!-- The Modal --&gt;
-&lt;div id='modalcovid19FTcasecount06' class='modal'&gt;
+&lt;div id='modalcovid19FTlog' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalcovid19FTcasecount06'&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlog'&gt;
   &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captioncovid19FTcasecount06' class='modal-caption'&gt;&lt;/div&gt;
+  &lt;div id='captioncovid19FTlog' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
 ]
@@ -542,7 +541,6 @@ class:primary
 
     - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
 
-
 ---
 class:primary
 # Underestimation of Exponential Growth
@@ -568,11 +566,6 @@ class:primary
 
 Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1979; Mackinnon and Wearing, 1991; Wagenaar and Sagaria, 1975).
 
-+ Numerical estimation is more accurate than graphical estimation for exponential curves. 
-+ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
-+ Instruction on exponential growth reduced the underestimation (Jones, 1979; Wagenaar and Sagaria, 1975). 
-+ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon and Wearing, 1991).
-
 **Can log transforming the data help?**
 
 + Maybe, but are there consequences? 
@@ -580,11 +573,12 @@ Estimation and prediction of **exponential growth is underestimated** when prese
 
 ???
 
-+ Results indicated that numerical estimation is more accurate than graphical estimation for exponential curves. Experimental studies were conducted in order to determine strategies to improve the accuracy of estimation of exponential growth (Jones, 1977; Mackinnon &amp; Wearing, 1991; Wagenaar &amp; Sagaria, 1975). There was no improvement in estimation found when participants had contextual knowledge or experience with exponential growth, but instruction on exponential growth reduced the
-underestimation; participants adjusted their initial starting value but not their
-perception of the growth rate (Jones, 1977; Wagenaar &amp; Sagaria, 1975). Mackinnon
-&amp; Wearing (1991) found that estimation was improved by providing immediate
-feedback to participants about the accuracy of their current predictions.
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically (Jones, 1979; Mackinnon and Wearing, 1991; Wagenaar and Sagaria, 1975).
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves.
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation (Jones, 1979; Wagenaar and Sagaria, 1975). 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions (Mackinnon and Wearing, 1991).
 
 ---
 class:inverse
@@ -606,37 +600,40 @@ class:primary
 ## (Finney, 1951)
 
 .pull-left[
-+ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected iwth dose-response relationships.
-+ **Method:** Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay. Sent out by mail, asked to "rule two lines."
++ **Big Idea:** Determine the effect of stopping iterative calculations after one iteration based on starting values of the pair of *parallel* probit regression lines judged by eye.
++ **Method:** Sent out by mail, asked to "rule two lines."
 + **Sample:** 21 scientists
-+ **Findings:** One cycle of iterations for calculating the relative potency was sufficient based on the starting values provided by eye from the participants.
++ **Findings:** One cycle of iterations was sufficient.
 ].pull-right[
 &lt;img src="images/subjective-judgement-plot.png" width="75%"/&gt;
 ]
 
 ???
-+ The subjects for this study were deliberately chosen as. having no' experience of probit methods.
++ **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected with dose-response relationships.
++ **Method:** Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay. Sent out by mail, asked to "rule two lines."
++ **Sample:** 21 scientists
++ **Findings:** One cycle of iterations for calculating the relative potency was sufficient based on the starting values provided by eye from the participants.
 
----
-class:primary
-# Scientistis have always had sass!
-## (Finney, 1951)
-&lt;font size="6"&gt;
-.small[
-+ "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.)
+&lt;!-- --- --&gt;
+&lt;!-- class:primary --&gt;
+&lt;!-- # Scientistis have always had sass! --&gt;
+&lt;!-- ## (Finney, 1951) --&gt;
+&lt;!-- &lt;font size="6"&gt; --&gt;
+&lt;!-- .small[ --&gt;
+&lt;!-- + "No one in their right senses could draw 2 parallel lines through the points in question, but I've done my best to comply with your request as I understand it. **Certainly I did not use my intelligence**". (No. 2.) --&gt;
 
-+ "Where fact and theory are so at variance one guess is as good as another-so here goes. The job might have been easier if S.E. of individual points was known!" (No. 9.) 
+&lt;!-- + "Where fact and theory are so at variance one guess is as good as another-so here goes. The job might have been easier if S.E. of individual points was known!" (No. 9.)  --&gt;
 
-+ "I should-say that the points were not on two parallel straight lines, and that was that!" (No. 11.) 
-+ "The line through the x points is of course easy to draw. But I had to overcome considerable intellectual resistance before I could bring myself to draw a parallel line for the 0 points". (No. 14.) 
+&lt;!-- + "I should-say that the points were not on two parallel straight lines, and that was that!" (No. 11.)  --&gt;
+&lt;!-- + "The line through the x points is of course easy to draw. But I had to overcome considerable intellectual resistance before I could bring myself to draw a parallel line for the 0 points". (No. 14.)  --&gt;
 
-+ "**What fun! But I don't believe a word of it.** The only thing is either (a) to do the experiment again or (b) revise the theory". (No. 18.) 
+&lt;!-- + "**What fun! But I don't believe a word of it.** The only thing is either (a) to do the experiment again or (b) revise the theory". (No. 18.)  --&gt;
 
-+ **"If, as an experimental scientist, an experiment of mine produced a set of data such as you provided I should at once do the experiment again!"** (No. -20-a chemist.) 
+&lt;!-- + **"If, as an experimental scientist, an experiment of mine produced a set of data such as you provided I should at once do the experiment again!"** (No. -20-a chemist.)  --&gt;
 
-+ "What I would really like to draw are 2 lines which are far from parallel!" (No. 21.)
-]
-&lt;/font&gt;
+&lt;!-- + "What I would really like to draw are 2 lines which are far from parallel!" (No. 21.) --&gt;
+&lt;!-- ] --&gt;
+&lt;!-- &lt;/font&gt; --&gt;
 
 ---
 class:primary
@@ -644,11 +641,10 @@ class:primary
 ## (Mosteller, Siegel, Trapido, et al., 1981)
 .pull-left[
 + **Big Idea:** Students fitted lines by eye to four sets of points.
-+ **Method:** 8.5 x 11 inch transparency with a straight line etched completely across the
-middle.
++ **Method:** 8.5 x 11 inch transparency with a straight line etched across the middle.
 + **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
-+ **Experimental Design:** Latin square with packets stapled in four different orders.
-+ **Findings:** Students tended to fit the slope of the first principal component over the slope of the ordinary least squares regression line.
++ **Experimental Design:** Latin square.
++ **Findings:** Students tended to fit the slope of the first principal component.
 ].pull-right[
 &lt;img src="images/eyefitting-straight-lines-plots.png" width="95%"/&gt;
 ]
@@ -667,7 +663,7 @@ class:primary
 # You Draw It Feature 
 ## (New York Times, 2015)
 .pull-left[
-&lt;img src="images/nyt-caraccidents-frame4.png" width="95%"/&gt;
+&lt;img src="images/nyt-caraccidents-frame4.png" width="100%"/&gt;
 .center[
 (Katz, 2017)
 ]
@@ -679,9 +675,11 @@ compare how these assumptions relate to reality.
 + [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) (Aisch, Cox, and Quealy, 2015)
 + [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) (Katz, 2017)
 + [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) (Buchanan, Park, and Pearce, 2017)
+]
+
+???
 
 The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
-]
 
 ---
 class:primary
@@ -809,17 +807,13 @@ class:primary
 Two sub-studies:
 
 1. **Eye Fitting Straight Lines in the Modern Era**
-  + Aims to establish and validate 'you draw it' as a tool for measuring predictions of trends fitted by eye and a method for testing graphics. 
+  + Validate 'you draw it' as a tool for measuring predictions of trends fitted by eye and a method for testing graphics.
   + Replicated experiment and results found in Mosteller et al. (1981).
+  
 2. **Prediction of Exponentially Increasing Trends**
   + Test an individuals' ability to make predictions for exponentially increasing data on both the log and linear scales.
 
-All subjects' participated in both sub-studies at the same time in conjunction with one another.
-
-+ Participants completed the experiment using a RShiny application found [**here.**](https://shiny.srvanderplas.com/you-draw-it/)
-+ Participants were recruited through Twitter, Reddit, and direct
-email during May 2021 *(you may have been one!* 😄*)*.
-+ A total of 39 individuals completed 256 unique you draw it task plots.
+A total of 39 individuals completed 256 unique you draw it task plots.
 
 ---
 class:inverse
@@ -857,17 +851,11 @@ An ordinary least squares regression is then fit to the simulated points:
 \hat y_{k,OLS} = \hat\beta_{0,OLS} + \hat\beta_{1,OLS} x_k
 \end{equation}`
 
-Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
-
 ---
 class:primary
 # Treatment Design
 .pull-left[
-Replicated the data sets from Mosteller et al. (1981).
-+ **F:** positive slope; a large variance; `\(x \in [0, 20]\)`. 
-+ **N:** negative slope; large variance; `\(x \in [0, 20]\)`. 
-+ **S:** positive slope; small variance; `\(x \in [0, 20]\)`. 
-+ **V:** steep positive slope; small variance; `\(x \in [4, 16]\)`. 
+Replicated the four data sets from Mosteller et al. (1981).
 
 Consistent aesthetic design choices:
 + aspect ratio set to one.
@@ -883,9 +871,13 @@ Consistent aesthetic design choices:
   &lt;!-- Modal Caption (Image Text) --&gt;
   &lt;div id='captioneyefittingexamplesimplot' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
-
-
 ]
+
+???
++ **F:** positive slope; a large variance; `\(x \in [0, 20]\)`. 
++ **N:** negative slope; large variance; `\(x \in [0, 20]\)`. 
++ **S:** positive slope; small variance; `\(x \in [0, 20]\)`. 
++ **V:** steep positive slope; small variance; `\(x \in [4, 16]\)`. 
 
 ---
 class:primary
@@ -893,13 +885,12 @@ class:primary
 
 .pull-left[
 
-Fitted points, `\((x_k, \hat y_{k,PCA})\)` are calculated every 0.25 increment across the domain from the PCA regression equation:
+Fitted points, `\((x_k, \hat y_{k,PCA})\)` are calculated by:
 `\begin{equation}
 \hat y_{k,PCA} = \hat\beta_{0,PCA} + \hat\beta_{1,PCA} x_k
 \end{equation}`
 
 where
-+ rotation of coordinate axes from `princomp`
 + `\(\hat\beta_{1,PCA} = \frac{\text{PC1 Rotation in y-axis}}{\text{PC1 Rotation in x-axis}}\)`
 + `\(\hat\beta_{0,PCA}\)` calculated by the point-slope equation of a line using the mean of of the simulated points, `\((\bar x_i, \bar y_i)\)`.
 
@@ -916,9 +907,9 @@ where
 
 ]
 
-
-
 ???
+
++ rotation of coordinate axes from `princomp`
 
 ---
 class:primary
@@ -928,7 +919,10 @@ class:primary
 For each participant, the final data set used for analysis contains:
 + `\(x_{ijk}\)`, `\(y_{ijk,drawn}\)`, `\(\hat y_{ijk,OLS}\)`, `\(\hat y_{ijk,PCA}\)`  
 
-for parameter choice `\(i = 1,2,3,4\)`, j = `\(1,...N_{participant}\)`, and `\(x_{ijk}\)` value `\(k = 1, ...,4 x_{max} + 1\)`.
+for 
++ parameter choice `\(i = 1,2,3,4\)`, 
++ participant j = `\(1,...N_{participant}\)`
++ `\(x_{ijk}\)` value corresponding to increment `\(k = 1, ...,4 x_{max} + 1\)`.
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + `\(e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}\)`
@@ -945,8 +939,6 @@ Vertical residuals between the drawn and fitted values were calculated as:
   &lt;!-- Modal Caption (Image Text) --&gt;
   &lt;div id='captioneyefittingtrialplot' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
-
-
 ]
 
 ???
@@ -957,8 +949,6 @@ Analyses:
 ---
 class:primary
 # Linear Mixed Model
-Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
-
 The LMM equation for each fit (OLS and PCA) residuals is given by:
 `\begin{equation}
 e_{ijk,fit} = \left[\gamma_0 + \alpha_i\right] + \left[\gamma_{1} x_{ijk} + \gamma_{2i} x_{ijk}\right] + p_{j} + \epsilon_{ijk}
@@ -973,11 +963,13 @@ where
 + `\(x_{ijk}\)` is the x-value for the `\(i^{th}\)` parameter choice, `\(j^{th}\)` participant, and `\(k^{th}\)` increment
 + `\(p_{j} \sim N(0, \sigma^2_{participant})\)` is the random error due to the `\(j^{th}\)` participant's characteristics
 + `\(\epsilon_{ijk} \sim N(0, \sigma^2)\)` is the residual error.
+
+???
+Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
+
 ---
 class:primary
 # Generalized Additive Mixed Model
-Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
-
 The GAMM equation for each fit (OLS and PCA) residuals is given by:
 `\begin{equation}
 e_{ijk,fit} = \alpha_i + s_{i}(x_{ijk}) + p_{j} + s_{j}(x_{ijk})
@@ -991,10 +983,15 @@ where
 + `\(p_{j} \sim N(0, \sigma^2_{participant})\)` is the error due to participant variation
 + `\(s_{j}\)` is the random smoothing spline for each participant.
 
+???
+Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
+
 ---
 class:primary
-# Results
-
+# Residuals Trend Results
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 .center[
 &lt;!-- Trigger the Modal --&gt;
 &lt;img id='imgeyefittinglmerplot' src='images/eyefitting-lmer-plot.png' alt=' ' width='45%'&gt;
@@ -1016,23 +1013,18 @@ class:primary
 &lt;/div&gt;
 ]
 
-+ Estimated trends from PCA residuals (orange) appear to align closer to the `\(y=0\)` horizontal (dashed) line than the OLS residuals (blue). 
+???
++ Estimated trends from PCA residuals appear to align closer to the `\(y=0\)` horizontal (dashed) line than the OLS residuals. 
 + More prominent in parameter choices with large variances (F and N).
 + Consistent to results found in Mosteller et al. (1981).
-
-
-
 
 ---
 class:primary
 # Sum of Squares Analysis
 
-Sums of squares between the OLS residuals and PCA residuals were compared using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
-
 Define `\(SS_{ijk}\)` as the sums of squares for parameter choice `\(i = 1,2,3,4\)`, fit `\(j=1,2\)`, and participant `\(k = 1,...,N_{participant}\)`.
 
 The LMM equation is given by: 
-&lt;!-- \rh{in equation 3.4, have epsilon ijk, and on page 56 too.} --&gt;
 `\begin{equation}
 \log\left(SS_{ijk}\right) = \alpha_i + \beta_j + \alpha\beta_{ij} + p_{j} + \epsilon_{ijk}
 \end{equation}`
@@ -1043,31 +1035,37 @@ The LMM equation is given by:
 + `\(p_{j} \sim N(0, \sigma^2_{participant})\)` is the random error due to the `\(k^{th}\)` participant's characteristics
 + `\(\epsilon_{ijk} \sim N(0, \sigma^2)\)` is the residual error.
 
+???
+Sums of squares between the OLS residuals and PCA residuals were compared using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
 
 ---
 class:primary 
 # Sum of Squares Results
+&lt;br&gt;
+&lt;br&gt;
+.center[
+&lt;img src="images/eyefitting-ss-plot.jpg" width="80%"/&gt;
+]
+
+???
 
 + No significant effect of fit for any parameter choices.
 + Indication of the trend previously shown in the residual LMM and GAMM; not enough power to detect.
-.center[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgeyefittingssplot' src='images/eyefitting-ss-plot.jpg' alt=' ' width='80%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modaleyefittingssplot' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodaleyefittingssplot'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captioneyefittingssplot' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-]
-
-
 
 ---
 class:primary
 # Conclusion
 
+**Goal:** Establish you draw it as a tool for testing graphics.
+
+**Results:**
++ Estimated drawn trend-lines followed closer to the PCA than the OLS regression line.
++ Most prominent in parameter choices with large variances.
++ Consistent to those found in the previous study.
+
+**The reproducibility of these results serve as evidence of the reliability of the you draw it method.**
+
+???
 **Goal:** Establish you draw it as a tool for testing graphics.
 + Replicate results found in Eye Fitting Straight Lines (Mosteller et al., 1981). 
 
@@ -1103,7 +1101,10 @@ Data were simulated based on a one parameter exponential model with multiplicati
 y_i = e^{\beta x_i + e_i}
 \end{equation}`
 
-where `\(\beta\)`, determines the rate of exponential growth, and `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
+for 
+
++ growth rate `\(\beta\)`
++ `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
 
 **Line data:** `\(m = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS})\)`
 
@@ -1112,6 +1113,9 @@ A nonlinear least squares regression is then fit to the simulated points:
 \hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
 \end{equation}`
 
+???
++ `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
+
 Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
 
 ---
@@ -1119,16 +1123,15 @@ class:primary
 # Treatment Design
 
 .pull-left[
-Total of eight interactive plots:
-+ each **growth rate** parameter (low and high) was used to simulate data for `\(x\in [0,20]\)` then plotted with,
-+ **points truncated** at `\(50%\)` and `\(75%\)` of the domain and
-+ log and linear **scale**.
+2 x 2 x 2 factorial:
++ **growth rate:** low and high.
++ **points truncated:** `\(50\%\)` and `\(75\%\)` of the domain.
++ **scale:** log and linear.
 
 Consistent aesthetic design choices:
-+ aspect ratio of one
-+ y-axis extended `\(50\%\)` below and `\(200\%\)` above the simulated data range
-+ participants begin drawing at `\(50%\)` of the domain
-+ y-axis displayed on either the linear scale or log scale.
++ aspect ratio of one.
++ y-axis extended `\(50\%\)` below and `\(200\%\)` above the simulated data range.
++ participants begin drawing at `\(50\%\)` of the domain.
 
 ].pull-right[
 .center[
@@ -1238,13 +1241,9 @@ Vertical residuals between the drawn and fitted values were calculated as:
   &lt;div id='captionexpspaghettiplot' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
-
-
 ---
 class:primary 
 # Generalized Additive Mixed Model
-
-Allowing for flexibility, the bam function in the `mgcv` package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
 
 The GAMM equation for residuals is given by:
 `\begin{equation}
@@ -1260,11 +1259,17 @@ where
 + `\(p_{l} \sim N(0, \sigma^2_{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
 + `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
 
+???
+Allowing for flexibility, the bam function in the mgcv package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
+
 ---
 class:primary 
 # GAMM Results
+.center[
+&lt;img src="images/exp-gamm-plot.png" width="80%"/&gt;
+]
 
-.pull-left[
+???
 Predictions made on the **linear scale** (blue) deviate from the  `\(y=0\)` horizontal (dashed) line `\(\implies\)` **underestimation** of exponential growth.
 
 Predictions made on the **log scale** (orange) follow closely to the `\(y=0\)` horizontal (dashed) line `\(\implies\)` **more accurate** than trends predicted on the linear scale.
@@ -1273,34 +1278,22 @@ More prominent in high exponential growth rates.
 
 Underestimation begins after the aid of points is removed.
 
-].pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgexpgammplot' src='images/exp-gamm-plot.png' alt=' ' width='100%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modalexpgammplot' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalexpgammplot'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionexpgammplot' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-]
-
-
-
 ---
 class:primary 
 # Conclusion
 
-**Goal:** Using the 'You Draw It' method, test an individual's ability to make predictions for exponentially increasing data.
+**Goal:** Test an individual's ability to make predictions for exponentially increasing data.
 
 **Results:**
-+ Improvement in predictions were made for trends when participants were asked to draw a trend line on the log scale compared to the linear scale. 
++ Predictions made on the log scale were more accurate than those made on the linear scale. 
 + Strongly supported for high exponential growth rates.
-+ Improvement in predictions are made when points along the exponential trend are shown
-  + Indicated by the discrepancy in results for treatments with points truncated at `\(50\%\)` compared to `\(75\%\)` of the domain. 
++ Points shown along the trend improve predictions.
 
 **The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
 
+???
+  + Indicated by the discrepancy in results for treatments with points truncated at `\(50\%\)` compared to `\(75\%\)` of the domain. 
+  
 Further investigation is necessary to determine the implications of using log scales when translating exponential graphs to numerical values. 
 
 ---
@@ -1356,9 +1349,7 @@ class:primary
 # Phrasing of Estimation Questions
 
 .pull-left[
-Amer (2005) demonstrates that visual illusion may bias decision making and graph comprehension, even if the graphs are constructed according to best practice.
-
-Participants were presented a cost volume profit graph with two crossing lines (revenue and cost) and asked to **estimate** three values: 
+Amer (2005) presents a cost volume profit graph with two crossing lines and asks participants to **estimate** three values: 
 ].pull-right[
 .center[
 &lt;!-- Trigger the Modal --&gt;
@@ -1372,25 +1363,23 @@ Participants were presented a cost volume profit graph with two crossing lines (
 &lt;/div&gt;
 ]
 ]
-+ the **amount** of total revenues on the ordinate **corresponding to the endpoint** of the total-revenue line plotted on the graph. 
-  + `\(\implies\)` *estimate numeric value for a given x-value*.
-+ the **amount** of total costs on the ordinate **corresponding to the endpoint** of the total-cost line plotted on the graph.
++ the **amount** of total revenues/total costs on the ordinate **corresponding to the endpoint** of the total-revenue line plotted on the graph. 
   + `\(\implies\)` *estimate numeric value for a given x-value*.
 + the **amount** of costs/revenues on the ordinate at the **break even point**—the point where the two lines cross.
   + `\(\implies\)` *estimate numeric value based on a visual cue (lines crossing)*.
 
+???
+
 ---
 class:primary
 # Phrasing of Estimation Questions
-Dunn (1988) assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
-+ informed that the experiment was designed to test the ability of individuals to "read" or "decode" statistical maps.
-+ shown two maps, an unclassed choropleth map and a framed rectangle chart, indicating the murder rate of each US state.
-+ asked to **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
+Dunn (1988) presents two maps indicating the murder rate of each US state and asks participants to:
++ **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
   + `\(\implies\)` *judge color shade or component part to estimate numeric value.*
 
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgframedmurderratemap' src='images/framed-murder-rate-map.png' alt='(Dunn, 1988)' width='60%'&gt;
+&lt;img id='imgframedmurderratemap' src='images/framed-murder-rate-map.png' alt='(Dunn, 1988)' width='90%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalframedmurderratemap' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -1400,24 +1389,30 @@ Dunn (1988) assessed the relative accuracy with which quantitative information i
 &lt;/div&gt;
 ]
 
+???
+Dunn (1988) assessed the relative accuracy with which quantitative information is extracted from both types of charts. Participants were:
++ informed that the experiment was designed to test the ability of individuals to "read" or "decode" statistical maps.
++ shown two maps, an unclassed choropleth map and a framed rectangle chart, indicating the murder rate of each US state.
++ asked to **write down their estimate** of the murder rate as accurately as possible beside the 24 named states. 
+  + `\(\implies\)` *judge color shade or component part to estimate numeric value.*
+
 ---
 class:primary
 # Prolific Data Collection
 
-1. Develop and complete the pilot study for estimation task.
-2. Make any necessary adjustments to the experimental tasks based on pilot studies.
-3. Collect final data via [Prolific](https://app.prolific.co/studies) *(a crowd sourcing website similar to Amazon Turk)* for:
-  + a representative sample.
-  + consistency in participants across all studies.
-3. Analyze final data sets of all three studies.
+.pull-left[
+Future data collection: 
++ Develop and complete the pilot study for estimation task.
++ Make any necessary adjustments to the experimental tasks based on pilot studies.
++ Collect final data via [Prolific](https://app.prolific.co/studies).
 
+].pull-right[
 .center[
-&lt;img src="images/drawing.gif" width="55%"/&gt;
-&lt;font size="2"&gt;
-Image source: https://coreyegbert.com/
-&lt;/font&gt;
-]
+&lt;img src="images/prolific-log.png" width="50%"/&gt;
 
+[(Prolific studies)](https://app.prolific.co/studies)
+]
+]
 ---
 class:primary
 # References
@@ -1470,7 +1465,7 @@ In: &lt;em&gt;Accounting History&lt;/em&gt; 17.1, pp. 35&amp;ndash;62.&lt;/cite&
 &amp;ldquo;Log or linear? Distinct intuitions of the number scale in Western and Amazonian indigene cultures&amp;rdquo;.
 In: &lt;em&gt;science&lt;/em&gt; 320.5880, pp. 1217&amp;ndash;1220.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;&lt;a id='bib-bavel_using_2020'&gt;&lt;/a&gt;&lt;a href="#cite-bavel_using_2020"&gt;Van Bavel, J. J., K. Baicker, P. S. Boggio, et al.&lt;/a&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-bavel_using_2020'&gt;&lt;/a&gt;&lt;a href="#cite-bavel_using_2020"&gt;Van Bavel, Jay J, Baicker, Katherine, Boggio, Paulo S, et al.&lt;/a&gt;
 (2020).
 &amp;ldquo;Using social and behavioural science to support COVID-19 pandemic response&amp;rdquo;.
 In: &lt;em&gt;Nature human behaviour&lt;/em&gt; 4.5, pp. 460&amp;ndash;471.&lt;/cite&gt;&lt;/p&gt;
@@ -1586,7 +1581,7 @@ Worth Publishers.&lt;/cite&gt;&lt;/p&gt;
 &amp;ldquo;The statistical breviary; shewing, on a principle entirely new, the resources of every state and kingdom in Europe, Wallis, Londres&amp;rdquo;.
 In: &lt;em&gt;Press, Chicago&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;&lt;a id='bib-romano_scale_2020'&gt;&lt;/a&gt;&lt;a href="#cite-romano_scale_2020"&gt;Romano, A., C. Sotis, G. Dominioni, et al.&lt;/a&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-romano_scale_2020'&gt;&lt;/a&gt;&lt;a href="#cite-romano_scale_2020"&gt;Romano, Alessandro, Sotis, Chiara, Dominioni, Goran, et al.&lt;/a&gt;
 (2020).
 &lt;em&gt;The Scale of COVID-19 Graphs Affects Understanding, Attitudes, and Policy Preferences&lt;/em&gt;.
 En.
@@ -1600,7 +1595,7 @@ URL: &lt;a href="https://papers.ssrn.com/abstract=3588511"&gt;https://papers.ssr
 &lt;em&gt;You've informed the public with visualizations about the coronavirus. Thank you.&lt;/em&gt;
 URL: &lt;a href="https://blog.datawrapper.de/coronavirus-data-visualization-effect-datawrapper/"&gt;https://blog.datawrapper.de/coronavirus-data-visualization-effect-datawrapper/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;cite&gt;&lt;a id='bib-shah1995conceptual'&gt;&lt;/a&gt;&lt;a href="#cite-shah1995conceptual"&gt;Shah, P. and P. A. Carpenter&lt;/a&gt;
+&lt;p&gt;&lt;cite&gt;Shah, P. and P. A. Carpenter
 (1995).
 &amp;ldquo;Conceptual limitations in comprehending line graphs.&amp;rdquo;
 In: &lt;em&gt;Journal of Experimental Psychology: General&lt;/em&gt; 124.1, p. 43.&lt;/cite&gt;&lt;/p&gt;
@@ -1619,7 +1614,7 @@ URL: &lt;a href="http://www.annualreviews.org/doi/10.1146/annurev-psych-010416-0
 class:primary
 # References
 &lt;font size="2"&gt;
-&lt;p&gt;&lt;cite&gt;&lt;a id='bib-silver538_2020'&gt;&lt;/a&gt;&lt;a href="#cite-silver538_2020"&gt;Silver, N.&lt;/a&gt;
+&lt;p&gt;&lt;cite&gt;Silver, N.
 (2020).
 &lt;em&gt;2020 Election Forecast&lt;/em&gt;.
 URL: &lt;a href="https://projects.fivethirtyeight.com/2020-election-forecast/"&gt;https://projects.fivethirtyeight.com/2020-election-forecast/&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
@@ -1714,8 +1709,6 @@ class:primary
 2. [Prediction with You Draw It](https://shiny.srvanderplas.com/you-draw-it/) ✏️
     
     - Tests an individuals ability to make predictions for exponentially increasing data.
-        + Eye Fitting Straight Lines in the Modern Era
-        + Prediction of Exponentially Increasing Trends
         
 3. Estimation by Numerical Translation 📏
 
@@ -1790,8 +1783,6 @@ class:primary
 class:primary
 # Generalized Linear Mixed Model
 
-Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function.
-
 Define `\(Y_{ijkl}\)` to be the event that participant `\(l\)` correctly identifies the target plot for data set `\(k\)` with curvature `\(j\)` plotted on scale `\(i\)`.
 
 `$$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$`
@@ -1805,29 +1796,24 @@ where
 
 We assume that random effects for data set and participant are independent.
 
+???
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function.
+
 ---
 class:primary
 # Results
 
-.pull-left[
+.center[
+&lt;img src="images/lineup-results.png" width="100%"/&gt;
+]
+
+???
 + The choice of scale has no impact if curvature differences are
 large. 
 
 + Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
 
 + An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, Smith, and Stubbs, 2007).
-]
-.pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglineupresults' src='images/lineup-results.png' alt=' ' width='100%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modallineupresults' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodallineupresults'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionlineupresults' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1989,36 +1975,36 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 </script>
 <script>
         /* Get the modal*/
-          var modalcovid19FTcasecount06 = document.getElementById('modalcovid19FTcasecount06');
+          var modalcovid19FTlinear = document.getElementById('modalcovid19FTlinear');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgcovid19FTcasecount06 = document.getElementById('imgcovid19FTcasecount06');
-          var modalImgcovid19FTcasecount06 = document.getElementById('imgmodalcovid19FTcasecount06');
-          var captionTextcovid19FTcasecount06 = document.getElementById('captioncovid19FTcasecount06');
-          imgcovid19FTcasecount06.onclick = function(){
-            modalcovid19FTcasecount06.style.display = 'block';
-            modalImgcovid19FTcasecount06.src = this.src;
-            captionTextcovid19FTcasecount06.innerHTML = this.alt;
+          var imgcovid19FTlinear = document.getElementById('imgcovid19FTlinear');
+          var modalImgcovid19FTlinear = document.getElementById('imgmodalcovid19FTlinear');
+          var captionTextcovid19FTlinear = document.getElementById('captioncovid19FTlinear');
+          imgcovid19FTlinear.onclick = function(){
+            modalcovid19FTlinear.style.display = 'block';
+            modalImgcovid19FTlinear.src = this.src;
+            captionTextcovid19FTlinear.innerHTML = this.alt;
           }
           /* When the user clicks on the modalImg, close it*/
-          modalImgcovid19FTcasecount06.onclick = function() {
-            modalcovid19FTcasecount06.style.display = 'none';
+          modalImgcovid19FTlinear.onclick = function() {
+            modalcovid19FTlinear.style.display = 'none';
           }
 </script>
 <script>
         /* Get the modal*/
-          var modalcovid19FTcasecount06 = document.getElementById('modalcovid19FTcasecount06');
+          var modalcovid19FTlog = document.getElementById('modalcovid19FTlog');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgcovid19FTcasecount06 = document.getElementById('imgcovid19FTcasecount06');
-          var modalImgcovid19FTcasecount06 = document.getElementById('imgmodalcovid19FTcasecount06');
-          var captionTextcovid19FTcasecount06 = document.getElementById('captioncovid19FTcasecount06');
-          imgcovid19FTcasecount06.onclick = function(){
-            modalcovid19FTcasecount06.style.display = 'block';
-            modalImgcovid19FTcasecount06.src = this.src;
-            captionTextcovid19FTcasecount06.innerHTML = this.alt;
+          var imgcovid19FTlog = document.getElementById('imgcovid19FTlog');
+          var modalImgcovid19FTlog = document.getElementById('imgmodalcovid19FTlog');
+          var captionTextcovid19FTlog = document.getElementById('captioncovid19FTlog');
+          imgcovid19FTlog.onclick = function(){
+            modalcovid19FTlog.style.display = 'block';
+            modalImgcovid19FTlog.src = this.src;
+            captionTextcovid19FTlog.innerHTML = this.alt;
           }
           /* When the user clicks on the modalImg, close it*/
-          modalImgcovid19FTcasecount06.onclick = function() {
-            modalcovid19FTcasecount06.style.display = 'none';
+          modalImgcovid19FTlog.onclick = function() {
+            modalcovid19FTlog.style.display = 'none';
           }
 </script>
 <script>
@@ -2104,23 +2090,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgeyefittinggammplot.onclick = function() {
             modaleyefittinggammplot.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modaleyefittingssplot = document.getElementById('modaleyefittingssplot');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgeyefittingssplot = document.getElementById('imgeyefittingssplot');
-          var modalImgeyefittingssplot = document.getElementById('imgmodaleyefittingssplot');
-          var captionTexteyefittingssplot = document.getElementById('captioneyefittingssplot');
-          imgeyefittingssplot.onclick = function(){
-            modaleyefittingssplot.style.display = 'block';
-            modalImgeyefittingssplot.src = this.src;
-            captionTexteyefittingssplot.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgeyefittingssplot.onclick = function() {
-            modaleyefittingssplot.style.display = 'none';
           }
 </script>
 <script>
@@ -2278,23 +2247,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 </script>
 <script>
         /* Get the modal*/
-          var modalexpgammplot = document.getElementById('modalexpgammplot');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgexpgammplot = document.getElementById('imgexpgammplot');
-          var modalImgexpgammplot = document.getElementById('imgmodalexpgammplot');
-          var captionTextexpgammplot = document.getElementById('captionexpgammplot');
-          imgexpgammplot.onclick = function(){
-            modalexpgammplot.style.display = 'block';
-            modalImgexpgammplot.src = this.src;
-            captionTextexpgammplot.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgexpgammplot.onclick = function() {
-            modalexpgammplot.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
           var modalamerpoggendorffillusion = document.getElementById('modalamerpoggendorffillusion');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
           var imgamerpoggendorffillusion = document.getElementById('imgamerpoggendorffillusion');
@@ -2359,23 +2311,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgloglineupexample.onclick = function() {
             modalloglineupexample.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modallineupresults = document.getElementById('modallineupresults');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imglineupresults = document.getElementById('imglineupresults');
-          var modalImglineupresults = document.getElementById('imgmodallineupresults');
-          var captionTextlineupresults = document.getElementById('captionlineupresults');
-          imglineupresults.onclick = function(){
-            modallineupresults.style.display = 'block';
-            modalImglineupresults.src = this.src;
-            captionTextlineupresults.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImglineupresults.onclick = function() {
-            modallineupresults.style.display = 'none';
           }
 </script>
 
