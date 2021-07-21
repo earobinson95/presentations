@@ -223,7 +223,8 @@ sensory system `r Citep(bib[[c("carlson2010psychology")]])`.
 
 1. stimulus in the environment -> light is reflected and focused back into the viewer’s eyes. 
 2. the light is reflected and transformed and image is formed on the viewer’s retina.
-3. Then the visual receptors transform the light energy into electrical energy through a process called transduction. 4. Signals are transmitted through the retina, to the brain
+3. Then the visual receptors transform the light energy into electrical energy through a process called transduction.
+4. Signals are transmitted through the retina, to the brain
 5. where perception (what do you see?) and recognition (what is it called?) occur. 
 6. The viewer may then take some sort of motor action; for example, the viewer might move closer to the object. 
 
@@ -906,6 +907,13 @@ Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit
 
 ---
 class:primary
+# LMM Residuals Trend Results
+.center[
+<img src="images/eyefitting-lmer-plot.png" width="85%"/>
+]
+
+---
+class:primary
 # Generalized Additive Mixed Model
 The GAMM equation for each fit (OLS and PCA) residuals is given by:
 \begin{equation}
@@ -926,21 +934,9 @@ Eliminating the linear trend constraint, the `bam` function in the mgcv package 
 
 ---
 class:primary
-# Residuals Trend Results
-<br>
-<br>
-<br>
+# GAMM Residuals Trend Results
 .center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/eyefitting-lmer-plot.png", alt = " ", other=list(width="45%"))
-i2 <- img_modal(src = "images/eyefitting-gamm-plot.png", alt = " ", other=list(width="45%"))
-
-c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i2, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9],
-  str_split(i2, "\\n", simplify = T)[3:9]
-  ) %>% paste(collapse = "\n") %>% cat()
-```
+<img src="images/eyefitting-gamm-plot.png" width="85%"/>
 ]
 
 ???
@@ -948,40 +944,6 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 + Estimated trends from PCA residuals appear to align closer to the $y=0$ horizontal (dashed) line than the OLS residuals. 
 + More prominent in parameter choices with large variances (F and N).
 + Consistent to results found in Mosteller et al. (1981).
-
----
-class:primary
-# Sum of Squares Analysis
-
-Define $SS_{ijk}$ as the sums of squares for parameter choice $i = 1,2,3,4$, fit $j=1,2$, and participant $k = 1,...,N_{participant}$.
-
-The LMM equation is given by: 
-\begin{equation}
-\log\left(SS_{ijk}\right) = \alpha_i + \beta_j + \alpha\beta_{ij} + p_{j} + \epsilon_{ijk}
-\end{equation}
-
-+ $\alpha_i$ denotes the effect of the $i^{th}$ parameter choice
-+ $\beta_j$ denotes the effect of the $j^{th}$ fit
-+ $\alpha\beta_{ij}$ denotes the interaction between the $i^{th}$ parameter choice and $j^{th}$ fit
-+ $p_{j} \sim N(0, \sigma^2_{participant})$ is the random error due to the $k^{th}$ participant's characteristics
-+ $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
-
-???
-Sums of squares were calculated (vertical difference between the drawn and fitted values) and analyzed to compare the sum of squares between OLS and PCA using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
-
----
-class:primary 
-# Sum of Squares Results
-<br>
-<br>
-.center[
-<img src="images/eyefitting-ss-plot.jpg" width="80%"/>
-]
-
-???
-
-+ No significant effect of fit for any parameter choices.
-+ Indication of the trend previously shown in the residual LMM and GAMM; not enough power to detect.
 
 ---
 class:primary
@@ -1164,7 +1126,7 @@ Allowing for flexibility, the bam function in the mgcv package is used to fit a 
 
 ---
 class:primary 
-# GAMM Results
+# GAMM Residual Trend Results
 .center[
 <img src="images/exp-gamm-plot.png" width="80%"/>
 ]
@@ -1516,3 +1478,56 @@ large.
 + Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
 
 + An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature `r Citep(bib[[c("best_perception_2007")]])`.
+
+---
+class:primary
+# Research Objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+1. [Perception through Lineups](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+
+    - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+    
+2. [**Prediction with You Draw It**](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
+    
+    - **Tests an individuals ability to make predictions for exponentially increasing data.**
+        
+3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
+
+    - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
+    
+    
+---
+class:primary
+# Sum of Squares Analysis
+
+Define $SS_{ijk}$ as the sums of squares for parameter choice $i = 1,2,3,4$, fit $j=1,2$, and participant $k = 1,...,N_{participant}$.
+
+The LMM equation is given by: 
+\begin{equation}
+\log\left(SS_{ijk}\right) = \alpha_i + \beta_j + \alpha\beta_{ij} + p_{j} + \epsilon_{ijk}
+\end{equation}
+
++ $\alpha_i$ denotes the effect of the $i^{th}$ parameter choice
++ $\beta_j$ denotes the effect of the $j^{th}$ fit
++ $\alpha\beta_{ij}$ denotes the interaction between the $i^{th}$ parameter choice and $j^{th}$ fit
++ $p_{j} \sim N(0, \sigma^2_{participant})$ is the random error due to the $k^{th}$ participant's characteristics
++ $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
+
+???
+Sums of squares were calculated (vertical difference between the drawn and fitted values) and analyzed to compare the sum of squares between OLS and PCA using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
+
+---
+class:primary 
+# Sum of Squares Results
+<br>
+<br>
+.center[
+<img src="images/eyefitting-ss-plot.jpg" width="80%"/>
+]
+
+???
+
++ No significant effect of fit for any parameter choices.
++ Indication of the trend previously shown in the residual LMM and GAMM; not enough power to detect.
