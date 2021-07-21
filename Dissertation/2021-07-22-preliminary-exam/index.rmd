@@ -165,10 +165,8 @@ Despite the popularity of graphics, we are too accepting of them as default with
 + **How effective is this graph at communicating useful information?** (Vanderplas, Cook, & Hofmann, 2020)
 + An effective graphic accurately shows the data through the appropriate chart selection, axes and scales, and aesthetic design choices in order to successfully communicate the intended result.
 
-Higher quality of technology has influenced the creation, replication, and
-complexity of graphics. We now have an infinitely many number design choices:
+Higher quality of technology has influenced the creation, replication, and complexity of graphics. We now have an infinitely many number design choices:
 + variables displayed, type of graphic, size of graphic, aspect ratio, colors, symbols, scales, limits, ordering of categorical variables
-+ increasing number of design choices $\implies$ consistent themes and higher standards.
 
 There is a need for an established set of concepts and terminology to build their graphics from so they can actively choose which of many possible graphics to draw in order to ensure their charts are effective at communicating the intended result.
 
@@ -197,7 +195,7 @@ Graphics are viewed as a mapping
 
 The figure illustrates the process of creating a graphic from a data set through the use of variable mapping, data transformations, coordinate systems, and aesthetic features (Vanderplas, Cook, & Hofmann, 2020) 
 
-Software, such as Hadley Wickham’s ggplot2 (Hadley Wickham, 2011), aims to implement the framework of creating charts and graphics as the grammar of graphics recommends.
+Software, such as Hadley Wickham’s ggplot2, aims to implement the framework of creating charts and graphics as the grammar of graphics recommends.
 
 ---
 class:primary
@@ -217,39 +215,30 @@ sensory system `r Citep(bib[[c("carlson2010psychology")]])`.
 ]
 
 ???
-+ In order to develop guiding principles for generating graphics effective in communication, we must first understand the basic mechanics of the human perceptual system and the biases we are vulnerable to (Goldstein & Brockmole, 2017).
 
-+ The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus
-`r Citep(bib[[c("goldstein2016sensation")]])`.
++ In order to develop guiding principles for generating graphics effective in communication, we must first understand the basic mechanics of the human perceptual system and the biases we are vulnerable to.
+
++ The **perceptual process** is a sequence of steps used to describe a how a stimulus in the environment leads to our perception of the stimulus and action in response to the stimulus.
 
 
-+ The perceptual process begins when there is a stimulus in the environment and
-light is reflected and focused back into the viewer’s eyes. Within the eye, the light
-reflected is transformed and focused by the eye’s optical system and an image is
-formed on the receptors of the viewer’s retina. It is important to note that
-everything a person perceives is based not on direct contact with stimuli but on
-representations of stimuli that are formed on the receptors and the resulting activity
-in the person’s nervous system. Once light is reflected and focused, our visual
-receptors respond to the light and transform the light energy into electrical energy
-through a process called transduction. Signals from the receptors are then
-transmitted through the retina, to the brain, and then within the brain where
-perception (what do you see?) and recognition (what is it called?) occur. After
-recognition, viewers take some sort of motor action; for example, the viewer might
-move closer to the object. The perceptual process is not direct and instead takes on
-more of a cyclic nature where a person may go through many iterations of stimuli,
-perception, recognition, and action before the final image is identified and
-understood (M. A. Peterson, 1994).
+1. stimulus in the environment -> light is reflected and focused back into the viewer’s eyes. 
+2. the light is reflected and transformed and image is formed on the viewer’s retina.
+3. Then the visual receptors transform the light energy into electrical energy through a process called transduction. 4. Signals are transmitted through the retina, to the brain
+5. where perception (what do you see?) and recognition (what is it called?) occur. 
+6. The viewer may then take some sort of motor action; for example, the viewer might move closer to the object. 
 
-**Sensation:** simple processes that occur right at the beginning of a
-sensory system `r Citep(bib[[c("carlson2010psychology")]])`.
+The perceptual process is not direct and instead takes on more of a cyclic nature where a person may go through many iterations of stimuli, perception, recognition, and action before the final image is identified and understood (M. A. Peterson, 1994).
 
-**Perception:** higher-order mechanisms and identified with more complex processes `r Citep(bib[[c("myers_dewall_2021")]])`.
-+ preattentive stage in which we observe color, shape, size, and other basic information about the stimuli being perceived.
-+ direct attention is required for additional processing to allow us to draw connections between components that assist in our interpretation of the stimuli. 
+**Sensation:** simple processes that occur right at the beginning of a sensory system.
 
-+ When viewing a chart or graph, most insights we gain are due to the cognitive processes that occur after attention is focused on specific aspects of the graph.
+**Perception:** higher-order mechanisms and identified with more complex processes
 
-+ The relationship between physiology and perception can provide us information about how graphics may be understood and interpreted. Through experimentation, the physiological response (automatic reaction) is related to the behavioral response (perception, recognition, and action).
++ **preattentive stage**: observe color, shape, size, and other basic information about the stimuli being perceived.
++ **direct attention** is required for additional processing to allow us to draw connections between components that assist in our interpretation of the stimuli. 
+
+When viewing a chart or graph, most insights we gain are due to the cognitive processes that occur after attention is focused on specific aspects of the graph.
+
+The relationship between physiology and perception can provide us information about how graphics may be understood and interpreted. Through experimentation, the physiological response (automatic reaction) is related to the behavioral response (perception, recognition, and action).
 
 ---
 class:primary
@@ -268,7 +257,7 @@ but instead that we notice the relative change `r Citep(bib[[c("fechner1860eleme
 of $S$ changes. 
 
 ???
-Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli; known as the “Just Noticeable Difference”) and the magnitude of a stimulus.
+Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
 
 ---
 class:primary
@@ -284,13 +273,26 @@ P = K \ln \frac{S}{S_0}
 + $S_0$ represents the minimal threshold of perception.
 
 ???
-Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
+Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception.
 
 ---
 class:primary
 # Testing Graphics
 
-Evaluate design choices through the use of graphical tests. Could ask participants to:
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+???
+
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
 
 - identify differences in graphs.
 - read information off of a chart accurately.
@@ -330,12 +332,15 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 ???
 
-Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions `r Citep(bib[[c("rost_2020")]])`.
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions.
 
-.pull-left[
-+ Mass media routinely showed charts to share information with the public about the progression of the pandemic `r Citep(bib[[c("romano_scale_2020")]])`.
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic.
 + Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
-+ Facilitated communication with the public to increase compliance `r Citep(bib[[c("bavel_using_2020")]])`.  
++ Facilitated communication with the public to increase compliance.  
+
+One of the many dashboards was called 91-DIVOC (COVID-19 backwards!). Gives the viewer choices of what to show: case count, mortality, hospitalizations, standardized to population, geographic regions, scales (log/linear).
+
+Other dashboards showed outbreak regions in the form of maps. 
 
 ---
 class:primary
@@ -361,9 +366,10 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ???
 
-+ Problem: Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
-+ Solution: Use of a log scale transformation; alters the contextual appearance of the data.
-+ The usefulness of the log scale in science is illustrated showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
++ **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
++ **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+
+The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
 ---
 class:primary
@@ -379,20 +385,13 @@ Our perception is **logarithmic at first**, but transitions to a **linear scale 
 
 ???
 
-+ When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
+When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
 
-Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
+Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education.
++ For example: A kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective.
 
-+ A kindergartner asked to place numbers one through ten along a number
-line would place three close to the middle, following the logarithmic perspective
-`r Citep(bib[[c("varshney_why_2013")]])`.
-
-+ Assuming there is a direct relationship between perceptual and cognitive
-processes, it is reasonable to assume numerical representations should also be
-displayed on a nonlinear, compressed number scale. Therefore, if we perceive
-logarithmically by default, it is a natural (and presumably low effort) way to display
-information and should be easy to read and understand/use.
-
+Assuming there is a direct relationship between perceptual and cognitive processes, it is reasonable to assume numerical representations should also be displayed on a nonlinear, compressed number scale. Therefore, if we perceive
+logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
 
 ---
 class:primary
@@ -484,7 +483,7 @@ class:primary
 
 ---
 class:primary
-# Underestimation of Exponential Growth
+# Stages of Exponential Growth
 
 .center[
 <img src="images/exponential-stages-comic.jpg", width="85%"/>
@@ -513,12 +512,17 @@ Estimation and prediction of **exponential growth is underestimated** when prese
 
 ???
 
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975")]])`.
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
 
 + Numerical estimation is more accurate than graphical estimation for exponential curves.
 + No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
-+ Instruction on exponential growth reduced the underestimation `r Citep(bib[[c("jones_generalized_1979", "wagenaar_misperception_1975")]])`. 
-+ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions `r Citep(bib[[c("mackinnon_feedback_1991")]])`.
++ Instruction on exponential growth reduced the underestimation. 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions.
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ---
 class:inverse
@@ -549,10 +553,14 @@ class:primary
 ]
 
 ???
+
+Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay.
+**relative potency** the ratio between the dose required from the test preparation and the standard preparation.
+
 + **Big Idea:** Determine the effect of stopping iterative maximum likelihood calculations after one iteration in the estimation of parameters connected with dose-response relationships.
-+ **Method:** Judge by eye the positions for a pair of *parallel* probit regression lines in a biological assay. Sent out by mail, asked to "rule two lines."
++ **Method:** Sent out by mail, asked to "rule two lines."
 + **Sample:** 21 scientists
-+ **Findings:** One cycle of iterations for calculating the relative potency was sufficient based on the starting values provided by eye from the participants.
++ **Findings:** One cycle of iterations for calculating the **relative potency** was sufficient based on the starting values provided by eye from the participants.
 
 <!-- --- -->
 <!-- class:primary -->
@@ -590,13 +598,11 @@ class:primary
 ]
 
 ???
-+ Method involves maneuvering a string, black thread, or ruler until the fit seems satisfactory, and then drawing the line.
-+ Sample - most had not studied statistics before
-+ Method proposed by Tukey
++ Students fitted lines by eye to four sets of points.
++ 8.5 x 11 inch transparency with a straight line etched across the middle.
++ 153 graduate students and post docs in Introductory Biostatistics.
++ Latin square.
 + Students tended to fit the slope of the first principal component or major axis (the line that minimizes the sum of squares of perpendicular rather than vertical distances).
-+ Students had a slight tendency to choose consistently either steeper or shallower slopes for all sets of data.
-+ Individual-to-individual variability in slope and in intercept was near the standard error provided by least squares for the four data sets (no theory encourages us to believe in such relations).
-+ Found no trend in the differences due to order.
 
 ---
 class:primary
@@ -609,8 +615,7 @@ class:primary
 ]
 ].pull-right[
 
-Readers are asked to input their own assumptions about various metrics and
-compare how these assumptions relate to reality.
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
 
 + [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) `r Citep(bib[[c("aisch_cox_quealy_2015")]])`
 + [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) `r Citep(bib[[c("katz_2017")]])`
@@ -618,6 +623,8 @@ compare how these assumptions relate to reality.
 ]
 
 ???
+
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
 
 The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
 
@@ -637,22 +644,15 @@ class:primary
 
 **Where?** The internet!
 
-**Why?** Advantages of using D3 include animation and allowing for movement and user interaction such as hovering, clicking, and brushing. 
+**Why?** Advantages of using D3 include animation and allowing for movement and user interaction.
 
 **How?** `r2d3`!
-
-```{r raster-vs-vector, fig.cap = "SVG vs Raster", out.width="50%"}
-# knitr::include_graphics("images/raster-vs-vector.png")
-# https://commons.wikimedia.org/wiki/File:Bitmap_VS_SVG.svg
-# https://creativecommons.org/licenses/by-sa/2.5/legalcode
-```
 
 ???
 
 + Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
-+ In June 2020, the New York Times released a front page displaying figures that represent each of the 100,000 lives lost from the COVID-19 pandemic until this point in time [@NYTrememberinglives]; this visualization was meant to bring about a visceral reaction and resonate with readers. 
-+ During 2021 March Madness, FiveThirtyEight created a roster-shuffling machine which allowed readers to build their own NBA contender through interactivity [@ryanabest_2021].
-+ Similar to geometric objects and style choices in ggplot2, the grammar of D3 also includes elements such as circles, paths, and rectangles with choices of attributes and styles such as color and size.
++ `D3` is to JavaScript as `ggplot2` is to R
++ Advantages include animation and allowing for movement and user interaction.
 
 ---
 class:primary
@@ -672,8 +672,6 @@ The `r2d3` package `r Citep(bib[[c("luraschi_r2d3")]])` in R provides an efficie
 `r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
 
 --
-<!-- The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. -->
-<!-- A default SVG container for layering elements is then generated by the r2d3 function which renders the plot using the source code.  -->
 .pull-left[
 **How?**
 + Converts data in R to JSON that can be interpreted by JavaScript
@@ -689,17 +687,17 @@ r2d3(data = data,
 ]
 
 ???
+
 A challenge of working with D3 is the environment necessary to display the graphics and images. 
 
-+ Converts data in R to JSON that can be interpreted by JavaScript
-  + Object is named 'data'
-  + Columns can be accessed
-+ Sources D3 code library
-  + Grabs version specified in function
-+ Creates plot container (svg is default)
-  + Or different container if specified
-  + specifies width and height of plot container
-+ Renders plot object using JavaScript and CSS files called in r2d3 call
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
+A default SVG (scalable vector graphic) container for layering elements is then generated by the r2d3 function which renders the plot using the source code.
 
 ---
 class:primary
@@ -739,9 +737,8 @@ Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box
 ]
 
 ???
-Example of a you draw it interactive plot as seen by participants during the study. 
-The first frame shows what the participant sees along with the prompt, "Use your mouse to fill in the trend in the yellow box region". 
-Next, the yellow box region moves along as the participant draws their trend-line until the yellow region disappears, indicating the participant has filled in the entire domain.
+
+Here we see an example of a you draw it interactive plot as seen by participants during the study. Participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region moves along as the participant draws their trend-line until the yellow region disappears.
 
 ---
 class:primary
@@ -797,6 +794,8 @@ An ordinary least squares regression is then fit to the simulated points:
 \hat y_{k,OLS} = \hat\beta_{0,OLS} + \hat\beta_{1,OLS} x_k
 \end{equation}
 
+???
+
 ---
 class:primary
 # Treatment Design
@@ -818,10 +817,10 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 
 ???
-+ **F:** positive slope; a large variance; $x \in [0, 20]$. 
-+ **N:** negative slope; large variance; $x \in [0, 20]$. 
 + **S:** positive slope; small variance; $x \in [0, 20]$. 
++ **F:** positive slope; a large variance; $x \in [0, 20]$. 
 + **V:** steep positive slope; small variance; $x \in [4, 16]$. 
++ **N:** negative slope; large variance; $x \in [0, 20]$. 
 
 ---
 class:primary
@@ -851,7 +850,9 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ???
 
-+ rotation of coordinate axes from `princomp`
++ In addition to the fitted values calculated by the OLS regression, we also obtain fitted values from the slope of the first principal component regression line.
++ This shows how the PCA regression line minimizes the distance orthogonally (smallest distance - both vertical and horizontal) while OLS minimizes vertically only. 
++ rotation of coordinate axes from `princomp`.
 
 ---
 class:primary
@@ -881,11 +882,6 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ```
 ]
 
-???
-Analyses:
-+ Linear Mixed Model
-+ Generalized Additive Mixed Model
-+ Sum of Squares Analysis
 ---
 class:primary
 # Linear Mixed Model
@@ -905,6 +901,7 @@ where
 + $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
 
 ???
+
 Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
 
 ---
@@ -924,6 +921,7 @@ where
 + $s_{j}$ is the random smoothing spline for each participant.
 
 ???
+
 Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
 
 ---
@@ -946,6 +944,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 
 ???
+
 + Estimated trends from PCA residuals appear to align closer to the $y=0$ horizontal (dashed) line than the OLS residuals. 
 + More prominent in parameter choices with large variances (F and N).
 + Consistent to results found in Mosteller et al. (1981).
@@ -968,7 +967,7 @@ The LMM equation is given by:
 + $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
 
 ???
-Sums of squares between the OLS residuals and PCA residuals were compared using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
+Sums of squares were calculated (vertical difference between the drawn and fitted values) and analyzed to compare the sum of squares between OLS and PCA using the lmer function in the `lme4` package in R to run a linear mixed model (LMM) with a log transformation.
 
 ---
 class:primary 
@@ -1046,6 +1045,7 @@ A nonlinear least squares regression is then fit to the simulated points:
 \end{equation}
 
 ???
+
 + $e_i \sim N(0, \sigma^2)$ are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
 
 Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
@@ -1139,6 +1139,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
+
 ---
 class:primary 
 # Generalized Additive Mixed Model
@@ -1158,6 +1159,7 @@ where
 + $s_{l}$ is the random smoothing spline for the $l^{th}$ participant.
 
 ???
+
 Allowing for flexibility, the bam function in the mgcv package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
 
 ---
@@ -1176,6 +1178,9 @@ More prominent in high exponential growth rates.
 
 Underestimation begins after the aid of points is removed.
 
+???
+Indicated by the discrepancy in results for treatments with points truncated at $50\%$ compared to $75\%$ of the domain. 
+
 ---
 class:primary 
 # Conclusion
@@ -1190,7 +1195,6 @@ class:primary
 **The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
 
 ???
-  + Indicated by the discrepancy in results for treatments with points truncated at $50\%$ compared to $75\%$ of the domain. 
   
 Further investigation is necessary to determine the implications of using log scales when translating exponential graphs to numerical values. 
 
