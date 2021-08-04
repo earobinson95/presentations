@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Pandemic Dilemmas: Human perception of exponentially increasing data displayed on a log scale evaluated through experimental graphics tasks</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emily Robinson, Susan VanderPlas, Reka Howard" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/modal.css" type="text/css" />
+    <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Pandemic Dilemmas: Human perception of exponentially increasing data displayed on a log scale evaluated through experimental graphics tasks
+## University of Nebraska - Lincoln
+### Emily Robinson, Susan VanderPlas, Reka Howard
+### JSM 2021
+
+---
+
+
+
+&lt;style&gt;
+
+/* colors: #EEB422, #8B0000, #191970, #00a8cc */
+/* define the new color palette here! */
+a, a &gt; code {
+  color: #8B0000;
+  text-decoration: none;
+}
+
+.title-slide h2::after, .mline h1::after {
+  content: '';
+  display: block;
+  border: none;
+  background-color: #8B0000;
+  color: #8B0000;
+  height: 2px;
+}
+
+.remark-slide-content {
+  background-color: #FFFFFF;
+  border-top: 80px solid #8B0000;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  &lt;!-- padding: 1em 2em 1em 2em --&gt;
+  background-image: url(css/UNL.svg);
+	background-position: 2% 98%;
+	background-size: 10%;
+	border-bottom: 0;
+}
+
+.inverse {
+  background-color: #8B0000;
+  &lt;!-- border-top: 20px solid #696969; --&gt;
+  &lt;!-- background-image: none; --&gt;
+	&lt;!-- background-position: 50% 75%; --&gt;
+  &lt;!-- background-size: 150px; --&gt;
+}
+
+.remark-slide-content &gt; h1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 45px;
+  margin-top: -95px;
+  margin-left: -00px;
+  color: #FFFFFF;
+}
+
+.title-slide {
+  background-color: #FFFFFF;
+  &lt;!-- border-left: 80px solid 	#8B0000; --&gt;
+  background-image:  url(css/UNL.svg);
+	background-position: 98% 98%;
+	&lt;!-- background-attachment: fixed, fixed; --&gt;
+	background-size: 20%;
+	border-bottom: 0;
+	border: 10px solid 	#8B0000;
+	&lt;!-- background: transparent; --&gt;
+}
+
+.title-slide &gt; h1  {
+  color: #111111;
+  font-size: 32px;
+  text-shadow: none;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 80px;
+}
+.title-slide &gt; h2  {
+  margin-top: -25px;
+  padding-bottom: -20px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide &gt; h3  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -20px;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #272822;
+  opacity: 1;
+}
+
+.inverse .remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #FAFAFA;
+  opacity: 1;
+}
+
+&lt;!-- img { --&gt;
+&lt;!--   max-width: 50%; --&gt;
+&lt;!-- } --&gt;
+
+&lt;/style&gt;
+
+
+
+
+
+
+# Outline
+
+1. Introduction to Logarithmic Scales and Mapping
+2. Research Objectives
+3. Perception of Exponential Growth
+4. Prediction of Exponential Trends
+5. Future Work
+
+???
+
+Thank you, everyone for coming! Today, I will be presenting my research on the human perception of exponentially increasing data displayed on a log scale evaluated through experimental graphics tasks as part of my Ph.D. prelims. This work has been conducted under the supervision of Dr. Susan VanderPlas and Dr. Reka Howard. 
+
+First, I will provide some background on graphics and logarithmic scales and give an overview of my research objectives. This presentation will mainly focus on the second graphical task study, Prediction with you draw it and then I will share future work to be done.
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Introduction
+]
+
+---
+class:primary
+# Motivation
+
+Data visualizations played an important role in during the **COVID-19 pandemic** (Rost, 2020; Romano, Alessandro, Sotis, Chiara, Dominioni, Goran, et al., 2020; Van Bavel, Jay J, Baicker, Katherine, Boggio, Paulo S, et al., 2020).
+
+.left-col[
+Dashboards displayed:
++ case counts. 
++ transmission rates.
++ outbreak regions.
+
+].right-col[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='img91divoccasesjuly2021' src='images/91divoc-cases-july2021.png' alt='(Fagen-Ulmschneider, 2020)' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modal91divoccasesjuly2021' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodal91divoccasesjuly2021'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='caption91divoccasesjuly2021' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+???
+
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions.
+
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic.
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance.  
+
+One of the many dashboards was called 91-DIVOC (COVID-19 backwards!). Gives the viewer choices of what to show: case count, mortality, hospitalizations, standardized to population, geographic regions, scales (log/linear).
+
+Other dashboards showed outbreak regions in the form of maps. 
+
+---
+class:primary
+# Logarithmic Scales
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallogscaleexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallogscaleexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+???
+
++ **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
++ **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+
+The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
+
+
+---
+class:primary
+# Logarithmic Perception &amp; Mapping
+
+**Weber’s law** states we do not notice absolute changes in stimuli,
+but instead that we notice the relative change (Fechner, 1860). 
+
+**Weber-Fechner law** states the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception (Fechner, 1860).
+
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
+
+.center[
+&lt;img src="images/log-numberline.png" width="100%"/&gt;
+]
+
+**Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
+
+???
+
+Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
+
+Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception.
+
+When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
+
+Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education.
++ For example: A kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective.
+
+Assuming there is a direct relationship between perceptual and cognitive processes, it is reasonable to assume numerical representations should also be displayed on a nonlinear, compressed number scale. Therefore, if we perceive
+logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+---
+class:primary
+# Benefits and Pitfalls of Log Scales
+
+.pull-left[
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FT03' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FT03'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FT03' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+].pull-right[
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FTlinear' src='images/covid19-FT-linear.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FTlinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FTlinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FTlog' src='images/covid19-FT-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FTlog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FTlog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+]
+
+???
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+
++ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
++ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
++ Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
++ The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
+
+---
+class:primary
+# Testing Graphics
+
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+???
+
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+---
+class:primary
+# Research Objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) 📈 📈 📈
+
+    - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+    
+2. [Prediction of Exponential Trends](https://shiny.srvanderplas.com/you-draw-it/) ✏️
+    
+    - Tests an individuals ability to make predictions for exponentially increasing data.
+        
+3. Estimation by Numerical Translation 📏
+
+    - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
+
+    
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Perception of Exponential Growth
+]
+
+---
+class:primary
+# Lineup Experimental Task 
+
+Study Participant Prompt: *Which plot is most different?*
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglinearlineupexample' src='images/linear-lineup-example.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgloglineupexample' src='images/log-lineup-example.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallinearlineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallinearlineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlinearlineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalloglineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalloglineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionloglineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+# Study Design
+
+**Curvature:**
++ High Curvature
++ Medium  Curvature
++  Low Curvature
+
+**Treatment Design:** Target Panel gets model A and Null Panels get model B
+
+`\(3!\cdot 2!= 6\)` curvature combinations
+
+`\(\times 2\)` lineup data sets per combination `\(=\)` **12 test data sets**
+
+`\(\times 2\)` scales (log &amp; linear) `\(=\)` **24 different lineup plots**
+
+**Experimental Design:** 13 lineup plots per participant
+
+`\(6\)` test parameter combinations per participant `\(\times 2\)` scales `\(= 12\)` test lineups
+
+`\(1\)` rorschach parameter combination per participant
+
+---
+class:primary
+# Generalized Linear Mixed Model
+
+Define `\(Y_{ijkl}\)` to be the event that participant `\(l\)` correctly identifies the target plot for data set `\(k\)` with curvature `\(j\)` plotted on scale `\(i\)`.
+
+`$$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$`
+where
+- `\(\eta\)` is the beaseline average probability of selecting the target plot. 
+- `\(\delta_i\)` is the effect of the log/linear scale.
+- `\(\gamma_j\)` is the effect of the curvature combination.
+- `\(\delta\gamma_{ij}\)`is the two-way interaction effect of the scale and curvature.
+- `\(s_l \sim N(0,\sigma^2_\text{participant})\)`, random effect for participant characteristics.
+- `\(d_k \sim N(0,\sigma^2_{\text{data}})\)`, random effect for data specific characteristics. 
+
+We assume that random effects for data set and participant are independent.
+
+???
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function.
+
+---
+class:primary
+# Results
+
+.center[
+&lt;img src="images/lineup-results.png" width="100%"/&gt;
+]
+
+???
++ The choice of scale has no impact if curvature differences are
+large. 
+
++ Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
+
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature (Best, Smith, and Stubbs, 2007).
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Prediction of Exponential Trends
+]
+
+---
+class:primary
+# Exponential Growth
+
+.center[
+&lt;img src="images/exponential-stages-comic.jpg", width="85%"/&gt;
+
+(Von
+Bergmann, 2021)
+]
+
+???
+Exponential growth is often misjudged:
++ **early stage** appears to have a small growth rate.
++ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
++ **late stages** exponential growth when it is quite apparent.
+
+This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
+
+???
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves.
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation. 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions.
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
+
+---
+class:primary
+# You Draw It Experimental Task
+
+Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+.pull-left[
+&lt;img src="images/eyefitting_example.gif" width="100%"/&gt;
+].pull-right[
+&lt;img src="images/exponential_example.gif" width="100%"/&gt;
+]
+
+???
+
+Here we see an example of a you draw it interactive plot as seen by participants during the study. Participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region moves along as the participant draws their trend-line until the yellow region disappears.
+
+---
+class:primary 
+# Data Simulation
+
+**Point data:** `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
+
+Data were simulated based on a one parameter exponential model with multiplicative errors:
+`\begin{equation}
+y_i = e^{\beta x_i + e_i}
+\end{equation}`
+
+for 
+
++ growth rate `\(\beta\)`
++ `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
+
+**Line data:** `\(m = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS})\)`
+
+A nonlinear least squares regression is then fit to the simulated points:
+`\begin{equation}
+\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
+\end{equation}`
+
+???
+
++ `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
+
+Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
+
+---
+class:primary 
+# Treatment Design
+
+.pull-left[
+2 x 2 x 2 factorial:
++ **growth rate:** low and high.
++ **points truncated:** `\(50\%\)` and `\(75\%\)` of the domain.
++ **scale:** log and linear.
+
+Consistent aesthetic design choices:
++ aspect ratio of one.
++ y-axis extended `\(50\%\)` below and `\(200\%\)` above the simulated data range.
++ participants begin drawing at `\(50\%\)` of the domain.
+
+].pull-right[
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10linear' src='images/low-10-linear.png' alt='Low Growth Rate, 50% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10log' src='images/low-10-log.png' alt='Low Growth Rate, 50% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15linear' src='images/low-15-linear.png' alt='Low Growth Rate, 75% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15log' src='images/low-15-log.png' alt='Low Growth Rate, 75% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10linear' src='images/high-10-linear.png' alt='High Growth Rate, 50% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10log' src='images/high-10-log.png' alt='High Growth Rate, 50% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15linear' src='images/high-15-linear.png' alt='High Growth Rate, 75% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15log' src='images/high-15-log.png' alt='High Growth Rate, 75% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]]
+
+---
+class:primary 
+# Feedback Data
+
+.pull-left[
+For each participant, the final data set used for analysis contains:
++ `\(x_{ijklm}\)`, `\(y_{ijklm,drawn}\)`, and `\(\hat y_{ijklm,NLS}\)`  
+
+for:
++ growth rate `\(i = 1,2\)`,
++ point truncation `\(j = 1,2\)`,
++ scale `\(k = 1,2\)`,
++ participant  `\(l = 1,...N_{participant}\)`, and 
++ `\(x_{ijklm}\)` value `\(m = 1, ...,4 x_{max} + 1\)`.
+
+Vertical residuals between the drawn and fitted values were calculated as: 
++ `\(e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}\)`.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgexpspaghettiplot' src='images/exp-spaghetti-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalexpspaghettiplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalexpspaghettiplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionexpspaghettiplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary 
+# Generalized Additive Mixed Model
+
+The GAMM equation for residuals is given by:
+`\begin{equation}
+e_{ijklm,nls} = \tau_{ijk} + s_{ijk}(x_{ijklm}) + p_{l} + s_{l}(x_{ijklm})
+\end{equation}`
+
+where
+
++ `\(e_{ijklm,NLS}\)` is the residual between the drawn y-value and fitted y-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(\tau_{ijk}\)` is the intercept for the `\(i^{th}\)` growth rate, `\(j^{th}\)` point truncation, and `\(k^{th}\)` scale treatment combination
++ `\(s_{ijk}\)` is the smoothing spline for the `\(ijk^{th}\)` treatment combination
++ `\(x_{ijklm}\)` is the x-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(p_{l} \sim N(0, \sigma^2_{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
++ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
+
+???
+
+Allowing for flexibility, the bam function in the mgcv package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
+
+---
+class:primary 
+# GAMM Residual Trend Results
+.center[
+&lt;img src="images/exp-gamm-plot.png" width="80%"/&gt;
+]
+
+???
+Predictions made on the **linear scale** (blue) deviate from the  `\(y=0\)` horizontal (dashed) line `\(\implies\)` **underestimation** of exponential growth.
+
+Predictions made on the **log scale** (orange) follow closely to the `\(y=0\)` horizontal (dashed) line `\(\implies\)` **more accurate** than trends predicted on the linear scale.
+
+More prominent in high exponential growth rates.
+
+Underestimation begins after the aid of points is removed.
+
+???
+
+**Goal:** Test an individual's ability to make predictions for exponentially increasing data.
+
+**Results:**
++ Predictions made on the log scale were more accurate than those made on the linear scale. 
++ Strongly supported for high exponential growth rates.
++ Points shown along the trend improve predictions.
+  + Indicated by the discrepancy in results for treatments with points truncated at `\(50\%\)` compared to `\(75\%\)` of the domain. 
+
+**The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
+
+Further investigation is necessary to determine the implications of using log scales when translating exponential graphs to numerical values. 
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Future Work
+]
+---
+class:primary
+# Future Work
+
+.pull-left[
++ Estimation by Numerical Translation
+  + Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
++ [Prolific](https://app.prolific.co/studies) data collection.
+
+].pull-right[
+.center[
+&lt;img src="images/prolific-log.png" width="50%"/&gt;
+
+[(Prolific studies)](https://app.prolific.co/studies)
+]
+]
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;Aisch, G., N. Cohn, A. Cox, et al.
+(2016).
+&lt;em&gt;Live Presidential Forecast&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/elections/2016/forecast/president"&gt;https://www.nytimes.com/elections/2016/forecast/president&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Aisch, G., A. Cox, and K. Quealy
+(2015).
+&lt;em&gt;You Draw It: How Family Income Predicts Children's College Chances&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html"&gt;https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Amer, T.
+(2005).
+&amp;ldquo;Bias due to visual illusion in the graphical presentation of accounting information&amp;rdquo;.
+In: &lt;em&gt;Journal of Information Systems&lt;/em&gt; 19.1, pp. 1&amp;ndash;18.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-best_perception_2007'&gt;&lt;/a&gt;&lt;a href="#cite-best_perception_2007"&gt;Best, L. A., L. D. Smith, and D. A. Stubbs&lt;/a&gt;
+(2007).
+&amp;ldquo;Perception of Linear and Nonlinear Trends: Using Slope and Curvature Information to Make Trend Discriminations&amp;rdquo;.
+In: &lt;em&gt;Perceptual and Motor Skills&lt;/em&gt; 104.3. Publisher: SAGE Publications Inc, pp. 707&amp;ndash;721.
+ISSN: 0031-5125.
+DOI: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;10.2466/pms.104.3.707-721&lt;/a&gt;.
+URL: &lt;a href="https://doi.org/10.2466/pms.104.3.707-721"&gt;https://doi.org/10.2466/pms.104.3.707-721&lt;/a&gt; (visited on Jul. 06, 2020).&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Buchanan, L., H. Park, and A. Pearce
+(2017).
+&lt;em&gt;You Draw It: What Got Better or Worse During Obama's Presidency&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"&gt;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-burnmurdoch_2020'&gt;&lt;/a&gt;&lt;a href="#cite-burnmurdoch_2020"&gt;Burn-Murdoch, J., C. Nevitt, C. Tilford, et al.&lt;/a&gt;
+(2020).
+&lt;em&gt;Coronavirus tracked: has the epidemic peaked near you?&lt;/em&gt;
+URL: &lt;a href="https://ig.ft.com/coronavirus-chart/?areas=eur"&gt;https://ig.ft.com/coronavirus-chart/?areas=eur&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Carlson, N. R.
+(2010).
+&lt;em&gt;Psychology: The science of behaviour&lt;/em&gt;.
+Pearson Education.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Chandar, N., D. Collier, and P. Miranti
+(2012).
+&amp;ldquo;Graph standardization and management accounting at AT&amp;amp;T during the 1920s&amp;rdquo;.
+In: &lt;em&gt;Accounting History&lt;/em&gt; 17.1, pp. 35&amp;ndash;62.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-dehaene2008log'&gt;&lt;/a&gt;&lt;a href="#cite-dehaene2008log"&gt;Dehaene, S., V. Izard, E. Spelke, et al.&lt;/a&gt;
+(2008).
+&amp;ldquo;Log or linear? Distinct intuitions of the number scale in Western and Amazonian indigene cultures&amp;rdquo;.
+In: &lt;em&gt;science&lt;/em&gt; 320.5880, pp. 1217&amp;ndash;1220.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-bavel_using_2020'&gt;&lt;/a&gt;&lt;a href="#cite-bavel_using_2020"&gt;Van Bavel, Jay J, Baicker, Katherine, Boggio, Paulo S, et al.&lt;/a&gt;
+(2020).
+&amp;ldquo;Using social and behavioural science to support COVID-19 pandemic response&amp;rdquo;.
+In: &lt;em&gt;Nature human behaviour&lt;/em&gt; 4.5, pp. 460&amp;ndash;471.&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Questions and Discussion
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightlines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+        /* Get the modal*/
+          var modal91divoccasesjuly2021 = document.getElementById('modal91divoccasesjuly2021');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var img91divoccasesjuly2021 = document.getElementById('img91divoccasesjuly2021');
+          var modalImg91divoccasesjuly2021 = document.getElementById('imgmodal91divoccasesjuly2021');
+          var captionText91divoccasesjuly2021 = document.getElementById('caption91divoccasesjuly2021');
+          img91divoccasesjuly2021.onclick = function(){
+            modal91divoccasesjuly2021.style.display = 'block';
+            modalImg91divoccasesjuly2021.src = this.src;
+            captionText91divoccasesjuly2021.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImg91divoccasesjuly2021.onclick = function() {
+            modal91divoccasesjuly2021.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallogscaleexample = document.getElementById('modallogscaleexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglogscaleexample = document.getElementById('imglogscaleexample');
+          var modalImglogscaleexample = document.getElementById('imgmodallogscaleexample');
+          var captionTextlogscaleexample = document.getElementById('captionlogscaleexample');
+          imglogscaleexample.onclick = function(){
+            modallogscaleexample.style.display = 'block';
+            modalImglogscaleexample.src = this.src;
+            captionTextlogscaleexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglogscaleexample.onclick = function() {
+            modallogscaleexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FT03 = document.getElementById('modalcovid19FT03');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FT03 = document.getElementById('imgcovid19FT03');
+          var modalImgcovid19FT03 = document.getElementById('imgmodalcovid19FT03');
+          var captionTextcovid19FT03 = document.getElementById('captioncovid19FT03');
+          imgcovid19FT03.onclick = function(){
+            modalcovid19FT03.style.display = 'block';
+            modalImgcovid19FT03.src = this.src;
+            captionTextcovid19FT03.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FT03.onclick = function() {
+            modalcovid19FT03.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlinear = document.getElementById('modalcovid19FTlinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlinear = document.getElementById('imgcovid19FTlinear');
+          var modalImgcovid19FTlinear = document.getElementById('imgmodalcovid19FTlinear');
+          var captionTextcovid19FTlinear = document.getElementById('captioncovid19FTlinear');
+          imgcovid19FTlinear.onclick = function(){
+            modalcovid19FTlinear.style.display = 'block';
+            modalImgcovid19FTlinear.src = this.src;
+            captionTextcovid19FTlinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlinear.onclick = function() {
+            modalcovid19FTlinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlog = document.getElementById('modalcovid19FTlog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlog = document.getElementById('imgcovid19FTlog');
+          var modalImgcovid19FTlog = document.getElementById('imgmodalcovid19FTlog');
+          var captionTextcovid19FTlog = document.getElementById('captioncovid19FTlog');
+          imgcovid19FTlog.onclick = function(){
+            modalcovid19FTlog.style.display = 'block';
+            modalImgcovid19FTlog.src = this.src;
+            captionTextcovid19FTlog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlog.onclick = function() {
+            modalcovid19FTlog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
+          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
+          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
+          imglinearlineupexample.onclick = function(){
+            modallinearlineupexample.style.display = 'block';
+            modalImglinearlineupexample.src = this.src;
+            captionTextlinearlineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglinearlineupexample.onclick = function() {
+            modallinearlineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalloglineupexample = document.getElementById('modalloglineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgloglineupexample = document.getElementById('imgloglineupexample');
+          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
+          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
+          imgloglineupexample.onclick = function(){
+            modalloglineupexample.style.display = 'block';
+            modalImgloglineupexample.src = this.src;
+            captionTextloglineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgloglineupexample.onclick = function() {
+            modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10linear = document.getElementById('modallow10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10linear = document.getElementById('imglow10linear');
+          var modalImglow10linear = document.getElementById('imgmodallow10linear');
+          var captionTextlow10linear = document.getElementById('captionlow10linear');
+          imglow10linear.onclick = function(){
+            modallow10linear.style.display = 'block';
+            modalImglow10linear.src = this.src;
+            captionTextlow10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10linear.onclick = function() {
+            modallow10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10log = document.getElementById('modallow10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10log = document.getElementById('imglow10log');
+          var modalImglow10log = document.getElementById('imgmodallow10log');
+          var captionTextlow10log = document.getElementById('captionlow10log');
+          imglow10log.onclick = function(){
+            modallow10log.style.display = 'block';
+            modalImglow10log.src = this.src;
+            captionTextlow10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10log.onclick = function() {
+            modallow10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15linear = document.getElementById('modallow15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15linear = document.getElementById('imglow15linear');
+          var modalImglow15linear = document.getElementById('imgmodallow15linear');
+          var captionTextlow15linear = document.getElementById('captionlow15linear');
+          imglow15linear.onclick = function(){
+            modallow15linear.style.display = 'block';
+            modalImglow15linear.src = this.src;
+            captionTextlow15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15linear.onclick = function() {
+            modallow15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15log = document.getElementById('modallow15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15log = document.getElementById('imglow15log');
+          var modalImglow15log = document.getElementById('imgmodallow15log');
+          var captionTextlow15log = document.getElementById('captionlow15log');
+          imglow15log.onclick = function(){
+            modallow15log.style.display = 'block';
+            modalImglow15log.src = this.src;
+            captionTextlow15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15log.onclick = function() {
+            modallow15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10linear = document.getElementById('modalhigh10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10linear = document.getElementById('imghigh10linear');
+          var modalImghigh10linear = document.getElementById('imgmodalhigh10linear');
+          var captionTexthigh10linear = document.getElementById('captionhigh10linear');
+          imghigh10linear.onclick = function(){
+            modalhigh10linear.style.display = 'block';
+            modalImghigh10linear.src = this.src;
+            captionTexthigh10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10linear.onclick = function() {
+            modalhigh10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10log = document.getElementById('modalhigh10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10log = document.getElementById('imghigh10log');
+          var modalImghigh10log = document.getElementById('imgmodalhigh10log');
+          var captionTexthigh10log = document.getElementById('captionhigh10log');
+          imghigh10log.onclick = function(){
+            modalhigh10log.style.display = 'block';
+            modalImghigh10log.src = this.src;
+            captionTexthigh10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10log.onclick = function() {
+            modalhigh10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15linear = document.getElementById('modalhigh15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15linear = document.getElementById('imghigh15linear');
+          var modalImghigh15linear = document.getElementById('imgmodalhigh15linear');
+          var captionTexthigh15linear = document.getElementById('captionhigh15linear');
+          imghigh15linear.onclick = function(){
+            modalhigh15linear.style.display = 'block';
+            modalImghigh15linear.src = this.src;
+            captionTexthigh15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15linear.onclick = function() {
+            modalhigh15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15log = document.getElementById('modalhigh15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15log = document.getElementById('imghigh15log');
+          var modalImghigh15log = document.getElementById('imgmodalhigh15log');
+          var captionTexthigh15log = document.getElementById('captionhigh15log');
+          imghigh15log.onclick = function(){
+            modalhigh15log.style.display = 'block';
+            modalImghigh15log.src = this.src;
+            captionTexthigh15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15log.onclick = function() {
+            modalhigh15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexpspaghettiplot = document.getElementById('modalexpspaghettiplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexpspaghettiplot = document.getElementById('imgexpspaghettiplot');
+          var modalImgexpspaghettiplot = document.getElementById('imgmodalexpspaghettiplot');
+          var captionTextexpspaghettiplot = document.getElementById('captionexpspaghettiplot');
+          imgexpspaghettiplot.onclick = function(){
+            modalexpspaghettiplot.style.display = 'block';
+            modalImgexpspaghettiplot.src = this.src;
+            captionTextexpspaghettiplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexpspaghettiplot.onclick = function() {
+            modalexpspaghettiplot.style.display = 'none';
+          }
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
