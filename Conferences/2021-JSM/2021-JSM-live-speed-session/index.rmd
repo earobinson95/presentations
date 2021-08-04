@@ -172,7 +172,6 @@ Kindergartener number line
 
 **Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
 
-???
 
 Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
 

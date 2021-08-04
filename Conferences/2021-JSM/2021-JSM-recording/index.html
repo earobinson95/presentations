@@ -145,7 +145,7 @@ body {
 
 # Outline
 
-1. Introduction to Logarithmic Scales and Mapping
+1. Introduction to Logarithmic Scales
 2. Research Objectives
 3. Perception of Exponential Growth
 4. Prediction of Exponential Trends
@@ -212,7 +212,7 @@ class:primary
 
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='100%'&gt;
+&lt;img id='imglogscaleexample' src='images/log-scale-example.jpg' alt=' ' width='60%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modallogscaleexample' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -222,6 +222,12 @@ class:primary
 &lt;/div&gt;
 ]
 
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
+
+.center[
+&lt;img src="images/log-numberline.png" width="70%"/&gt;
+]
+
 ???
 
 + **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
@@ -229,9 +235,6 @@ class:primary
 
 The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
-
----
-class:primary
 # Logarithmic Perception &amp; Mapping
 
 **Weber’s law** states we do not notice absolute changes in stimuli,
@@ -241,13 +244,10 @@ but instead that we notice the relative change (Fechner, 1860).
 
 Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development (Dehaene, Izard, Spelke, et al., 2008; Siegler and Braithwaite, 2017; Varshney and Sun, 2013).
 
-.center[
-&lt;img src="images/log-numberline.png" width="100%"/&gt;
-]
+Kindergartener number line
 
 **Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
 
-???
 
 Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
 
@@ -321,32 +321,6 @@ class:primary
 
 ---
 class:primary
-# Testing Graphics
-
-Evaluate design choices through the use of graphical tests. 
-
-Could ask participants to:
-
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
-
-???
-
-Evaluate design choices through the use of graphical tests. 
-
-Could ask participants to:
-
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
-
-All of these types of tests require different levels of use and manipulation of the information presented in the chart.
-
----
-class:primary
 # Research Objectives
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
@@ -363,6 +337,20 @@ class:primary
 
     - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
 
+???
+
+# Testing Graphics
+
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
     
 ---
 class:inverse
@@ -407,26 +395,83 @@ Study Participant Prompt: *Which plot is most different?*
 
 ---
 class:primary
-# Study Design
+# Lineup Study Design
 
-**Curvature:**
+**Curvature Levels:**
 + High Curvature
 + Medium  Curvature
-+  Low Curvature
++ Low Curvature
 
-**Treatment Design:** Target Panel gets model A and Null Panels get model B
+**Treatment Design:** Target Panel gets model A and Null Panels get model B. Shown on both the linear and log scales.
 
-`\(3!\cdot 2!= 6\)` curvature combinations
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtE_nH' src='images/tE_nH.png' alt='Target - high curvature; Null - low curvature' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtE_nM' src='images/tE_nM.png' alt='Target - high curvature; Null - medium curvature' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtM_nH' src='images/tM_nH.png' alt='Target - medium curvature; Null - low curvature' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtM_nE' src='images/tM_nE.png' alt='Target - medium curvature; Null - high curvature' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtH_nM' src='images/tH_nM.png' alt='Target - low curvature; Null - medium curvature' width='15%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgtH_nE' src='images/tH_nE.png' alt='Target - low curvature; Null - high curvature' width='15%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltE_nH' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltE_nH'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontE_nH' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltE_nM' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltE_nM'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontE_nM' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltM_nH' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltM_nH'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontM_nH' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltM_nE' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltM_nE'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontM_nE' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltH_nM' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltH_nM'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontH_nM' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaltH_nE' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaltH_nE'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiontH_nE' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-`\(\times 2\)` lineup data sets per combination `\(=\)` **12 test data sets**
+&lt;!-- `\(3!\cdot 2!= 6\)` curvature combinations --&gt;
 
-`\(\times 2\)` scales (log &amp; linear) `\(=\)` **24 different lineup plots**
+&lt;!-- `\(\times 2\)` lineup data sets per combination `\(=\)` **12 test data sets** --&gt;
 
-**Experimental Design:** 13 lineup plots per participant
+&lt;!-- `\(\times 2\)` scales (log &amp; linear) `\(=\)` **24 different lineup plots** --&gt;
 
-`\(6\)` test parameter combinations per participant `\(\times 2\)` scales `\(= 12\)` test lineups
 
-`\(1\)` rorschach parameter combination per participant
+
+**Experimental Design:** 12 test lineup plots per participant.
+
+&lt;!-- `\(6\)` test parameter combinations per participant `\(\times 2\)` scales `\(= 12\)` test lineups --&gt;
+
+&lt;!-- `\(1\)` rorschach parameter combination per participant --&gt;
 
 ---
 class:primary
@@ -450,7 +495,7 @@ Each lineup plot evaluated was assigned a value based on the participant respons
 
 ---
 class:primary
-# Results
+# Accuracy of Perception Results
 
 .center[
 &lt;img src="images/lineup-results.png" width="100%"/&gt;
@@ -480,7 +525,7 @@ class:inverse
 
 ---
 class:primary
-# Exponential Growth
+# Underestimation of Exponential Growth
 
 .center[
 &lt;img src="images/exponential-stages-comic.jpg", width="85%"/&gt;
@@ -497,8 +542,6 @@ Exponential growth is often misjudged:
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
 
-???
-
 Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
 
 + Numerical estimation is more accurate than graphical estimation for exponential curves.
@@ -513,14 +556,14 @@ Estimation and prediction of **exponential growth is underestimated** when prese
 
 ---
 class:primary
-# You Draw It Experimental Task
+# 'You Draw It' Experimental Task
 
 Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
 .pull-left[
-&lt;img src="images/eyefitting_example.gif" width="100%"/&gt;
+&lt;img src="images/exponential_example_linear.gif" width="100%"/&gt;
 ].pull-right[
-&lt;img src="images/exponential_example.gif" width="100%"/&gt;
+&lt;img src="images/exponential_example_log.gif" width="100%"/&gt;
 ]
 
 ???
@@ -529,45 +572,17 @@ Here we see an example of a you draw it interactive plot as seen by participants
 
 ---
 class:primary 
-# Data Simulation
-
-**Point data:** `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
-
-Data were simulated based on a one parameter exponential model with multiplicative errors:
-`\begin{equation}
-y_i = e^{\beta x_i + e_i}
-\end{equation}`
-
-for 
-
-+ growth rate `\(\beta\)`
-+ `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
-
-**Line data:** `\(m = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS})\)`
-
-A nonlinear least squares regression is then fit to the simulated points:
-`\begin{equation}
-\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
-\end{equation}`
-
-???
-
-+ `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
-
-Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
-
----
-class:primary 
-# Treatment Design
+# 'You Draw It' Study Design
 
 .pull-left[
-2 x 2 x 2 factorial:
+**Treatment Design:** 2 x 2 x 2 factorial:
 + **growth rate:** low and high.
 + **points truncated:** `\(50\%\)` and `\(75\%\)` of the domain.
 + **scale:** log and linear.
 
-Consistent aesthetic design choices:
-+ aspect ratio of one.
+**Experimental Design:** 8 'You Draw It' interactive task plots per participant.
+
+**Aesthetic design choices:**
 + y-axis extended `\(50\%\)` below and `\(200\%\)` above the simulated data range.
 + participants begin drawing at `\(50\%\)` of the domain.
 
@@ -718,8 +733,6 @@ More prominent in high exponential growth rates.
 
 Underestimation begins after the aid of points is removed.
 
-???
-
 **Goal:** Test an individual's ability to make predictions for exponentially increasing data.
 
 **Results:**
@@ -830,7 +843,7 @@ class:inverse
 &lt;br&gt;
 &lt;br&gt;
 .center[
-# Questions and Discussion
+# Questions?
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -1023,6 +1036,108 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgloglineupexample.onclick = function() {
             modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltE_nH = document.getElementById('modaltE_nH');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtE_nH = document.getElementById('imgtE_nH');
+          var modalImgtE_nH = document.getElementById('imgmodaltE_nH');
+          var captionTexttE_nH = document.getElementById('captiontE_nH');
+          imgtE_nH.onclick = function(){
+            modaltE_nH.style.display = 'block';
+            modalImgtE_nH.src = this.src;
+            captionTexttE_nH.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtE_nH.onclick = function() {
+            modaltE_nH.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltE_nM = document.getElementById('modaltE_nM');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtE_nM = document.getElementById('imgtE_nM');
+          var modalImgtE_nM = document.getElementById('imgmodaltE_nM');
+          var captionTexttE_nM = document.getElementById('captiontE_nM');
+          imgtE_nM.onclick = function(){
+            modaltE_nM.style.display = 'block';
+            modalImgtE_nM.src = this.src;
+            captionTexttE_nM.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtE_nM.onclick = function() {
+            modaltE_nM.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltM_nH = document.getElementById('modaltM_nH');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtM_nH = document.getElementById('imgtM_nH');
+          var modalImgtM_nH = document.getElementById('imgmodaltM_nH');
+          var captionTexttM_nH = document.getElementById('captiontM_nH');
+          imgtM_nH.onclick = function(){
+            modaltM_nH.style.display = 'block';
+            modalImgtM_nH.src = this.src;
+            captionTexttM_nH.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtM_nH.onclick = function() {
+            modaltM_nH.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltM_nE = document.getElementById('modaltM_nE');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtM_nE = document.getElementById('imgtM_nE');
+          var modalImgtM_nE = document.getElementById('imgmodaltM_nE');
+          var captionTexttM_nE = document.getElementById('captiontM_nE');
+          imgtM_nE.onclick = function(){
+            modaltM_nE.style.display = 'block';
+            modalImgtM_nE.src = this.src;
+            captionTexttM_nE.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtM_nE.onclick = function() {
+            modaltM_nE.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltH_nM = document.getElementById('modaltH_nM');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtH_nM = document.getElementById('imgtH_nM');
+          var modalImgtH_nM = document.getElementById('imgmodaltH_nM');
+          var captionTexttH_nM = document.getElementById('captiontH_nM');
+          imgtH_nM.onclick = function(){
+            modaltH_nM.style.display = 'block';
+            modalImgtH_nM.src = this.src;
+            captionTexttH_nM.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtH_nM.onclick = function() {
+            modaltH_nM.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaltH_nE = document.getElementById('modaltH_nE');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgtH_nE = document.getElementById('imgtH_nE');
+          var modalImgtH_nE = document.getElementById('imgmodaltH_nE');
+          var captionTexttH_nE = document.getElementById('captiontH_nE');
+          imgtH_nE.onclick = function(){
+            modaltH_nE.style.display = 'block';
+            modalImgtH_nE.src = this.src;
+            captionTexttH_nE.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgtH_nE.onclick = function() {
+            modaltH_nE.style.display = 'none';
           }
 </script>
 <script>

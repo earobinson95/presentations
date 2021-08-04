@@ -103,7 +103,7 @@ write("", file = "js-addins.html")
 
 # Outline
 
-1. Introduction to Logarithmic Scales and Mapping
+1. Introduction to Logarithmic Scales
 2. Research Objectives
 3. Perception of Exponential Growth
 4. Prediction of Exponential Trends
@@ -168,12 +168,18 @@ class:primary
 
 .center[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/log-scale-example.png", alt = " ", other=list(width="100%"))
+i1 <- img_modal(src = "images/log-scale-example.jpg", alt = " ", other=list(width="60%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
   ) %>% paste(collapse = "\n") %>% cat()
 ```
+]
+
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
+
+.center[
+<img src="images/log-numberline.png" width="70%"/>
 ]
 
 ???
@@ -183,9 +189,6 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
-
----
-class:primary
 # Logarithmic Perception & Mapping
 
 **Weber’s law** states we do not notice absolute changes in stimuli,
@@ -195,13 +198,10 @@ but instead that we notice the relative change `r Citep(bib[[c("fechner1860eleme
 
 Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
 
-.center[
-<img src="images/log-numberline.png" width="100%"/>
-]
+Kindergartener number line
 
 **Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
 
-???
 
 Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
 
@@ -269,32 +269,6 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ---
 class:primary
-# Testing Graphics
-
-Evaluate design choices through the use of graphical tests. 
-
-Could ask participants to:
-
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
-
-???
-
-Evaluate design choices through the use of graphical tests. 
-
-Could ask participants to:
-
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
-
-All of these types of tests require different levels of use and manipulation of the information presented in the chart.
-
----
-class:primary
 # Research Objectives
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
@@ -311,6 +285,20 @@ class:primary
 
     - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
 
+???
+
+# Testing Graphics
+
+Evaluate design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
     
 ---
 class:inverse
@@ -347,26 +335,51 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ---
 class:primary
-# Study Design
+# Lineup Study Design
 
-**Curvature:**
+**Curvature Levels:**
 + High Curvature
 + Medium  Curvature
-+  Low Curvature
++ Low Curvature
 
-**Treatment Design:** Target Panel gets model A and Null Panels get model B
+**Treatment Design:** Target Panel gets model A and Null Panels get model B. Shown on both the linear and log scales.
 
-$3!\cdot 2!= 6$ curvature combinations
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/tE_nH.png", alt = "Target - high curvature; Null - low curvature", other=list(width="15%"))
+i2 <- img_modal(src = "images/tE_nM.png", alt = "Target - high curvature; Null - medium curvature", other=list(width="15%"))
+i3 <- img_modal(src = "images/tM_nH.png", alt = "Target - medium curvature; Null - low curvature", other=list(width="15%"))
+i4 <- img_modal(src = "images/tM_nE.png", alt = "Target - medium curvature; Null - high curvature", other=list(width="15%"))
+i5 <- img_modal(src = "images/tH_nM.png", alt = "Target - low curvature; Null - medium curvature", other=list(width="15%"))
+i6 <- img_modal(src = "images/tH_nE.png", alt = "Target - low curvature; Null - high curvature", other=list(width="15%"))
 
-$\times 2$ lineup data sets per combination $=$ **12 test data sets**
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i3, "\\n", simplify = T)[1:2],
+  str_split(i4, "\\n", simplify = T)[1:2],
+  str_split(i5, "\\n", simplify = T)[1:2],
+  str_split(i6, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9],
+  str_split(i3, "\\n", simplify = T)[3:9],
+  str_split(i4, "\\n", simplify = T)[3:9],
+  str_split(i5, "\\n", simplify = T)[3:9],
+  str_split(i6, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
 
-$\times 2$ scales (log & linear) $=$ **24 different lineup plots**
+<!-- $3!\cdot 2!= 6$ curvature combinations -->
 
-**Experimental Design:** 13 lineup plots per participant
+<!-- $\times 2$ lineup data sets per combination $=$ **12 test data sets** -->
 
-$6$ test parameter combinations per participant $\times 2$ scales $= 12$ test lineups
+<!-- $\times 2$ scales (log & linear) $=$ **24 different lineup plots** -->
 
-$1$ rorschach parameter combination per participant
+
+
+**Experimental Design:** 12 test lineup plots per participant.
+
+<!-- $6$ test parameter combinations per participant $\times 2$ scales $= 12$ test lineups -->
+
+<!-- $1$ rorschach parameter combination per participant -->
 
 ---
 class:primary
@@ -390,7 +403,7 @@ Each lineup plot evaluated was assigned a value based on the participant respons
 
 ---
 class:primary
-# Results
+# Accuracy of Perception Results
 
 .center[
 <img src="images/lineup-results.png" width="100%"/>
@@ -420,7 +433,7 @@ class:inverse
 
 ---
 class:primary
-# Exponential Growth
+# Underestimation of Exponential Growth
 
 .center[
 <img src="images/exponential-stages-comic.jpg", width="85%"/>
@@ -436,8 +449,6 @@ Exponential growth is often misjudged:
 
 This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
 
-???
-
 Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
 
 + Numerical estimation is more accurate than graphical estimation for exponential curves.
@@ -452,14 +463,14 @@ Estimation and prediction of **exponential growth is underestimated** when prese
 
 ---
 class:primary
-# You Draw It Experimental Task
+# 'You Draw It' Experimental Task
 
 Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
 .pull-left[
-<img src="images/eyefitting_example.gif" width="100%"/>
+<img src="images/exponential_example_linear.gif" width="100%"/>
 ].pull-right[
-<img src="images/exponential_example.gif" width="100%"/>
+<img src="images/exponential_example_log.gif" width="100%"/>
 ]
 
 ???
@@ -468,45 +479,17 @@ Here we see an example of a you draw it interactive plot as seen by participants
 
 ---
 class:primary 
-# Data Simulation
-
-**Point data:** $N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$.
-
-Data were simulated based on a one parameter exponential model with multiplicative errors:
-\begin{equation}
-y_i = e^{\beta x_i + e_i}
-\end{equation}
-
-for 
-
-+ growth rate $\beta$
-+ $e_i \sim N(0, \sigma^2)$ generated by rejection sampling.
-
-**Line data:** $m = 1,....4x_{max} + 1$ fitted values in 0.25 increments across the domain, $(x_m, \hat y_{m,NLS})$
-
-A nonlinear least squares regression is then fit to the simulated points:
-\begin{equation}
-\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
-\end{equation}
-
-???
-
-+ $e_i \sim N(0, \sigma^2)$ are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
-
-Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
-
----
-class:primary 
-# Treatment Design
+# 'You Draw It' Study Design
 
 .pull-left[
-2 x 2 x 2 factorial:
+**Treatment Design:** 2 x 2 x 2 factorial:
 + **growth rate:** low and high.
 + **points truncated:** $50\%$ and $75\%$ of the domain.
 + **scale:** log and linear.
 
-Consistent aesthetic design choices:
-+ aspect ratio of one.
+**Experimental Design:** 8 'You Draw It' interactive task plots per participant.
+
+**Aesthetic design choices:**
 + y-axis extended $50\%$ below and $200\%$ above the simulated data range.
 + participants begin drawing at $50\%$ of the domain.
 
@@ -623,8 +606,6 @@ More prominent in high exponential growth rates.
 
 Underestimation begins after the aid of points is removed.
 
-???
-
 **Goal:** Test an individual's ability to make predictions for exponentially increasing data.
 
 **Results:**
@@ -697,5 +678,5 @@ class:inverse
 <br>
 <br>
 .center[
-# Questions and Discussion
+# Questions?
 ]
