@@ -416,31 +416,6 @@ In order to determine whether there are cognitive disadvantages to log scales, w
 
 ---
 class:primary
-# Underestimation of Exponential Growth
-
-.center[
-<img src="images/exponential-stages-comic.jpg", width="85%"/>
-
-`r Citep(bib[[c("vonbergmann_2021")]])`
-]
-
-???
-Exponential growth is often misjudged:
-+ **early stage** appears to have a small growth rate.
-+ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
-+ **late stages** exponential growth when it is quite apparent.
-
-This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
-
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
-
-**Can log transforming the data help?**
-
-+ Maybe, but are there consequences? 
-+ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
-
----
-class:primary
 # 'You Draw It' Experimental Task
 
 Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
