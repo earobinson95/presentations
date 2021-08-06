@@ -103,7 +103,7 @@ write("", file = "js-addins.html")
 
 # Motivation
 
-Data visualizations played an important role in during the **COVID-19 pandemic** `r Citep(bib[[c("rost_2020", "romano_scale_2020", "bavel_using_2020")]])`.
+Data visualizations played an important role in during the **COVID-19 pandemic**.
 
 .left-col[
 Dashboards displayed:
@@ -146,7 +146,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ```
 ]
 
-Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development.
 
 .center[
 <img src="images/log-numberline.png" width="70%"/>
