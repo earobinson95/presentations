@@ -154,36 +154,11 @@ Our perception is **logarithmic at first**, but transitions to a **linear scale 
 
 ???
 
-+ **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
-+ **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+One problem we face is when data spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area. We can address this problem through the use of a log scale transformation; however, this alters the contextual appearance of the data.
 
-The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
+In fact, past research has found that our perception is **logarithmic at first**, but transitions to a **linear scale later** in development. For example, a kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective. We have all experienced this when making a poster where we misjudged the space needed and end up compressing the last few letters onto the poster board.
 
-# Logarithmic Perception & Mapping
-
-**Weber’s law** states we do not notice absolute changes in stimuli,
-but instead that we notice the relative change `r Citep(bib[[c("fechner1860elemente")]])`. 
-
-**Weber-Fechner law** states the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception `r Citep(bib[[c("fechner1860elemente")]])`.
-
-Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
-
-Kindergartener number line
-
-**Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
-
-
-Ernst Weber, an early psychophysics researcher discovered the relationship between the difference threshold (smallest detectable difference between two sensory stimuli) and the magnitude of a stimulus. States we do not notice absolute changes in stimuli, but instead that we notice the relative change.
-
-Gustav Fechner, a founder of psychophysics, provided further extension to Weber’s law by discovering the relationship between the perceived intensity is logarithmic to the stimulus intensity when observed above a minimal threshold of perception.
-
-When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
-
-Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education.
-+ For example: A kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective.
-
-Assuming there is a direct relationship between perceptual and cognitive processes, it is reasonable to assume numerical representations should also be displayed on a nonlinear, compressed number scale. Therefore, if we perceive
-logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+Therefore, if we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
 
 ---
 class:primary
@@ -227,30 +202,12 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ???
 
-**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+Benefits of log scales were seen in spring 2020, during the early stages of the COVID-19 pandemic. During this time, we saw log scale transformations were useful for showing case count curves for areas with few cases and areas with many cases within once chart.
 
-+ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
-+ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
-
-**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
-
-+ Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
-+ The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
+Pitfalls of log scales were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially. During last summer's wave, graphs with a linear scale seemed more effective at spotting early increases in case counts that signaled more localized outbreaks. While we can still see the increase in rate of transimtion on the log scale, the effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
 
 ??? 
 
-# Testing Graphics
-
-Evaluate design choices through the use of graphical tests. 
-
-Could ask participants to:
-
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
-
-All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
 ---
 class:primary
@@ -287,9 +244,9 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ???
 
-*View slides from recorded presentation at ...*
+One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
-**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+The main goal of this research is to use graphical tests to determine if there **are benefits to displaying exponentially increasing data on a log scale rather than a linear scale?** We have developed three graphical tests:
 
 .pull-left[
 1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
