@@ -130,8 +130,6 @@ Data visualizations played an important role in during the COVID-19 pandemic in 
 
 One of the many dashboards was called 91-DIVOC (COVID-19 backwards!). Gives the viewer choices of what to show: case count, mortality, hospitalizations, standardized to population, geographic regions, scales (log/linear).
 
-Other dashboards showed outbreak regions in the form of maps. 
-
 ---
 class:primary
 # Logarithmic Scales
@@ -159,55 +157,6 @@ One problem we face is when data spans several orders of magnitude shown on its 
 In fact, past research has found that our perception is **logarithmic at first**, but transitions to a **linear scale later** in development. For example, a kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective. We have all experienced this when making a poster where we misjudged the space needed and end up compressing the last few letters onto the poster board.
 
 Therefore, if we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
-
----
-class:primary
-# Benefits and Pitfalls of Log Scales
-
-.pull-left[
-
-**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
-.center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="100%"))
-
-c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9]
-  ) %>% paste(collapse = "\n") %>% cat()
-```
-]
-
-].pull-right[
-
-**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
-
-.center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/covid19-FT-linear.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
-
-c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9]
-  ) %>% paste(collapse = "\n") %>% cat()
-```
-
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/covid19-FT-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
-
-c(str_split(i1, "\\n", simplify = T)[1:2],
-  str_split(i1, "\\n", simplify = T)[3:9]
-  ) %>% paste(collapse = "\n") %>% cat()
-```
-]
-]
-
-???
-
-Benefits of log scales were seen in spring 2020, during the early stages of the COVID-19 pandemic. During this time, we saw log scale transformations were useful for showing case count curves for areas with few cases and areas with many cases within once chart.
-
-Pitfalls of log scales were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially. During last summer's wave, graphs with a linear scale seemed more effective at spotting early increases in case counts that signaled more localized outbreaks. While we can still see the increase in rate of transimtion on the log scale, the effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
-
-??? 
-
 
 ---
 class:primary
@@ -248,10 +197,29 @@ One way to evaluate design choices is through the use of graphical tests. We cou
 
 The main goal of this research is to use graphical tests to determine if there **are benefits to displaying exponentially increasing data on a log scale rather than a linear scale?** We have developed three graphical tests:
 
-.pull-left[
 1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
   + Utilizes statistical lineups to test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
 2. [Prediction of Exponential Trends](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
   + Tests an individuals ability to make predictions for exponentially increasing data with 'You Draw It'
 3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
   + Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
+  
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Thank you!
+<br
+<br>
+To learn more, visit **www.emilyarobinson.com**.
+]
+
+???
+
+Thank you for listening to my talk, please place any questions or discussion points in the chat on the JSM platform. 
+
