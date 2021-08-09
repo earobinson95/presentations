@@ -1,7 +1,7 @@
 ---
 title: "Pandemic Dilemmas: Human perception of exponentially increasing data displayed on a log scale evaluated through experimental graphics tasks"
 subtitle: "University of Nebraska - Lincoln"
-author: "Emily Robinson, Susan VanderPlas, Reka Howard"
+author: "[Emily Robinson](www.emilyarobinson.com), Susan VanderPlas, Reka Howard"
 date: "JSM 2021"
 output:
   xaringan::moon_reader:
@@ -631,10 +631,11 @@ class:inverse
 <br>
 <br>
 <br>
-<br>
-<br>
 .center[
-# Questions?
+# Thank you!
+<br
+<br>
+To learn more, visit **www.emilyarobinson.com**.
 ]
 
 ???
