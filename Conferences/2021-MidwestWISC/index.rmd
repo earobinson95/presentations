@@ -463,10 +463,10 @@ class:primary
 
 
 1. Establish 'You Draw It' as a tool for testing graphics.
-2. Provide experimental support for “ensemble perception”.
+2. Provide experimental support for human perception of linear regression.
 
 **Results:**
-+ Estimated drawn trend-lines followed closer to the regression line based on the principal axes than the OLS regression line.
++ Estimated drawn trend-lines followed closer to the principal axes than the OLS regression line.
 + Most prominent in data simulated with large variances.
 + Humans perform “ensemble perception” in a statistical graphic setting as participants minimized the distance from the their regression line over both the x and y axis simultaneously
 
