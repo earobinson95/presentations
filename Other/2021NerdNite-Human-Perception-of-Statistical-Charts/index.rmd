@@ -112,7 +112,7 @@ write("", file = "js-addins.html")
 ##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/)
 ##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95)
 <br>
-.medium[*Slides: https://bit.ly/3EgSVU4*]
+.medium[*Slides: https://bit.ly/3msOdKX*]
 
 
 ???
