@@ -103,7 +103,7 @@ write("", file = "js-addins.html")
 ```
 
 <br><br><br>
-# Eye Fitting Straight Lines in the Modern Era
+## Pandemic Dilemmas: Human Perception of Exponentially Increasing Data Displayed on a Log Scale Evaluated Through Experimental Graphics Tasks
 ## Women in Statistics and Data Science (WSDS)
 ### October 7, 2021
 #### Emily A. Robinson, Susan VanderPlas, and Reka Howard 
