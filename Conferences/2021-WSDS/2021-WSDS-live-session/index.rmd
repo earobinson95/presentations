@@ -1,5 +1,5 @@
 ---
-title: "Eye Fitting Straight Lines in the Modern Era"
+title: "Pandemic Dilemmas: Human Perception of Exponentially Increasing Data Displayed on a Log Scale Evaluated Through Experimental Graphics Tasks"
 subtitle: "Midwest WISC (Sept. 18, 2021)"
 author: "Emily Robinson"
 date: "Department of Statistics, University of Nebraska - Lincoln"
