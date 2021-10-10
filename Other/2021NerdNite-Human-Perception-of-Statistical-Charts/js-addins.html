@@ -1,6 +1,40 @@
 
 <script>
         /* Get the modal*/
+          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
+          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
+          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
+          imglinearlineupexample.onclick = function(){
+            modallinearlineupexample.style.display = 'block';
+            modalImglinearlineupexample.src = this.src;
+            captionTextlinearlineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglinearlineupexample.onclick = function() {
+            modallinearlineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalloglineupexample = document.getElementById('modalloglineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgloglineupexample = document.getElementById('imgloglineupexample');
+          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
+          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
+          imgloglineupexample.onclick = function(){
+            modalloglineupexample.style.display = 'block';
+            modalImgloglineupexample.src = this.src;
+            captionTextloglineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgloglineupexample.onclick = function() {
+            modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
           var modaleyefittingexamplesimplot = document.getElementById('modaleyefittingexamplesimplot');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
           var imgeyefittingexamplesimplot = document.getElementById('imgeyefittingexamplesimplot');

@@ -208,6 +208,24 @@ Could ask participants to:
 All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
 ---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Lineup Protocal
+<font size="6">
+(Buja et. al, 2009)
+</font>
+]
+???
+Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
+
+---
 class:primary
 # Introduction to Visual Inference
 When doing exploratory data analysis, how do we know if what we see is actually there?
@@ -223,8 +241,6 @@ ggplot(banknote) +
 ```
 
 ???
-
-Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
 
 When inspecting a plot, how do we know if what we are seeing is actually there?
 
@@ -273,12 +289,56 @@ The main benefit of using visual inference is that visual tests tend to be more 
 class:primary
 # Lineup Studies
 
++ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) `r Citep(bib[[c("buja2009statistical")]])`
++ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) `r Citep(bib[[c("majumder2013validation")]])`
++ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) `r Citep(bib[[c("majumder2014human")]])`
++ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) `r Citep(bib[[c("loy2016variations")]])`
++ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) `r Citep(bib[[c("vanderplas2015spatial")]])`
++ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) `r Citep(bib[[c("vanderplas2017clusters")]])`
++ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) `r Citep(bib[[c("vanderplas2021statistical")]])`
 
+.pull-left[
++ Dissertation work: Perception of log scales
+Participate in study [here.](https://shiny.srvanderplas.com/log-study/)
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/linear-lineup-example.png", alt = "Linear Scale", other=list(width="40%"))
+i2 <- img_modal(src = "images/log-lineup-example.png", alt = "Log Scale", other=list(width="40%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+???
+**Clusters beat trend!? testing feature hierarchy in statistical graphics** `r Citep(bib[[c("vanderplas2017clusters")]])`
++ Introduces perceptual principles such as preattentive features and gestalt heuristics
++ Discusses the design and results of a factorial experiment examining the effect of plot aesthetics such as color and trend lines on participants’ assessment of ambiguous data displays.
++ Strongly suggests that plot aesthetics have a significant impact on the perception of important features in data displays.
+
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# 'You Draw It'
+]
+ 
 ---
 class:primary
 # Linear Regression 
 
-```{r linear-regression, echo = F, fig.width = 6, fig.height = 9/2, out.width = "75%", fig.align='center'}
+The principle of simple linear regression is to find the line (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
+
+```{r linear-regression, echo = F, fig.width = 6, fig.height = 9/2, out.width = "70%", fig.align='center'}
 dat <- mtcars
 
 library(ggplot2)
@@ -301,7 +361,7 @@ class:primary
 
 The principle of simple linear regression is to **find the line** (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
 
-```{r linear-regression2, echo=F, fig.align='center', fig.height=9/2, fig.width=6, message=FALSE, warning=FALSE, out.width="75%"}
+```{r linear-regression2, echo=F, fig.align='center', fig.height=9/2, fig.width=6, message=FALSE, warning=FALSE, out.width="70%"}
 dat <- mtcars
 
 library(ggplot2)
@@ -331,6 +391,8 @@ The principle of simple linear regression is to **find the line** (i.e., determi
 .center[
 <img src="images/pca-plot.jpg" width="80%"/>
 ]
+
+--
 
 **Big Idea:** How do statistical regression results compare to intuitive, visually fitted results?
 
@@ -454,7 +516,7 @@ class:primary
 
 + A total of 35 individuals completed 119 unique you draw it task plots.
 
-+ Data sets were generated randomly, independently for each participant at the start of the experiment.
++ Data sets were generated randomly, independently for each participant at the start of the experiment. 
 
 + Participants shown 2 practice plots followed by 4 task plots randomly assigned for each individual in a completely randomized design.
 
@@ -497,7 +559,7 @@ for
 + $e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}$
 + $e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}$.
 
-].pull-right[
+].pull-right[ 
 
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
 i1 <- img_modal(src = "images/eyefitting-trial-plot.png", alt = " ", other=list(width="100%"))
