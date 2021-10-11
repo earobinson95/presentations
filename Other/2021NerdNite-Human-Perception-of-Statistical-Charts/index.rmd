@@ -277,7 +277,7 @@ class:primary
 # Introduction to Visual Inference
 
 .center[
-<img src="images/visual-inference-flowchart.png" width="58%" />
+<img src="images/visual-inference-flowchart.png" width="58%" /> 
 ]
 
 ???
@@ -287,7 +287,7 @@ The main benefit of using visual inference is that visual tests tend to be more 
 
 ---
 class:primary
-# Lineup Studies
+# Lineup Studies `r emo::ji("graph")` `r emo::ji("graph")` `r emo::ji("graph")`
 
 + [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) `r Citep(bib[[c("buja2009statistical")]])`
 + [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) `r Citep(bib[[c("majumder2013validation")]])`
