@@ -253,7 +253,7 @@ class:primary
 ]
 ].pull-right[
 .center[
-<!-- <img src="images/can-you-draw-it-mobile-qrcode.png" width="88%"/> -->
+<img src="images/can-you-draw-it-mobile-qrcode.png" width="88%"/>
 <font size="6">
 **SCAN ME**
 
@@ -267,7 +267,7 @@ OR VISIT [bit.ly/3BF56Zj](https://bit.ly/3BF56Zj)
 class:primary
 # Did it looks something like this?
 .center[
-<!-- <img src="images/can-you-draw-it-example.png" width="60%"/> -->
+<img src="images/can-you-draw-it-example.png" width="60%"/>
 ]
 
 ---
