@@ -744,86 +744,6 @@ Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/medi
 
 `r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
 
-
----
-class:primary
-# References
-<font size="2">
-```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("aisch_cox_quealy_2015",
-"Aisch_NYTimes_presidential_forecast",
-"buchanan_park_pearce_2017",
-"buja2009statistical",
-"carpenter1998model",
-"chandar2012graph",
-"chong2003representation",
-"chong2005statistical",
-"ciccione2021can",
-"cleveland1984graphical")]], 
-      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
-      )
-```
-</font>
-
----
-class:primary
-# References
-<font size="2">
-```{r, print_refs2, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("cleveland1985graphical",
-"finney1951subjective",
-"gouretski2007much",
-"green2009personal",
-"harms1991august",
-"hofmann2012graphical",
-"katz_2017",
-"lewandowsky1989perception",
-"mosteller1981eye",
-"playfair1801statistical")]], 
-      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
-      )
-```
-</font>
-
----
-class:primary
-# References
-<font size="2">
-```{r, print_refs3, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("spence1990visual",
-"unwin2020data",
-"van2011rapid",
-"vanderplas2015spatial",
-"vanderplas2017clusters",
-"vanderplas2020testing",
-"walker2013statistical",
-"wickham2011ggplot2",
-"wilkinson2013grammar",
-"yates1985graphs")]], 
-      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
-      )
-```
-</font>
-
-
----
-class:inverse
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-.center[
-# Thank you!
-<br
-<br>
-<!-- `r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu** -->
-<!-- `r fa("home", fill = "white")` **www.emilyarobinson.com** -->
-`r fa("github", fill = "white")` **earobinson95**
-]
-
-
 ---
 class:primary
 # Future Work
@@ -854,6 +774,19 @@ Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/medi
 `r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
 
 `r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Prediction of exponential growth with 'You Draw It'.
+]
 
 ---
 class:primary
@@ -1079,3 +1012,81 @@ class:primary
 + Points shown along the trend improve predictions.
 
 **The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("aisch_cox_quealy_2015",
+"Aisch_NYTimes_presidential_forecast",
+"buchanan_park_pearce_2017",
+"buja2009statistical",
+"carpenter1998model",
+"chandar2012graph",
+"chong2003representation",
+"chong2005statistical",
+"ciccione2021can",
+"cleveland1984graphical")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs2, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("cleveland1985graphical",
+"finney1951subjective",
+"gouretski2007much",
+"green2009personal",
+"harms1991august",
+"hofmann2012graphical",
+"katz_2017",
+"lewandowsky1989perception",
+"mosteller1981eye",
+"playfair1801statistical")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+---
+class:primary
+# References
+<font size="2">
+```{r, print_refs3, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("spence1990visual",
+"unwin2020data",
+"van2011rapid",
+"vanderplas2015spatial",
+"vanderplas2017clusters",
+"vanderplas2020testing",
+"walker2013statistical",
+"wickham2011ggplot2",
+"wilkinson2013grammar",
+"yates1985graphs")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Thank you!
+<br
+<br>
+<!-- `r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu** -->
+<!-- `r fa("home", fill = "white")` **www.emilyarobinson.com** -->
+`r fa("github", fill = "white")` **earobinson95**
+]
