@@ -105,9 +105,9 @@ write("", file = "js-addins.html")
 <br><br>
 # Can 'You Draw It'? Eye Fitting Straight Lines in the Modern Era
 ## UNL Ph.D. Seminar
-### October 14, 2021
+### October 15, 2021
 #### Emily Robinson 
-#### Department of Statistics, University of Nebraska - Lincoln
+<!-- #### Department of Statistics, University of Nebraska - Lincoln -->
 <!-- ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) -->
 <!-- ##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/) -->
 <!-- ##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95) -->
