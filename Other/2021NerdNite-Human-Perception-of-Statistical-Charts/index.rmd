@@ -246,7 +246,7 @@ When inspecting a plot, how do we know if what we are seeing is actually there?
 
 ---
 class:primary
-# Lineup Protocal (Buja et. al, 2009)
+# Lineup Protocol (Buja et. al, 2009)
 
 Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
 
