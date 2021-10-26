@@ -257,9 +257,9 @@ Data visualization is defined as the art of drawing **graphical charts** in orde
 
 📈 Data cleaning.
 
-🔎 Exploring data structure. 
+🔍 Exploring data structure. 
 
-💭 Communicating information.
+🗯 Communicating information.
 
 **Who uses graphics?**
 + Governments (Harms, 1991; Playfair, 1801; Walker, 2013).
@@ -315,7 +315,7 @@ Evaluate design choices and understand cognitive biases through the use of **vis
 
 Could ask participants to:
 
-📉 identify differences in graphs.
+📈 identify differences in graphs.
 
 📖 read information off of a chart accurately. 
 
@@ -397,7 +397,7 @@ The main benefit of using visual inference is that visual tests tend to be more 
 
 ---
 class:primary
-# Lineup Studies 📉 📉 💹
+# Lineup Studies 📊 💹 📊
 
 + [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=10347521957724374176&amp;ei=W11jYaXsKYWM6rQPo_eDyAg&amp;scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) (Buja, Cook, Hofmann, et al., 2009)
 + [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=3201506009084463478&amp;ei=a11jYe6GFJ2N6rQPrdWZ4A0&amp;scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) (Majumder, Hofmann, and Cook, 2013)
@@ -806,11 +806,56 @@ class:inverse
 
 ---
 class:primary
+# Motivation
+
+.pull-left[
+Data visualizations played an important role in during the **COVID-19 pandemic** .
+
+Dashboards displayed:
++ case counts.
++ transmission rates.
++ outbreak regions.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='img91divoccasesjuly2021' src='images/91divoc-cases-july2021.png' alt='' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modal91divoccasesjuly2021' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodal91divoccasesjuly2021'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='caption91divoccasesjuly2021' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19summer2020riskmap' src='images/covid19-summer2020-risk-map.png' alt='' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19summer2020riskmap' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19summer2020riskmap'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19summer2020riskmap' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+???
+
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions.
+
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic.
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance.  
+
+One of the many dashboards was called 91-DIVOC (COVID-19 backwards!). Gives the viewer choices of what to show: case count, mortality, hospitalizations, standardized to population, geographic regions, scales (log/linear).
+
+Other dashboards showed outbreak regions in the form of maps. 
+
+---
+class:primary
 # Logarithmic Scales
 
-.center[
+.pull-left[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglogscaleexample' src='images/log-scale-example.jpg' alt=' ' width='60%'&gt;
+&lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='100%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modallogscaleexample' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -818,21 +863,104 @@ class:primary
   &lt;!-- Modal Caption (Image Text) --&gt;
   &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
-]
-
-Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development.
-
-.center[
-&lt;img src="images/log-numberline.png" width="70%"/&gt;
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt='' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallogscalecomic' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallogscalecomic'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlogscalecomic' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
 
 ???
 
-One problem we face is when data spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area. We can address this problem through the use of a log scale transformation; however, this alters the contextual appearance of the data.
++ **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
++ **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
 
-In fact, past research has found that our perception is **logarithmic at first**, but transitions to a **linear scale later** in development. For example, a kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective. We have all experienced this when making a poster where we misjudged the space needed and end up compressing the last few letters onto the poster board.
+The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
-Therefore, if we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+---
+class:primary
+# Logarithmic Mapping
+
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development .
+
+.center[
+&lt;img src="images/log-numberline.png" width="100%"/&gt;
+]
+
+**Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
+
+???
+
+When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
+
+Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education.
++ For example: A kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective.
+
+Assuming there is a direct relationship between perceptual and cognitive processes, it is reasonable to assume numerical representations should also be displayed on a nonlinear, compressed number scale. Therefore, if we perceive
+logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+---
+class:primary
+# Benefits and Pitfalls of Log Scales
+
+.pull-left[
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FT03' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FT03'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FT03' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+].pull-right[
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FTlinear' src='images/covid19-FT-linear.png' alt='' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FTlinear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlinear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FTlinear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgcovid19FTlog' src='images/covid19-FT-log.png' alt='' width='80%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalcovid19FTlog' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalcovid19FTlog'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioncovid19FTlog' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+]
+
+???
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+
++ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
++ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
++ Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
++ The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
 
 ---
 class:primary
@@ -894,6 +1022,49 @@ class:inverse
 .center[
 # Prediction of Exponential Growth
 ]
+
+---
+class:primary
+# Stages of Exponential Growth
+
+.center[
+&lt;img src="images/exponential-stages-comic.jpg", width="85%"/&gt;
+
+
+]
+
+???
+Exponential growth is often misjudged:
++ **early stage** appears to have a small growth rate.
++ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
++ **late stages** exponential growth when it is quite apparent.
+
+This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
+
+---
+class:primary
+# Underestimation of Exponential Growth
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically .
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
+
+???
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves.
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation. 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions.
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ---
 class:primary 
@@ -1117,23 +1288,31 @@ class:inverse
 class:primary
 # What's Next?
 
-.center[
-&lt;img src="images/loading.gif" width="50%"/&gt;
-]
+&lt;!-- .center[ --&gt;
+&lt;!-- &lt;img src="images/loading.gif" width="50%"/&gt; --&gt;
+&lt;!-- ] --&gt;
 
-✏️ Implement the 'You Draw It' method in non-linear settings.
+&lt;!-- ✏️ Implement the 'You Draw It' method in non-linear settings. --&gt;
 
-📈 Evaluate human ability to extrapolate data from trends.
+&lt;!-- 📈 Evaluate human ability to extrapolate data from trends. --&gt;
 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends. 
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends.  --&gt;
 
-<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots. --&gt;
+
++ Pilot study for translation to numeric values on a logarithmic scale.
+
++ Final Data Collection on Prolific.
+
++ Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
++ Use the tool to understand beliefs of real data such as climate change trends.
 
 &lt;br&gt;
 
-.right-col[
-Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
-]
+&lt;!-- .right-col[ --&gt;
+&lt;!-- Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html) --&gt;
+&lt;!-- ] --&gt;
 
 ???
 ✏️ Implement the 'You Draw It' method in non-linear settings.
@@ -1476,6 +1655,40 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 </script>
 <script>
         /* Get the modal*/
+          var modal91divoccasesjuly2021 = document.getElementById('modal91divoccasesjuly2021');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var img91divoccasesjuly2021 = document.getElementById('img91divoccasesjuly2021');
+          var modalImg91divoccasesjuly2021 = document.getElementById('imgmodal91divoccasesjuly2021');
+          var captionText91divoccasesjuly2021 = document.getElementById('caption91divoccasesjuly2021');
+          img91divoccasesjuly2021.onclick = function(){
+            modal91divoccasesjuly2021.style.display = 'block';
+            modalImg91divoccasesjuly2021.src = this.src;
+            captionText91divoccasesjuly2021.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImg91divoccasesjuly2021.onclick = function() {
+            modal91divoccasesjuly2021.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19summer2020riskmap = document.getElementById('modalcovid19summer2020riskmap');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19summer2020riskmap = document.getElementById('imgcovid19summer2020riskmap');
+          var modalImgcovid19summer2020riskmap = document.getElementById('imgmodalcovid19summer2020riskmap');
+          var captionTextcovid19summer2020riskmap = document.getElementById('captioncovid19summer2020riskmap');
+          imgcovid19summer2020riskmap.onclick = function(){
+            modalcovid19summer2020riskmap.style.display = 'block';
+            modalImgcovid19summer2020riskmap.src = this.src;
+            captionTextcovid19summer2020riskmap.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19summer2020riskmap.onclick = function() {
+            modalcovid19summer2020riskmap.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
           var modallogscaleexample = document.getElementById('modallogscaleexample');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
           var imglogscaleexample = document.getElementById('imglogscaleexample');
@@ -1489,6 +1702,74 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImglogscaleexample.onclick = function() {
             modallogscaleexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallogscalecomic = document.getElementById('modallogscalecomic');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglogscalecomic = document.getElementById('imglogscalecomic');
+          var modalImglogscalecomic = document.getElementById('imgmodallogscalecomic');
+          var captionTextlogscalecomic = document.getElementById('captionlogscalecomic');
+          imglogscalecomic.onclick = function(){
+            modallogscalecomic.style.display = 'block';
+            modalImglogscalecomic.src = this.src;
+            captionTextlogscalecomic.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglogscalecomic.onclick = function() {
+            modallogscalecomic.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FT03 = document.getElementById('modalcovid19FT03');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FT03 = document.getElementById('imgcovid19FT03');
+          var modalImgcovid19FT03 = document.getElementById('imgmodalcovid19FT03');
+          var captionTextcovid19FT03 = document.getElementById('captioncovid19FT03');
+          imgcovid19FT03.onclick = function(){
+            modalcovid19FT03.style.display = 'block';
+            modalImgcovid19FT03.src = this.src;
+            captionTextcovid19FT03.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FT03.onclick = function() {
+            modalcovid19FT03.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlinear = document.getElementById('modalcovid19FTlinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlinear = document.getElementById('imgcovid19FTlinear');
+          var modalImgcovid19FTlinear = document.getElementById('imgmodalcovid19FTlinear');
+          var captionTextcovid19FTlinear = document.getElementById('captioncovid19FTlinear');
+          imgcovid19FTlinear.onclick = function(){
+            modalcovid19FTlinear.style.display = 'block';
+            modalImgcovid19FTlinear.src = this.src;
+            captionTextcovid19FTlinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlinear.onclick = function() {
+            modalcovid19FTlinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlog = document.getElementById('modalcovid19FTlog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlog = document.getElementById('imgcovid19FTlog');
+          var modalImgcovid19FTlog = document.getElementById('imgmodalcovid19FTlog');
+          var captionTextcovid19FTlog = document.getElementById('captioncovid19FTlog');
+          imgcovid19FTlog.onclick = function(){
+            modalcovid19FTlog.style.display = 'block';
+            modalImgcovid19FTlog.src = this.src;
+            captionTextcovid19FTlog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlog.onclick = function() {
+            modalcovid19FTlog.style.display = 'none';
           }
 </script>
 <script>

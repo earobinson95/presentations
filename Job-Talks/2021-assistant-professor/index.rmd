@@ -748,11 +748,60 @@ class:inverse
 
 ---
 class:primary
+# Motivation
+
+.pull-left[
+Data visualizations played an important role in during the **COVID-19 pandemic** `r Citep(bib[[c("rost_2020", "romano_scale_2020", "bavel_using_2020")]])`.
+
+Dashboards displayed:
++ case counts.
++ transmission rates.
++ outbreak regions.
+
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/91divoc-cases-july2021.png", alt = Citep(bib[[c("fagen-ulmschneider_2020")]]), other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+``` 
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-summer2020-risk-map.png", alt = Citep(bib[[c("global_epidemics_2021")]]), other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+``` 
+]
+???
+
+Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions.
+
++ Mass media routinely showed charts to share information with the public about the progression of the pandemic.
++ Graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing.
++ Facilitated communication with the public to increase compliance.  
+
+One of the many dashboards was called 91-DIVOC (COVID-19 backwards!). Gives the viewer choices of what to show: case count, mortality, hospitalizations, standardized to population, geographic regions, scales (log/linear).
+
+Other dashboards showed outbreak regions in the form of maps. 
+
+---
+class:primary
 # Logarithmic Scales
 
-.center[
+.pull-left[
 ```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
-i1 <- img_modal(src = "images/log-scale-example.jpg", alt = " ", other=list(width="60%"))
+i1 <- img_modal(src = "images/log-scale-example.png", alt = " ", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/log-scale-comic.png", alt = Citep(bib[[c("munroe_2005")]]), other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
   str_split(i1, "\\n", simplify = T)[3:9]
@@ -760,19 +809,86 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ```
 ]
 
-Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development.
+???
+
++ **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
++ **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+
+The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
+
+---
+class:primary
+# Logarithmic Mapping
+
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
 
 .center[
-<img src="images/log-numberline.png" width="70%"/>
+<img src="images/log-numberline.png" width="100%"/>
+]
+
+**Assumption:** If we perceive logarithmically by default, it is a natural way to display information and should be easy to read and understand/use.
+
+???
+
+When we first learn to count, we begin counting by ones, then by tens, and advancing to hundreds, following the base10 order of magnitude system.
+
+Our perception and mapping of numbers to a number line is **logarithmic at first**, but transitions to a **linear scale later** in development, with formal mathematics education.
++ For example: A kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective.
+
+Assuming there is a direct relationship between perceptual and cognitive processes, it is reasonable to assume numerical representations should also be displayed on a nonlinear, compressed number scale. Therefore, if we perceive
+logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+---
+class:primary
+# Benefits and Pitfalls of Log Scales
+
+.pull-left[
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+].pull-right[
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+.center[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-FT-linear.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/covid19-FT-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
 ]
 
 ???
 
-One problem we face is when data spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area. We can address this problem through the use of a log scale transformation; however, this alters the contextual appearance of the data.
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 
-In fact, past research has found that our perception is **logarithmic at first**, but transitions to a **linear scale later** in development. For example, a kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective. We have all experienced this when making a poster where we misjudged the space needed and end up compressing the last few letters onto the poster board.
++ Large magnitude discrepancies in case counts at a given time point between different geographic regions.
++ Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart. 
 
-Therefore, if we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
++ Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
++ The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
 
 ---
 class:primary
@@ -834,6 +950,49 @@ class:inverse
 .center[
 # Prediction of Exponential Growth
 ]
+
+---
+class:primary
+# Stages of Exponential Growth
+
+.center[
+<img src="images/exponential-stages-comic.jpg", width="85%"/>
+
+`r Citep(bib[[c("vonbergmann_2021")]])`
+]
+
+???
+Exponential growth is often misjudged:
++ **early stage** appears to have a small growth rate.
++ **middle stage** appears to be growing, but not at an astounding rate, appearing more quadratic.
++ **late stages** exponential growth when it is quite apparent.
+
+This misinterpretation can lead to decisions made under inaccurate understanding causing future consequences.
+
+---
+class:primary
+# Underestimation of Exponential Growth
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975")]])`.
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
+
+???
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
+
++ Numerical estimation is more accurate than graphical estimation for exponential curves.
++ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
++ Instruction on exponential growth reduced the underestimation. 
++ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions.
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ---
 class:primary 
@@ -1023,23 +1182,31 @@ class:inverse
 class:primary
 # What's Next?
 
-.center[
-<img src="images/loading.gif" width="50%"/>
-]
+<!-- .center[ -->
+<!-- <img src="images/loading.gif" width="50%"/> -->
+<!-- ] -->
 
-`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
+<!-- `r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings. -->
 
-`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
+<!-- `r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends. -->
 
-`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
+<!-- `r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends.  -->
 
-`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+<!-- `r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots. -->
+
++ Pilot study for translation to numeric values on a logarithmic scale.
+
++ Final Data Collection on Prolific.
+
++ Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
++ Use the tool to understand beliefs of real data such as climate change trends.
 
 <br>
 
-.right-col[
-Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
-]
+<!-- .right-col[ -->
+<!-- Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html) -->
+<!-- ] -->
 
 ???
 `r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
