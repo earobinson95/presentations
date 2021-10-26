@@ -103,40 +103,19 @@ write("", file = "js-addins.html")
 ```
 
 <br><br>
-# Can 'You Draw It'?
-
-### November XX, 2021
+# Can 'You Draw It'? Eye Fitting Straight Lines in the Modern Era
+## UNL Ph.D. Seminar
+### October 15, 2021
 #### Emily Robinson 
-#### Department of Statistics, University of Nebraska - Lincoln 
-##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) 
-##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/) 
-##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95)
+<!-- #### Department of Statistics, University of Nebraska - Lincoln -->
+<!-- ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) -->
+<!-- ##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/) -->
+<!-- ##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95) -->
 
----
-class:primary
-# Hi there, I'm Emily! 
 
----
-class:primary
-# Publications
+???
 
-**Graphics**
-
-**Collaborations**
-
----
-class:primary
-# Outline
-
-+ Introduction to Graphical Testing
-
-+ Let's see your drawing skills!
-
-+ Eye Fitting Straight Lines in the Modern Era
-
-+ Logarithmic Perception
-
-+ Prediction of Exponential Growth
+Thank you, everyone for coming! I am a PhD candidate in the Department of Statistics at the University of Nebraska - Lincoln. I will be presenting on human perception of statistical charts and giving an overview of current graphical testing methods then introduce the current research I am conducting in graphical testing. 
 
 ---
 class:primary
@@ -349,7 +328,7 @@ class:inverse
 <br>
 <br>
 .center[
-# Eye Fitting Straight Lines in the Modern Era
+# 'You Draw It'
 ]
 
 ---
@@ -733,6 +712,69 @@ This study reinforces the differences between intuitive visual model fitting and
 
 **The reproducibility of these results serve as validation of the 'You Draw It' tool and method.**
 
+
+---
+class:primary
+# Future Work
+
+.center[
+<img src="images/loading.gif" width="50%"/>
+]
+
+`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
+
+`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
+
+`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
+
+`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+<br>
+
+.right-col[
+Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
+]
+
+???
+`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
+
+`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
+
+`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
+
+`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+---
+class:primary
+# Future Work
+
+.center[
+<img src="images/loading.gif" width="50%"/>
+]
+
+`r emo::ji("pencil2")` **Implement the 'You Draw It' method in non-linear settings.**
+
+`r emo::ji("chart increasing")` **Evaluate human ability to extrapolate data from trends.**
+
+`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
+
+`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+<br>
+
+.right-col[
+Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
+]
+
+???
+`r emo::ji("pencil2")` **Implement the 'You Draw It' method in non-linear settings.**
+
+`r emo::ji("chart increasing")` **Evaluate human ability to extrapolate data from trends.**
+
+`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
+
+`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
 ---
 class:inverse
 <br>
@@ -743,7 +785,7 @@ class:inverse
 <br>
 <br>
 .center[
-# Logarithmic Perception
+# Prediction of exponential growth with 'You Draw It'.
 ]
 
 ---
@@ -784,30 +826,6 @@ class:primary
 
     - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
     
-2. [Prediction of Exponential Trends](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
-    
-    - Tests an individuals ability to make predictions for exponentially increasing data.
-        
-3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
-
-    - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
-
-???
-
-One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
-
-The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
-
----
-class:primary
-# Research Objectives
-
-**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
-
-1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
-
-    - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
-    
 2. [**Prediction of Exponential Trends**](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
     
     - **Tests an individuals ability to make predictions for exponentially increasing data.**
@@ -821,19 +839,7 @@ class:primary
 One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
 The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
-
----
-class:inverse
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-.center[
-# Prediction of Exponential Growth
-]
+    
 
 ---
 class:primary 
@@ -1008,49 +1014,6 @@ class:primary
 **The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
 
 ---
-class:inverse
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-.center[
-# What's Next?
-]
-
----
-class:primary
-# What's Next?
-
-.center[
-<img src="images/loading.gif" width="50%"/>
-]
-
-`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
-
-`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
-
-`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
-
-`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
-
-<br>
-
-.right-col[
-Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
-]
-
-???
-`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
-
-`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
-
-`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
-
-`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
-
----
 class:primary
 # References
 <font size="2">
@@ -1110,9 +1073,6 @@ print(bib[[c("spence1990visual",
 ```
 </font>
 
----
-class:primary
-# Tools
 
 ---
 class:inverse
@@ -1126,7 +1086,7 @@ class:inverse
 # Thank you!
 <br
 <br>
-`r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu**
-`r fa("home", fill = "white")` **www.emilyarobinson.com**
+<!-- `r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu** -->
+<!-- `r fa("home", fill = "white")` **www.emilyarobinson.com** -->
 `r fa("github", fill = "white")` **earobinson95**
 ]
