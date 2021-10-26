@@ -114,7 +114,7 @@ write("", file = "js-addins.html")
 
 ---
 class:primary
-# Hi there, I'm Emily!
+# Hi there, I'm Emily! 
 
 ---
 class:primary
