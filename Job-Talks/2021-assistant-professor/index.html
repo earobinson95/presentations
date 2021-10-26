@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Can ‘You Draw It’? Eye Fitting Straight Lines in the Modern Era</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emily Robinson" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/modal.css" type="text/css" />
+    <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class:title-slide-custom
+
+
+&lt;style&gt;
+
+/* colors: #EEB422, #8B0000, #191970, #00a8cc */
+/* define the new color palette here! */
+a, a &gt; code {
+  color: #8B0000;
+  text-decoration: none;
+}
+
+.title-slide h2::after, .mline h1::after {
+  content: '';
+  display: block;
+  border: none;
+  background-color: #8B0000;
+  color: #8B0000;
+  height: 2px;
+}
+
+.remark-slide-content {
+  background-color: #FFFFFF;
+  border-top: 80px solid #8B0000;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  &lt;!-- padding: 1em 2em 1em 2em --&gt;
+  background-image: url(css/UNL.svg);
+	background-position: 2% 98%;
+	background-size: 10%;
+	border-bottom: 0;
+}
+
+.inverse {
+  background-color: #8B0000;
+  &lt;!-- border-top: 20px solid #696969; --&gt;
+  &lt;!-- background-image: none; --&gt;
+	&lt;!-- background-position: 50% 75%; --&gt;
+  &lt;!-- background-size: 150px; --&gt;
+}
+
+.remark-slide-content &gt; h1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 45px;
+  margin-top: -95px;
+  margin-left: -00px;
+  color: #FFFFFF;
+}
+
+.title-slide {
+  background-color: #FFFFFF;
+  &lt;!-- border-left: 80px solid 	#8B0000; --&gt;
+  background-image:  url(css/UNL.svg);
+	background-position: 98% 98%;
+	&lt;!-- background-attachment: fixed, fixed; --&gt;
+	background-size: 20%;
+	border-bottom: 0;
+	border: 10px solid 	#8B0000;
+	&lt;!-- background: transparent; --&gt;
+}
+
+.title-slide &gt; h1  {
+  color: #111111;
+  font-size: 32px;
+  text-shadow: none;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 80px;
+}
+.title-slide &gt; h2  {
+  margin-top: -25px;
+  padding-bottom: -20px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide &gt; h3  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -20px;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #272822;
+  opacity: 1;
+}
+
+.inverse .remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #FAFAFA;
+  opacity: 1;
+}
+
+.title-slide-custom .remark-slide-number {
+  display: none;
+}
+
+.title-slide-custom h3::after, .mline h1::after {
+  content: '';
+  display: block;
+  border: none;
+  background-color: #8B0000;
+  color: #8B0000;
+  height: 2px;
+}
+
+.title-slide-custom {
+  background-color: #FFFFFF;
+  &lt;!-- border-left: 80px solid 	#8B0000; --&gt;
+  background-image:  url(css/UNL.svg);
+	background-position: 98% 98%;
+	&lt;!-- background-attachment: fixed, fixed; --&gt;
+	background-size: 20%;
+	border-bottom: 0;
+	border: 10px solid 	#8B0000;
+	&lt;!-- background: transparent; --&gt;
+}
+
+.title-slide-custom &gt; h1  {
+  color: #111111;
+  font-size: 40px;
+  text-shadow: none;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+.title-slide-custom &gt; h2  {
+  margin-top: -25px;
+  padding-bottom: 30px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 32px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide-custom &gt; h3  {
+  margin-top: -25px;
+  padding-bottom: -25px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 32px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide-custom &gt; h4  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -30px;
+  padding-bottom: -25px;
+}
+.title-slide-custom &gt; h5  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -40px;
+}
+
+&lt;!-- img { --&gt;
+&lt;!--   max-width: 50%; --&gt;
+&lt;!-- } --&gt;
+
+&lt;/style&gt;
+
+
+
+
+
+
+&lt;br&gt;&lt;br&gt;
+# Can 'You Draw It'? Eye Fitting Straight Lines in the Modern Era
+## UNL Ph.D. Seminar
+### October 15, 2021
+#### Emily Robinson 
+&lt;!-- #### Department of Statistics, University of Nebraska - Lincoln --&gt;
+&lt;!-- ##### <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) --&gt;
+&lt;!-- ##### <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg> [www.emilyarobinson.com](https://www.emilyarobinson.com/) --&gt;
+&lt;!-- ##### <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> [earobinson95](https://github.com/earobinson95) --&gt;
+
+
+???
+
+Thank you, everyone for coming! I am a PhD candidate in the Department of Statistics at the University of Nebraska - Lincoln. I will be presenting on human perception of statistical charts and giving an overview of current graphical testing methods then introduce the current research I am conducting in graphical testing. 
+
+---
+class:primary
+# Introduction to Graphics
+
+Data visualization is defined as the art of drawing **graphical charts** in order to display data (Unwin, 2020).
+
+**What are graphics useful for?** (Lewandowsky and Spence, 1989)
+
+📈 Data cleaning.
+
+🔍 Exploring data structure. 
+
+💭 Communicating information.
+
+**Who uses graphics?**
++ Governments (Harms, 1991; Playfair, 1801; Walker, 2013).
++ Companies (Chandar, Collier, and Miranti, 2012; Yates, 1985).
++ News sources and mass media (Aisch, Cohn, Cox, Katz, Pearce, and Quealy, 2016).
++ Scientific publications (Gouretski and Koltermann, 2007).
+
+???
+To get started, we are first going to lay the foundation of graphics. Data visualization has become central tool in modern data science and statistics. Unwin 2020 defines data visualization as the art of drawing graphical charts in order to display data.
+
+Graphics are useful for data cleaning, exploring data structure, and communicating information.
+
+In the 18th and 19th century, governments began using graphics to understand population and economic interests. In the 20th century, we saw companies using graphics to understand the inner workings of their business and support their business decision. We often see news source displaying graphics of weather forecasts such as hurricane trajectories. Today, we see graphics everywhere from scientific journals to mass media in the newspapers, TV, and internet.
+
+Despite the popularity of graphics, we are too accepting of them as default without asking critical questions about the graphics we create or view (Unwin, 2020). We must begin asking ourselves **How effective is this graph at communicating useful information?**
+
+Higher quality of technology has influenced the creation, replication, and complexity of graphics. We now have an infinitely many number design choices:
++ variables displayed, type of graphic, size of graphic, aspect ratio, colors, symbols, scales, limits, ordering of categorical variables
+
+There is a need for an established set of concepts and terminology to build their graphics from so they can actively choose which of many possible graphics to draw in order to ensure their charts are effective at communicating the intended result.
+
+---
+class:primary
+# Grammar of Graphics (Wilkinson, 2013)
+
+Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
+
+.center[
+&lt;img src="images/building-a-masterpiece-Allison-Horst.png" width="65%" /&gt;
+
+Building a masterpiece, by Allison Horst
+]
+
+???
+
+Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
+
++ **aesthetics:** links between data variables and graphical features (position, color, shape, size)
++ **layers:** geometric elements (points, lines, rectangles, text, …)
++ **transformations:** transformations specify a functional link between the data and the displayed information (identity, count, bins, density, regression). Transformations act on the variables.
++ **scales:** scales map values in data space to values in the aesthetic space. Scales change the coordinate space of an aesthetic, but don’t change the underlying value (so the change is at the visual level, not the mathematical level).
++ **coordinate system:** e.g.polar or Cartesian
++ **faceting:** facets allow you to split plots by other variables to produce many sub-plots.
++ **theme:** formatting items, such as background color, fonts, margins…
+
+Software, such as Hadley Wickham’s ggplot2, aims to implement the framework of creating charts and graphics as the grammar of graphics recommends.
+
+---
+class:primary
+# Testing Statistical Graphics
+
+Evaluate design choices and understand cognitive biases through the use of **visual tests**. 
+
+Could ask participants to:
+
+💹 identify differences in graphs.
+
+📖 read information off of a chart accurately. 
+
+🌎 use data to make correct real-world decisions.
+
+✏️ predict the next few observations.
+
+???
+One way we can evaluate these design choices through the use of graphical tests. 
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Lineup Protocol
+&lt;font size="6"&gt;
+(Buja et. al, 2009)
+&lt;/font&gt;
+]
+???
+Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
+
+---
+class:primary
+# Introduction to Visual Inference
+When doing exploratory data analysis, how do we know if what we see is actually there?
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+???
+
+When inspecting a plot, how do we know if what we are seeing is actually there?
+
+---
+class:primary
+# Lineup Protocol (Buja et. al, 2009)
+
+Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
+
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+???
+
+One way of answering this question is to embed the true data plot (called target plot) into a set of randomly permuted data sets (called null plots). This is what we call a lineup.
+
+This is similar to the law-enforcement procedure to line up a suspect among a set of innocents to check if a victim can identify the suspect as the perpetrator of the crime.
+
+Here, visual evaluation of the lineup is conducted by a person. If the viewers detect the target plot, we can conclude the plots are distinguishable.
+
+The lineup protocol is one such example of the development of tools designed for statistical graphical testing. The advancement of graphing software provides the tools necessary to develop new methods of testing graphics.
+
+---
+class:primary
+# Introduction to Visual Inference
+
+.center[
+&lt;img src="images/visual-inference-flowchart.png" width="58%" /&gt; 
+]
+
+???
+The main idea behind visual inference is that graphs are visual statistics or summaries of the data sets generated by mathematical functions. In a standard statistical analysis, a test statistic is generated from the data set and compared to the null distribution of that test statistic. Similarly, the visual statistic (target plot) is compared by a human viewer to other plots generated under the assumption of the null.
+
+The main benefit of using visual inference is that visual tests tend to be more comprehensive. Since individuals are being asked to select one or more plots from a the lineup which are different but the difference is left unspecified the individual eye is actually spotting many differences at once. An equivalent numerical assessment may involved multiple tests using different test statistics. 
+
+---
+class:primary
+# Lineup Studies 💹 💹 📈
+
++ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=10347521957724374176&amp;ei=W11jYaXsKYWM6rQPo_eDyAg&amp;scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) (Buja, Cook, Hofmann, Lawrence, Lee, Swayne, and Wickham, 2009)
++ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=3201506009084463478&amp;ei=a11jYe6GFJ2N6rQPrdWZ4A0&amp;scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) (Majumder, Hofmann, and Cook, 2013)
++ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=3201506009084463478&amp;ei=gV1jYYt-gtDJBMHbsVg&amp;scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) (Majumder, Hofmann, and Cook, 2014)
++ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=10678752834182219121&amp;ei=kF1jYdL3L4i5yQTj8oqgCg&amp;scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) (Loy, Follett, and Hofmann, 2016)
++ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=1511166849179793238&amp;ei=oF1jYY7gA5LSyQT4lJigBw&amp;scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) (VanderPlas and Hofmann, 2015)
++ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) (VanderPlas and Hofmann, 2017)
++ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=18231836572357450482&amp;ei=v11jYaauD4i5yQTj8oqgCg&amp;scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) (VanderPlas, Röttger, Cook, and Hofmann, 2021)
+
+.pull-left[
++ **Dissertation work:** Perception of log scales
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglinearlineupexample' src='images/linear-lineup-example.png' alt='Linear Scale' width='40%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgloglineupexample' src='images/log-lineup-example.png' alt='Log Scale' width='40%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallinearlineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallinearlineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlinearlineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalloglineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalloglineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionloglineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+???
+**Clusters beat trend!? testing feature hierarchy in statistical graphics** (VanderPlas and Hofmann, 2017)
++ Introduces perceptual principles such as preattentive features and gestalt heuristics
++ Discusses the design and results of a factorial experiment examining the effect of plot aesthetics such as color and trend lines on participants’ assessment of ambiguous data displays.
++ Strongly suggests that plot aesthetics have a significant impact on the perception of important features in data displays.
+
+As part of my dissertation work, I have conducted a study examining human perception of logarithmic scales. Here we see an example of the first part of the study utilizing lineups to test our ability to perceptually differentiate between two exponentially increasing trends shown on both the linear and log scale. Notice how it is much easier to pick out panel 13 as being most different when displayed on the log scale than on the linear scale.
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# 'You Draw It'
+]
+
+---
+class:primary
+# Linear Regression 
+
+The principle of simple linear regression is to find the line (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
+
+&lt;img src="index_files/figure-html/linear-regression-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+???
+Linear regression is a statistical approach that allows to assess the linear relationship between two quantitative variables. 
+
+---
+class:primary
+# Linear Regression
+
+The principle of simple linear regression is to **find the line** (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
+
+&lt;img src="index_files/figure-html/linear-regression2-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+???
+
+The principle of simple linear regression is to **find the line** (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
+
+---
+class:primary
+# Let's see your drawing skills!
+
+.pull-left[
+.center[
+&lt;img src="images/eyefitting_example.gif" width="100%"/&gt;
+]
+].pull-right[
+.center[
+&lt;img src="images/can-you-draw-it-mobile-qrcode.png" width="88%"/&gt;
+&lt;font size="6"&gt;
+**SCAN ME**
+
+OR VISIT [bit.ly/3BF56Zj](https://bit.ly/3BF56Zj)
+&lt;/font&gt;
+]
+&lt;!-- &lt;a rel='nofollow' href='https://www.qr-code-generator.com' border='0' style='cursor:default'&gt;&lt;img src='https://chart.googleapis.com/chart?cht=qr&amp;chl=https%3A%2F%2Femily-robinson.shinyapps.io%2Fcan-you-draw-it-mobile%2F&amp;chs=180x180&amp;choe=UTF-8&amp;chld=L|2' alt=''&gt;&lt;/a&gt; --&gt;
+]
+
+---
+class:primary
+# Did it looks something like this?
+.center[
+&lt;img src="images/can-you-draw-it-example.png" width="60%"/&gt;
+]
+
+---
+class:primary
+# Linear Regression
+
+The principle of simple linear regression is to **find the line** (i.e., determine its equation) **which passes as close as possible to the observations**, that is, the set of points.
+
+.center[
+&lt;img src="images/pca-plot.jpg" width="80%"/&gt;
+]
+
+--
+
+**Big Idea:** How do statistical regression results compare to intuitive, visually fitted results?
+
+???
+We are going to focus on two regression lines determined by ordinary least squares regression and regression based on the principal axis. The figure illustrates the difference between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis (Principal Component) which minimizes the Euclidean distance of points (orthogonal) from the line. This is what we refer to as “ensemble perception” indicating the visual system can compute averages of various features in parallel across the items in a set (in this case, over the x and y-axes).
+
+**Big Idea:** How do statistical regression results compare to intuitive, visually fitted results?
+
+---
+class:primary
+# Eye Fitting Straight Lines
+## Mosteller, Siegel, Trapido, and Youtz (1981)
+.pull-left[
++ **Big Idea:** Students fitted lines by eye to four sets of points.
++ **Method:** 8.5 x 11 inch transparency with a straight line etched across the middle.
++ **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
++ **Experimental Design:** Latin square.
++ **Findings:** Students tended to fit the slope of the first principal component.
+].pull-right[
+&lt;img src="images/eyefitting-straight-lines-plots.png" width="95%"/&gt;
+]
+
+???
+
+I want to introduce a study conducted in 1981 called Eye Fitting Straight Lines by Mosteller et al. In this study:
+
++ Students fitted lines by eye to four sets of points.
++ 8.5 x 11 inch transparency with a straight line etched across the middle.
++ 153 graduate students and post docs in Introductory Biostatistics.
++ Latin square.
++ Students tended to fit the slope of the first principal component or major axis (the line that minimizes the sum of squares of perpendicular rather than vertical distances).
+
+---
+class:primary
+# 'You Draw It' Feature 
+## (New York Times, 2015)
+.pull-left[
+&lt;img src="images/nyt-caraccidents-frame4.png" width="100%"/&gt;
+.center[
+(Katz, 2017)
+]
+].pull-right[
+
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
++ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) (Aisch, Cox, and Quealy, 2015)
++ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) (Katz, 2017)
++ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) (Buchanan, Park, and Pearce, 2017)
+]
+
+???
+
+In 2015, the New York Times developed a You Draw it feature where readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+
+---
+class:primary
+# Research Objectives 
+
+1. Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981). 
+
+2. Extend the study with formal statistical analysis methods in order to better understand the perception of linear regression.
+
+???
+
+The two objectives of my current research are to:
+
+1. Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981). 
+
+2. Extend the study with formal statistical analysis methods in order to better understand the perception of linear regression.
+
+---
+class:primary
+# 'You Draw It' Task
+
+Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+.center[
+&lt;img src="images/eyefitting_example.gif" width="60%"/&gt;
+]
+
+???
+
+Here we see an example of a "You Draw It" task plot used in the study. Participants are prompted to "Use your mouse to fill in the trend in the yellow box region. The yellow box region moves along as the participant draws their trend-line until the yellow region disappears." 
+
+Task plots were created using Data Driven Documents (D3), a JavaScript-based graphing framework that facilitates user interaction. We then integrate this into RShiny using the r2d3 package.
+
+---
+class:primary
+# Data Generation
+
+.pull-left[
+
+`\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
+
+Data were simulated based on linear model with additive errors:
+`\begin{equation}
+y_i = \beta_0 + \beta_1 x_i + e_i
+\end{equation}`
+
+where `\(e_i \sim N(0, \sigma^2).\)`
+
+Parameters `\(\beta_0\)` and `\(\beta_1\)` were selected to reflect the four data sets used in Mosteller, Siegel, Trapido, et al. (1981).
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingexamplesimplot' src='images/eyefitting-example-simplot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingexamplesimplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingexamplesimplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingexamplesimplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+???
+
+Data were generated following a linear model with additive errors. 
+
+Model equation parameters, `\(\beta_0\)` and `\(\beta_1\)`, were selected to reflect the four data sets (F, N, S, and V) used in Mosteller et al. (1981). 
+
++ **S:** positive slope; small variance; `\(x \in [0, 20]\)`. 
++ **F:** positive slope; a large variance; `\(x \in [0, 20]\)`.  
++ **V:** steep positive slope; small variance; `\(x \in [4, 16]\)`. 
++ **N:** negative slope; large variance; `\(x \in [0, 20]\)`. 
+
+---
+class:primary
+# Study Design
+
++ Participants recruited through Twitter, Reddit, and direct email in May 2021.
+
++ A total of 35 individuals completed 119 unique you draw it task plots.
+
++ Data sets were generated randomly, independently for each participant at the start of the experiment. 
+
++ Participants shown 2 practice plots followed by 4 task plots randomly assigned for each individual in a completely randomized design.
+
++ Experiment conducted and distributed through an RShiny application found [**here**](https://emily-robinson.shinyapps.io/you-draw-it-pilot-app/).
+
+???
+Participants were recruited through through Twitter, Reddit, and direct email in May 2021. The experiment was conducted and distributed through an RShiny application. Participants were first shown 2 practice plots followed by the 4 You Draw It task plots randomly assigned for each individual in a completely randomized design.
+
+---
+class:primary
+# Model Data
+ 
+.pull-left[
+For each participant, the final data set used for analysis contains:
++ `\(x_{ijk}\)`, `\(y_{ijk,drawn}\)`, `\(\hat y_{ijk,OLS}\)`, `\(\hat y_{ijk,PCA}\)`
+
+for 
++ parameter choice `\(i = 1,2,3,4\)`, 
++ participant j = `\(1,...N_{participant}\)` 
++ `\(x_{ijk}\)` value corresponding to increment `\(k = 1, ...,4 x_{max} + 1\)`.
+
+**Vertical residuals** between the drawn and fitted values were calculated as: 
++ `\(e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}\)`
++ `\(e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}\)`.
+
+].pull-right[ 
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingtrialplot' src='images/eyefitting-trial-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingtrialplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingtrialplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingtrialplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+???
+We compare the participant drawn line to two regression lines determined by ordinary least squares regression and regression based on the principal axis. The figure illustrates the difference between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis (Principal Component) which minimizes the Euclidean distance of points (orthogonal) from the line.
+
+Here we see an example of the feedback data from one you draw it plot. For 0.25 increments across the domain, we have the participant drawn values, the fitted values from the ordinary least squares regression, and the fitted values from the regression based on the principal axis. 
+
+We are mainly interested in the deviation of the participant drawn line from the fitted regression lines. So while it seems counter-intuitive, the residual actually becomes our response in this case.
+
+---
+class:primary
+# Linear Trend Constraint
+The **Linear Mixed Model** equation for each fit (OLS and PCA) residuals is given by:
+`\begin{equation}
+e_{ijk,fit} = \left[\gamma_0 + \alpha_i\right] + \left[\gamma_{1} x_{ijk} + \gamma_{2i} x_{ijk}\right] + p_{j} + \epsilon_{ijk}
+\end{equation}`
+where
+
++ `\(e_{ijk,fit}\)` is the residual between the drawn and fitted y-values for the `\(i^{th}\)` parameter choice, `\(j^{th}\)` participant, and `\(k^{th}\)` increment of x-value corresponding to either the OLS or PCA fit
++ `\(\gamma_0\)` is the overall intercept
++ `\(\alpha_i\)` is the effect of the `\(i^{th}\)` parameter choice (F, S, V, N) on the intercept
++ `\(\gamma_1\)` is the overall slope for `\(x\)`
++ `\(\gamma_{2i}\)` is the effect of the parameter choice on the slope
++ `\(x_{ijk}\)` is the x-value for the `\(i^{th}\)` parameter choice, `\(j^{th}\)` participant, and `\(k^{th}\)` increment
++ `\(p_{j} \sim N(0, \sigma^2_{participant})\)` is the random error due to the `\(j^{th}\)` participant's characteristics
++ `\(\epsilon_{ijk} \sim N(0, \sigma^2)\)` is the residual error.
+
+???
+
+Using the `lmer` function in the lme4 package, a linear mixed model (LMM) is fit separately to the OLS and PCA residuals, constraining the fit to a linear trend. 
+
+---
+class:primary
+# Linear Trend Constraint
+
+.center[
+&lt;img src="images/eyefitting-lmer-plot.png" width="85%"/&gt;
+]
+
+???
+Results indicate the estimated trends of PCA residuals (orange) appear to align closer to the y = 0 horizontal (dashed) line than the OLS residuals (blue). In particular, this trend is more prominent in parameter choices with large variances (F and N). These results are consistent to those found in Mosteller
+et al. (1981) indicating participants fit a trend-line closer to the estimated regression line with the slope of based on the first principal axis than the estimated OLS regression line.
+
+---
+class:primary
+# Smoothing Spline Trend
+The **Generalized Additive Mixed Model** equation for each fit (OLS and PCA) residuals is given by: 
+`\begin{equation}
+e_{ijk,fit} = \alpha_i + s_{i}(x_{ijk}) + p_{j} + s_{j}(x_{ijk})
+\end{equation}`
+where 
+
++ `\(e_{ijk,fit}\)` is the residual between the drawn and fitted y-values for the `\(i^{th}\)` parameter choice, `\(j^{th}\)` participant, and `\(k^{th}\)` increment of x-value corresponding to either the OLS or PCA fit
++ `\(\alpha_i\)` is the intercept for the parameter choice `\(i\)`
++ `\(s_{i}\)` is the smoothing spline for the `\(i^{th}\)` parameter choice
++ `\(x_{ijk}\)` is the x-value for the `\(i^{th}\)` parameter choice, `\(j^{th}\)` participant, and `\(k^{th}\)` increment
++ `\(p_{j} \sim N(0, \sigma^2_{participant})\)` is the error due to participant variation
++ `\(s_{j}\)` is the random smoothing spline for each participant.
+
+???
+
+Eliminating the linear trend constraint, the `bam` function in the mgcv package is used to fit a generalized additive mixed model (GAMM) separately to the OLS and PCA residuals to allow for estimation of smoothing splines.
+
+---
+class:primary
+# Smoothing Spline Trend
+
+.center[
+&lt;img src="images/eyefitting-gamm-plot.png" width="85%"/&gt;
+]
+
+???
+The results of the GAMM align with those in the linear constraint trend providing support that for scatter-plots with more noise (F and N), estimated trends of PCA residuals (orange) appear to align closer to the y = 0 horizontal (dashed) line than the OLS residuals (blue). However, By fitting smoothing splines, we can determine whether participants naturally fit a straight trend-line to the set of points or whether they deviate throughout the domain providing us with further insight into the curvature humans perceive in a set of points.
+
+---
+class:primary
+# Conclusion
+
+**Research Objectives:** 
+
+1. Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981). 
+2. Extend the study found in Mosteller et al. (1981) with formal statistical analysis methods for understanding the perception of linear regression.
+
+**Results:**
++ Estimated drawn trend-lines followed closer to the regression line based on the principal axes than the OLS regression line.
++ Most prominent in data simulated with large variances.
++ Humans perform “ensemble perception” in a statistical graphic setting.
+
+**The reproducibility of these results serve as validation of the 'You Draw It' tool and method.**
+
+???
+
+
+1. Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981). 
+
+2. Extend the study found in Mosteller et al. (1981) with formal statistical analysis methods for understanding the perception of linear regression.
+
+**Results:**
++ Estimated drawn trend-lines followed closer to the principal axes than the OLS regression line.
++ Most prominent in data simulated with large variances.
++ Humans perform “ensemble perception” in a statistical graphic setting as participants minimized the distance from the their regression line over both the x and y axis simultaneously
+
+This study reinforces the differences between intuitive visual model fitting and statistical model fitting, providing information about human perception as it relates to the use of statistical graphics.
+
+**The reproducibility of these results serve as validation of the 'You Draw It' tool and method.**
+
+
+---
+class:primary
+# Future Work
+
+.center[
+&lt;img src="images/loading.gif" width="50%"/&gt;
+]
+
+✏️ Implement the 'You Draw It' method in non-linear settings.
+
+📈 Evaluate human ability to extrapolate data from trends.
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+&lt;br&gt;
+
+.right-col[
+Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
+]
+
+???
+✏️ Implement the 'You Draw It' method in non-linear settings.
+
+📈 Evaluate human ability to extrapolate data from trends.
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+---
+class:primary
+# Future Work
+
+.center[
+&lt;img src="images/loading.gif" width="50%"/&gt;
+]
+
+✏️ **Implement the 'You Draw It' method in non-linear settings.**
+
+📈 **Evaluate human ability to extrapolate data from trends.**
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+&lt;br&gt;
+
+.right-col[
+Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html)
+]
+
+???
+✏️ **Implement the 'You Draw It' method in non-linear settings.**
+
+📈 **Evaluate human ability to extrapolate data from trends.**
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Prediction of exponential growth with 'You Draw It'.
+]
+
+---
+class:primary
+# Logarithmic Scales
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglogscaleexample' src='images/log-scale-example.jpg' alt=' ' width='60%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallogscaleexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallogscaleexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development.
+
+.center[
+&lt;img src="images/log-numberline.png" width="70%"/&gt;
+]
+
+???
+
+One problem we face is when data spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area. We can address this problem through the use of a log scale transformation; however, this alters the contextual appearance of the data.
+
+In fact, past research has found that our perception is **logarithmic at first**, but transitions to a **linear scale later** in development. For example, a kindergartner asked to place numbers one through ten along a number line would place three close to the middle, following the logarithmic perspective. We have all experienced this when making a poster where we misjudged the space needed and end up compressing the last few letters onto the poster board.
+
+Therefore, if we perceive logarithmically by default, it is a natural (and presumably low effort) way to display information and should be easy to read and understand/use.
+
+---
+class:primary
+# Research Objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) 📈 📈 📈
+
+    - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+    
+2. [**Prediction of Exponential Trends**](https://shiny.srvanderplas.com/you-draw-it/) ✏️
+    
+    - **Tests an individuals ability to make predictions for exponentially increasing data.**
+        
+3. Estimation by Numerical Translation 📏
+
+    - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
+
+???
+
+One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
+    
+
+---
+class:primary 
+# Data Simulation
+
+**Point data:** `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
+
+Data were simulated based on a one parameter exponential model with multiplicative errors:
+`\begin{equation}
+y_i = e^{\beta x_i + e_i}
+\end{equation}`
+
+for 
+
++ growth rate `\(\beta\)`
++ `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
+
+**Line data:** `\(m = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS})\)`
+
+A nonlinear least squares regression is then fit to the simulated points:
+`\begin{equation}
+\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
+\end{equation}`
+
+???
+
++ `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
+
+Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
+
+---
+class:primary 
+# Treatment Design
+
+.pull-left[
+2 x 2 x 2 factorial:
++ **growth rate:** low and high.
++ **points truncated:** `\(50\%\)` and `\(75\%\)` of the domain.
++ **scale:** log and linear.
+
+Consistent aesthetic design choices:
++ y-axis extended `\(50\%\)` below and `\(200\%\)` above the simulated data range.
++ participants begin drawing at `\(50\%\)` of the domain.
+
+].pull-right[
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10linear' src='images/low-10-linear.png' alt='Low Growth Rate, 50% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow10log' src='images/low-10-log.png' alt='Low Growth Rate, 50% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15linear' src='images/low-15-linear.png' alt='Low Growth Rate, 75% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglow15log' src='images/low-15-log.png' alt='Low Growth Rate, 75% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallow15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallow15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlow15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10linear' src='images/high-10-linear.png' alt='High Growth Rate, 50% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh10log' src='images/high-10-log.png' alt='High Growth Rate, 50% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh10log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh10log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh10log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15linear' src='images/high-15-linear.png' alt='High Growth Rate, 75% Truncation, Linear Scale' width='30%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imghigh15log' src='images/high-15-log.png' alt='High Growth Rate, 75% Truncation, Log Scale' width='30%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15linear' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15linear'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15linear' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalhigh15log' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalhigh15log'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionhigh15log' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]]
+
+---
+class:primary 
+# Feedback Data
+
+.pull-left[
+For each participant, the final data set used for analysis contains:
++ `\(x_{ijklm}\)`, `\(y_{ijklm,drawn}\)`, and `\(\hat y_{ijklm,NLS}\)`  
+
+for:
++ growth rate `\(i = 1,2\)`,
++ point truncation `\(j = 1,2\)`,
++ scale `\(k = 1,2\)`,
++ participant  `\(l = 1,...N_{participant}\)`, and 
++ `\(x_{ijklm}\)` value `\(m = 1, ...,4 x_{max} + 1\)`.
+
+Vertical residuals between the drawn and fitted values were calculated as: 
++ `\(e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}\)`.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgexpspaghettiplot' src='images/exp-spaghetti-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalexpspaghettiplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalexpspaghettiplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionexpspaghettiplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary 
+# Generalized Additive Mixed Model
+
+The GAMM equation for residuals is given by:
+`\begin{equation}
+e_{ijklm,nls} = \tau_{ijk} + s_{ijk}(x_{ijklm}) + p_{l} + s_{l}(x_{ijklm})
+\end{equation}`
+
+where
+
++ `\(e_{ijklm,NLS}\)` is the residual between the drawn y-value and fitted y-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(\tau_{ijk}\)` is the intercept for the `\(i^{th}\)` growth rate, `\(j^{th}\)` point truncation, and `\(k^{th}\)` scale treatment combination
++ `\(s_{ijk}\)` is the smoothing spline for the `\(ijk^{th}\)` treatment combination
++ `\(x_{ijklm}\)` is the x-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(p_{l} \sim N(0, \sigma^2_{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
++ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
+
+???
+
+Allowing for flexibility, the bam function in the mgcv package is used to fit a GAMM to estimate trends of vertical residuals from the participant drawn line in relation to the NLS fitted values.
+
+---
+class:primary 
+# GAMM Residual Trend Results
+.center[
+&lt;img src="images/exp-gamm-plot.png" width="80%"/&gt;
+]
+
+???
+Predictions made on the **linear scale** (blue) deviate from the  `\(y=0\)` horizontal (dashed) line `\(\implies\)` **underestimation** of exponential growth.
+
+Predictions made on the **log scale** (orange) follow closely to the `\(y=0\)` horizontal (dashed) line `\(\implies\)` **more accurate** than trends predicted on the linear scale.
+
+More prominent in high exponential growth rates.
+
+Underestimation begins after the aid of points is removed.
+
+???
+Indicated by the discrepancy in results for treatments with points truncated at `\(50\%\)` compared to `\(75\%\)` of the domain. 
+
+---
+class:primary 
+# Conclusion
+
+**Goal:** Test an individual's ability to make predictions for exponentially increasing data.
+
+**Results:**
++ Predictions made on the log scale were more accurate than those made on the linear scale. 
++ Strongly supported for high exponential growth rates.
++ Points shown along the trend improve predictions.
+
+**The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
+
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-Aisch_NYTimes_presidential_forecast'&gt;&lt;/a&gt;&lt;a href="#cite-Aisch_NYTimes_presidential_forecast"&gt;Aisch, G., N. Cohn, A. Cox, et al.&lt;/a&gt;
+(2016).
+&lt;em&gt;Live Presidential Forecast&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/elections/2016/forecast/president"&gt;https://www.nytimes.com/elections/2016/forecast/president&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-aisch_cox_quealy_2015'&gt;&lt;/a&gt;&lt;a href="#cite-aisch_cox_quealy_2015"&gt;Aisch, G., A. Cox, and K. Quealy&lt;/a&gt;
+(2015).
+&lt;em&gt;You Draw It: How Family Income Predicts Children's College Chances&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html"&gt;https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-buchanan_park_pearce_2017'&gt;&lt;/a&gt;&lt;a href="#cite-buchanan_park_pearce_2017"&gt;Buchanan, L., H. Park, and A. Pearce&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: What Got Better or Worse During Obama's Presidency&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"&gt;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-buja2009statistical'&gt;&lt;/a&gt;&lt;a href="#cite-buja2009statistical"&gt;Buja, A., D. Cook, H. Hofmann, et al.&lt;/a&gt;
+(2009).
+&amp;ldquo;Statistical inference for exploratory data analysis and model diagnostics&amp;rdquo;.
+In: &lt;em&gt;Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences&lt;/em&gt; 367.1906, pp. 4361&amp;ndash;4383.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Carpenter, P. A. and P. Shah
+(1998).
+&amp;ldquo;A model of the perceptual and conceptual processes in graph comprehension.&amp;rdquo;
+In: &lt;em&gt;Journal of Experimental Psychology: Applied&lt;/em&gt; 4.2, p. 75.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-chandar2012graph'&gt;&lt;/a&gt;&lt;a href="#cite-chandar2012graph"&gt;Chandar, N., D. Collier, and P. Miranti&lt;/a&gt;
+(2012).
+&amp;ldquo;Graph standardization and management accounting at AT&amp;amp;T during the 1920s&amp;rdquo;.
+In: &lt;em&gt;Accounting History&lt;/em&gt; 17.1, pp. 35&amp;ndash;62.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Chong, S. C. and A. Treisman
+(2003).
+&amp;ldquo;Representation of statistical properties&amp;rdquo;.
+In: &lt;em&gt;Vision research&lt;/em&gt; 43.4, pp. 393&amp;ndash;404.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&amp;mdash;
+(2005).
+&amp;ldquo;Statistical processing: Computing the average size in perceptual groups&amp;rdquo;.
+In: &lt;em&gt;Vision research&lt;/em&gt; 45.7, pp. 891&amp;ndash;900.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Ciccione, L. and S. Dehaene
+(2021).
+&amp;ldquo;Can humans perform mental regression on a graph? Accuracy and bias in the perception of scatterplots&amp;rdquo;.
+In: &lt;em&gt;Cognitive Psychology&lt;/em&gt; 128, p. 101406.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Cleveland, W. S. and R. McGill
+(1984).
+&amp;ldquo;Graphical perception: Theory, experimentation, and application to the development of graphical methods&amp;rdquo;.
+In: &lt;em&gt;Journal of the American statistical association&lt;/em&gt; 79.387, pp. 531&amp;ndash;554.&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;Cleveland, W. S. and R. McGill
+(1985).
+&amp;ldquo;Graphical perception and graphical methods for analyzing scientific data&amp;rdquo;.
+In: &lt;em&gt;Science&lt;/em&gt; 229.4716, pp. 828&amp;ndash;833.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Finney, D.
+(1951).
+&amp;ldquo;Subjective judgment in statistical analysis: An experimental study&amp;rdquo;.
+In: &lt;em&gt;Journal of the Royal Statistical Society: Series B (Methodological)&lt;/em&gt; 13.2, pp. 284&amp;ndash;297.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-gouretski2007much'&gt;&lt;/a&gt;&lt;a href="#cite-gouretski2007much"&gt;Gouretski, V. and K. P. Koltermann&lt;/a&gt;
+(2007).
+&amp;ldquo;How much is the ocean really warming?&amp;rdquo;
+In: &lt;em&gt;Geophysical Research Letters&lt;/em&gt; 34.1.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Green, T. M. and B. Fisher
+(2009).
+&amp;ldquo;The personal equation of complex individual cognition during visual interface interaction&amp;rdquo;.
+In: 
+&lt;em&gt;Workshop on Human-Computer Interaction and Visualization&lt;/em&gt;.
+Springer.
+, pp. 38&amp;ndash;57.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-harms1991august'&gt;&lt;/a&gt;&lt;a href="#cite-harms1991august"&gt;Harms, H.&lt;/a&gt;
+(1991).
+&amp;ldquo;August Friedrich Wilhelm Crome (1753-1833) Autor begehrter Wirtschaftskarten&amp;rdquo;.
+In: &lt;em&gt;Cartographica Helvetica&lt;/em&gt; 3, pp. 33&amp;ndash;38.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Hofmann, H., L. Follett, M. Majumder, et al.
+(2012).
+&amp;ldquo;Graphical tests for power comparison of competing designs&amp;rdquo;.
+In: &lt;em&gt;IEEE Transactions on Visualization and Computer Graphics&lt;/em&gt; 18.12, pp. 2441&amp;ndash;2448.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-katz_2017'&gt;&lt;/a&gt;&lt;a href="#cite-katz_2017"&gt;Katz, J.&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: Just How Bad Is the Drug Overdose Epidemic?&lt;/em&gt;
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html"&gt;https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-lewandowsky1989perception'&gt;&lt;/a&gt;&lt;a href="#cite-lewandowsky1989perception"&gt;Lewandowsky, S. and I. Spence&lt;/a&gt;
+(1989).
+&amp;ldquo;The perception of statistical graphs&amp;rdquo;.
+In: &lt;em&gt;Sociological Methods &amp;amp; Research&lt;/em&gt; 18.2-3, pp. 200&amp;ndash;242.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-mosteller1981eye'&gt;&lt;/a&gt;&lt;a href="#cite-mosteller1981eye"&gt;Mosteller, F., A. F. Siegel, E. Trapido, et al.&lt;/a&gt;
+(1981).
+&amp;ldquo;Eye fitting straight lines&amp;rdquo;.
+In: &lt;em&gt;The American Statistician&lt;/em&gt; 35.3, pp. 150&amp;ndash;152.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-playfair1801statistical'&gt;&lt;/a&gt;&lt;a href="#cite-playfair1801statistical"&gt;Playfair, W.&lt;/a&gt;
+(1801).
+&amp;ldquo;The statistical breviary; shewing, on a principle entirely new, the resources of every state and kingdom in Europe, Wallis, Londres&amp;rdquo;.
+In: &lt;em&gt;Press, Chicago&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+---
+class:primary
+# References
+&lt;font size="2"&gt;
+&lt;p&gt;&lt;cite&gt;Spence, I.
+(1990).
+&amp;ldquo;Visual psychophysics of simple graphical elements.&amp;rdquo;
+In: &lt;em&gt;Journal of Experimental Psychology: Human Perception and Performance&lt;/em&gt; 16.4, p. 683.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-unwin2020data'&gt;&lt;/a&gt;&lt;a href="#cite-unwin2020data"&gt;Unwin, A.&lt;/a&gt;
+(2020).
+&amp;ldquo;Why is data visualization important? what is important in data visualization?&amp;rdquo;
+In: &lt;em&gt;Harvard Data Science Review&lt;/em&gt; 2.1.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Van Opstal, F., F. P. de
+Lange, and S. Dehaene
+(2011).
+&amp;ldquo;Rapid parallel semantic processing of numbers without awareness&amp;rdquo;.
+In: &lt;em&gt;Cognition&lt;/em&gt; 120.1, pp. 136&amp;ndash;147.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Vanderplas, S., D. Cook, and H. Hofmann
+(2020).
+&amp;ldquo;Testing Statistical Charts: What makes a good graph?&amp;rdquo;
+In: &lt;em&gt;Annual Review of Statistics and Its Application&lt;/em&gt; 7, pp. 61&amp;ndash;88.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-vanderplas2015spatial'&gt;&lt;/a&gt;&lt;a href="#cite-vanderplas2015spatial"&gt;VanderPlas, S. and H. Hofmann&lt;/a&gt;
+(2015).
+&amp;ldquo;Spatial reasoning and data displays&amp;rdquo;.
+In: &lt;em&gt;IEEE Transactions on Visualization and Computer Graphics&lt;/em&gt; 22.1, pp. 459&amp;ndash;468.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-vanderplas2017clusters'&gt;&lt;/a&gt;&lt;a href="#cite-vanderplas2017clusters"&gt;&amp;mdash;&lt;/a&gt;
+(2017).
+&amp;ldquo;Clusters beat trend!? testing feature hierarchy in statistical graphics&amp;rdquo;.
+In: &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt; 26.2, pp. 231&amp;ndash;242.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-walker2013statistical'&gt;&lt;/a&gt;&lt;a href="#cite-walker2013statistical"&gt;Walker, F. A.&lt;/a&gt;
+(2013).
+&lt;em&gt;Statistical atlas of the United States based on the results of the ninth census 1870 with contributions from many eminent men of science and several departments of the government&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;Wickham, H.
+(2011).
+&amp;ldquo;ggplot2&amp;rdquo;.
+In: &lt;em&gt;Wiley Interdisciplinary Reviews: Computational Statistics&lt;/em&gt; 3.2, pp. 180&amp;ndash;185.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-wilkinson2013grammar'&gt;&lt;/a&gt;&lt;a href="#cite-wilkinson2013grammar"&gt;Wilkinson, L.&lt;/a&gt;
+(2013).
+&lt;em&gt;The grammar of graphics&lt;/em&gt;.
+Springer Science &amp;amp; Business Media.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-yates1985graphs'&gt;&lt;/a&gt;&lt;a href="#cite-yates1985graphs"&gt;Yates, J.&lt;/a&gt;
+(1985).
+&amp;ldquo;Graphs as a managerial tool: A case study of Du Pont's use of graphs in the early twentieth century&amp;rdquo;.
+In: &lt;em&gt;The Journal of Business Communication (1973)&lt;/em&gt; 22.1, pp. 5&amp;ndash;33.&lt;/cite&gt;&lt;/p&gt;
+&lt;/font&gt;
+
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Thank you!
+&lt;br
+&lt;br&gt;
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> **emily.robinson@huskers.unl.edu** --&gt;
+&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg> **www.emilyarobinson.com** --&gt;
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> **earobinson95**
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightlines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+        /* Get the modal*/
+          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
+          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
+          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
+          imglinearlineupexample.onclick = function(){
+            modallinearlineupexample.style.display = 'block';
+            modalImglinearlineupexample.src = this.src;
+            captionTextlinearlineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglinearlineupexample.onclick = function() {
+            modallinearlineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalloglineupexample = document.getElementById('modalloglineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgloglineupexample = document.getElementById('imgloglineupexample');
+          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
+          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
+          imgloglineupexample.onclick = function(){
+            modalloglineupexample.style.display = 'block';
+            modalImgloglineupexample.src = this.src;
+            captionTextloglineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgloglineupexample.onclick = function() {
+            modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingexamplesimplot = document.getElementById('modaleyefittingexamplesimplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingexamplesimplot = document.getElementById('imgeyefittingexamplesimplot');
+          var modalImgeyefittingexamplesimplot = document.getElementById('imgmodaleyefittingexamplesimplot');
+          var captionTexteyefittingexamplesimplot = document.getElementById('captioneyefittingexamplesimplot');
+          imgeyefittingexamplesimplot.onclick = function(){
+            modaleyefittingexamplesimplot.style.display = 'block';
+            modalImgeyefittingexamplesimplot.src = this.src;
+            captionTexteyefittingexamplesimplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingexamplesimplot.onclick = function() {
+            modaleyefittingexamplesimplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingtrialplot = document.getElementById('modaleyefittingtrialplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingtrialplot = document.getElementById('imgeyefittingtrialplot');
+          var modalImgeyefittingtrialplot = document.getElementById('imgmodaleyefittingtrialplot');
+          var captionTexteyefittingtrialplot = document.getElementById('captioneyefittingtrialplot');
+          imgeyefittingtrialplot.onclick = function(){
+            modaleyefittingtrialplot.style.display = 'block';
+            modalImgeyefittingtrialplot.src = this.src;
+            captionTexteyefittingtrialplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingtrialplot.onclick = function() {
+            modaleyefittingtrialplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallogscaleexample = document.getElementById('modallogscaleexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglogscaleexample = document.getElementById('imglogscaleexample');
+          var modalImglogscaleexample = document.getElementById('imgmodallogscaleexample');
+          var captionTextlogscaleexample = document.getElementById('captionlogscaleexample');
+          imglogscaleexample.onclick = function(){
+            modallogscaleexample.style.display = 'block';
+            modalImglogscaleexample.src = this.src;
+            captionTextlogscaleexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglogscaleexample.onclick = function() {
+            modallogscaleexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10linear = document.getElementById('modallow10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10linear = document.getElementById('imglow10linear');
+          var modalImglow10linear = document.getElementById('imgmodallow10linear');
+          var captionTextlow10linear = document.getElementById('captionlow10linear');
+          imglow10linear.onclick = function(){
+            modallow10linear.style.display = 'block';
+            modalImglow10linear.src = this.src;
+            captionTextlow10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10linear.onclick = function() {
+            modallow10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10log = document.getElementById('modallow10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10log = document.getElementById('imglow10log');
+          var modalImglow10log = document.getElementById('imgmodallow10log');
+          var captionTextlow10log = document.getElementById('captionlow10log');
+          imglow10log.onclick = function(){
+            modallow10log.style.display = 'block';
+            modalImglow10log.src = this.src;
+            captionTextlow10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10log.onclick = function() {
+            modallow10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15linear = document.getElementById('modallow15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15linear = document.getElementById('imglow15linear');
+          var modalImglow15linear = document.getElementById('imgmodallow15linear');
+          var captionTextlow15linear = document.getElementById('captionlow15linear');
+          imglow15linear.onclick = function(){
+            modallow15linear.style.display = 'block';
+            modalImglow15linear.src = this.src;
+            captionTextlow15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15linear.onclick = function() {
+            modallow15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15log = document.getElementById('modallow15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15log = document.getElementById('imglow15log');
+          var modalImglow15log = document.getElementById('imgmodallow15log');
+          var captionTextlow15log = document.getElementById('captionlow15log');
+          imglow15log.onclick = function(){
+            modallow15log.style.display = 'block';
+            modalImglow15log.src = this.src;
+            captionTextlow15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15log.onclick = function() {
+            modallow15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10linear = document.getElementById('modalhigh10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10linear = document.getElementById('imghigh10linear');
+          var modalImghigh10linear = document.getElementById('imgmodalhigh10linear');
+          var captionTexthigh10linear = document.getElementById('captionhigh10linear');
+          imghigh10linear.onclick = function(){
+            modalhigh10linear.style.display = 'block';
+            modalImghigh10linear.src = this.src;
+            captionTexthigh10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10linear.onclick = function() {
+            modalhigh10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10log = document.getElementById('modalhigh10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10log = document.getElementById('imghigh10log');
+          var modalImghigh10log = document.getElementById('imgmodalhigh10log');
+          var captionTexthigh10log = document.getElementById('captionhigh10log');
+          imghigh10log.onclick = function(){
+            modalhigh10log.style.display = 'block';
+            modalImghigh10log.src = this.src;
+            captionTexthigh10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10log.onclick = function() {
+            modalhigh10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15linear = document.getElementById('modalhigh15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15linear = document.getElementById('imghigh15linear');
+          var modalImghigh15linear = document.getElementById('imgmodalhigh15linear');
+          var captionTexthigh15linear = document.getElementById('captionhigh15linear');
+          imghigh15linear.onclick = function(){
+            modalhigh15linear.style.display = 'block';
+            modalImghigh15linear.src = this.src;
+            captionTexthigh15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15linear.onclick = function() {
+            modalhigh15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15log = document.getElementById('modalhigh15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15log = document.getElementById('imghigh15log');
+          var modalImghigh15log = document.getElementById('imgmodalhigh15log');
+          var captionTexthigh15log = document.getElementById('captionhigh15log');
+          imghigh15log.onclick = function(){
+            modalhigh15log.style.display = 'block';
+            modalImghigh15log.src = this.src;
+            captionTexthigh15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15log.onclick = function() {
+            modalhigh15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexpspaghettiplot = document.getElementById('modalexpspaghettiplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexpspaghettiplot = document.getElementById('imgexpspaghettiplot');
+          var modalImgexpspaghettiplot = document.getElementById('imgmodalexpspaghettiplot');
+          var captionTextexpspaghettiplot = document.getElementById('captionexpspaghettiplot');
+          imgexpspaghettiplot.onclick = function(){
+            modalexpspaghettiplot.style.display = 'block';
+            modalImgexpspaghettiplot.src = this.src;
+            captionTextexpspaghettiplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexpspaghettiplot.onclick = function() {
+            modalexpspaghettiplot.style.display = 'none';
+          }
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
