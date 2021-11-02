@@ -8,6 +8,10 @@
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/modal.css" type="text/css" />
     <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
   </head>
@@ -223,15 +227,52 @@ body {
 
 ---
 class:primary
-# Hi there, I'm Emily! 
+# About Me
+
+**Education**
++ B.S. from Winona State University in 2017
++ Ph.D. Candidate at University of Nebraska - Lincoln
+  + Expected graduation August 2022
++ 5-12 Mathematics Minnesota Teaching License
+
+**Experience**
++ Teaching at UNL
+  + Simulation-based introductory statistics
+  + Calculus-based introductory statistics
++ Statistical consultant at SC3L on UNL Campus
++ Research Areas: Visualization, Experimental Design, and Statistical Consulting and Collaboration
 
 ---
 class:primary
 # Publications
-
 **Graphics**
+.medium[
++ [In Preparation] **Robinson, E. A.**, VanderPlas, S., Howard, R., (2021) Eye Fitting Straight Lines in the Modern Era. Target journal: *Journal of Computational and Graphical Statistics*. [Access on GitHub.](https://earobinson95.github.io/Eye-Fitting-Straight-Lines-in-the-Modern-Era/Eye-Fitting-Straight-Lines-in-the-Modern-Era.pdf)
+
++ Dissertation work to be published in *Journal of Computational and Graphical Statistics.*
+]
+---
+class:primary
+# Publications
 
 **Collaborations**
+.medium[
++ [In Preparation] Ortez, O. A., McMechan, A. J., Hoegemeyer, T., **Robinson, E. A.**, Howard, R. &amp; Elmore, R. W. (2021) Abnormal ear development in corn: does hybrid, environment, and seeding rate matter? Target journal: *Field Crops Research*.
+
++ [Under Review] Carmona G. I., **Robinson, E. A.**, Rosa, A. T., Proctor C. A. &amp; McMechan
+A. J. (2021) Cover crop planting and termination dates influence arthropod activity in the following corn. Submitted to *Journal of Economic Entomology*.
+
++ [Under Review] Reinders, J. D., Reinders, E. E., French, B. W., **Robinson, E. A.** &amp; Meinke, L. J. (2021) Evidence of western corn rootworm resistance to Cry3Bb1 + Cry34/35Ab1 maize in Nebraska. Submitted to *Journal of Economic Entomology*.
+
++ [Under Review] Ongaratto, S., Baldin, E. L., Hunt, T. E., Montezano, D. G., **Robinson, E. A.**, Heier, K., &amp; Santos, M. C. (2021) Larval movement of Anticarsia gemmatalis (Lepidoptera: Erebidae) on vegetative and reproductive stage non-Bt soybean. Submitted to *Journal of Pest Science*.
+
++ Krueger, A. J., **Robinson, E. A.**, Weissling, T. J., Velez, A. M., &amp; Anderson, T. D. (2021) Chemical combinations reduce growth and survival of monarch butterflies. *Journal of Economic Entomology*. doi:10.1093/jee/toab169
+
++ Reinders, J. D., Wangila, D. S., **Robinson, E. A.**, French, B. W., &amp; Meinke, L. J. (2021) Characterizing the relationship between western corn rootworm (Coleoptera: Chrysomelidae) larval survival on Cry3Bb1-expressing corn and larval developmental factors. *Journal of Economic Entomology*. doi:10.1093/jee/toab151
+
++ Ongaratto, S., Baldin, E. L., Hunt, T. E., Montezano, D. G., **Robinson, E. A.**, &amp; Santos, M. C. (2021). Effects of intraguild interactions on Anticarsia gemmatalis and Chrysodeixis includens larval fitness and behavior in soybean. Pest Management Science. doi:10.1002/ps.6330
+
+]
 
 ---
 class:primary
@@ -255,11 +296,11 @@ Data visualization is defined as the art of drawing **graphical charts** in orde
 
 **What are graphics useful for?** (Lewandowsky and Spence, 1989)
 
-📈 Data cleaning.
+📊 Data cleaning.
 
-🔍 Exploring data structure. 
+🔎 Exploring data structure. 
 
-🗯 Communicating information.
+💭 Communicating information.
 
 **Who uses graphics?**
 + Governments (Harms, 1991; Playfair, 1801; Walker, 2013).
@@ -319,7 +360,7 @@ Could ask participants to:
 
 📖 read information off of a chart accurately. 
 
-🌐 use data to make correct real-world decisions.
+🌏 use data to make correct real-world decisions.
 
 ✏️ predict the next few observations.
 
@@ -336,41 +377,12 @@ Could ask participants to:
 All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
 ---
-class:inverse
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-.center[
-# Lineup Protocol
-&lt;font size="6"&gt;
-(Buja et. al, 2009)
-&lt;/font&gt;
-]
-???
-Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
-
----
-class:primary
-# Introduction to Visual Inference
-When doing exploratory data analysis, how do we know if what we see is actually there?
-
-&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="75%" style="display: block; margin: auto;" /&gt;
-
-???
-
-When inspecting a plot, how do we know if what we are seeing is actually there?
-
----
 class:primary
 # Lineup Protocol (Buja et. al, 2009)
 
 Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
 
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="75%" style="display: block; margin: auto;" /&gt;
 
 ???
 
@@ -381,62 +393,6 @@ This is similar to the law-enforcement procedure to line up a suspect among a se
 Here, visual evaluation of the lineup is conducted by a person. If the viewers detect the target plot, we can conclude the plots are distinguishable.
 
 The lineup protocol is one such example of the development of tools designed for statistical graphical testing. The advancement of graphing software provides the tools necessary to develop new methods of testing graphics.
-
----
-class:primary
-# Introduction to Visual Inference
-
-.center[
-&lt;img src="images/visual-inference-flowchart.png" width="58%" /&gt; 
-]
-
-???
-The main idea behind visual inference is that graphs are visual statistics or summaries of the data sets generated by mathematical functions. In a standard statistical analysis, a test statistic is generated from the data set and compared to the null distribution of that test statistic. Similarly, the visual statistic (target plot) is compared by a human viewer to other plots generated under the assumption of the null.
-
-The main benefit of using visual inference is that visual tests tend to be more comprehensive. Since individuals are being asked to select one or more plots from a the lineup which are different but the difference is left unspecified the individual eye is actually spotting many differences at once. An equivalent numerical assessment may involved multiple tests using different test statistics. 
-
----
-class:primary
-# Lineup Studies 📊 💹 📊
-
-+ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=10347521957724374176&amp;ei=W11jYaXsKYWM6rQPo_eDyAg&amp;scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) (Buja, Cook, Hofmann, et al., 2009)
-+ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=3201506009084463478&amp;ei=a11jYe6GFJ2N6rQPrdWZ4A0&amp;scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) (Majumder, Hofmann, and Cook, 2013)
-+ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=3201506009084463478&amp;ei=gV1jYYt-gtDJBMHbsVg&amp;scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) (Majumder, Hofmann, and Cook, 2014)
-+ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=10678752834182219121&amp;ei=kF1jYdL3L4i5yQTj8oqgCg&amp;scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) (Loy, Follett, and Hofmann, 2016)
-+ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=1511166849179793238&amp;ei=oF1jYY7gA5LSyQT4lJigBw&amp;scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) (VanderPlas and Hofmann, 2015)
-+ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) (VanderPlas and Hofmann, 2017)
-+ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&amp;hl=en&amp;sa=T&amp;oi=gsb-gga&amp;ct=res&amp;cd=0&amp;d=18231836572357450482&amp;ei=v11jYaauD4i5yQTj8oqgCg&amp;scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) (VanderPlas, Röttger, Cook, et al., 2021)
-
-.pull-left[
-+ **Dissertation work:** Perception of log scales
-].pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglinearlineupexample' src='images/linear-lineup-example.png' alt='Linear Scale' width='40%'&gt;
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgloglineupexample' src='images/log-lineup-example.png' alt='Log Scale' width='40%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modallinearlineupexample' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodallinearlineupexample'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionlinearlineupexample' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modalloglineupexample' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalloglineupexample'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionloglineupexample' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-]
-
-???
-**Clusters beat trend!? testing feature hierarchy in statistical graphics** (VanderPlas and Hofmann, 2017)
-+ Introduces perceptual principles such as preattentive features and gestalt heuristics
-+ Discusses the design and results of a factorial experiment examining the effect of plot aesthetics such as color and trend lines on participants’ assessment of ambiguous data displays.
-+ Strongly suggests that plot aesthetics have a significant impact on the perception of important features in data displays.
-
-As part of my dissertation work, I have conducted a study examining human perception of logarithmic scales. Here we see an example of the first part of the study utilizing lineups to test our ability to perceptually differentiate between two exponentially increasing trends shown on both the linear and log scale. Notice how it is much easier to pick out panel 13 as being most different when displayed on the log scale than on the linear scale.
 
 ---
 class:inverse
@@ -808,35 +764,12 @@ class:inverse
 class:primary
 # Motivation
 
-.pull-left[
 Data visualizations played an important role in during the **COVID-19 pandemic** .
-
-Dashboards displayed:
-+ case counts.
-+ transmission rates.
-+ outbreak regions.
-
-].pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='img91divoccasesjuly2021' src='images/91divoc-cases-july2021.png' alt='' width='80%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modal91divoccasesjuly2021' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodal91divoccasesjuly2021'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='caption91divoccasesjuly2021' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19summer2020riskmap' src='images/covid19-summer2020-risk-map.png' alt='' width='80%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modalcovid19summer2020riskmap' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalcovid19summer2020riskmap'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captioncovid19summer2020riskmap' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
+.center[
+&lt;img src="images/91divoc-cases-july2021.png" width="80%"/&gt;
+ 
 ]
+
 ???
 
 Data visualizations played an important role in during the COVID-19 pandemic in displaying case counts, transmission rates, and outbreak regions.
@@ -853,34 +786,14 @@ Other dashboards showed outbreak regions in the form of maps.
 class:primary
 # Logarithmic Scales
 
-.pull-left[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglogscaleexample' src='images/log-scale-example.png' alt=' ' width='100%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modallogscaleexample' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodallogscaleexample'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionlogscaleexample' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
-].pull-right[
-&lt;!-- Trigger the Modal --&gt;
-&lt;img id='imglogscalecomic' src='images/log-scale-comic.png' alt='' width='100%'&gt;
-&lt;!-- The Modal --&gt;
-&lt;div id='modallogscalecomic' class='modal'&gt;
-  &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodallogscalecomic'&gt;
-  &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionlogscalecomic' class='modal-caption'&gt;&lt;/div&gt;
-&lt;/div&gt;
+.center[
+&lt;img src="images/log-scale-example.jpg" width="100%"/&gt;
 ]
 
 ???
 
 + **Problem:** Data which sapns several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
 + **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
-
-The usefulness of the log scale in science is illustrated here showing the challenge of displaying the fuel energy density of Uranium along side other sources of fuel due to differences in magnitude of density.
 
 ---
 class:primary
@@ -1026,6 +939,7 @@ class:inverse
 ---
 class:primary
 # Stages of Exponential Growth
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically .
 
 .center[
 &lt;img src="images/exponential-stages-comic.jpg", width="85%"/&gt;
@@ -1043,57 +957,29 @@ This misinterpretation can lead to decisions made under inaccurate understanding
 
 ---
 class:primary
-# Underestimation of Exponential Growth
+# Data Generation
 
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically .
-
-**Can log transforming the data help?**
-
-+ Maybe, but are there consequences? 
-+ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
-
-???
-
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically.
-
-+ Numerical estimation is more accurate than graphical estimation for exponential curves.
-+ No improvement in estimation found when participants had contextual knowledge or experience with exponential growth.
-+ Instruction on exponential growth reduced the underestimation. 
-+ Estimation was improved by providing immediate feedback to participants about the accuracy of their current predictions.
-
-**Can log transforming the data help?**
-
-+ Maybe, but are there consequences? 
-+ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
-
----
-class:primary 
-# Data Simulation
-
-**Point data:** `\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
+.pull-left[
+`\(N = 30\)` points `\((x_i, y_i), i = 1,...N\)` were generated for `\(x_i \in [x_{min}, x_{max}]\)`.
 
 Data were simulated based on a one parameter exponential model with multiplicative errors:
 `\begin{equation}
 y_i = e^{\beta x_i + e_i}
 \end{equation}`
 
-for 
+for growth rate `\(\beta\)` and `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
 
-+ growth rate `\(\beta\)`
-+ `\(e_i \sim N(0, \sigma^2)\)` generated by rejection sampling.
+].pull-right[
+&lt;img src="images/exponential_example_linear.gif", width="85%"/&gt;
+]
 
-**Line data:** `\(m = 1,....4x_{max} + 1\)` fitted values in 0.25 increments across the domain, `\((x_m, \hat y_{m,NLS})\)`
-
-A nonlinear least squares regression is then fit to the simulated points:
+A **nonlinear least squares regression** is then fit to the simulated points:
 `\begin{equation}
 \hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
 \end{equation}`
+to obtain fitted values `\((x_m, \hat y_{m,NLS})\)`.
 
 ???
-
-+ `\(e_i \sim N(0, \sigma^2)\)` are generated by rejection sampling in order to guarantee the points shown align with that of the fitted line displayed in the initial plot frame.
-
-Outputs a list of point data and line data both indicating the parameter identification, x-value, and corresponding simulated or fitted y value.
 
 ---
 class:primary 
@@ -1189,6 +1075,23 @@ Consistent aesthetic design choices:
 ]]
 
 ---
+class:primary
+# Study Design
+
++ Participants recruited through Twitter, Reddit, and direct email in May 2021.
+
++ A total of 35 individuals completed 280 unique you draw it task plots.
+
++ Data sets were generated randomly, independently for each participant at the start of the experiment. 
+
++ Participants shown 2 practice plots followed by 8 task plots randomly assigned for each individual in a completely randomized design.
+
++ Experiment conducted and distributed through an RShiny application found [**here**](https://emily-robinson.shinyapps.io/you-draw-it-pilot-app/).
+
+???
+Participants were recruited through through Twitter, Reddit, and direct email in May 2021. The experiment was conducted and distributed through an RShiny application. Participants were first shown 2 practice plots followed by the 4 You Draw It task plots randomly assigned for each individual in a completely randomized design.
+
+---
 class:primary 
 # Feedback Data
 
@@ -1267,7 +1170,9 @@ class:primary
 
 **Results:**
 + Predictions made on the log scale were more accurate than those made on the linear scale. 
+
 + Strongly supported for high exponential growth rates.
+
 + Points shown along the trend improve predictions.
 
 **The results of this study suggest that there are cognitive advantages to log scales when making predictions of exponential trends.**
@@ -1288,31 +1193,15 @@ class:inverse
 class:primary
 # What's Next?
 
-&lt;!-- .center[ --&gt;
-&lt;!-- &lt;img src="images/loading.gif" width="50%"/&gt; --&gt;
-&lt;!-- ] --&gt;
++ Pilot study for estimation by numerical translation task.
 
-&lt;!-- ✏️ Implement the 'You Draw It' method in non-linear settings. --&gt;
-
-&lt;!-- 📈 Evaluate human ability to extrapolate data from trends. --&gt;
-
-&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:gray;overflow:visible;position:relative;"><path d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"/></svg> Use the tool to understand beliefs of real data such as climate change trends.  --&gt;
-
-&lt;!-- <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Develop an R package designed for easy implementation of ‘You Draw It’ task plots. --&gt;
-
-+ Pilot study for translation to numeric values on a logarithmic scale.
-
-+ Final Data Collection on Prolific.
++ Final data collection on Prolific.
 
 + Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
 
-+ Use the tool to understand beliefs of real data such as climate change trends.
++ Use the 'You Draw It' tool to understand beliefs of real data such as climate change trends.
 
 &lt;br&gt;
-
-&lt;!-- .right-col[ --&gt;
-&lt;!-- Gif Source: [photobucket.com](http://s280.photobucket.com/user/ariffisariff/media/animated-loading.gif.html) --&gt;
-&lt;!-- ] --&gt;
 
 ???
 ✏️ Implement the 'You Draw It' method in non-linear settings.
@@ -1495,6 +1384,10 @@ In: &lt;em&gt;The Journal of Business Communication (1973)&lt;/em&gt; 22.1, pp. 
 class:primary
 # Tools
 
++ R Shiny
++ Data Driven Documents (D3.js)
++ 
+
 ---
 class:inverse
 &lt;br&gt;
@@ -1511,6 +1404,458 @@ class:inverse
 <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg> **www.emilyarobinson.com**
 <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> **earobinson95**
 ]
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Perception through lineups
+]
+
+---
+class:primary
+# Lineup Experimental Task 
+
+Study Participant Prompt: *Which plot is most different?*
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglinearlineupexample' src='images/linear-lineup-example.png' alt=' ' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgloglineupexample' src='images/log-lineup-example.png' alt=' ' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallinearlineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallinearlineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlinearlineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalloglineupexample' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalloglineupexample'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionloglineupexample' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+# Data Generation
+
+.pull-left[
+**Three Parameter Exponential:** `\(y_i=\alpha e^{\beta x_i + \epsilon_i} + \theta\)` with `\(\epsilon_i \sim N(0, \sigma^2)\)`
+
+**Heuristic Simulation Approach**
+- Set 3 points (Min, Max, Midpoint) 
+- Select starting values
+  - Obtain linear model coefficients for `\(\log(y_i) = a+bx_i\)`
+	- `\(\alpha_0 = e^a ;\beta_0 = b; \theta_0 = \frac{\min(y)}{2}\)`
+	
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgheuristicsimulation' src='images/heuristic-simulation.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalheuristicsimulation' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalheuristicsimulation'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionheuristicsimulation' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+- Using `nls()`, fit selected model to the points and obtain parameter estimates `\(y_i = \hat\alpha e^{\hat\beta x_i} + \hat\theta\)`.
+- Using the parameter estimates, assume `\(\epsilon_i \sim N(0, \sigma^2)\)` and set `\(\tilde \alpha = \frac{\hat\alpha}{e^{\sigma^2/2}}\)`. Simulate data based on `\(y_i = \tilde\alpha e^{\hat\beta x_i + \epsilon_i}+\hat\theta.\)`
+
+???
+
+The final model we selected to simulate an exponentially increasing trend was the three parameter exponential model with multiplicative errors leading to nonconstant variance. 
+
+By doing this, we could implement constraints of the same starting and ending values so that comparisons across models with differing parameters compared. However, this results in some curvature on the log scale as well in comparison to the linear trend we would typically experience from log transforming exponetial data.
+
+The simulation approach we selected to use was what we are calling a heuristic simulation. By this, what I mean is we selected a minimum and maximum value and then a midpoint that falls on a given line.
+
+From there, we obtained starting values and fit a nonlinear model to obtain our final parameter estimates. 
+
+When using the multiplicative error, we will have some nonconstant variance so to gaurantee that the expected value is equal for different error variances, we then scale our final alpha.
+
+Using the final parameters estimates, we simulate data along that increasing exponential curve and deviate it from the curve by including our error in the exponent.
+
+---
+class:primary
+# The 'Goldilocks Zone'
+
+The **Lack of Fit** test statistic calculated by the deviation of the data from a linear regression line was used to determine the curvature and variability combination values.
+
+.pull-left[
+- **Curvature** is controled by the `Midpoint` in the heuristic simulation and in turn affects `\(\hat\beta.\)` Three difficulty levels were selected:
+    - Easy (Obvious curvature)
+    - Medium  (Noticable curvature) 
+    - Hard (Almost linear)
+    
+- `\(\hat\alpha\)` and `\(\hat\theta\)` are adjusted within the heutistic simulation to ensure our range and domain constraints are met.
+
+- A sensible value for `\(\sigma\)` was selected for each curvature difficulty.
+
+].pull-right[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imglofcurvature' src='images/lof-curvature.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modallofcurvature' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodallofcurvature'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionlofcurvature' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;table class="table" style="font-size: 14px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(x_{mid}\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\hat\alpha\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\tilde\alpha\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\hat\beta\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\hat\theta\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\hat\sigma\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Easy &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.88 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9.10 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Medium &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 13.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6.86 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6.82 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.13 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3.14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Hard &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 11.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 37.26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 37.22 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -27.26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.05 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+???
+After running an initial study where we manipulated both curvature and variability, we decided to design the study to focus on low variability only and manipulate the curvature. Recall, a previous study examined whether discrimination between curvature types is possible and found that accuracy was higher when nonlinear trends were presented and that accuracy was higher with low variability.
+
+We decided to select 3 levels of curvature. Curvature is controled by that midpoint and in turn the beta parameter. Alpha and Theta are calculated as a result in order to maintain our range and domain constraints. A sensible choice for sigma was then selected. 
+
+In order to determine whether the levels of curvature differ, we calculated the lack of fit statistic as the deviation of the simulated data from a linear regression line. From here, we simulated 1000 datasets and calculated the lack of fit statistic and look for separation in the density plots.
+
+The goal is to hit that sweet spot of it not being too easy to pick out the target plot but also not too difficult. 
+
+---
+class:primary
+# Study Design
+
+**Curvature:**
++ High Curvature
++ Medium  Curvature
++  Low Curvature
+
+**Treatment Design:** Target Panel gets model A and Null Panels get model B
+
+`\(3!\cdot 2!= 6\)` curvature combinations
+
+`\(\times 2\)` lineup data sets per combination `\(=\)` **12 test data sets**
+
+`\(\times 2\)` scales (log &amp; linear) `\(=\)` **24 different lineup plots**
+
+**Experimental Design:** 13 lineup plots per participant
+
+`\(6\)` test parameter combinations per participant `\(\times 2\)` scales `\(= 12\)` test lineups
+
+`\(1\)` rorschach parameter combination per participant
+
+---
+class:primary
+# Generalized Linear Mixed Model
+
+Define `\(Y_{ijkl}\)` to be the event that participant `\(l\)` correctly identifies the target plot for data set `\(k\)` with curvature `\(j\)` plotted on scale `\(i\)`.
+
+`$$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$`
+where
+- `\(\eta\)` is the beaseline average probability of selecting the target plot. 
+- `\(\delta_i\)` is the effect of the log/linear scale.
+- `\(\gamma_j\)` is the effect of the curvature combination.
+- `\(\delta\gamma_{ij}\)`is the two-way interaction effect of the scale and curvature.
+- `\(s_l \sim N(0,\sigma^2_\text{participant})\)`, random effect for participant characteristics.
+- `\(d_k \sim N(0,\sigma^2_{\text{data}})\)`, random effect for data specific characteristics. 
+
+We assume that random effects for data set and participant are independent.
+
+???
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function.
+
+---
+class:primary
+# Results
+
+.center[
+&lt;img src="images/lineup-results.png" width="100%"/&gt;
+]
+
+???
++ The choice of scale has no impact if curvature differences are
+large. 
+
++ Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
+
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature .
+
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Data Driven Documents (D3.js)
+]
+
+---
+class:primary
+# Background of D3
+
+**Who?** [Mike Bostock](https://observablehq.com/@mbostock) created D3 during his time working on graphics at the New York Times.
+  
+**What?** Open-source JavaScript based graphing framework
++ D3 = "Data Driven Documents"
++ `D3` is to JavaScript as `ggplot2` is to R
++ Framework for binding objects and layers to plotting area
+  + framework for movement and user interaction
+
+**When?** D3 v1.0 released in 2011, D3.js recently celebrated it's 10th anniversary!
+
+**Where?** The internet!
+
+**Why?** Advantages of using D3 include animation and allowing for movement and user interaction.
+
+**How?** `r2d3`!
+
+???
+
++ Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
++ `D3` is to JavaScript as `ggplot2` is to R
++ Advantages include animation and allowing for movement and user interaction.
+
+---
+class:primary
+# Relationship between D3 and R 
+
+.pull-left[
+The `r2d3` package  in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
+
+].pull-right[
+.center[ 
+ &lt;img src="images/r2d3-hex.png" width="40%"/&gt;
+]
+]
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+--
+.pull-left[
+**How?**
++ Converts data in R to JSON that can be interpreted by JavaScript
++ Sources D3 code library
++ Creates plot container (svg)
++ Renders plot using source code
+].right-plot[
+
+```r
+r2d3(data = data,
+     script = "d3-source-code.js",
+     d3_version= "5")
+```
+]
+
+???
+
+A challenge of working with D3 is the environment necessary to display the graphics and images. 
+
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
+A default SVG (scalable vector graphic) container for layering elements is then generated by the r2d3 function which renders the plot using the source code.
+
+---
+class:primary
+# Getting Started with D3
+
+`D3.js` is to JavaScript as `ggplot2` is to R
+
+.pull-left[
+<i class="fab fa-js" role="presentation" aria-label="js icon"></i> [Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+<i class="fa fa-image" role="presentation" aria-label="image icon"></i> Understand [SVG](http://tutorials.jenkov.com/svg/g-element.html) elements: inspect elements in web browser!
+
+<i class="fa fa-book-open" role="presentation" aria-label="book-open icon"></i> Amelia Wattenberger's [Full Stack D3 and Data Visualization Book](https://www.newline.co/fullstack-d3)
+
+<i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i> Build a basic graphic using [r2d3](https://rstudio.github.io/r2d3/articles/introduction.html)
+
+<i class="fa fa-grimace" role="presentation" aria-label="grimace icon"></i> Modify `D3.js` code until it does what you want!
+]
+.pull-right[
+**Additional Resources**
+
+<i class="fa fa-code" role="presentation" aria-label="code icon"></i> [How to learn D3 with no coding experience](https://www.heshameissa.com/blog/learn-d3)
+
+<i class="fab fa-twitter" role="presentation" aria-label="twitter icon"></i> Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger)
+]
+
+---
+class:primary
+# r2d3 ➕ R Shiny
+
+.center[
+&lt;img src="images/r2d3+shiny-inkscape.png" width="80%"/&gt;
+]
+???
+To distinguish between code that runs at initialization-time only and code that runs when data changes, organize your code so that the code which responds to data changes is contained within the r2d3.onRender()
+
+An explicit resize handler redraws plot as you resize your browser window 
+
+---
+class:primary
+# r2d3 ➕ R Shiny
+
+
+```r
+data_to_json &lt;- function(data) {
+    jsonlite::toJSON(data, 
+                     dataframe = "rows", 
+                     auto_unbox = FALSE, 
+                     rownames = TRUE)
+} 
+```
+
+
+```r
+data &lt;- list(line_data, point_data) # Create a list of simulated point and line data
+message_loc &lt;- session$ns("drawr_message") # Create storage for data from d3.js
+  r2d3(
+    data = data_to_json(data), # Convert data list to a JSON file
+    script = "shinydrawr-d3v5.js", # Provide the D3.js code file
+    dependencies = c("d3-jetpack"),
+    d3_version= "5", # Specify D3 version
+    options = list(message_loc,
+                   ...) # Communciate parameters from R Shiny to D3.js
+  )
+```
+
+---
+class:primary
+# r2d3 ➕ R Shiny
+
+
+```r
+function draw_true_line({svg, line_data, draw_start}, scales){
+  var df = line_data.filter(function(d){ return d.x &lt;= draw_start})
+  state.svg.selectAppend("path.shown_line")
+  .datum(df)
+  .at(default_line_attrs)
+  .attr("d", scales.line_drawer);
+}
+```
+
+
+```r
+function draw_points({svg, point_data, points_end, points}, scales){
+  const dots = state.svg.selectAll("circle").data(df)
+  dots
+    .enter().append("circle")
+    .merge(dots)
+    .attr("cx", d =&gt; scales.x(d.x))
+    .attr("cy", d =&gt; scales.y(d.y))
+    .attr("r", 2)
+    .style("fill", "black")
+    .style("opacity", 0.8)
+    .style("stroke", "black")
+}
+```
+
+---
+class:primary
+# r2d3 ➕ R Shiny
+
+
+```r
+  const on_drag = function(){
+    const drag_x = scales.x.invert(d3.event.x);
+    const drag_y = scales.y.invert(d3.event.y);
+    fill_in_closest_point(state, drag_x, drag_y);
+    draw_user_line(state, scales);
+    draw_rectangle(state, scales);
+  };
+```
+
+
+```r
+const on_end = function(){
+    const line_status = get_user_line_status(state);
+    if(line_status === 'done'){ # User has completed line drawing
+      ...
+      if(state.shiny_message_loc){ # Make sure shiny is available
+        if(typeof Shiny !== 'undefined'){
+          Shiny.onInputChange( # Send drawn points off to server
+            state.shiny_message_loc,
+            state.drawable_points.map(d =&gt; d.y)
+          );
+        ...
+  };
+```
+
+---
+class:primary
+# r2d3 ➕ R Shiny
+
+
+```r
+function setup_draw_watcher(svg, scales, on_drag, on_end){
+  ...
+  .call(
+    d3.drag()
+    .on("drag", on_drag)
+    .on("end", on_end)
+  );
+}
+```
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1587,40 +1932,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 
 <script>
         /* Get the modal*/
-          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
-          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
-          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
-          imglinearlineupexample.onclick = function(){
-            modallinearlineupexample.style.display = 'block';
-            modalImglinearlineupexample.src = this.src;
-            captionTextlinearlineupexample.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImglinearlineupexample.onclick = function() {
-            modallinearlineupexample.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modalloglineupexample = document.getElementById('modalloglineupexample');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgloglineupexample = document.getElementById('imgloglineupexample');
-          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
-          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
-          imgloglineupexample.onclick = function(){
-            modalloglineupexample.style.display = 'block';
-            modalImgloglineupexample.src = this.src;
-            captionTextloglineupexample.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgloglineupexample.onclick = function() {
-            modalloglineupexample.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
           var modaleyefittingexamplesimplot = document.getElementById('modaleyefittingexamplesimplot');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
           var imgeyefittingexamplesimplot = document.getElementById('imgeyefittingexamplesimplot');
@@ -1651,74 +1962,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgeyefittingtrialplot.onclick = function() {
             modaleyefittingtrialplot.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modal91divoccasesjuly2021 = document.getElementById('modal91divoccasesjuly2021');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var img91divoccasesjuly2021 = document.getElementById('img91divoccasesjuly2021');
-          var modalImg91divoccasesjuly2021 = document.getElementById('imgmodal91divoccasesjuly2021');
-          var captionText91divoccasesjuly2021 = document.getElementById('caption91divoccasesjuly2021');
-          img91divoccasesjuly2021.onclick = function(){
-            modal91divoccasesjuly2021.style.display = 'block';
-            modalImg91divoccasesjuly2021.src = this.src;
-            captionText91divoccasesjuly2021.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImg91divoccasesjuly2021.onclick = function() {
-            modal91divoccasesjuly2021.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modalcovid19summer2020riskmap = document.getElementById('modalcovid19summer2020riskmap');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgcovid19summer2020riskmap = document.getElementById('imgcovid19summer2020riskmap');
-          var modalImgcovid19summer2020riskmap = document.getElementById('imgmodalcovid19summer2020riskmap');
-          var captionTextcovid19summer2020riskmap = document.getElementById('captioncovid19summer2020riskmap');
-          imgcovid19summer2020riskmap.onclick = function(){
-            modalcovid19summer2020riskmap.style.display = 'block';
-            modalImgcovid19summer2020riskmap.src = this.src;
-            captionTextcovid19summer2020riskmap.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImgcovid19summer2020riskmap.onclick = function() {
-            modalcovid19summer2020riskmap.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modallogscaleexample = document.getElementById('modallogscaleexample');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imglogscaleexample = document.getElementById('imglogscaleexample');
-          var modalImglogscaleexample = document.getElementById('imgmodallogscaleexample');
-          var captionTextlogscaleexample = document.getElementById('captionlogscaleexample');
-          imglogscaleexample.onclick = function(){
-            modallogscaleexample.style.display = 'block';
-            modalImglogscaleexample.src = this.src;
-            captionTextlogscaleexample.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImglogscaleexample.onclick = function() {
-            modallogscaleexample.style.display = 'none';
-          }
-</script>
-<script>
-        /* Get the modal*/
-          var modallogscalecomic = document.getElementById('modallogscalecomic');
-        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imglogscalecomic = document.getElementById('imglogscalecomic');
-          var modalImglogscalecomic = document.getElementById('imgmodallogscalecomic');
-          var captionTextlogscalecomic = document.getElementById('captionlogscalecomic');
-          imglogscalecomic.onclick = function(){
-            modallogscalecomic.style.display = 'block';
-            modalImglogscalecomic.src = this.src;
-            captionTextlogscalecomic.innerHTML = this.alt;
-          }
-          /* When the user clicks on the modalImg, close it*/
-          modalImglogscalecomic.onclick = function() {
-            modallogscalecomic.style.display = 'none';
           }
 </script>
 <script>
@@ -1923,6 +2166,74 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgexpspaghettiplot.onclick = function() {
             modalexpspaghettiplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
+          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
+          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
+          imglinearlineupexample.onclick = function(){
+            modallinearlineupexample.style.display = 'block';
+            modalImglinearlineupexample.src = this.src;
+            captionTextlinearlineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglinearlineupexample.onclick = function() {
+            modallinearlineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalloglineupexample = document.getElementById('modalloglineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgloglineupexample = document.getElementById('imgloglineupexample');
+          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
+          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
+          imgloglineupexample.onclick = function(){
+            modalloglineupexample.style.display = 'block';
+            modalImgloglineupexample.src = this.src;
+            captionTextloglineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgloglineupexample.onclick = function() {
+            modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalheuristicsimulation = document.getElementById('modalheuristicsimulation');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgheuristicsimulation = document.getElementById('imgheuristicsimulation');
+          var modalImgheuristicsimulation = document.getElementById('imgmodalheuristicsimulation');
+          var captionTextheuristicsimulation = document.getElementById('captionheuristicsimulation');
+          imgheuristicsimulation.onclick = function(){
+            modalheuristicsimulation.style.display = 'block';
+            modalImgheuristicsimulation.src = this.src;
+            captionTextheuristicsimulation.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgheuristicsimulation.onclick = function() {
+            modalheuristicsimulation.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallofcurvature = document.getElementById('modallofcurvature');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglofcurvature = document.getElementById('imglofcurvature');
+          var modalImglofcurvature = document.getElementById('imgmodallofcurvature');
+          var captionTextlofcurvature = document.getElementById('captionlofcurvature');
+          imglofcurvature.onclick = function(){
+            modallofcurvature.style.display = 'block';
+            modalImglofcurvature.src = this.src;
+            captionTextlofcurvature.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglofcurvature.onclick = function() {
+            modallofcurvature.style.display = 'none';
           }
 </script>
 
