@@ -1182,12 +1182,12 @@ class:primary
 
 **R Packages and Toolkits:**
 + Modeling: `lmer`, `bam`
-+ Data Wrangling: `dplyr`, `purrr`, `dbplyr`
++ Data Wrangling: `dplyr`, `tidyr`, `purrr`, `dbplyr`
 + Visualization: `ggplot2`
 + Slides/Documentation: `rmarkdown`, `xaringang`, `knitr`
 + User interface: `Rshiny`
 
-**Other Software:** Data Driven Documents (D3.js)
+**Other Software:** Data Driven Documents (D3.js), GitHub
 
 ---
 class:inverse
