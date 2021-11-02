@@ -272,6 +272,7 @@ Embed a **target plot** (actual data) in a lineup of **null plots** (randomly pe
 
 ```{r, echo = F, fig.width = 8, fig.height = 6, out.width = "75%", fig.align='center'}
 library(nullabor)
+data(banknote, package = "mclust")
 lineup(null_permute("Status"), banknote, pos = 8) %>%
 ggplot() + 
   geom_jitter(aes(x = Left, y = Right, color = Status), shape = 1) + 
@@ -1092,13 +1093,17 @@ class:inverse
 class:primary
 # What's Next?
 
+**Data Collection**
+
 + Pilot study for estimation by numerical translation task.
 
 + Final data collection on Prolific.
 
-+ Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
+**Software Development**
++ R package designed for easy implementation of ‘You Draw It’ task plots.
 
-+ Use the 'You Draw It' tool to understand beliefs of real data such as climate change trends.
+**Publications**
++ Series of logarithmic perception studies to be published in *Journal of Computational and Graphical Statistics*.
 
 <br>
 
@@ -1175,9 +1180,14 @@ print(bib[[c("spence1990visual",
 class:primary
 # Tools
 
-+ R Shiny
-+ Data Driven Documents (D3.js)
-+ 
+**R Packages and Toolkits:**
++ Modeling: `lmer`, `bam`
++ Data Wrangling: `dplyr`, `purrr`, `dbplyr`
++ Visualization: `ggplot2`
++ Slides/Documentation: `rmarkdown`, `xaringang`, `knitr`
++ User interface: `Rshiny`
+
+**Other Software:** Data Driven Documents (D3.js)
 
 ---
 class:inverse
