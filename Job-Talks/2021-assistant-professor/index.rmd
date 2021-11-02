@@ -43,7 +43,7 @@ library(fontawesome)
 
 # References
 library(RefManageR)
-bib <- ReadBib("bib/bibliography.bib", check = FALSE)
+bib <- ReadBib("bib/thesis.bib", check = FALSE)
 ui <- "- "
 
 # R markdown options
@@ -105,8 +105,8 @@ write("", file = "js-addins.html")
 
 <br><br>
 # Can 'You Draw It'?
-
-### November XX, 2021
+## Creighton University
+### November 3, 2021
 #### Emily Robinson 
 #### Department of Statistics, University of Nebraska - Lincoln 
 ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) 
@@ -119,6 +119,7 @@ class:primary
 
 **Education**
 + B.S. from Winona State University in 2017
++ M.S. from University of Nebraska - Lincoln in 2019
 + Ph.D. Candidate at University of Nebraska - Lincoln
   + Expected graduation August 2022
 + 5-12 Mathematics Minnesota Teaching License
@@ -129,22 +130,14 @@ class:primary
   + Calculus-based introductory statistics
 + Statistical consultant at SC3L on UNL Campus
 + Research Areas: Visualization, Experimental Design, and Statistical Consulting and Collaboration
++ Industry: Summer internships at John Deere and Berkley Human Services
 
 ---
 class:primary
 # Publications
-**Graphics**
 .medium[
 + [In Preparation] **Robinson, E. A.**, VanderPlas, S., Howard, R., (2021) Eye Fitting Straight Lines in the Modern Era. Target journal: *Journal of Computational and Graphical Statistics*. [Access on GitHub.](https://earobinson95.github.io/Eye-Fitting-Straight-Lines-in-the-Modern-Era/Eye-Fitting-Straight-Lines-in-the-Modern-Era.pdf)
 
-+ Dissertation work to be published in *Journal of Computational and Graphical Statistics.*
-]
----
-class:primary
-# Publications
-
-**Collaborations**
-.medium[
 + [In Preparation] Ortez, O. A., McMechan, A. J., Hoegemeyer, T., **Robinson, E. A.**, Howard, R. & Elmore, R. W. (2021) Abnormal ear development in corn: does hybrid, environment, and seeding rate matter? Target journal: *Field Crops Research*.
 
 + [Under Review] Carmona G. I., **Robinson, E. A.**, Rosa, A. T., Proctor C. A. & McMechan
@@ -154,11 +147,11 @@ A. J. (2021) Cover crop planting and termination dates influence arthropod activ
 
 + [Under Review] Ongaratto, S., Baldin, E. L., Hunt, T. E., Montezano, D. G., **Robinson, E. A.**, Heier, K., & Santos, M. C. (2021) Larval movement of Anticarsia gemmatalis (Lepidoptera: Erebidae) on vegetative and reproductive stage non-Bt soybean. Submitted to *Journal of Pest Science*.
 
-+ Krueger, A. J., **Robinson, E. A.**, Weissling, T. J., Velez, A. M., & Anderson, T. D. (2021) Chemical combinations reduce growth and survival of monarch butterflies. *Journal of Economic Entomology*. doi:10.1093/jee/toab169
++ Krueger, A. J., **Robinson, E. A.**, Weissling, T. J., Velez, A. M., & Anderson, T. D. (2021) Chemical combinations reduce growth and survival of monarch butterflies. *Journal of Economic Entomology*. [DOI:10.1093/jee/toab169](https://academic.oup.com/jee/advance-article/doi/10.1093/jee/toab169/6371730)
 
-+ Reinders, J. D., Wangila, D. S., **Robinson, E. A.**, French, B. W., & Meinke, L. J. (2021) Characterizing the relationship between western corn rootworm (Coleoptera: Chrysomelidae) larval survival on Cry3Bb1-expressing corn and larval developmental factors. *Journal of Economic Entomology*. doi:10.1093/jee/toab151
++ Reinders, J. D., Wangila, D. S., **Robinson, E. A.**, French, B. W., & Meinke, L. J. (2021) Characterizing the relationship between western corn rootworm (Coleoptera: Chrysomelidae) larval survival on Cry3Bb1-expressing corn and larval developmental factors. *Journal of Economic Entomology*. [DOI:10.1093/jee/toab151](https://academic.oup.com/jee/article/114/5/2096/6330605)
 
-+ Ongaratto, S., Baldin, E. L., Hunt, T. E., Montezano, D. G., **Robinson, E. A.**, & Santos, M. C. (2021). Effects of intraguild interactions on Anticarsia gemmatalis and Chrysodeixis includens larval fitness and behavior in soybean. Pest Management Science. doi:10.1002/ps.6330
++ Ongaratto, S., Baldin, E. L., Hunt, T. E., Montezano, D. G., **Robinson, E. A.**, & Santos, M. C. (2021). Effects of intraguild interactions on Anticarsia gemmatalis and Chrysodeixis includens larval fitness and behavior in soybean. *Pest Management Science*. [DOI:10.1002/ps.6330](https://doi.org/10.1002/ps.6330)
 
 ]
 
@@ -175,6 +168,8 @@ class:primary
 + Logarithmic Perception
 
 + Prediction of Exponential Growth
+
++ Future Work
 
 ---
 class:primary
@@ -212,32 +207,6 @@ There is a need for an established set of concepts and terminology to build thei
 
 ---
 class:primary
-# Grammar of Graphics `r Citep(bib[[c("wilkinson2013grammar")]])`
-
-Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
-
-.center[
-<img src="images/building-a-masterpiece-Allison-Horst.png" width="65%" />
-
-Building a masterpiece, by Allison Horst
-]
-
-???
-
-Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
-
-+ **aesthetics:** links between data variables and graphical features (position, color, shape, size)
-+ **layers:** geometric elements (points, lines, rectangles, text, …)
-+ **transformations:** transformations specify a functional link between the data and the displayed information (identity, count, bins, density, regression). Transformations act on the variables.
-+ **scales:** scales map values in data space to values in the aesthetic space. Scales change the coordinate space of an aesthetic, but don’t change the underlying value (so the change is at the visual level, not the mathematical level).
-+ **coordinate system:** e.g.polar or Cartesian
-+ **faceting:** facets allow you to split plots by other variables to produce many sub-plots.
-+ **theme:** formatting items, such as background color, fonts, margins…
-
-Software, such as Hadley Wickham’s ggplot2, aims to implement the framework of creating charts and graphics as the grammar of graphics recommends.
-
----
-class:primary
 # Testing Statistical Graphics
 
 Evaluate design choices and understand cognitive biases through the use of **visual tests**. 
@@ -253,6 +222,9 @@ Could ask participants to:
 `r emo::ji("pencil2")` predict the next few observations.
 
 ???
+
+How do we know graphics work and are effective? 
+
 One way we can evaluate these design choices through the use of graphical tests. 
 
 Could ask participants to:
@@ -263,6 +235,8 @@ Could ask participants to:
 - predict the next few observations.
 
 All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+There are different ways of engaging in graphics and how effective the graphic is depends on how you engage with the chart. 
 
 ---
 class:primary
@@ -443,6 +417,8 @@ I want to introduce a study conducted in 1981 called Eye Fitting Straight Lines 
 + 153 graduate students and post docs in Introductory Biostatistics.
 + Latin square.
 + Students tended to fit the slope of the first principal component or major axis (the line that minimizes the sum of squares of perpendicular rather than vertical distances).
+
+In the past -> draw on paper
 
 ---
 class:primary
@@ -662,11 +638,14 @@ class:primary
 **Research Objectives:** 
 
 1. Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981). 
+
 2. Extend the study found in Mosteller et al. (1981) with formal statistical analysis methods for understanding the perception of linear regression.
 
 **Results:**
 + Estimated drawn trend-lines followed closer to the regression line based on the principal axes than the OLS regression line.
+
 + Most prominent in data simulated with large variances.
+
 + Humans perform “ensemble perception” in a statistical graphic setting.
 
 **The reproducibility of these results serve as validation of the 'You Draw It' tool and method.**
@@ -704,9 +683,10 @@ class:inverse
 class:primary
 # Motivation
 
-Data visualizations played an important role in during the **COVID-19 pandemic** `r Citep(bib[[c("rost_2020", "romano_scale_2020", "bavel_using_2020")]])`.
+Data visualizations played an important role in during the **COVID-19 pandemic**.
 .center[
-<img src="images/91divoc-cases-july2021.png" width="80%"/>
+<img src="images/91divoc-cases-july2021.png" width="90%"/>
+
 `r Citep(bib[[c("fagen-ulmschneider_2020")]])` 
 ]
 
@@ -739,7 +719,7 @@ class:primary
 class:primary
 # Logarithmic Mapping
 
-Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
+Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development.
 
 .center[
 <img src="images/log-numberline.png" width="100%"/>
@@ -853,7 +833,7 @@ class:primary
 
 ???
 
-One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+When designing graphical tests, you must consider that how effective the graphic is depends on how viewers engage with the chart. There are different ways of knowing if your chart is effective and your tests need to align with this and show these. This is similar to the way you customize your teaching material to your audience.
 
 The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
 
@@ -873,10 +853,10 @@ class:inverse
 ---
 class:primary
 # Stages of Exponential Growth
-Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975")]])`.
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones1979generalized",       "mackinnon1991feedback", "wagenaar1975misperception")]])`.
 
 .center[
-<img src="images/exponential-stages-comic.jpg", width="85%"/>
+<img src="images/exponential-stages-comic.png", width="75%"/>
 
 `r Citep(bib[[c("vonbergmann_2021")]])`
 ]
@@ -1085,8 +1065,9 @@ class:inverse
 <br>
 <br>
 <br>
+<br>
 .center[
-# What's Next?
+# Future Work
 ]
 
 ---
@@ -1103,74 +1084,50 @@ class:primary
 + R package designed for easy implementation of ‘You Draw It’ task plots.
 
 **Publications**
++ [In Preparation] **Robinson, E. A.**, VanderPlas, S., Howard, R., (2021) Eye Fitting Straight Lines in the Modern Era. Target journal: *Journal of Computational and Graphical Statistics*. [Access on GitHub.](https://earobinson95.github.io/Eye-Fitting-Straight-Lines-in-the-Modern-Era/Eye-Fitting-Straight-Lines-in-the-Modern-Era.pdf)
+
 + Series of logarithmic perception studies to be published in *Journal of Computational and Graphical Statistics*.
 
-<br>
+---
+class:primary
+# Future Plans
 
-???
-`r emo::ji("pencil2")` Implement the 'You Draw It' method in non-linear settings.
++ Implement the use of visual inference as a teaching technique in introductory statistics.
 
-`r emo::ji("chart increasing")` Evaluate human ability to extrapolate data from trends.
++ Conduct visual testing in the consulting setting.
 
-`r fa("cloud-showers-heavy", fill = "gray")` Use the tool to understand beliefs of real data such as climate change trends. 
++ Apply 'You Draw It' to other fields in order to evaluate science communication using graphics.
 
-`r fa("r-project", fill = "steelblue")` Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
++ Evaluate human's ability to visually perform change point detection in time series.
 
 ---
 class:primary
 # References
 <font size="2">
 ```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("aisch_cox_quealy_2015",
-"Aisch_NYTimes_presidential_forecast",
-"buchanan_park_pearce_2017",
-"buja2009statistical",
-"carpenter1998model",
-"chandar2012graph",
-"chong2003representation",
-"chong2005statistical",
-"ciccione2021can",
-"cleveland1984graphical")]], 
-      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
-      )
-```
-</font>
-
----
-class:primary
-# References
-<font size="2">
-```{r, print_refs2, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("cleveland1985graphical",
-"finney1951subjective",
-"gouretski2007much",
-"green2009personal",
-"harms1991august",
-"hofmann2012graphical",
-"katz_2017",
-"lewandowsky1989perception",
-"mosteller1981eye",
-"playfair1801statistical")]], 
-      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
-      )
-```
-</font>
-
----
-class:primary
-# References
-<font size="2">
-```{r, print_refs3, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("spence1990visual",
-"unwin2020data",
-"van2011rapid",
-"vanderplas2015spatial",
-"vanderplas2017clusters",
-"vanderplas2020testing",
-"walker2013statistical",
-"wickham2011ggplot2",
-"wilkinson2013grammar",
-"yates1985graphs")]], 
+print(bib[[c("unwin2020data",
+             "lewandowsky1989perception",
+             # "harms1991august", 
+             # "playfair1801statistical", 
+             # "walker2013statistical",
+             # "chandar2012graph", 
+             # "yates1985graphs",
+             # "Aisch_NYTimes_presidential_forecast",
+             # "gouretski2007much",
+             "buja2009statistical",
+             "mosteller1981eye",
+             "katz_2017",
+             "aisch_cox_quealy_2015",
+             "buchanan_park_pearce_2017",
+             "fagen-ulmschneider_2020",
+             "burnmurdoch_2020",
+             "vonbergmann_2021",
+             "dehaene2008log", 
+             "siegler2017numerical", 
+             "varshney2013",
+             "jones1979generalized", 
+             "mackinnon1991feedback", 
+             "wagenaar1975misperception")]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
@@ -1181,10 +1138,15 @@ class:primary
 # Tools
 
 **R Packages and Toolkits:**
-+ Modeling: `lmer`, `bam`
+
++ Modeling: `lme4`, `mgcv`
+
 + Data Wrangling: `dplyr`, `tidyr`, `purrr`, `dbplyr`
-+ Visualization: `ggplot2`
+
++ Visualization: `ggplot2`, `r2d3`, `nullabor`
+
 + Slides/Documentation: `rmarkdown`, `xaringang`, `knitr`
+
 + User interface: `Rshiny`
 
 **Other Software:** Data Driven Documents (D3.js), GitHub
@@ -1382,7 +1344,121 @@ large.
 
 + Presenting data on the log scale makes us more sensitive to the the changes when there are only slight changes in curvature.
 
-+ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature `r Citep(bib[[c("best_perception_2007")]])`.
++ An exception occurs when identifying a plot with more curvature than the surrounding plots, indicating that it is is more difficult to say something has less curvature, but easy to say that something has more curvature.
+
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Lineup Protocol
+<font size="6">
+(Buja et. al, 2009)
+</font>
+]
+???
+Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
+
+---
+class:primary
+# Introduction to Visual Inference
+When doing exploratory data analysis, how do we know if what we see is actually there?
+
+```{r, echo = F, fig.width = 6, fig.height = 9/2, out.width = "75%", fig.align='center'}
+data(banknote, package = "mclust")
+ggplot(banknote) + 
+  geom_jitter(aes(x = Left, y = Right, color = Status)) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+???
+
+When inspecting a plot, how do we know if what we are seeing is actually there?
+
+---
+class:primary
+# Lineup Protocol (Buja et. al, 2009)
+
+Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
+
+```{r, echo = F, fig.width = 8, fig.height = 6, out.width = "75%", fig.align='center'}
+library(nullabor)
+lineup(null_permute("Status"), banknote, pos = 8) %>%
+ggplot() + 
+  geom_jitter(aes(x = Left, y = Right, color = Status), shape = 1) + 
+  facet_wrap(~.sample) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+???
+
+One way of answering this question is to embed the true data plot (called target plot) into a set of randomly permuted data sets (called null plots). This is what we call a lineup.
+
+This is similar to the law-enforcement procedure to line up a suspect among a set of innocents to check if a victim can identify the suspect as the perpetrator of the crime.
+
+Here, visual evaluation of the lineup is conducted by a person. If the viewers detect the target plot, we can conclude the plots are distinguishable.
+
+The lineup protocol is one such example of the development of tools designed for statistical graphical testing. The advancement of graphing software provides the tools necessary to develop new methods of testing graphics.
+
+---
+class:primary
+# Introduction to Visual Inference
+
+.center[
+<img src="images/visual-inference-flowchart.png" width="58%" /> 
+]
+
+???
+The main idea behind visual inference is that graphs are visual statistics or summaries of the data sets generated by mathematical functions. In a standard statistical analysis, a test statistic is generated from the data set and compared to the null distribution of that test statistic. Similarly, the visual statistic (target plot) is compared by a human viewer to other plots generated under the assumption of the null.
+
+The main benefit of using visual inference is that visual tests tend to be more comprehensive. Since individuals are being asked to select one or more plots from a the lineup which are different but the difference is left unspecified the individual eye is actually spotting many differences at once. An equivalent numerical assessment may involved multiple tests using different test statistics. 
+
+---
+class:primary
+# Lineup Studies `r emo::ji("graph")` `r emo::ji("graph")` `r emo::ji("graph")`
+
++ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) `r Citep(bib[[c("buja2009statistical")]])`
++ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) `r Citep(bib[[c("majumder2013validation")]])`
++ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) `r Citep(bib[[c("majumder2014human")]])`
++ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) `r Citep(bib[[c("loy2016variations")]])`
++ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) `r Citep(bib[[c("vanderplas2015spatial")]])`
++ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) `r Citep(bib[[c("vanderplas2017clusters")]])`
++ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) `r Citep(bib[[c("vanderplas2021statistical")]])`
+
+.pull-left[
++ **Dissertation work:** Perception of log scales
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+i1 <- img_modal(src = "images/linear-lineup-example.png", alt = "Linear Scale", other=list(width="40%"))
+i2 <- img_modal(src = "images/log-lineup-example.png", alt = "Log Scale", other=list(width="40%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+???
+**Clusters beat trend!? testing feature hierarchy in statistical graphics** `r Citep(bib[[c("vanderplas2017clusters")]])`
++ Introduces perceptual principles such as preattentive features and gestalt heuristics
++ Discusses the design and results of a factorial experiment examining the effect of plot aesthetics such as color and trend lines on participants’ assessment of ambiguous data displays.
++ Strongly suggests that plot aesthetics have a significant impact on the perception of important features in data displays.
+
+As part of my dissertation work, I have conducted a study examining human perception of logarithmic scales. Here we see an example of the first part of the study utilizing lineups to test our ability to perceptually differentiate between two exponentially increasing trends shown on both the linear and log scale. Notice how it is much easier to pick out panel 13 as being most different when displayed on the log scale than on the linear scale.
+
 
 ---
 class:inverse
