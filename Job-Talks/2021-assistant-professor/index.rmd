@@ -113,6 +113,9 @@ write("", file = "js-addins.html")
 ##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/) 
 ##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95)
 
+???
+Thank you for inviting me for a visit today and for attending my talk.
+
 ---
 class:primary
 # About Me
@@ -131,6 +134,11 @@ class:primary
 + Statistical consultant at SC3L on UNL Campus
 + Research Areas: Visualization, Experimental Design, and Statistical Consulting and Collaboration
 + Industry: Summer internships at John Deere and Berkley Human Services
+
+???
+To start, I wanted to share a little bit about myself, I completed my undergraduate at Winona State University up in Minnesota with a double major in Statistics and Secondary Math Education. From there, I have been in Lincoln for the last 5 years working on my my PhD in statistics. If any of the students have questions about graduate school or UNL, feel free to reach out and I'd be happy to share my experience with you.
+
+During graduate school, I gained experience teaching both simulation based and calculus based introductory statistics courses. For the last three years, I have been working as a statistical consultant at UNL where I work one-on-one with graduate students and faculty from a variety of departments. My research interests involve data visualization, experimental design, and best statistical consulting practices. 
 
 ---
 class:primary
@@ -155,6 +163,9 @@ A. J. (2021) Cover crop planting and termination dates influence arthropod activ
 
 ]
 
+???
+I am currently working on a graphics publication to be submitted for review to the Journal of Computing and Graphical Statistics (JCGS) by the end of the year and have been involved in many collaborations that have resulted in peer reviewed publications. I am currently collaborating on a series of publications evaluating the effects of genetics, management, and environment interactions on abnormal ear development in corn to be published in *Field Crops Research*. I have worked closely with the entomology department, publishing in the *Journal of Economic Entomology* and *Pest Management Science*.
+
 ---
 class:primary
 # Outline
@@ -170,6 +181,9 @@ class:primary
 + Prediction of Exponential Growth
 
 + Future Work
+
+???
+In my talk today I am going to introduce graphical testing and give you a chance to participate in a graphical testing task. I will then provide validation for a modern method of fitting visual regression lines. My dissertation work specifically addresses the perception of logarithmic scales and exponential growth. I will then conclude with my future work.
 
 ---
 class:primary
@@ -259,7 +273,9 @@ ggplot() +
 
 ???
 
-One way of answering this question is to embed the true data plot (called target plot) into a set of randomly permuted data sets (called null plots). This is what we call a lineup.
+Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
+
+Here we see what is called a lineup. The idea is to embed the true data plot (called target plot) into a set of randomly permuted data sets (called null plots).
 
 This is similar to the law-enforcement procedure to line up a suspect among a set of innocents to check if a victim can identify the suspect as the perpetrator of the crime.
 
@@ -809,9 +825,9 @@ class:primary
 
 ???
 
-One way to evaluate design choices is through the use of graphical tests. We could ask participants to identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+When designing graphical tests, you must consider that how effective the graphic is depends on how viewers engage with the chart. There are different ways of knowing if your chart is effective and your tests need to align with this and show these. This is similar to the way you customize your teaching material to your audience.
 
-The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
+The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address different levels of graphical engagement and cognitive involvement which evaluate the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
 
 ---
 class:primary
@@ -833,9 +849,7 @@ class:primary
 
 ???
 
-When designing graphical tests, you must consider that how effective the graphic is depends on how viewers engage with the chart. There are different ways of knowing if your chart is effective and your tests need to align with this and show these. This is similar to the way you customize your teaching material to your audience.
-
-The main goal of this research is to use graphical tests to determine if there are benefits to displaying exponentially increasing data on a log scale rather than a linear scale. We have developed three graphical tests which address the perception of exponential growth, prediction of exponential growth, and translation from graphical to numerical estimation. 
+In the rest of this presentation, I will focus on the second study which tests an individuals ability to make predictions for exponentially increasing data by utilizing the 'You Draw It' method previously introduced.
 
 ---
 class:inverse
@@ -894,6 +908,21 @@ A **nonlinear least squares regression** is then fit to the simulated points:
 to obtain fitted values $(x_m, \hat y_{m,NLS})$.
 
 ???
+
+$N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$.
+
+Data were simulated based on a one parameter exponential model with multiplicative errors:
+\begin{equation}
+y_i = e^{\beta x_i + e_i}
+\end{equation}
+
+for growth rate $\beta$ and $e_i \sim N(0, \sigma^2)$ generated by rejection sampling.
+
+A **nonlinear least squares regression** is then fit to the simulated points:
+\begin{equation}
+\hat y_{m,NLS} = e^{\hat \beta_{NLS} x_m}
+\end{equation}
+to obtain fitted values $(x_m, \hat y_{m,NLS})$.
 
 ---
 class:primary 
@@ -971,7 +1000,7 @@ class:primary
 + Experiment conducted and distributed through an RShiny application found [**here**](https://emily-robinson.shinyapps.io/you-draw-it-pilot-app/).
 
 ???
-Participants were recruited through through Twitter, Reddit, and direct email in May 2021. The experiment was conducted and distributed through an RShiny application. Participants were first shown 2 practice plots followed by the 4 You Draw It task plots randomly assigned for each individual in a completely randomized design.
+Participants were recruited through through Twitter, Reddit, and direct email in May 2021. The experiment was conducted and distributed through an RShiny application. Participants were first shown 2 practice plots followed by the 8 You Draw It task plots randomly assigned for each individual in a completely randomized design.
 
 ---
 class:primary 
