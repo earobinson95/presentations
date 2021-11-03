@@ -1103,7 +1103,7 @@ class:primary
 ---
 class:primary
 # References
-<font size="2">
+<font size="1.5">
 ```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 print(bib[[c("unwin2020data",
              "lewandowsky1989perception",
@@ -1505,7 +1505,7 @@ class:primary
 # Relationship between D3 and R 
 
 .pull-left[
-The `r2d3` package `r Citep(bib[[c("luraschi_r2d3")]])` in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
 + RMarkdown with HTML output
 + Shiny applications (amazing!)
 
