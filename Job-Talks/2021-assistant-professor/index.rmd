@@ -856,7 +856,7 @@ class:primary
 Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones1979generalized",       "mackinnon1991feedback", "wagenaar1975misperception")]])`.
 
 .center[
-<img src="images/exponential-stages-comic.png", width="75%"/>
+<img src="images/exponential-stages-comic.PNG", width="75%"/>
 
 `r Citep(bib[[c("vonbergmann_2021")]])`
 ]
