@@ -105,8 +105,8 @@ write("", file = "js-addins.html")
 
 <br><br>
 # Can 'You Draw It'?
-## Creighton University
-### November 3, 2021
+## University of Wisconsin - La Crosse
+### November 5, 2021
 #### Emily Robinson 
 #### Department of Statistics, University of Nebraska - Lincoln 
 ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) 
