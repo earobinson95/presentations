@@ -105,8 +105,8 @@ write("", file = "js-addins.html")
 
 <br><br>
 # Can 'You Draw It'?
-## California Polytechnic State University
-### December 1, 2021
+## Grinnell College
+### December 7, 2021
 #### Emily Robinson 
 #### Department of Statistics, University of Nebraska - Lincoln 
 ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) 
