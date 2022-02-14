@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Intergalactic Time Travel: Estimation Pilot Study</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Emily Robinson" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/modal.css" type="text/css" />
+    <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class:title-slide-custom
+
+
+&lt;style&gt;
+
+/* colors: #EEB422, #000080, #191970, #00a8cc */
+/* define the new color palette here! */
+a, a &gt; code {
+  color: #000080;
+  text-decoration: none;
+}
+
+.title-slide h2::after, .mline h1::after {
+  content: '';
+  display: block;
+  border: none;
+  background-color: #000080;
+  color: #000080;
+  height: 2px;
+}
+
+.remark-slide-content {
+  background-color: #FFFFFF;
+  border-top: 80px solid #000080;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  &lt;!-- padding: 1em 2em 1em 2em --&gt;
+  &lt;!-- background-image: url(css/UNL.svg); --&gt;
+	background-position: 2% 98%;
+	background-size: 10%;
+	border-bottom: 0;
+}
+
+.inverse {
+  background-color: #000080;
+  &lt;!-- border-top: 20px solid #696969; --&gt;
+  &lt;!-- background-image: none; --&gt;
+	&lt;!-- background-position: 50% 75%; --&gt;
+  &lt;!-- background-size: 150px; --&gt;
+}
+
+.remark-slide-content &gt; h1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 45px;
+  margin-top: -95px;
+  margin-left: -00px;
+  color: #FFFFFF;
+}
+
+.title-slide {
+  background-color: #FFFFFF;
+  &lt;!-- border-left: 80px solid 	#000080; --&gt;
+  &lt;!-- background-image:  url(css/UNL.svg); --&gt;
+	background-position: 98% 98%;
+	&lt;!-- background-attachment: fixed, fixed; --&gt;
+	background-size: 20%;
+	border-bottom: 0;
+	border: 10px solid 	#000080;
+	&lt;!-- background: transparent; --&gt;
+}
+
+.title-slide &gt; h1  {
+  color: #111111;
+  font-size: 32px;
+  text-shadow: none;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 80px;
+}
+.title-slide &gt; h2  {
+  margin-top: -25px;
+  padding-bottom: -20px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide &gt; h3  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -20px;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #272822;
+  opacity: 1;
+}
+
+.inverse .remark-slide-number {
+  font-size: 13pt;
+  font-family: 'Roboto';
+  color: #FAFAFA;
+  opacity: 1;
+}
+
+.title-slide-custom .remark-slide-number {
+  display: none;
+}
+
+.title-slide-custom h1::after, .mline h1::after {
+  content: '';
+  display: block;
+  border: none;
+  background-color: #000080;
+  color: #000080;
+  height: 3px;
+}
+
+.title-slide-custom {
+  background-color: #FFFFFF;
+  &lt;!-- border-left: 80px solid 	#000080; --&gt;
+  &lt;!-- background-image:  url(css/UNL.svg); --&gt;
+	background-position: 98% 98%;
+	&lt;!-- background-attachment: fixed, fixed; --&gt;
+	background-size: 20%;
+	border-bottom: 0;
+	border: 10px solid 	#000080;
+	&lt;!-- background: transparent; --&gt;
+}
+
+.title-slide-custom &gt; h1  {
+  color: #111111;
+  font-size: 40px;
+  text-shadow: none;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 80px;
+  padding-bottom: 10px;
+}
+.title-slide-custom &gt; h2  {
+  margin-top: -25px;
+  padding-bottom: 30px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 32px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide-custom &gt; h3  {
+  margin-top: -25px;
+  padding-bottom: -25px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 32px;
+  text-align: left;
+  margin-left: 15px;
+}
+.title-slide-custom &gt; h4  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -30px;
+  padding-bottom: -25px;
+}
+.title-slide-custom &gt; h5  {
+  color: #111111;
+  text-shadow: none;
+  font-weight: 100;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: -40px;
+}
+
+&lt;!-- img { --&gt;
+&lt;!--   max-width: 50%; --&gt;
+&lt;!-- } --&gt;
+
+&lt;/style&gt;
+
+
+
+
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# Intergalactic Time Travel: Estimation Pilot Study
+## ISU Graphics Group
+## February 16, 2022
+## Emily Robinson 
+
+---
+class:primary
+# Estimation Pilot Study 
+
+📏 Take 15 minutes to participate in the pilot study at [https://shiny.srvanderplas.com/estimation/](https://shiny.srvanderplas.com/estimation/).
+
+💬 Please share any feedback or comments you have during the study.
+
+💬 We will also go through the questions from the study afterwards.
+
+.center[
+&lt;img src="images/ewok-tribble.jpg" width="75%"/&gt;
+]
+
+---
+class:primary
+# Intergalactic Populations: Tribbles
+
+[YouTube: Star Trek The Trouble With Tribbles Clip](https://www.youtube.com/watch?v=p4wM5KvUGEc)
+
+Hi, we're Tribbles! We were taken from our native planet, Iota Germinorum IV, and brought abroad Starfleet in stardate 4500. A Starfleet scientist, Edward Larkin, genetically engineered us to increase our reproductive rate in an attempt to solve a planetary food shortage. 
+&lt;br&gt; &lt;br&gt; 
+The Tribble population on Starfleet over the next 50 Stardates (equivalent to 1 week universe time) is illustrated in the graph. We need your help answering a few questions regarding the population of Tribbles.
+
+.center[
+&lt;img src="images/tribble.jpg" width="75%"/&gt;
+]
+
+---
+class:primary
+# Intergalactic Populations: Ewoks
+
+Hi, we're Ewoks! We are native to the forest moon of Endor. After the Galactic Civil War, some Ewoks traveled offworld to help Rebel veterens as 'therapy Ewoks' and began to repopulate. 
+&lt;br&gt; &lt;br&gt; 
+The Ewok population After the Battle of Yavin (ABY) is illustrated in the graph. We need your help answering a few questions regarding the population of Ewoks offworld.
+
+.center[
+&lt;img src="images/ewok.jpg" width="75%"/&gt;
+]
+
+---
+class:primary
+# Time Travel
+
+Original data were simulated from `\(x \in (3000, 3050)\)`.
+
+**[Tribbles from Startrek](https://trekguide.com/Stardates.htm)**
+
++ Trouble with Tribbles occured on stardate 4523.3 (universe year = Fri Jan 11 2267 21:58:18)
++ 1 week span: Jan 11, 2267 (4516.69) to Jan 18, 2267 (4567.19) = 50.5 stardates
++ 4516.69 stardate - 3000 date of simulated data (+ 1516.69)
++ Conversion: round to 4500 (+ 1500)
+
+**[Ewoks from Star Wars](https://starwars.fandom.com/wiki/Timeline_of_galactic_history)**
+
++ The Galactic Civil War occurred in 0 - 5 After the Battle of Yavin (ABY)
++ Conversion: start at 0 ABY (- 3000)
+
+---
+class:primary
+# Data Plots
+&lt;br&gt;
+.center[
+&lt;img src="images/simulated-data-plot.jpg" width="100%"/&gt;
+]
+
+---
+class:primary
+# Graph Comprehension
+
+Questioning is an important aspect of comprehension (Friel et al., 2001). Three levels of graph comprehension have emerged (NCTM, 2000):
++ **Elementary level:** focused on extracting data from a graph (literal reading of the data)
+
++ **Intermediate level:** characterized by interpolating and finding relationships in the data as shown on the graph (reading between the data)
+
++ **Advanced level:** requires extrapolating from the data and analyzing the relationships implicit in the graph (reading beyond the data)
+
+???
+
++ 2 literal items (requiring a literal reading of the data, title, or axis label)
+    + What does this graph tell you?
+    + How tall was xxx?
++ 2 comparison items (requiring comparisons and the use of mathematical concepts and skills to “read between the data)
+    + Who was the tallest?
+    + How much taller was x than y?
++ 2 extension items (requiring an extension, prediction, or inference to “read beyond the data”)
+    + If x grows 5 centimeters and y grows 10 centimeters by Sept. 1981, who will be taller, and by how much?
+    + If z is 5 years old, which of the following is a correct statement?
+
+**Other considerations**
++ Beeby and Taylor (cited in MacDonald-Ross, 1977) found that in reading data from line graphs, people persistently misread the scale on the vertical axis; when only alternate lines were numbered, the unnumbered lines were read as halves.
++ Leinhardt, Zaslavsky, and Stein (1990) noted that the shape of a graph changes depending on the scale; this change may create a “conceptual demand” (p.17) that affects the mental image a graph user is able to construct.
++ Open-ended estimation tasks elicit certain well-known biases such as the tendency to round to multiples of 5 or 10.
++ Long-term interaction with a complex graph or chart showing multiple layers of data is generally not ideal within this paradigm, which requires a fixed set of numerical assessments that do not accurately represent how we explore a new, complex graphic.
+
+---
+class:primary
+# Elementary Questions
+
+**Open Ended**
++ Between stardates 4530 and 4540, how does the population of Tribbles change?
++ Between 30 ABY and 40 ABY, how does the population of Ewoks change?
+
+**Numerical Translation**
++ What is the population of Tribbles in stardate 4510?
++ What is the population of Ewoks in 10 ABY?
+
+
++ At what stardate does the population of Tribbles reach 4,000?
++ In what ABY does the population of Ewoks reach 4,000?
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgsimulateddataplot' src='images/simulated-data-plot.jpg' alt=' ' width='55%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalsimulateddataplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalsimulateddataplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionsimulateddataplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+---
+class:primary
+# Intermediate Questions
+
+**Additive Comparisons**
+
++ From 4520 to 4540, the population increases by ____ Tribbles.
++ From 20 ABY to 40 ABY, the population increases by ____ Ewoks.
+
+**Multiplicative Comparisons**
+
++ How many times more Tribbles are there in 4540 than in 4520?
++ How many times more Ewoks are there in 40 ABY than in 20 ABY?
+
+
++ How long does it take for the population of Tribbles in stardate 4510 to double?
++ How long does it take for the population of Ewoks in 10 ABY to double?
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgsimulateddataplot' src='images/simulated-data-plot.jpg' alt=' ' width='55%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalsimulateddataplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalsimulateddataplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionsimulateddataplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+---
+class:inverse
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.center[
+# Additional Suggestions or Considerations?
+]
+
+---
+class:primary
+# Group Discussion
+## [International Day of Women and Girls in Science](https://www.un.org/en/observances/women-and-girls-in-science-day)
+
+.center[
+&lt;img src="images/women-and-girls-in-science.jpg" width="80%"/&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightlines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+        /* Get the modal*/
+          var modalsimulateddataplot = document.getElementById('modalsimulateddataplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgsimulateddataplot = document.getElementById('imgsimulateddataplot');
+          var modalImgsimulateddataplot = document.getElementById('imgmodalsimulateddataplot');
+          var captionTextsimulateddataplot = document.getElementById('captionsimulateddataplot');
+          imgsimulateddataplot.onclick = function(){
+            modalsimulateddataplot.style.display = 'block';
+            modalImgsimulateddataplot.src = this.src;
+            captionTextsimulateddataplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgsimulateddataplot.onclick = function() {
+            modalsimulateddataplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalsimulateddataplot = document.getElementById('modalsimulateddataplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgsimulateddataplot = document.getElementById('imgsimulateddataplot');
+          var modalImgsimulateddataplot = document.getElementById('imgmodalsimulateddataplot');
+          var captionTextsimulateddataplot = document.getElementById('captionsimulateddataplot');
+          imgsimulateddataplot.onclick = function(){
+            modalsimulateddataplot.style.display = 'block';
+            modalImgsimulateddataplot.src = this.src;
+            captionTextsimulateddataplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgsimulateddataplot.onclick = function() {
+            modalsimulateddataplot.style.display = 'none';
+          }
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
