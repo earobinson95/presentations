@@ -28,7 +28,7 @@ class:title-slide-custom
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 
 # Packages
-library(emo)
+library(emoji)
 library(purrr)
 library(tidyverse)
 library(gridExtra)
@@ -105,7 +105,7 @@ write("", file = "js-addins.html")
 
 <br><br>
 # Can 'You Draw It'?
-## Grinnell College
+## Cal Poly
 ### December 7, 2021
 #### Emily Robinson 
 #### Department of Statistics, University of Nebraska - Lincoln 
@@ -193,11 +193,11 @@ Data visualization is defined as the art of drawing **graphical charts** in orde
 
 **What are graphics useful for?** `r Citep(bib[[c("lewandowsky1989perception")]])`
 
-`r emo::ji("graph")` Data cleaning.
+`r emoji("graph")` Data cleaning.
 
-`r emo::ji("magnifying")` Exploring data structure. 
+`r emoji("magnifying")` Exploring data structure.
 
-`r emo::ji("bubble")` Communicating information.
+`r emoji("bubble")` Communicating information.
 
 **Who uses graphics?**
 + Governments `r Citep(bib[[c("harms1991august", "playfair1801statistical", "walker2013statistical")]])`.
@@ -227,13 +227,13 @@ Evaluate design choices and understand cognitive biases through the use of **vis
 
 Could ask participants to:
 
-`r emo::ji("graph")` identify differences in graphs.
+`r emoji("graph")` identify differences in graphs.
 
-`r emo::ji("book")` read information off of a chart accurately. 
+`r emoji("book")` read information off of a chart accurately. 
 
-`r emo::ji("international")` use data to make correct real-world decisions.
+`r emoji("international")` use data to make correct real-world decisions.
 
-`r emo::ji("pencil2")` predict the next few observations.
+`r emoji("pencil2")` predict the next few observations.
 
 ???
 
@@ -811,15 +811,15 @@ class:primary
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
 
-1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emoji("chart increasing")` `r emoji("chart increasing")` `r emoji("chart increasing")`
 
     - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
     
-2. [Prediction of Exponential Trends](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
+2. [Prediction of Exponential Trends](https://shiny.srvanderplas.com/you-draw-it/) `r emoji("pencil2")`
     
     - Tests an individuals ability to make predictions for exponentially increasing data.
         
-3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
+3. Estimation by Numerical Translation `r emoji("straight_ruler")`
 
     - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
 
@@ -835,15 +835,15 @@ class:primary
 
 **Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
 
-1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emo::ji("chart increasing")` `r emo::ji("chart increasing")` `r emo::ji("chart increasing")`
+1. [Perception of Exponential Growth](https://shiny.srvanderplas.com/log-study/) `r emoji("chart increasing")` `r emoji("chart increasing")` `r emoji("chart increasing")`
 
     - Test an individuals ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
     
-2. [**Prediction of Exponential Trends**](https://shiny.srvanderplas.com/you-draw-it/) `r emo::ji("pencil2")`
+2. [**Prediction of Exponential Trends**](https://shiny.srvanderplas.com/you-draw-it/) `r emoji("pencil2")`
     
     - **Tests an individuals ability to make predictions for exponentially increasing data.**
         
-3. Estimation by Numerical Translation `r emo::ji("straight_ruler")`
+3. Estimation by Numerical Translation `r emoji("straight_ruler")`
 
     - Tests an individuals ability to translate a graph of exponentially increasing data into real value quantities.
 
@@ -1455,7 +1455,7 @@ The main benefit of using visual inference is that visual tests tend to be more 
 
 ---
 class:primary
-# Lineup Studies `r emo::ji("graph")` `r emo::ji("graph")` `r emo::ji("graph")`
+# Lineup Studies `r emoji("graph")` `r emoji("graph")` `r emoji("graph")`
 
 + [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) `r Citep(bib[[c("buja2009statistical")]])`
 + [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) `r Citep(bib[[c("majumder2013validation")]])`
@@ -1601,7 +1601,7 @@ class:primary
 
 ---
 class:primary
-# r2d3 `r emo::ji("plus")` R Shiny
+# r2d3 `r emoji("plus")` R Shiny
 
 .center[
 <img src="images/r2d3+shiny-inkscape.png" width="80%"/>
@@ -1613,7 +1613,7 @@ An explicit resize handler redraws plot as you resize your browser window
 
 ---
 class:primary
-# r2d3 `r emo::ji("plus")` R Shiny
+# r2d3 `r emoji("plus")` R Shiny
 
 ```{r data_to_json, include = T, echo = T, eval = F}
 data_to_json <- function(data) {
@@ -1639,7 +1639,7 @@ message_loc <- session$ns("drawr_message") # Create storage for data from d3.js
 
 ---
 class:primary
-# r2d3 `r emo::ji("plus")` R Shiny
+# r2d3 `r emoji("plus")` R Shiny
 
 ```{r r2d3-draw-true-line, include = T, echo = T, eval = F}
 function draw_true_line({svg, line_data, draw_start}, scales){
@@ -1668,7 +1668,7 @@ function draw_points({svg, point_data, points_end, points}, scales){
 
 ---
 class:primary
-# r2d3 `r emo::ji("plus")` R Shiny
+# r2d3 `r emoji("plus")` R Shiny
 
 ```{r r2d3-on-drag, include = T, echo = T, eval = F}
   const on_drag = function(){
@@ -1697,7 +1697,7 @@ const on_end = function(){
 
 ---
 class:primary
-# r2d3 `r emo::ji("plus")` R Shiny
+# r2d3 `r emoji("plus")` R Shiny
 
 ```{r r2d3-draw-watcher, include = T, echo = T, eval = F}
 function setup_draw_watcher(svg, scales, on_drag, on_end){
