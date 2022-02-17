@@ -398,15 +398,6 @@ class:primary
 + Open-ended estimation tasks elicit certain well-known biases such as the tendency to round to multiples of 5 or 10.
 + Long-term interaction with a complex graph or chart showing multiple layers of data is generally not ideal within this paradigm, which requires a fixed set of numerical assessments that do not accurately represent how we explore a new, complex graphic.
 
-&lt;!-- @article{beeby1973well, --&gt;
-&lt;!--   title={How well can we use graphs}, --&gt;
-&lt;!--   author={Beeby, AW and Taylor, HPJ}, --&gt;
-&lt;!--   journal={The Communicator of Scientific and Technical Information}, --&gt;
-&lt;!--   volume={17}, --&gt;
-&lt;!--   pages={7--11}, --&gt;
-&lt;!--   year={1973} --&gt;
-&lt;!-- } --&gt;
-
 ---
 class:primary
 # Elementary Questions
@@ -455,13 +446,13 @@ class:primary
 
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgsimulateddataplot' src='images/simulated-data-plot.jpg' alt=' ' width='55%'&gt;
+&lt;img id='imgsimulateddataplot2' src='images/simulated-data-plot2.jpg' alt=' ' width='55%'&gt;
 &lt;!-- The Modal --&gt;
-&lt;div id='modalsimulateddataplot' class='modal'&gt;
+&lt;div id='modalsimulateddataplot2' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
-  &lt;img class='modal-content' id='imgmodalsimulateddataplot'&gt;
+  &lt;img class='modal-content' id='imgmodalsimulateddataplot2'&gt;
   &lt;!-- Modal Caption (Image Text) --&gt;
-  &lt;div id='captionsimulateddataplot' class='modal-caption'&gt;&lt;/div&gt;
+  &lt;div id='captionsimulateddataplot2' class='modal-caption'&gt;&lt;/div&gt;
 &lt;/div&gt;
 ]
 
@@ -649,19 +640,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 </script>
 <script>
         /* Get the modal*/
-          var modalsimulateddataplot = document.getElementById('modalsimulateddataplot');
+          var modalsimulateddataplot2 = document.getElementById('modalsimulateddataplot2');
         /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
-          var imgsimulateddataplot = document.getElementById('imgsimulateddataplot');
-          var modalImgsimulateddataplot = document.getElementById('imgmodalsimulateddataplot');
-          var captionTextsimulateddataplot = document.getElementById('captionsimulateddataplot');
-          imgsimulateddataplot.onclick = function(){
-            modalsimulateddataplot.style.display = 'block';
-            modalImgsimulateddataplot.src = this.src;
-            captionTextsimulateddataplot.innerHTML = this.alt;
+          var imgsimulateddataplot2 = document.getElementById('imgsimulateddataplot2');
+          var modalImgsimulateddataplot2 = document.getElementById('imgmodalsimulateddataplot2');
+          var captionTextsimulateddataplot2 = document.getElementById('captionsimulateddataplot2');
+          imgsimulateddataplot2.onclick = function(){
+            modalsimulateddataplot2.style.display = 'block';
+            modalImgsimulateddataplot2.src = this.src;
+            captionTextsimulateddataplot2.innerHTML = this.alt;
           }
           /* When the user clicks on the modalImg, close it*/
-          modalImgsimulateddataplot.onclick = function() {
-            modalsimulateddataplot.style.display = 'none';
+          modalImgsimulateddataplot2.onclick = function() {
+            modalsimulateddataplot2.style.display = 'none';
           }
 </script>
 <script>
