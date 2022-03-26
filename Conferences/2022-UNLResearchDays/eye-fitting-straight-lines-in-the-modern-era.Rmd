@@ -1,0 +1,195 @@
+---
+# PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
+# https://github.com/brentthorne/posterdown/wiki/posterdown_betterland
+poster_height: "29in"
+poster_width: "39in"
+font_family: 'Rasa'
+#ESSENTIALS
+title: 'Eye Fitting Straight Lines in the Modern Era'
+author:
+  - name: Emily A. Robinson
+    affil:
+    email: emily.robinson@huskers.unl.edu
+    github: earobinson95
+    website: www.emilyarobinson.com
+    orcid: 0000-0001-9800-7304
+    main: true
+affiliation:
+  - num: 1
+    address: Department of Statistics, University of Nebraska - Lincoln
+#STYLE & FORMATTING
+title_textsize: "90pt"
+author_textsize: "1.17em"
+authorextra_textsize: "35px"
+affiliation_textsize: "25px"
+affiliation_textcol: '#00000080'
+caption_fontsize: "20pt"
+#Middle of the poster
+main_fontfamily: "Special Elite"
+main_textsize: "100pt"
+main_width: 0.4
+main_picwidth: 80%
+main_findings:
+  - "How do statistical regression results compare to intuitive, visually fitted results?"
+  - '![](images\eyefitting_example.gif){.main_pic}'
+logoleft_name: ''
+logocenter_name: ""
+logoright_name: '![](images\can-you-draw-it-mobile-qrcode.png){.main-img-right}'
+# POSTER BODY OPTIONS
+primary_colour: '#8b0000' # sets middle section color to gradient from (top)
+secondary_colour: '#8b0000' # sets middle section color to gradient to (bottom)
+accent_colour: "#5d19c4"
+body_bgcol: "#ffffff"
+body_textsize: "45px"
+body_textcol: "#000000"
+reference_textsize: "23px"
+# STANDARD OPTIONS
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: espresso
+    # highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: bibliography.bib
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+```{r, include=FALSE}
+knitr::write_bib(c('mosteller1981eye', 'finney1951subjective','ciccione2021can'), 'bibliography.bib')
+```
+
+# Introduction
+
+We all use statistical graphics, but how do we know that the graphics we use are communicating properly?
+
+**Testing Statistical Graphics**
+
+We need human testing of graphics in order to draw broad conclusions, develop guidelines for graphical design, and improve graphical communication. Could ask participants to:
+
++ identify differences in graphs.
++ read information off of a chart accurately.
++ use data to make correct real-world decisions.
++ predict the next few observations.
+
+**Fitting Trends by Eye**
+
+Fitting lines by eye through a set of points has been explored since the 20th century [@finney1951subjective; @mosteller1981eye]. 
+Common methods of fitting trends by eye involved maneuvering a string, black thread, or ruler until the fit is suitable, then drawing the line through the set of points. Recently, @ciccione2021can conducted a comprehensive set of studies investigating human ability to detect trends in graphical representations. In 2015, the New York Times introduced an interactive feature, called You Draw It.
+Readers were asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
+```{r ols-vs-pca-example, fig.height = 3, fig.width = 6, fig.cap=" Comparison between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis which minimizes the Euclidean distance of points (orthogonal) from the line.", message=FALSE, warning=FALSE, out.width="100%"}
+library(ggplot2)
+library(magrittr)
+library(plyr)
+
+set.seed(2)
+corrCoef = 0.5 # sample from a multivariate normal, 10 datapoints
+dat = MASS::mvrnorm(10,c(0,0),Sigma = matrix(c(1,corrCoef,2,corrCoef),2,2))
+dat[,1] = dat[,1] - mean(dat[,1]) # it makes life easier for the princomp
+dat[,2] = dat[,2] - mean(dat[,2])
+
+dat = data.frame(x1 = dat[,1],x2 = dat[,2])
+
+# Calculate the first principle component
+# see http://stats.stackexchange.com/questions/13152/how-to-perform-orthogonal-regression-total-least-squares-via-pca
+v = dat%>%prcomp%$%rotation
+x1x2cor = bCor = v[2,1]/v[1,1]
+
+x1tox2 = coef(lm(x1~x2,dat))
+x2tox1 = coef(lm(x2~x1,dat))
+slopeData = data.frame(slope = c(x1x2cor,x2tox1[2]),
+                       type=c("PC", "OLS"))
+
+# We want this to draw the neat orthogonal lines.
+pointOnLine = function(inp){
+  # y = a*x + c (c=0)
+  # yOrth = -(1/a)*x + d
+  # yOrth = b*x + d
+  x0 = inp[1] 
+  y0 = inp[2] 
+  a = x1x2cor
+  b = -(1/a)
+  c = 0
+  d = y0 - b*x0
+  x = (d-c)/(a-b)
+  y = -(1/a)*x+d
+  return(c(x,y))
+}
+
+points = apply(dat,1,FUN=pointOnLine)
+
+segmeData = rbind(data.frame(x=dat[,1],y=dat[,2],xend=points[1,],yend=points[2,],type = "PC"),
+                  data.frame(x=dat[,1],y=dat[,2],yend=dat[,1]*x2tox1[2],xend=dat[,1],type="OLS"))
+
+dat %>%
+ggplot(aes(x1,x2))+
+  geom_point()+
+  geom_abline(data=slopeData,aes(slope = slope,intercept=0,color=type, linetype=type), size = 1.2)+
+  geom_segment(data=segmeData,aes(x=x,y=y,xend=xend,yend=yend,color=type, linetype=type))+
+  facet_grid(.~type)+
+  coord_equal()+
+  scale_x_continuous("x") +
+  scale_y_continuous("y") +
+  theme_bw(base_size = 14) +
+  theme(aspect.ratio = 1,
+        legend.position = "none",
+        axis.text    = element_text(size = 12),
+        axis.title   = element_text(size = 12),
+        legend.title = element_blank(),
+        # legend.text  = element_text(size = 10),
+        # strip.text = element_text(size = 8, margin = margin(0.1,0,0.1,0, "cm")),
+        # strip.background = element_rect(size = 0.8),
+        legend.key.size = unit(1, "line")
+        ) +
+  scale_color_manual(values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
+  scale_linetype_manual(values = c("solid", "dashed"), labels = c("OLS", "PCA"))
+```
+
+**Objectives**
+
+1. Implement the 'You Draw It' feature as a way to measure the patterns we see in data.
+2. Validate the 'You Draw It' method by replicating the less technological study conducted by @mosteller1981eye.
+3. Introduce a method for statistically modeling the participant drawn lines using generalized additive mixed models (GAMM).
+
+# Methods
+
+
+<!-- ![](images\eyefitting-example-simplot.png){width:20%} -->
+
++ A total of 35 individuals completed 119 unique 'You Draw It' task plots.
++ The experiment was conducted and distributed through a R Shiny application found [here](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/).
+
+# Results
+
+<!-- ![](images\eyefitting-trial-plot.png){width:20%} -->
+
+<!-- ![](images\eyefitting-gamm-plot.png){width:20%} -->
+<!-- ![](images\eyefitting-lmer-plot.png){width:20%} -->
+
++ Estimated drawn trend-lines followed closer to the regression line based on the principal axes than the OLS regression line.
++ Most prominent in data simulated with large variances.
++ Humans perform “ensemble perception” in a statistical graphic setting.
+
+**The reproducibility of these results serve as validation of the 'You Draw It' tool and method**
+
+
+# Future Work
+
++ Implement the 'You Draw It' method in non-linear settings.
++ Evaluate human ability to extrapolate data from trends.
++ Develop an R package designed for easy implementation of ‘You Draw It’ task plots.
++ Apply 'You Draw It' to other fields in order to evaluate science communication using graphics.
+ 
+# References
