@@ -3,7 +3,7 @@
 # https://github.com/brentthorne/posterdown/wiki/posterdown_betterland
 poster_height: "29in"
 poster_width: "39in"
-font_family: 'Rasa'
+font_family: 'Raavi'
 #ESSENTIALS
 title: 'Eye Fitting Straight Lines in the Modern Era'
 author:
@@ -23,27 +23,28 @@ author_textsize: "1.17em"
 authorextra_textsize: "32px"
 affiliation_textsize: "25px"
 affiliation_textcol: '#00000080'
-caption_textsize: "18pt"
+caption_textsize: "20pt"
 #Middle of the poster
 main_fontfamily: "Special Elite"
-main_textsize: "85pt"
+main_textsize: "80pt"
 main_width: 0.3
-main_picwidth: 85%
+main_picwidth: 100%
 main_findings:
   - "How do statistical regression results compare to intuitive, visually fitted results?"
   - '![](images\eyefitting_example.gif){.main_pic}'
-# logoleft_name: '![](images\youdrawit-mobile-qr-code.png){.main-img-left}'
-# logoright_name: '![](images\manuscript-qr-code.png){.main-img-right}'
-logoright_name: '![](images\youdrawit-mobile-qr-code.png){.main-img-right}'
+  - '![](images\qr-codes.png){.main_pic}'
+# logoleft_name: '![](images\manuscript-qr-codes.png){.main-img-left}'
+# logoright_name: '![](images\youdrawit-mobile-qr-code-text.png){.main-img-right}'
 # POSTER BODY OPTIONS
 primary_colour: '#8b0000' # sets middle section color to gradient from (top)
 secondary_colour: '#8b0000' # sets middle section color to gradient to (bottom)
 accent_colour: "#5d19c4"
 body_bgcol: "#ffffff"
-body_textsize: "33px"
+body_textsize: "35px"
 body_textcol: "#000000"
-reference_textsize: "18px"
+reference_textsize: "16px"
 # STANDARD OPTIONS
+css: style.
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -242,7 +243,7 @@ eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
   facet_wrap(~`Parameter Choice`, ncol = 4) +
   theme_bw(base_size = 14) +
   theme(aspect.ratio = 1,
-        legend.position = "right",
+        legend.position = "bottom",
         plot.title   = element_text(size = 12, hjust = 0),
         axis.text    = element_text(size = 12),
         axis.title   = element_text(size = 12),
@@ -297,7 +298,7 @@ eyefitting_example_simplot
 
 ## Results
 
-A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant, the final data set used for analysis contained $x, y_drawn, \hat y_{OLS}$, and $\hat y_{PCA}$ for each of the four parameter choices. 
+A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant and parameter choice, the feedback data set contained $x, y_drawn, \hat y_{OLS}$, and $\hat y_{PCA}$.
 
 ### Fitted Regression Lines
 

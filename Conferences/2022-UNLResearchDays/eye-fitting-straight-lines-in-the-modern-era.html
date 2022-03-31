@@ -15,6 +15,7 @@
 
 
 
+<link rel="stylesheet" href="style." type="text/css" />
 
 <!--
 Font-awesome icons ie github or twitter
@@ -26,7 +27,7 @@ Font-awesome icons ie github or twitter
 Google fonts api stuff
 -->
 <link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Raavi' rel='stylesheet'>
 
 <!--
 Here are the required style attributes for css to make this poster work :)
@@ -44,7 +45,7 @@ padding: 0px;
 width: 39in;
 height: 29in;
 text-align: justify;
-font-size: 33px;
+font-size: 35px;
 background-color: #ffffff;
 color: #000000;
 }
@@ -93,7 +94,7 @@ border-radius: 2mm;
 }
 caption {
 margin-bottom: 10px;
-font-size: 18pt;
+font-size: 20pt;
 font-style: italic;
 }
 
@@ -123,7 +124,7 @@ font-style: italic;
 padding-top: 0;
 }
 .references {
-font-size: 18px;
+font-size: 16px;
 line-height: 90%;
 }
 /* Create three unequal columns that floats next to each other */
@@ -151,7 +152,7 @@ column-rule-style: solid;
 column-rule-color: black;
 -webkit-column-gap: calc(0.3 * 100%);
 background-color: #ffffff;
-font-family: Rasa;
+font-family: Raavi;
 color: #000000;
 }
 span.citation {
@@ -239,7 +240,7 @@ position: absolute;
 }
 .main p {
 padding-top: 20%;
-font-size: 85pt;
+font-size: 80pt;
 text-align: left;
 }
 .fab {
@@ -294,7 +295,7 @@ span > #tab:mytable {
   padding-right: 30mm;
 }
 .main_pic {
-  width: 85%;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -369,7 +370,7 @@ Figure 1: Example of simulated data points displayed in a scatter-plot illustrat
 </div>
 <div id="results" class="section level2">
 <h2>Results</h2>
-<p>A total of 35 individuals completed 119 unique ‘You Draw It’ task plots. For each participant, the final data set used for analysis contained <span class="math inline">\(x, y_drawn, \hat y_{OLS}\)</span>, and <span class="math inline">\(\hat y_{PCA}\)</span> for each of the four parameter choices.</p>
+<p>A total of 35 individuals completed 119 unique ‘You Draw It’ task plots. For each participant and parameter choice, the feedback data set contained <span class="math inline">\(x, y_drawn, \hat y_{OLS}\)</span>, and <span class="math inline">\(\hat y_{PCA}\)</span>.</p>
 <div id="fitted-regression-lines" class="section level3">
 <h3>Fitted Regression Lines</h3>
 <p>We compared the participant drawn line to two regression lines determined by ordinary least squares (OLS) regression and regression based on the principal axis (PCA).</p>
@@ -419,9 +420,9 @@ Strayer, Nick, Javier Luraschi, and JJ Allaire. 2020. <em>R2d3: Interface to ’
 
 </div>
 <div class="main">
-<p>How do statistical regression results compare to intuitive, visually fitted results?<br><br> <img src="images/eyefitting_example.gif" class="main_pic" /></p>
+<p>How do statistical regression results compare to intuitive, visually fitted results?<br><br> <img src="images/eyefitting_example.gif" class="main_pic" /><br><br> <img src="images/qr-codes.png" class="main_pic" /></p>
 
-<img src="images/youdrawit-mobile-qr-code.png" class="main-img-right" />
+
 </div>
 </div>
 
