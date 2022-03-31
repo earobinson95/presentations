@@ -254,8 +254,8 @@ eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
         legend.key.size = unit(1, "line")
         ) +
   scale_y_continuous("Residual") +
-  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
-  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
+  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA"), guide = guide_legend(override.aes = list(alpha = 1, size = 1.5))) +
+  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA"), guide = guide_legend(override.aes = list(alpha = 1))) 
 ```
 
 ## Introduction
@@ -298,7 +298,7 @@ eyefitting_example_simplot
 
 ## Results
 
-A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant and parameter choice, the feedback data set contained $x, y_drawn, \hat y_{OLS}$, and $\hat y_{PCA}$.
+A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant and parameter choice, the feedback data set contained $x, y_{drawn}, \hat y_{OLS}$, and $\hat y_{PCA}$.
 
 ### Fitted Regression Lines
 
