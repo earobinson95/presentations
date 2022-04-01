@@ -42,7 +42,7 @@ accent_colour: "#5d19c4"
 body_bgcol: "#ffffff"
 body_textsize: "35px"
 body_textcol: "#000000"
-reference_textsize: "16px"
+reference_textsize: "14px"
 # STANDARD OPTIONS
 css: style.
 output: 
