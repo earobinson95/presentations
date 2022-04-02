@@ -3,7 +3,7 @@
 # https://github.com/brentthorne/posterdown/wiki/posterdown_betterland
 poster_height: "29in"
 poster_width: "39in"
-font_family: 'Raavi'
+font_family: 'Rasa'
 #ESSENTIALS
 title: 'Eye Fitting Straight Lines in the Modern Era'
 author:
@@ -26,25 +26,24 @@ affiliation_textcol: '#00000080'
 caption_textsize: "20pt"
 #Middle of the poster
 main_fontfamily: "Special Elite"
-main_textsize: "80pt"
+main_textsize: "85pt"
 main_width: 0.3
-main_picwidth: 100%
+main_picwidth: 90%
 main_findings:
   - "How do statistical regression results compare to intuitive, visually fitted results?"
   - '![](images\eyefitting_example.gif){.main_pic}'
   - '![](images\qr-codes.png){.main_pic}'
-# logoleft_name: '![](images\manuscript-qr-codes.png){.main-img-left}'
-# logoright_name: '![](images\youdrawit-mobile-qr-code-text.png){.main-img-right}'
+# logoleft_name: '![](images\youdrawit-mobile-qr-code.png){.main-img-left}'
+# logoright_name: '![](images\youdrawit-mobile-qr-code.png){.main-img-right}'
 # POSTER BODY OPTIONS
 primary_colour: '#8b0000' # sets middle section color to gradient from (top)
 secondary_colour: '#8b0000' # sets middle section color to gradient to (bottom)
 accent_colour: "#5d19c4"
 body_bgcol: "#ffffff"
-body_textsize: "35px"
+body_textsize: "33px"
 body_textcol: "#000000"
 reference_textsize: "14px"
 # STANDARD OPTIONS
-css: style.
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -54,7 +53,7 @@ output:
     number_sections: false
 link-citations: true
 bibliography: bibliography.bib
-# knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 ---
 
 ```{r, include=FALSE}
@@ -66,7 +65,6 @@ knitr::opts_chunk$set(results = 'asis',
                       fig.align = 'center',
                       out.width = "100%")
 options(knitr.table.format = "html") 
-
 library(tidyverse)
 library(patchwork)
 ```
@@ -77,25 +75,20 @@ knitr::write_bib(c('mosteller1981eye', 'finney1951subjective','ciccione2021can')
 
 ```{r}
 library(magrittr)
-
 set.seed(2)
 corrCoef = 0.5 # sample from a multivariate normal, 10 datapoints
 dat = MASS::mvrnorm(10,c(0,0),Sigma = matrix(c(1,corrCoef,2,corrCoef),2,2))
 dat[,1] = dat[,1] - mean(dat[,1]) # it makes life easier for the princomp
 dat[,2] = dat[,2] - mean(dat[,2])
-
 dat = data.frame(x1 = dat[,1],x2 = dat[,2])
-
 # Calculate the first principle component
 # see http://stats.stackexchange.com/questions/13152/how-to-perform-orthogonal-regression-total-least-squares-via-pca
 v = dat%>%prcomp%$%rotation
 x1x2cor = bCor = v[2,1]/v[1,1]
-
 x1tox2 = coef(lm(x1~x2,dat))
 x2tox1 = coef(lm(x2~x1,dat))
 slopeData = data.frame(slope = c(x1x2cor,x2tox1[2]),
                        type=c("PC", "OLS"))
-
 # We want this to draw the neat orthogonal lines.
 pointOnLine = function(inp){
   # y = a*x + c (c=0)
@@ -111,12 +104,9 @@ pointOnLine = function(inp){
   y = -(1/a)*x+d
   return(c(x,y))
 }
-
 points = apply(dat,1,FUN=pointOnLine)
-
 segmeData = rbind(data.frame(x=dat[,1],y=dat[,2],xend=points[1,],yend=points[2,],type = "PC"),
                   data.frame(x=dat[,1],y=dat[,2],yend=dat[,1]*x2tox1[2],xend=dat[,1],type="OLS"))
-
 pca_vs_ols_plot <- dat %>%
 ggplot(aes(x1,x2))+
   geom_point()+
@@ -139,10 +129,8 @@ ggplot(aes(x1,x2))+
         ) +
   scale_color_manual(values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
   scale_linetype_manual(values = c("solid", "dashed"), labels = c("OLS", "PCA"))
-
           
 eyefitting_example_sim <- read.csv("data/youdrawit/youdrawit-eyefitting-simdata-example.csv")
-
 eyefitting_example_simplot <- eyefitting_example_sim %>%
   filter(data == "point_data") %>%
   filter(dataset %in% c("F", "N", "S") | (x < 16 & x > 4)) %>%
@@ -164,10 +152,8 @@ eyefitting_example_simplot <- eyefitting_example_sim %>%
   legend.key.size = unit(1, "line")
 ) +
   scale_y_continuous(breaks = seq(-10, 20, 5))
-
 eyefitting_model_data <- read.csv("data/youdrawit/youdrawit-eyefitting-model-data.csv") %>%
   dplyr::rename(`Parameter Choice` = parm_id)
-
 trial.feedback <- read.csv("data/youdrawit/youdrawit-eyefitting-example-feedback.csv") %>%
     mutate(`Parameter Choice` = "F")
 trial.sim <- read.csv("data/youdrawit/youdrawit-eyefitting-example-simulated.csv") %>%
@@ -195,7 +181,6 @@ trial_plot <- trial.feedback %>%
   scale_y_continuous(limits = c(-5, 17), breaks = seq(-5, 15, 5)) +
   scale_color_manual("", values = c("black", "steelblue", "orange")) +
   scale_linetype_manual("", values = c("dashed", "solid", "solid"))
-
 eyefitting.preds.lmer <- read.csv("data/youdrawit/youdrawit-eyefitting-lmerpred-data.csv")
 # Plot Predictions
 eyefitting.lmer.plot <- eyefitting.preds.lmer %>%
@@ -226,7 +211,6 @@ eyefitting.lmer.plot <- eyefitting.preds.lmer %>%
   scale_y_continuous("Residual") +
   scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
   scale_fill_manual("LMER fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
-
 eyefitting.grid.gamm <- read.csv("data/youdrawit/youdrawit-eyefitting-gammpred-data.csv")
 eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
   filter((parm_id %in% c("F", "N", "S") | (x <= 16 & x >= 4))) %>%
@@ -243,7 +227,7 @@ eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
   facet_wrap(~`Parameter Choice`, ncol = 4) +
   theme_bw(base_size = 14) +
   theme(aspect.ratio = 1,
-        legend.position = "bottom",
+        legend.position = "right",
         plot.title   = element_text(size = 12, hjust = 0),
         axis.text    = element_text(size = 12),
         axis.title   = element_text(size = 12),
@@ -254,8 +238,8 @@ eyefitting.gamm.plot <- eyefitting.grid.gamm %>%
         legend.key.size = unit(1, "line")
         ) +
   scale_y_continuous("Residual") +
-  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA"), guide = guide_legend(override.aes = list(alpha = 1, size = 1.5))) +
-  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA"), guide = guide_legend(override.aes = list(alpha = 1))) 
+  scale_color_manual("Individual participant \nresiduals", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) +
+  scale_fill_manual("GAMM fitted trend", values = c("steelblue", "orange"), labels = c("OLS", "PCA")) 
 ```
 
 ## Introduction
@@ -298,7 +282,7 @@ eyefitting_example_simplot
 
 ## Results
 
-A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant and parameter choice, the feedback data set contained $x, y_{drawn}, \hat y_{OLS}$, and $\hat y_{PCA}$.
+A total of 35 individuals completed 119 unique 'You Draw It' task plots. For each participant and parameter choice, the final feedback data set contained $x, y_{drawn}, \hat y_{OLS}$, and $\hat y_{PCA}$.
 
 ### Fitted Regression Lines
 
