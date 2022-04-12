@@ -2,7 +2,7 @@
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 # https://github.com/brentthorne/posterdown/wiki/posterdown_betterland
 poster_height: "29in"
-poster_width: "39in"
+poster_width: "48in"
 font_family: 'Rasa'
 #ESSENTIALS
 title: 'Eye Fitting Straight Lines in the Modern Era'
@@ -28,7 +28,7 @@ caption_textsize: "20pt"
 main_fontfamily: "Special Elite"
 main_textsize: "85pt"
 main_width: 0.3
-main_picwidth: 90%
+main_picwidth: 65%
 main_findings:
   - "How do statistical regression results compare to intuitive, visually fitted results?"
   - '![](images\eyefitting_example.gif){.main_pic}'
@@ -278,7 +278,7 @@ Model equation parameters, $\beta_0$ and $\beta_1$, were selected to reflect the
 eyefitting_example_simplot
 ```
 
-<br>
+<br><br><br><br>
 
 ## Results
 
