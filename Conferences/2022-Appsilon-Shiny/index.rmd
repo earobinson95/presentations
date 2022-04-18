@@ -1,0 +1,332 @@
+---
+title: "Pandemic Dilemmas: Human Perception of Exponentially Increasing Data Displayed on a Log Scale Evaluated Through Experimental Graphics Tasks"
+subtitle: "Midwest WISC (Sept. 18, 2021)"
+author: "Emily Robinson"
+date: "Department of Statistics, University of Nebraska - Lincoln"
+output:
+  xaringan::moon_reader:
+    seal: false
+    includes:
+      after_body:
+        "js-addins.html"
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    css: ["default", "metropolis-fonts", "metropolis" ,"css/modal.css", "css/sizeformat.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightlines: true
+      countIncrementalSlides: true
+---
+class:title-slide-custom
+
+```{r, child = "style.Rmd"}
+```
+
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+# Packages
+library(emoji)
+library(purrr)
+library(tidyverse)
+library(gridExtra)
+library(nullabor)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(RefManageR)
+library(iconr)
+library(fontawesome)
+# download_fontawesome()
+
+# References
+bib <- ReadBib("bib/references.bib", check = FALSE)
+ui <- "- "
+
+# R markdown options
+knitr::opts_chunk$set(echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      cache = FALSE,
+                      dpi = 300)
+options(htmltools.dir.version = FALSE)
+options(knitr.kable.NA = '')
+```
+
+```{r, include = F, eval = T, cache = F}
+clean_file_name <- function(x) {
+  basename(x) %>% str_remove("\\..*?$") %>% str_remove_all("[^[A-z0-9_]]")
+}
+img_modal <- function(src, alt = "", id = clean_file_name(src), other = "") {
+  
+  other_arg <- paste0("'", as.character(other), "'") %>%
+    paste(names(other), ., sep = "=") %>%
+    paste(collapse = " ")
+  
+  js <- glue::glue("<script>
+        /* Get the modal*/
+          var modal{id} = document.getElementById('modal{id}');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var img{id} = document.getElementById('img{id}');
+          var modalImg{id} = document.getElementById('imgmodal{id}');
+          var captionText{id} = document.getElementById('caption{id}');
+          img{id}.onclick = function(){{
+            modal{id}.style.display = 'block';
+            modalImg{id}.src = this.src;
+            captionText{id}.innerHTML = this.alt;
+          }}
+          /* When the user clicks on the modalImg, close it*/
+          modalImg{id}.onclick = function() {{
+            modal{id}.style.display = 'none';
+          }}
+</script>")
+  
+  html <- glue::glue(
+     " <!-- Trigger the Modal -->
+<img id='img{id}' src='{src}' alt='{alt}' {other_arg}>
+<!-- The Modal -->
+<div id='modal{id}' class='modal'>
+  <!-- Modal Content (The Image) -->
+  <img class='modal-content' id='imgmodal{id}'>
+  <!-- Modal Caption (Image Text) -->
+  <div id='caption{id}' class='modal-caption'></div>
+</div>
+"
+  )
+  write(js, file = "js-addins.html", append = T)
+  return(html)
+}
+# Clean the file out at the start of the compilation
+write("", file = "js-addins.html")
+```
+
+<br><br><br>
+## ‘You Draw It’: Implementing human interaction in R shiny with r2d3
+### 2022 Appsilon Shiny Conference
+#### Emily A. Robinson
+#### Department of Statistics, University of Nebraska - Lincoln
+##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu)
+##### `r fa("home", fill = "black")` [www.emilyarobinson.com](https://www.emilyarobinson.com/)
+##### `r fa("github", fill = "black")` [earobinson95](https://github.com/earobinson95)
+<!-- <br><br> -->
+<!-- .medium[*Slides: https://bit.ly/3EgSVU4*] -->
+
+---
+class:primary
+# Outline
+
+---
+class:primary
+# Testing Statistical Graphics
+
+Evaluate design choices and understand cognitive biases through the use of **visual tests**. 
+
+Could ask participants to:
+
+`r emoji("graph")` identify differences in graphs.
+
+`r emoji("book")` read information off of a chart accurately. 
+
+`r emoji("international")` use data to make correct real-world decisions.
+
+`r emoji("pencil2")` predict the next few observations.
+
+---
+class:primary
+# Measuring Patterns & Trends
+
+---
+class:primary
+# 'You Draw It' Feature 
+## (New York Times, 2015)
+.pull-left[
+<img src="images/nyt-caraccidents.png" width="100%"/>
+.center[
+`r Citep(bib[[c("katz_2017")]])`
+]
+].pull-right[
+
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
++ [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) `r Citep(bib[[c("aisch_cox_quealy_2015")]])`
++ [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) `r Citep(bib[[c("katz_2017")]])`
++ [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) `r Citep(bib[[c("buchanan_park_pearce_2017")]])`
+]
+
+???
+
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+
+---
+class:primary
+# Background of D3
+
+**Who?** [Mike Bostock](https://observablehq.com/@mbostock) created D3 during his time working on graphics at the New York Times.
+  
+**What?** Open-source JavaScript based graphing framework
++ D3 = "Data Driven Documents"
++ `D3` is to JavaScript as `ggplot2` is to R
++ Framework for binding objects and layers to plotting area
+  + framework for movement and user interaction
+
+**When?** D3 v1.0 released in 2011, D3.js recently celebrated it's 10th anniversary!
+
+**Where?** The internet!
+
+**Why?** Advantages of using D3 include animation and allowing for movement and user interaction.
+
+**How?** `r2d3`!
+
+???
+
++ Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
++ `D3` is to JavaScript as `ggplot2` is to R
++ Advantages include animation and allowing for movement and user interaction.
+
+---
+class:primary
+# Relationship between D3 and R 
+
+.pull-left[
+The `r2d3` package `r Citep(bib[[c("r2d3_pkg")]])` in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
+
+].pull-right[
+.center[ 
+ <img src="images/r2d3-hex.png" width="40%"/>
+]
+]
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+--
+.pull-left[
+**How?**
++ Converts data in R to JSON that can be interpreted by JavaScript
++ Sources D3 code library
++ Creates plot container (svg)
++ Renders plot using source code
+].right-plot[
+```{r r2d3-example, echo = T, eval = F}
+r2d3(data = data,
+     script = "d3-source-code.js",
+     d3_version= "5")
+```
+]
+
+???
+
+A challenge of working with D3 is the environment necessary to display the graphics and images. 
+
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
+A default SVG (scalable vector graphic) container for layering elements is then generated by the r2d3 function which renders the plot using the source code.
+
+---
+class:primary
+# Getting Started with D3
+
+`D3.js` is to JavaScript as `ggplot2` is to R
+
+.pull-left[
+`r fa_i("js")` [Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+`r fa_i("image")` Understand [SVG](http://tutorials.jenkov.com/svg/g-element.html) elements: inspect elements in web browser!
+
+`r fa_i("book-open")` Amelia Wattenberger's [Full Stack D3 and Data Visualization Book](https://www.newline.co/fullstack-d3)
+
+`r fa_i("chart-bar")` Build a basic graphic using [r2d3](https://rstudio.github.io/r2d3/articles/introduction.html)
+
+`r fa_i("grimace")` Modify `D3.js` code until it does what you want!
+]
+.pull-right[
+**Additional Resources**
+
+`r fa_i("code")` [How to learn D3 with no coding experience](https://www.heshameissa.com/blog/learn-d3)
+
+`r fa_i("twitter")` Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger)
+]
+
+---
+class:primary
+# 'You Draw It' Task Plot
+
+Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+.pull-left[
+<img src="images/eyefitting_example.gif" width="100%"/>
+].pull-right[
+<img src="images/exponential_example.gif" width="100%"/>
+]
+
+**Test out your drawing skills at [emily-robinson.shinyapps.io/can-you-draw-it](https://emily-robinson.shinyapps.io/can-you-draw-it).**
+
+???
+
+Here we see an example of a you draw it interactive plot as seen by participants during the study. Participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region moves along as the participant draws their trend-line until the yellow region disappears.
+
+---
+class:primary
+# D3.js Source Code
+
+.center[ 
+ <img src="images/r2d3+shiny-inkscape.png" width="80%"/>
+]
+
+---
+class:primary
+# Validation Study
+
++ Replicated *Eye Fitting Straight Lines* by `r Citet(bib[[c("mosteller1981eye")]])`
++ Participants completed study at [emily-robinson.shinyapps.io/you-draw-it-validation-applet/](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/)
+
+---
+class:primary
+# Coming soon for 'You Draw It'\!
+
+**Software Development**
++ R package designed for easy implementation of ‘You Draw It’ task plots.
+
+**Future Applications**
+
++ Evaluate human's ability to make future predictions from trends and to fit curved trend lines.
++ Apply 'You Draw It' to other fields in order to evaluate science communication using graphics.
+
+**Publications**
++ [Under Review] Robinson, E. A., VanderPlas, S., Howard, R., (2021) Eye Fitting Straight Lines in the Modern Era. Submitted to *Journal of Computational and Graphical Statistics*. [Access on GitHub.](https://earobinson95.github.io/Eye-Fitting-Straight-Lines-in-the-Modern-Era/Eye-Fitting-Straight-Lines-in-the-Modern-Era.pdf)
+
+---
+class:primary
+# References
+<font size="4">
+```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+print(bib[[c("finney1951subjective", "mosteller1981eye", "r2d3_pkg")]], 
+      .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
+      )
+```
+</font>
+
+---
+class:inverse
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.center[
+# Thank you!
+<br
+<br>
+`r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu**
+`r fa("home", fill = "white")` **www.emilyarobinson.com**
+`r fa("github", fill = "white")` **earobinson95**
+]
+
