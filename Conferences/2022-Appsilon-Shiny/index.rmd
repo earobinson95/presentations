@@ -1,6 +1,6 @@
 ---
-title: "Pandemic Dilemmas: Human Perception of Exponentially Increasing Data Displayed on a Log Scale Evaluated Through Experimental Graphics Tasks"
-subtitle: "Midwest WISC (Sept. 18, 2021)"
+title: "‘You Draw It’: Implementing human interaction in R shiny with r2d3"
+subtitle: "2022 Appsilon Shiny Conference"
 author: "Emily Robinson"
 date: "Department of Statistics, University of Nebraska - Lincoln"
 output:
