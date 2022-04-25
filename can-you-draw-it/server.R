@@ -1,6 +1,4 @@
-# ----------------------------------------------------------------------------------------------------
-# Load libraries -------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
+# Load libraries
 library(shiny)
 library(shinyjs)
 library(r2d3)
@@ -10,10 +8,7 @@ library(gridSVG)
 library(lubridate)
 library(readxl)
 
-# ----------------------------------------------------------------------------------------------------
-# Turn a list of data into a json file ---------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
-
+# Turn a list of data into a json file
 data_to_json <- function(data) {
   jsonlite::toJSON(data, 
                    dataframe = "rows", 
@@ -21,10 +16,7 @@ data_to_json <- function(data) {
                    rownames = TRUE)
 } 
 
-# ----------------------------------------------------------------------------------------------------
-# Redefine drawr function --------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
-
+# Redefine drawr function
 drawr <- function(data, 
                   linear            = "true", 
                   draw_start        = NULL,
@@ -70,13 +62,13 @@ drawr <- function(data,
       stop("Supplied y range doesn't cover data fully.")
     }
   }
-
+  
   if ((draw_start <= x_min) | (draw_start >= x_max)) {
     stop("Draw start is out of data range.")
   }
-
+  
   r2d3::r2d3(data   = data_to_json(data), 
-             script = "main-d3v5.js",
+             script = "www/main-d3v5.js",
              d3_version = "5",
              dependencies = c("d3-jetpack"),
              options = list(draw_start        = draw_start, 
@@ -95,14 +87,11 @@ drawr <- function(data,
                             show_finished     = show_finished,
                             shiny_message_loc = shiny_message_loc,
                             title             = title)
-             )
+  )
   
 }
 
-# ----------------------------------------------------------------------------------------------------
-# Linear Data Simulation -----------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
-
+# Linear Data Simulation
 linearDataGen <- 
   function(y_xbar, 
            slope, 
@@ -118,24 +107,13 @@ linearDataGen <-
     
     # Set up x values
     xVals <- seq(x_min, x_max, length.out = N)
-    # xVals <- sample(xVals, N, replace = TRUE)
-    # xVals <- jitter(xVals)
     xVals <- ifelse(xVals < x_min, x_min, xVals)
     xVals <- ifelse(xVals > x_max, x_max, xVals)
     
-    # From slope intercept form
-    # y-y_xbar = m(x-xbar)
-    # y = m(x-xbar) + y_xbar = mx - mxbar + y_xbar
     yintercept = y_xbar - slope*mean(xVals)
     
-    # Generate "good" errors
     errorVals <- rnorm(N, 0, sigma)
-    # repeat{
-    #   errorVals <- rnorm(N, 0, sigma)
-    #   if(mean(errorVals[floor(N/3)]) < 2*sigma & mean(errorVals[floor(N/3)] > -2*sigma)){
-    #     break
-    #   }
-    # }
+
     
     # Simulate point data
     point_data <- tibble(data = "point_data",
@@ -158,45 +136,13 @@ linearDataGen <-
     return(data)
   }
 
-# ----------------------------------------------------------------------------------------------------
-# User Interface -------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
-
-ui <- navbarPage(
-  "Can 'You Draw It'?",
-
-# ----------------------------------------------------------------------------------------------------
-  tabPanel(
-    title = "Eye Fitting Straight Lines in the Modern Era",
-    tags$head(
-      tags$link(rel = "stylesheet", type = "text/css", href = "d3.css")
-    ),
-    fluidRow(
-      column(
-        width = 5,
-        actionButton("eyefitting_reset", "Reset"),
-        d3Output("shinydrawr_S", height = "500px")
-      )
-    )
-  )
-# ----------------------------------------------------------------------------------------------------
-)
-
-# ----------------------------------------------------------------------------------------------------
-# Server ---------------------------------------------------------------------------------------------
-# ----------------------------------------------------------------------------------------------------
-
 # Define server logic required to draw a histogram
 server <- function(input, output, session){
-
-  # ----------------------------------------------------------------------------------------------------
-  # Eye Fitting Straight Lines Replication -------------------------------------------------------------
-  # ----------------------------------------------------------------------------------------------------
-
+  
   linear_data <- reactive({
-
+    
     input$eyefitting_reset
-      
+    
     tibble(
       dataset = c("S"),
       y_xbar = c(3.9),
@@ -217,30 +163,28 @@ server <- function(input, output, session){
       unnest(data) %>%
       unnest(data)
   })
-
+  
   linear_y_range <- reactive({
     linear_data <- linear_data()
     range(linear_data$y) * c(1.5, 1.5)
   })
-
+  
   linear_x_range <- reactive({
     linear_data <- linear_data()
     c(min(linear_data$x), max(linear_data$x))
   })
-
-  # S ----------------------------------------------------------
-
-  message_loc_S <- session$ns("drawr_message")
-  output$shinydrawr_S <- r2d3::renderD3({
-
-    line_data_S <- linear_data() %>%
-      filter(dataset == "S", data == "line_data")
+  
+  message_loc <- session$ns("drawr_message")
+  output$shinydrawr <- r2d3::renderD3({
     
-    point_data_S <- linear_data() %>%
-      filter(dataset == "S", data == "point_data")
+    line_data <- linear_data() %>%
+      filter(data == "line_data")
     
-    data <- list(line_data = line_data_S, point_data = point_data_S)
-
+    point_data <- linear_data() %>%
+      filter(data == "point_data")
+    
+    data <- list(line_data = line_data, point_data = point_data)
+    
     drawr(data              = data,
           aspect_ratio      = 1,
           linear            = "true",
@@ -249,17 +193,11 @@ server <- function(input, output, session){
           x_by              = 0.25,
           draw_start        = 1,
           points_end        = 20,
-          # show_finished     = input$eyefitting_show_finished,
           show_finished     = T,
-          shiny_message_loc = message_loc_S,
+          shiny_message_loc = message_loc,
           x_range           = linear_x_range(),
           y_range           = linear_y_range()
     )
-
+    
   })
-  
-  # END OF SERVER ------------------------------------------------------------------------------------------
 }
-
-# Run the application
-shinyApp(ui = ui, server = server)

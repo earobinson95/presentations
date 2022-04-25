@@ -133,6 +133,8 @@ class:primary
 + Evaluate design choices and understand cognitive biases through the use of visual tests.
 + Researchers conduct studies in which human subjects are asked to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. 
 
+--
+
 **Measuring Patterns & Trends**
 
 + Our visual system is naturally built to look for structure and identify patterns.
