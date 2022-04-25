@@ -228,25 +228,56 @@ body {
 class:primary
 # Outline
 
----
-class:primary
-# Testing Statistical Graphics
+<i class="fa fa-chart-line" role="presentation" aria-label="chart-line icon"></i> Background of graphical testing and measuring patterns
 
-Evaluate design choices and understand cognitive biases through the use of **visual tests**. 
+<i class="fab fa-js" role="presentation" aria-label="js icon"></i> <i class="fa fa-plus" role="presentation" aria-label="plus icon"></i> <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i> Integration of D3.js and R Shiny
 
-Could ask participants to:
+<i class="fa fa-pen" role="presentation" aria-label="pen icon"></i> Test your drawing skills!
 
-📈 identify differences in graphs.
+<i class="fa fa-check" role="presentation" aria-label="check icon"></i> Validation and Application
 
-📖 read information off of a chart accurately. 
-
-🌍 use data to make correct real-world decisions.
-
-✏️ predict the next few observations.
+<i class="fa fa-spinner" role="presentation" aria-label="spinner icon"></i> Future Work
 
 ---
 class:primary
-# Measuring Patterns &amp; Trends
+# Background
+
+**Testing statistical graphics**
+
++ Evaluate design choices and understand cognitive biases through the use of visual tests.
++ Researchers conduct studies in which human subjects are asked to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. 
+
+**Measuring Patterns &amp; Trends**
+
++ Our visual system is naturally built to look for structure and identify patterns.
++ Physical manipulation: maneuvering a string, black thread, or ruler until the fit is suitable, then drawing the line through the set of points (Mosteller, Siegel, Trapido, et al., 1981; Finney, 1951)
++ Ciccione and Dehaene (2021) conducted a comprehensive set of studies based on psychophysical approaches. 
+
+--
+
+**How can we compare our intuitive visual sense of patterns to those determined by statistical methods?**
+
+
+???
+
+Graphical tests are useful for studying the perception of statistical graphs. Studies might ask participants to
+identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information being presented in the chart.
+
+Efforts in the field of statistical graphics have developed graphical testing tools and methods. Through
+experimentation, graphical testing methods allow researchers to conduct studies geared at understanding human ability to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. 
+
+The advancement of graphing software provides the tools necessary to develop new methods of testing statistical graphics.
+
+
+Our visual system is naturally built to look for structure and identify patterns. For instance, points going down from left to right indicates a negative correlation between the x and y variables. 
+
+Initial studies in the 20th century explored the use of fitting lines by eye through a set of points (Finney,
+1951; Mosteller et al., 1981). Common methods of fitting trends by eye involved maneuvering a string, black
+thread, or ruler until the fit is suitable, then drawing the line through the set of points. Recently, Ciccione and Dehaene (2021) conducted a comprehensive set of studies investigating human ability to detect trends in graphical representations from a psychophysical approach.
+
+
+**How can we compare our intuitive visual sense of patterns to those determined by statistical methods?**
+
 
 ---
 class:primary
@@ -266,6 +297,11 @@ Readers are asked to input their own assumptions about various metrics and compa
 + [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) (Buchanan, Park, and Pearce, 2017)
 ]
 
+--
+
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+
+
 ???
 
 Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
@@ -284,7 +320,7 @@ class:primary
 + Framework for binding objects and layers to plotting area
   + framework for movement and user interaction
 
-**When?** D3 v1.0 released in 2011, D3.js recently celebrated it's 10th anniversary!
+**When?** D3 v1.0 released in 2011.
 
 **Where?** The internet!
 
@@ -399,8 +435,106 @@ class:primary
 class:primary
 # Validation Study
 
-+ Replicated *Eye Fitting Straight Lines* by Mosteller, Siegel, Trapido, and Youtz (1981)
-+ Participants completed study at [emily-robinson.shinyapps.io/you-draw-it-validation-applet/](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/)
+Replicated *Eye Fitting Straight Lines* by Mosteller, Siegel, Trapido, et al. (1981)
+
+.pull-left[
++ **Big Idea:** Students fitted lines by eye to four sets of points.
++ **Method:** 8.5 x 11 inch transparency with a straight line etched across the middle.
++ **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
++ **Experimental Design:** Latin square.
++ **Findings:** Students tended to fit the slope of the first principal component.
+].pull-right[ 
+&lt;img src="images/eyefitting-straight-lines-plots.png" width="75%"/&gt;
+]
+
+--
+
+Experiment conducted and distributed through an RShiny application found at [emily-robinson.shinyapps.io/you-draw-it-validation-applet/](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/) in May 2021 with 35 paricipants completing 119 unique 'You Draw It' task plots.
+
+???
+We conducted a study in order to validate ‘You Draw It’ as a method for graphical testing, comparing results
+to the less technological method utilized in Mosteller et al. (1981)
+
+---
+class:primary
+# Validation Study
+ 
+.pull-left[ 
+
+Compare participant drawn line to **statistical regression results**.
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgpcaplot' src='images/pca-plot.jpg' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalpcaplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalpcaplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionpcaplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+].pull-right[ 
+
+**Vertical residuals** between the drawn and fitted values were calculated as: 
+
++ `\(e_{OLS} = y_{drawn} - \hat y_{OLS}\)`
++ `\(e_{PCA} = y_{drawn} - \hat y_{PCA}\)`.
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittingtrialplot' src='images/eyefitting-trial-plot.png' alt=' ' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittingtrialplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittingtrialplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittingtrialplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+
+???
+We compare the participant drawn line to two regression lines determined by ordinary least squares regression and regression based on the principal axis. The figure illustrates the difference between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis (Principal Component) which minimizes the Euclidean distance of points (orthogonal) from the line.
+
+Here we see an example of the feedback data from one you draw it plot. For 0.25 increments across the domain, we have the participant drawn values, the fitted values from the ordinary least squares regression, and the fitted values from the regression based on the principal axis. 
+
+We are mainly interested in the deviation of the participant drawn line from the fitted regression lines. So while it seems counter-intuitive, the residual actually becomes our response in this case.
+
+Feedback data from conducted studies are collected and stored in a database for analysis. Within the collected
+feedback data, we know the simulated data points, the predicted values from the statistical model, and the predicted values from the user drawn line. In our initial studies, a unique data set was simulated independently for each participant. Therefore, we evaluate the accuracy of the user drawn line by observing the deviation, vertical residuals, between the user drawn line and the predicted values from the statistical model. We use a Generalized Additive Mixed Model (GAMM) to model the vertical residuals in order to statistically compare visually fitted trends to actual metrics, simulated data models, or statistical regression results. A benefit of using a GAMM is the estimation of smoothing splines, allowing for flexibility in the residual trend.
+
+---
+class:primary
+# Validation Study
+
+.pull-left[
+**Linear Trend Constraint**
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittinglmerplot' src='images/eyefitting-lmer-plot.png' alt=' ' width='110%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittinglmerplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittinglmerplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittinglmerplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+].pull-right[
+
+**Generalized Additive Mixed Model (GAMM)**
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeyefittinggammplot' src='images/eyefitting-gamm-plot.png' alt=' ' width='110%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleyefittinggammplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleyefittinggammplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneyefittinggammplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
+]
 
 ---
 class:primary
@@ -417,14 +551,38 @@ class:primary
 **Publications**
 + [Under Review] Robinson, E. A., VanderPlas, S., Howard, R., (2021) Eye Fitting Straight Lines in the Modern Era. Submitted to *Journal of Computational and Graphical Statistics*. [Access on GitHub.](https://earobinson95.github.io/Eye-Fitting-Straight-Lines-in-the-Modern-Era/Eye-Fitting-Straight-Lines-in-the-Modern-Era.pdf)
 
+
+???
+look at forecasting biases
+
 ---
 class:primary
 # References
-&lt;font size="4"&gt;
-&lt;p&gt;&lt;cite&gt;Finney, D.
+&lt;font size="3"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-aisch_cox_quealy_2015'&gt;&lt;/a&gt;&lt;a href="#cite-aisch_cox_quealy_2015"&gt;Aisch, G., A. Cox, and K. Quealy&lt;/a&gt;
+(2015).
+&lt;em&gt;You Draw It: How Family Income Predicts Children's College Chances&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html"&gt;https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-buchanan_park_pearce_2017'&gt;&lt;/a&gt;&lt;a href="#cite-buchanan_park_pearce_2017"&gt;Buchanan, L., H. Park, and A. Pearce&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: What Got Better or Worse During Obama's Presidency&lt;/em&gt;.
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"&gt;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-ciccione2021'&gt;&lt;/a&gt;&lt;a href="#cite-ciccione2021"&gt;Ciccione, L. and S. Dehaene&lt;/a&gt;
+(2021).
+&amp;ldquo;Can humans perform mental regression on a graph? Accuracy and bias in the perception of scatterplots&amp;rdquo;.
+In: &lt;em&gt;Cognitive Psychology&lt;/em&gt; 128, p. 101406.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-finney1951subjective'&gt;&lt;/a&gt;&lt;a href="#cite-finney1951subjective"&gt;Finney, D.&lt;/a&gt;
 (1951).
 &amp;ldquo;Subjective judgment in statistical analysis: An experimental study&amp;rdquo;.
 In: &lt;em&gt;Journal of the Royal Statistical Society: Series B (Methodological)&lt;/em&gt; 13.2, pp. 284&amp;ndash;297.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-katz_2017'&gt;&lt;/a&gt;&lt;a href="#cite-katz_2017"&gt;Katz, J.&lt;/a&gt;
+(2017).
+&lt;em&gt;You Draw It: Just How Bad Is the Drug Overdose Epidemic?&lt;/em&gt;
+URL: &lt;a href="https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html"&gt;https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-mosteller1981eye'&gt;&lt;/a&gt;&lt;a href="#cite-mosteller1981eye"&gt;Mosteller, F., A. F. Siegel, E. Trapido, et al.&lt;/a&gt;
 (1981).
@@ -529,6 +687,74 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
 })();</script>
 
+<script>
+        /* Get the modal*/
+          var modalpcaplot = document.getElementById('modalpcaplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgpcaplot = document.getElementById('imgpcaplot');
+          var modalImgpcaplot = document.getElementById('imgmodalpcaplot');
+          var captionTextpcaplot = document.getElementById('captionpcaplot');
+          imgpcaplot.onclick = function(){
+            modalpcaplot.style.display = 'block';
+            modalImgpcaplot.src = this.src;
+            captionTextpcaplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgpcaplot.onclick = function() {
+            modalpcaplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittingtrialplot = document.getElementById('modaleyefittingtrialplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittingtrialplot = document.getElementById('imgeyefittingtrialplot');
+          var modalImgeyefittingtrialplot = document.getElementById('imgmodaleyefittingtrialplot');
+          var captionTexteyefittingtrialplot = document.getElementById('captioneyefittingtrialplot');
+          imgeyefittingtrialplot.onclick = function(){
+            modaleyefittingtrialplot.style.display = 'block';
+            modalImgeyefittingtrialplot.src = this.src;
+            captionTexteyefittingtrialplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittingtrialplot.onclick = function() {
+            modaleyefittingtrialplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittinglmerplot = document.getElementById('modaleyefittinglmerplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittinglmerplot = document.getElementById('imgeyefittinglmerplot');
+          var modalImgeyefittinglmerplot = document.getElementById('imgmodaleyefittinglmerplot');
+          var captionTexteyefittinglmerplot = document.getElementById('captioneyefittinglmerplot');
+          imgeyefittinglmerplot.onclick = function(){
+            modaleyefittinglmerplot.style.display = 'block';
+            modalImgeyefittinglmerplot.src = this.src;
+            captionTexteyefittinglmerplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittinglmerplot.onclick = function() {
+            modaleyefittinglmerplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleyefittinggammplot = document.getElementById('modaleyefittinggammplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeyefittinggammplot = document.getElementById('imgeyefittinggammplot');
+          var modalImgeyefittinggammplot = document.getElementById('imgmodaleyefittinggammplot');
+          var captionTexteyefittinggammplot = document.getElementById('captioneyefittinggammplot');
+          imgeyefittinggammplot.onclick = function(){
+            modaleyefittinggammplot.style.display = 'block';
+            modalImgeyefittinggammplot.src = this.src;
+            captionTexteyefittinggammplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeyefittinggammplot.onclick = function() {
+            modaleyefittinggammplot.style.display = 'none';
+          }
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
