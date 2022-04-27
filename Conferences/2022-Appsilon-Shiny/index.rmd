@@ -110,6 +110,10 @@ write("", file = "js-addins.html")
 <br><br>
 .medium[*Slides: https://bit.ly/3ENZmOZ*]
 
+???
+
+Thank you for coming to my talk at whatever time it is where you are joining from. I am going to be sharing some of my work on using R2D3 and Shiny to test statistical graphics.
+
 ---
 class:primary
 # Outline
@@ -124,6 +128,10 @@ class:primary
 
 `r fa_i("spinner")` Future Work
 
+???
+
+During my talk, I will first provide a brief background on graphical testing and how it relates to detecting trends and patterns in data. Then I will talk about the development process behind the scenes and you will get a chance to test out your drawing skills. Finally, I will share results from the validation study and plans for future work.
+
 ---
 class:primary
 # Background
@@ -133,6 +141,10 @@ class:primary
 + Evaluate design choices and understand cognitive biases through the use of visual tests.
 + Researchers conduct studies in which human subjects are asked to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. 
 
+???
+
+We all use statistical graphics, but how do we know that the graphics we use are communicating properly? Through experimentation, graphical testing methods allow researchers to conduct studies geared at understanding human ability to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. Efforts in the field of statistical graphics have developed graphical testing tools and methods and all of these types of tests require different levels of use and manipulation of the information being presented in the chart. With the advancement of graphing software, we have the tools necessary to develop new methods of testing.
+
 --
 
 **Measuring Patterns & Trends**
@@ -141,6 +153,10 @@ class:primary
 + Physical manipulation: maneuvering a string, black thread, or ruler until the fit is suitable, then drawing the line through the set of points `r Citep(bib[[c("mosteller1981eye", "finney1951subjective")]])`
 + `r Citet(bib[[c("ciccione2021")]])` conducted a comprehensive set of studies based on psychophysical approaches. 
 
+???
+
+One such aspect of interest is the ability to identify and detect trends. Our visual system is naturally built to look for structure and identify patterns. For instance, points going down from left to right indicates a negative correlation between the x and y variables. Initial studies in the 20th century explored the use of fitting lines by eye through a set of points through physical manipulation methods such as maneuvering a string, black thread, or ruler until the fit is suitable, then drawing the line through the set of points. Recently, a study in 2021 conducted a comprehensive set of studies investigating human ability to detect trends in graphical representations from a psychophysical approach.
+
 --
 
 **How can we compare our intuitive visual sense of patterns to those determined by statistical methods?**
@@ -148,24 +164,7 @@ class:primary
 
 ???
 
-Graphical tests are useful for studying the perception of statistical graphs. Studies might ask participants to
-identify differences in graphs, read information off of a chart accurately, use data to make correct real-world decisions, or predict the next few observations. All of these types of tests require different levels of use and manipulation of the information being presented in the chart.
-
-Efforts in the field of statistical graphics have developed graphical testing tools and methods. Through
-experimentation, graphical testing methods allow researchers to conduct studies geared at understanding human ability to conduct tasks related to the perception of statistical charts such as differentiation, prediction, estimation, and extrapolation. 
-
-The advancement of graphing software provides the tools necessary to develop new methods of testing statistical graphics.
-
-
-Our visual system is naturally built to look for structure and identify patterns. For instance, points going down from left to right indicates a negative correlation between the x and y variables. 
-
-Initial studies in the 20th century explored the use of fitting lines by eye through a set of points (Finney,
-1951; Mosteller et al., 1981). Common methods of fitting trends by eye involved maneuvering a string, black
-thread, or ruler until the fit is suitable, then drawing the line through the set of points. Recently, Ciccione and Dehaene (2021) conducted a comprehensive set of studies investigating human ability to detect trends in graphical representations from a psychophysical approach.
-
-
 **How can we compare our intuitive visual sense of patterns to those determined by statistical methods?**
-
 
 ---
 class:primary
@@ -185,6 +184,10 @@ Readers are asked to input their own assumptions about various metrics and compa
 + [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) `r Citep(bib[[c("buchanan_park_pearce_2017")]])`
 ]
 
+???
+
+In 2015, the New York Times introduced an interactive feature, called ‘You Draw It’, where readers input their own assumptions about various metrics and compare how these assumptions relate to reality. The Times team utilizes Data Driven Documents (D3) that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+
 --
 
 The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
@@ -192,9 +195,7 @@ The New York Times team utilizes **Data Driven Documents (D3)** that allows read
 
 ???
 
-Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
-
-The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+The goal of this research is to implement ‘You Draw It,’ adapted from the New York Times feature, as a way to measure the patterns we see in data. In the rest of the presentation, I am going to provide a high level overview of the technical details of the software development which utilized interactive graphics in R. I will then share results from a study which validates ‘You Draw It’ as a method for graphical testing and recommend an appropriate data analysis method to the participant data.
 
 ---
 class:primary
@@ -218,9 +219,7 @@ class:primary
 
 ???
 
-+ Used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center create and customize graphics.
-+ `D3` is to JavaScript as `ggplot2` is to R
-+ Advantages include animation and allowing for movement and user interaction.
+Data Driven Documents (D3) is a JavaScript-based graphing framework that facilitates user interaction. It is used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center to create and customize graphics.
 
 ---
 class:primary
@@ -236,6 +235,16 @@ The `r2d3` package `r Citep(bib[[c("r2d3_pkg")]])` in R provides an efficient in
  <img src="images/r2d3-hex.png" width="40%"/>
 ]
 ]
+
+`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
+
+???
+
+A challenge of working with D3 is the environment necessary to display the graphics and images. 
+
+The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
++ RMarkdown with HTML output
++ Shiny applications (amazing!)
 
 `r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
 
@@ -256,16 +265,7 @@ r2d3(data = data,
 
 ???
 
-A challenge of working with D3 is the environment necessary to display the graphics and images. 
-
-The `r2d3` package in R provides an efficient integration of D3 visuals and R by displaying them in familiar formats:
-+ RMarkdown with HTML output
-+ Shiny applications (amazing!)
-
-`r2d3` makes it easy to do your data processing in R, then apply D3.js code to visualize that data!
-
-The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code.
-A default SVG (scalable vector graphic) container for layering elements is then generated by the r2d3 function which renders the plot using the source code.
+The example R code illustrates the structure of the r2d3 function which includes specification of a data frame in R (converted to a JSON file), the D3.js source code file, and the D3 version that accompanies the source code. The r2d3 function then renders the plot using the source code.
 
 ---
 class:primary
@@ -292,6 +292,10 @@ class:primary
 `r fa_i("twitter")` Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger)
 ]
 
+???
+
+When I first started working on this, I was comfortable working with R and Shiny, however, I had almost no experience working with JavaScript. I wanted to share some resources that I found useful in learning to create graphics using D3. One thing to know is that D3 uses SVG's (scalable vector graphics) which preserves shapes rather than pixels and follows a layered element framework. I highly recommend Amelia Wattenberger's Full Stack D3 and Data Visualization book. She does not use R html formats as her environment, but the examples and D3 source code can easily be implemented in any formats you might be familiar with.
+
 ---
 class:primary
 # 'You Draw It' task plot
@@ -308,7 +312,11 @@ Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
 ???
 
-Here we see an example of a you draw it interactive plot as seen by participants during the study. Participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region moves along as the participant draws their trend-line until the yellow region disappears.
+Here you see an example of 'You Draw It' interactive plots. In graphical testing, participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region then moves along as the participant draws their trend-line until the yellow region disappears.
+
+In the chat, you can follow the link provided to use your mouse and test out your drawing skills.
+
+You can feel free to take a look at the working pieces behind the scenes with showcase display mode and we will talk a little more about this on the next slide as well.
 
 ---
 class:primary
@@ -318,6 +326,11 @@ class:primary
 .center[ 
  <img src="images/r2d3+shiny.png" width="100%"/>
 ]
+
+???
+
+We conduct all data simulation and processing in R and output two data sets - point data and line data -
+containing (x, y) coordinates corresponding to either a simulated point or fitted value predicted by a statistical model respectively. Then, the r2d3 package converts the data sets in R to JSON to be interpreted by the D3.js code. We define functions in D3.js to draw the initial plot and set up drawable points for the user drawn line. Drag events in D3.js are utilized to observe and react to user input. Shiny Messages are used to communicate the user interaction between the D3 code and the R environment. The plot is then rendered and updated on user interaction into the R shiny application with the `RenderD3` and `d3Output` functions. Parameters for aesthetic design choices are defined in a list of options and r2d3 passes these to the D3.js code. For instance, we can specify the buffer space allowed for the x and y axes to avoid users to anchor their lines to the axes limits.
 
 ---
 class:primary
@@ -335,13 +348,18 @@ Replicated *Eye Fitting Straight Lines* by `r Citet(bib[[c("mosteller1981eye")]]
 <img src="images/eyefitting-straight-lines-plots.png" width="75%"/>
 ]
 
+???
+
+We conducted a study in order to validate ‘You Draw It’ as a method for graphical testing, comparing results
+to the less technological method utilized in Mosteller et al. (1981). In this study, participants were asked to fit lines by eye to four sets of points using an 8.5 x 11 inch transparency. Their results showed that students tended to fit the slope of the first principal component as opposed to the slope of the ordinary least squares regression.
+
 --
 
-Experiment conducted and distributed through an RShiny application found at [emily-robinson.shinyapps.io/you-draw-it-validation-applet/](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/) in May 2021 with 35 paricipants completing 119 unique 'You Draw It' task plots.
+Experiment conducted and distributed through an R Shiny application found at [emily-robinson.shinyapps.io/you-draw-it-validation-applet/](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/) in May 2021 with 35 participants completing 119 unique 'You Draw It' task plots.
 
 ???
-We conducted a study in order to validate ‘You Draw It’ as a method for graphical testing, comparing results
-to the less technological method utilized in Mosteller et al. (1981)
+
+In our study, participants were asked to draw a line through a set of points with the 'You Draw It' method. We simulated data meant to reflect the four data sets in the 1981 study. This experiment was conducted and distributed through an R Shiny application.
 
 ---
 class:primary
@@ -373,14 +391,9 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 
 ???
-We compare the participant drawn line to two regression lines determined by ordinary least squares regression and regression based on the principal axis. The figure illustrates the difference between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis (Principal Component) which minimizes the Euclidean distance of points (orthogonal) from the line.
+We compare the participant drawn line to two regression lines determined by ordinary least squares regression and regression based on the principal axis. This figure illustrates the difference between an OLS regression line which minimizes the vertical distance of points from the line and a regression line based on the principal axis (Principal Component) which minimizes the Euclidean distance of points (orthogonal) from the line, capturing the variability in both the horizontal and vertical directions.
 
-Here we see an example of the feedback data from one you draw it plot. For 0.25 increments across the domain, we have the participant drawn values, the fitted values from the ordinary least squares regression, and the fitted values from the regression based on the principal axis. 
-
-We are mainly interested in the deviation of the participant drawn line from the fitted regression lines. So while it seems counter-intuitive, the residual actually becomes our response in this case.
-
-Feedback data from conducted studies are collected and stored in a database for analysis. Within the collected
-feedback data, we know the simulated data points, the predicted values from the statistical model, and the predicted values from the user drawn line. In our initial studies, a unique data set was simulated independently for each participant. Therefore, we evaluate the accuracy of the user drawn line by observing the deviation, vertical residuals, between the user drawn line and the predicted values from the statistical model. We use a Generalized Additive Mixed Model (GAMM) to model the vertical residuals in order to statistically compare visually fitted trends to actual metrics, simulated data models, or statistical regression results. A benefit of using a GAMM is the estimation of smoothing splines, allowing for flexibility in the residual trend.
+From our study, we collect data on the participant drawn values, the fitted values from the ordinary least squares regression, and the fitted values from the regression based on the principal axis for that unique data set. We are mainly interested in the deviation of the participant drawn line from the fitted regression lines. So while it seems counter-intuitive, the residual actually becomes our response in this case.
 
 ---
 class:primary
@@ -413,6 +426,15 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 ]
 
+???
+
+Linear mixed model and a Generalized Additive Mixed Model (GAMM) were used to evaluate the vertical residuals in order to statistically compare visually fitted trends to actual metrics, simulated data models, or statistical regression results. A benefit of using a GAMM is the estimation of smoothing splines, allowing for flexibility in the residual trend.
+
+Results from our study were consistent with those found in the previous study; when shown points
+following a linear trend, participants tended to fit the slope of the first principal component over the slope of the least-squares regression line. This trend was most prominent when shown data simulated with larger variances. This study reinforces the differences between intuitive visual model fitting and statistical model fitting, providing information about human perception as it relates to the use of statistical graphics. This also laid the foundation for recommending the use of GAMMS as an analysis method of the collected data.
+
+
+
 ---
 class:primary
 # Coming soon for 'You Draw It'\!
@@ -433,7 +455,8 @@ class:primary
 
 
 ???
-look at forecasting biases
+
+While some technical details were presented here, I intend to create an R package designed for easy implementation of ‘You Draw It’ task plots in order to make this tool accessible to other researchers. Further investigation is necessary to implement this method with real data in order to facilitate scientific communication and to evaluate the ability to make future predictions and looka t forcasting biases.
 
 ---
 class:primary
@@ -451,15 +474,16 @@ class:inverse
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
 .center[
-# Thank you!
-<br
+# Thank you! 
+### Acknowledgments: Dr. Susan VanderPlas and Dr. Reka Howard
+<br>
 <br>
 `r fa("envelope", fill = "white")` **emily.robinson@huskers.unl.edu**
 `r fa("home", fill = "white")` **www.emilyarobinson.com**
 `r fa("github", fill = "white")` **earobinson95**
 ]
 
+???
+
+Big thanks to my advisers at UNL, Dr. Susan VanderPlas and Dr. Reka Howard, for guiding me through this research.
