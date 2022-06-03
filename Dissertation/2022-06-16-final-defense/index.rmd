@@ -47,13 +47,13 @@ ui <- "- "
 knitr::opts_chunk$set(echo = FALSE, 
                       message = FALSE, 
                       warning = FALSE, 
-                      cache = FALSE,
+                      cache = TRUE,
                       dpi = 300)
 options(htmltools.dir.version = FALSE)
 options(knitr.kable.NA = '')
 ```
 
-```{r, include = F, eval = T, cache = F}
+```{r, include = F, eval = T, cache = T}
 clean_file_name <- function(x) {
   basename(x) %>% str_remove("\\..*?$") %>% str_remove_all("[^[A-z0-9_]]")
 }
@@ -143,30 +143,57 @@ class:inverse
 # Motivation and Background
 ]
 
-
 ---
 class:primary
 # Motivation
+
+Data visualizations played an important role in during the **COVID-19 pandemic** `r Citep(bib[[c("rost_2020", "romano_scale_2020", "bavel_using_2020")]])`.
+
+Dashboards displayed: case counts, transmission rates, outbreak regions. 
+
+.center[
+```{r, out.width = "75%"}
+knitr::include_graphics("images/91divoc-cases-july2021.png")
+```
+
+`r Citep(bib[[c("fagen-ulmschneider_2020")]])`
+]
+
+???
+
+Many of these graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing, as well as facilitated communication with the public to increase compliance (Bavel et al., 2020). 
+
+As graphics began to play an important role in sharing information with the public, creators of graphics were faced with design choices in order to ensure their charts were effective at accurately communicating the current status of the pandemic. 
+
+In order to make educated decisions when designing a chart, we need guidelines as established through experimentation to ensure the graphic is effective at communicating the intended results
 
 ---
 class:primary
 # Graphics: the 'good' and the 'bad'
 
+
 ---
 class:primary
 # Testing statistical graphics
 
----
-class:primary
-# Task Complexity
+Evaluate design choices and understand cognitive biases through the use of visual tests `r Citep(bib[[c("cleveland_graphical_1984", "lewandowsky_perception_1989", "spence_visual_1990", "vanderplas_testing_2020")]])`.
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+???
+
+Carpenter & Shah (1998) identifies pattern recognition, interpretative processes, and integrative processes as strategies and processes required to complete tasks of varying degrees of complexity.
 
 ---
 class:primary
-# Graph comprehension
-
----
-class:primary
-# Logarithmic Scales
+# Logarithmic scales
 
 .center[
 ```{r, out.width = "90%"}
@@ -183,13 +210,13 @@ The usefulness of the log scale in science is illustrated here showing the chall
 
 ---
 class:primary
-# Benefits and Pitfalls of Log Scales
+# Benefits and pitfalls of log scales
 
 .pull-left[
 
 **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 .center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/covid19-FT-03.23.2020-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
@@ -203,7 +230,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially. 
 
 .center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/covid19-FT-linear.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
@@ -211,7 +238,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/covid19-FT-log.png", alt = Citep(bib[[c("burnmurdoch_2020")]]), other=list(width="80%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
@@ -223,12 +250,12 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ---
 class:primary
-# Logarithmic Mapping
+# Logarithmic mapping
 
 Our perception is **logarithmic at first**, but transitions to a **linear scale later** in development `r Citep(bib[[c("dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]])`.
 
 .center[
-```{r, out.width = "100%"}
+```{r, out.width = "80%"}
 knitr::include_graphics("images/log-number-line-1.png")
 ```
 ]
@@ -248,15 +275,22 @@ logarithmically by default, it is a natural (and presumably low effort) way to d
 ---
 class:primary
 # Exponential growth
-<br>
-<br>
 .center[
-```{r, out.width = "75%"}
+```{r, out.width = "65%"}
 knitr::include_graphics("images/exponential-stages-comic.jpg")
 ```
 
 `r Citep(bib[[c("vonbergmann_2021")]])`
 ]
+
+Estimation and prediction of **exponential growth is underestimated** when presented both numerically and graphically `r Citep(bib[[c("jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975")]])`.
+
+???
+
+**Can log transforming the data help?**
+
++ Maybe, but are there consequences? 
++ Most readers are not mathematically sophisticated enough to intuitively understand logarithmic math and translate that back into real-world effects.
 
 ---
 class:inverse
@@ -271,6 +305,19 @@ class:inverse
 .center[
 # Comprehensive graphical studies
 ]
+
+---
+class:primary
+# Task complexity
+
+`r Citep(bib[[c("carpenter1998model")]])` identifies pattern recognition, interpretative processes, and integrative processes as strategies and processes required to complete tasks of varying degrees of complexity. 
+
++ **Pattern recognition** requires the viewer to encode graphic patterns.
+
++ **Interpretive processes** operate on those patterns to construct meaning.
+
++ **Integrative processes** then relate the meanings to the contextual scenario as inferred from labels and titles.
+
 ---
 class:primary
 # Research objectives
@@ -319,12 +366,12 @@ class:inverse
 
 ---
 class:primary
-# Lineup Experimental Task 
+# Lineup experimental task 
 
 Study Participant Prompt: *Which plot is most different?*
 
 .center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/linear-lineup-example.png", alt = " ", other=list(width="45%"))
 i2 <- img_modal(src = "images/log-lineup-example.png", alt = " ", other=list(width="45%"))
 
@@ -338,7 +385,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ---
 class:primary
-# Lineup Study Design
+# Lineup study design
 
 .pull-left[
 **Curvature:**
@@ -347,7 +394,7 @@ class:primary
 + Low Curvature
 ].pull-right[
 
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/curvature-combination-example-1.png", alt = " ", other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
@@ -389,7 +436,7 @@ Each lineup plot evaluated was assigned a value based on the participant respons
 
 ---
 class:primary
-# Lineup Results
+# Lineup results
 
 .center[
 ```{r, out.width = "90%"}
@@ -413,7 +460,7 @@ class:inverse
 
 ---
 class:primary
-# You Draw It Experimental Task
+# 'You Draw It' experimental task
 
 Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
@@ -433,7 +480,7 @@ Here we see an example of a you draw it interactive plot as seen by participants
 
 ---
 class:primary 
-# Treatment Design
+# Treatment design
 
 .pull-left[
 2 x 2 x 2 factorial:
@@ -443,7 +490,7 @@ class:primary
 
 ].pull-right[
 .center[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/low-10-linear.png", alt = "Low Growth Rate, 50% Truncation, Linear Scale", other=list(width="30%"))
 i2 <- img_modal(src = "images/low-10-log.png", alt = "Low Growth Rate, 50% Truncation, Log Scale", other=list(width="30%"))
 
@@ -454,7 +501,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/low-15-linear.png", alt = "Low Growth Rate, 75% Truncation, Linear Scale", other=list(width="30%"))
 i2 <- img_modal(src = "images/low-15-log.png", alt = "Low Growth Rate, 75% Truncation, Log Scale", other=list(width="30%"))
 
@@ -465,7 +512,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/high-10-linear.png", alt = "High Growth Rate, 50% Truncation, Linear Scale", other=list(width="30%"))
 i2 <- img_modal(src = "images/high-10-log.png", alt = "High Growth Rate, 50% Truncation, Log Scale", other=list(width="30%"))
 
@@ -476,7 +523,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
   ) %>% paste(collapse = "\n") %>% cat()
 ```
 
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/high-15-linear.png", alt = "High Growth Rate, 75% Truncation, Linear Scale", other=list(width="30%"))
 i2 <- img_modal(src = "images/high-15-log.png", alt = "High Growth Rate, 75% Truncation, Log Scale", other=list(width="30%"))
 
@@ -490,7 +537,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 
 ---
 class:primary 
-# Feedback Data
+# Feedback data
 
 .pull-left[
 For each participant, the final data set used for analysis contains:
@@ -507,7 +554,7 @@ Vertical residuals between the drawn and fitted values were calculated as:
 + $e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}$.
 
 ].pull-right[
-```{r results='asis', echo = F, include = T, cache = F, eval = TRUE}
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
 i1 <- img_modal(src = "images/exponential-yloess-spaghetti-plot-1.png", alt = " ", other=list(width="100%"))
 
 c(str_split(i1, "\\n", simplify = T)[1:2],
@@ -541,7 +588,7 @@ Allowing for flexibility, the bam function in the mgcv package is used to fit a 
 
 ---
 class:primary
-# GAMM Results
+# GAMM results
 
 .center[
 ```{r, out.width = "64%"}
@@ -569,28 +616,148 @@ class:primary
 
 **Graph Comprehension**
 
+The three behaviors related to graph comprehension involve `r Citep(bib[[c("curcio1987comprehension", "friel2001making", "glazer2011challenges", "jolliffe1991assessment", "wood1968objectives")]])`.
+
+1. literal reading of the data (elementary level)
+2. reading between the data (intermediate level)
+3. reading beyond the data (advanced level).
+
 **Estimation Biases**
 
----
-class:primary
-# Study design: scenarios
++ Anchoring `r Citep(bib[[c("tan1990processing")]])` and rounding to multiples of five or ten `r Citep(bib[[c("myers1954accuracy")]])` arise in open-ended estimation tasks.
++ Scale and axis labels are other critical factors in estimation accuracy `r Citep(bib[[c("dunham1991learning", "beeby1973well", "leinhardt1990functions")]])`.  
+
+???
+
+Integrative processes requires viewers to translate the visual features into conceptual relations by interpreting titles, labels, and scales.
+
+An important consideration in understanding graph comprehension is the
+questions being asked of the viewer (Graesser, Swamer, Baggett, & Sell, 2014). 
+
+Anchoring bias refers to an individual using easily
+observed visual cues such as grid lines or “anchors” when extracting information
+such as the x or y value on a chart (Tan, 1994 ; Godlonton, Hernandez, & Murphy,
+2018)
+
+Beeby & Taylor (1973) found that when asked to read data from line graphs, viewers consistently misread the y-axis scale; when alternate grid lines were labeled, the unlabeled grid lines were read as halves. 
+
+The choice of scale can change the shape of a graph, thus creating a conceptual
+demand for the viewer when constructing a mental image of the graph (Leinhardt,
+Zaslavsky, & Stein, 1990)
 
 ---
 class:primary
-# Study design: questions
+# Scenarios
+
+.pull-left[
+**Tribble scenario** 
+
+Hi, we’re Tribbles! We were taken from our native planet, Iota Germinorum IV, and brought abroad Starfleet in stardate 4500. A Starfleet scientist, Edward Larkin, genetically engineered us to increase our reproductive rate in an attempt to solve a planetary food shortage. The Tribble population on Starfleet over the next 50 Stardates (equivalent to 1 week universe time) is illustrated in the graph. We need your help answering a few questions regarding the population of Tribbles.
+
+].pull-right[
+
+**Ewok scenario**
+
+Hi, we’re Ewoks! We are native to the forest moon of Endor. After the Galactic Civil War, some Ewoks traveled offworld to help Rebel veterans as ’therapy Ewoks’ and began to repopulate. The Ewok population After the Battle of Yavin (ABY) is illustrated in the graph. We need your help answering a few questions regarding the population of Ewoks offworld.
+
+
+]
+
+*Fictional illustrations of the figures were modified from artwork
+by Allison Horst (2021) and included on the main page for each scenario.*
+
+---
+class:primary
+# Questioning
+
+.center[
+```{r, out.width = "65%"}
+knitr::include_graphics("images/estimation-questions.png")
+```
+]
+
 
 ---
 class:primary
 # Data and plot generation
 
+.pull-left[
+
+Two unique data sets were simulated based on a three parameter exponential model with multiplicative errors:
+
+$y_i=\alpha e^{\beta x_i + \epsilon_i} + \theta$ with $\epsilon_i \sim N(0, \sigma^2)$
+
+for 
+
++ $x_i \in [0:50]$, 
++ $\alpha = 130$, 
++ $\beta = 0.12$, 
++ $\theta = 50$, and 
++ $\sigma = 1.5$.
+
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/estimation-simulated-data-1.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+The time unit labels on the x-axis reflected 0 to 50 ABY (After Battle of Yavin) for the Ewok scenario and were adjusted to 4500 to 4550 Stardates for the Tribble Scenario to align with the associated popular media depiction of each figure.
+
+???
+
+The time unit labels on the x-axis reflected 0 to 50 ABY (After Battle of Yavin) for the Ewok scenario and were adjusted to 4500 to 4550 Stardates for the Tribble Scenario to align with the associated popular media depiction of each figure as well as disguise the use of the same underlying data simulation model and estimation questions across both scenarios.
+
 ---
 class:primary
-# Open ended
+# Study design
+
++ Participants were shown two examples with associated sketches (available throghout study).
+
++ The **scale** of the graphic and **data set** displayed was randomly assigned to scenarios for each individual.
+
++ The order in which the participant saw the scenario, scale, and data set combination was randomly selected.
+
++ Questioning: 
+
+    + participants were first asked an open ended question
+    + followed by a random order of two elementary level questions and three intermediate level questions.
+    
+---
+class:primary
+# Estimation strategy
+
+.pull-left[
+.center[
+```{r, out.width = "100%"}
+knitr::include_graphics("images/estimation-scratchwork-app.png")
+```
+]
+].pull-right[
+We recorded the inputted and evaluated calculations and scratch work of each participant in order to better understand participant strategies for estimation.
+]
+
+???
+For instance, a participant may have seen a scatter plot of data set two
+displayed on the linear scale paired with the Ewok scenario text and a scatter plot
+of data set one displayed on the log scale paired with the Tribble scenario text. The
+order of the two scenarios and their assigned data set and scale was randomly
+assigned to each individual.
+
+Participants were shown the graphic of both data sets on either the linear or log
+scale with labels adjusted to reflect the associated scenario context and scale.
+
+---
+class:primary
+# Open ended 
 
 *"Between year 30 and 40, how does the population of [creatures] change?"*
 
 .center[
-```{r, out.width = "64%"}
+```{r, out.width = "55%"}
 knitr::include_graphics("images/estimation-word-cloud-1.png")
 ```
 ]
@@ -599,31 +766,196 @@ knitr::include_graphics("images/estimation-word-cloud-1.png")
 class:primary
 # Estimation of population
 ### Elementary Q1
+
+*"What is the population in year 10?"* 
+
+.pull-left[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qe1-sketch.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qe1-density-plot-10-all-1.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
 ---
 class:primary
 # Estimation of population
 ### First level estimates
+
+.pull-left[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi1-sketch.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+].pull-right[
+.center[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/spaghetti-dataset1-1.png", other=list(width="85%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/spaghetti-dataset2-1.png", other=list(width="85%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]]
+
+---
+class:primary
+# Estimation of population
+### Scratchwork
+
+Participant calculations and scratch work provides support that participants equated halfway spatially as halfway numerically.
+
+.pull-left[
+2048 − 1024 = 1024
+
+1024/2 = 512
+
+512 + 1024 = 1536
+].pull-right[
+32768 − 16384 = 16384
+
+32768 − 16384 = 16384
+
+16384 ∗ 2 = 32768
+
+16384/2 = 8192
+
+8192 + 16384 = 24576.
+]
 
 ---
 class:primary
 # Estimation of time
 ### Elementary Q2
 
+*"In what year does the population reach 4,000?"*
+
+.pull-left[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qe2-sketch.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qe2-density-plot-1.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
 ---
 class:primary
 # Additive increase in population
 ### Intermediate Q1
+
+*From 20 to 40, the population increases by ____ [creatures].*
+
+.pull-left[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi1-density-1-2.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi1-density-2-2.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
 
 ---
 class:primary
 # Multiplicative change in population
 ### Intermediate Q2
 
+*How many times more [creatures] are there in 40 than in 20?*
+
+.pull-left[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi2-sketch.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi2-density-1.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
+
+---
+class:primary
+# Misunderstanding of log logic
+### Misinterpretation and miscalculations in Intermediate Q1 and Q2
+
+Further investigation is necessary to determine if the misunderstanding occurs due to the ambiguity of language or scale.
 
 ---
 class:primary
 # Time until population doubles
 ### Intermediate Q3
+*How long does it take for the population in year 10 to double?*
+
+.pull-left[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi3-sketch.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi3-density-1.png", other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+]
 
 ---
 class:primary
@@ -655,16 +987,45 @@ class:primary
 
 **Overall**
 
+The studies conducted in this research relied on graphical tasks of varying
+complexity in order to help us understand the perceptual and cognitive advantages
+and disadvantages of displaying exponentially increasing data on the log scale. Our
+results showed there are perceptual advantages of the use of log scales due to the
+change in contextual appearance; however, our understanding of log logic is flawed
+when translating the information into context. We recommend consideration of
+both user needs and graph specific tasks when presenting data on the log scale;
+caution should be taken when interpretation of large magnitudes is required, but
+advantages may appear when it is necessary to visually identify and interpret small
+magnitudes on the chart. 
+
+---
+class:primary
+# Challenges
+
 ---
 class:primary
 # Future work
 
++ Potential follow-up studies:
+    + Providing users the ability to interact with the graph with visual aids in order to better understand strategies of estimation.
+    + Additional study which focuses on how we make decisions based on data displayed on a log scale in order to evaluate the effect of scale on risk adversity.
+
++ Expand the use of log scales to data which does not follow an exponential trend, but where log scales are otherwise appropriate.
+
++ Evaluate the implications of transforming or displaying the x-axis on a log scale.
+
++ More widespread use of comprehensive graphical studies conducted on the same type of data and plot.
+
+???
+
++ This research stands as a model for conducting an extensive series of graphical tasks on the same type of data and plot in order to gain a comprehensive understanding of both the perceptual and cognitive implications of the design choices.
+
 ---
 class:primary
 # References
-<font size="3">
+<font size="2">
 ```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("vonbergmann_2021", "dehaene2008log", "siegler_numerical_2017", "varshney_why_2013")]], 
+print(bib[[c("vonbergmann_2021", "dehaene2008log", "siegler_numerical_2017", "varshney_why_2013", "jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975", "curcio1987comprehension", "friel2001making", "glazer2011challenges", "jolliffe1991assessment", "wood1968objectives")]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
