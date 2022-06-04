@@ -10,6 +10,8 @@
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/modal.css" type="text/css" />
     <link rel="stylesheet" href="css/sizeformat.css" type="text/css" />
   </head>
@@ -282,6 +284,57 @@ In order to make educated decisions when designing a chart, we need guidelines a
 class:primary
 # Graphics: the 'good' and the 'bad'
 
+.pull-left[
+**Misleading Graphics**
++ Bad Form
++ "Chartjunk"
++ Bad axes
+
+**Graphical Guidelines** 
+(Wickham, 2013; Andrews, 2022)
++ Keep symbols to a minimum; (Tufte, 1985) coins the term “chartjunk”.
++ Use of lengths over areas or volumes.
++ Proper use of scales such as arrangements, labels, and baselines.
+].pull-right[
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgmisleadinggraphicsbadformsupercomputers' src='images/misleading-graphics-bad-form-supercomputers.png' alt='(Dongarra, Meuer, Strohmaier, and others, 1997)' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgmisleadinggraphicsbadaxesroubletodollar' src='images/misleading-graphics-bad-axes-rouble-to-dollar.jpg' alt='(Villa, 2022)' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalmisleadinggraphicsbadformsupercomputers' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalmisleadinggraphicsbadformsupercomputers'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionmisleadinggraphicsbadformsupercomputers' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalmisleadinggraphicsbadaxesroubletodollar' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalmisleadinggraphicsbadaxesroubletodollar'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionmisleadinggraphicsbadaxesroubletodollar' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgstandardsofgraphicslogscale' src='images/standards-of-graphics-log-scale.jpg' alt='(Andrews, 2022)' width='100%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalstandardsofgraphicslogscale' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalstandardsofgraphicslogscale'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionstandardsofgraphicslogscale' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+]
+???
+
++ Early Guidelines
+  + International Institute of Statistics in 1901, Wickham (2013) 
+  + The American Society of Mechanical Engineers (ASME) in 1915, Andrews (2022)
+
+Here we take a look at selected guidelines from these articles and connect them to work conducted almost 100 years after the recommendations were made
+
 
 ---
 class:primary
@@ -326,7 +379,7 @@ class:primary
 **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
 .center[
 &lt;!-- Trigger the Modal --&gt;
-&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, et al., 2020)' width='100%'&gt;
+&lt;img id='imgcovid19FT03' src='images/covid19-FT-03.23.2020-log.png' alt='(Burn-Murdoch, Nevitt, Tilford, Rininsland, Kao, Elliott, Lewis, Fox, and Stabe, 2020)' width='100%'&gt;
 &lt;!-- The Modal --&gt;
 &lt;div id='modalcovid19FT03' class='modal'&gt;
   &lt;!-- Modal Content (The Image) --&gt;
@@ -523,7 +576,7 @@ class:primary
 ]
 **Treatment Design:** Target Panel gets model A and Null Panels get model B
 
-`\(3!\cdot 2!= 6\)` curvature combinations
+`\(3!\cdot 2!= 6\)` curvature combinations 
 
 `\(\times 2\)` lineup data sets per combination `\(=\)` **12 test data sets**
 
@@ -543,7 +596,7 @@ Define `\(Y_{ijkl}\)` to be the event that participant `\(l\)` correctly identif
 where
 - `\(\eta\)` is the beaseline average probability of selecting the target plot. 
 - `\(\delta_i\)` is the effect of the log/linear scale.
-- `\(\gamma_j\)` is the effect of the curvature combination.
+- `\(\gamma_j\)` is the effect of the curvature combination. 
 - `\(\delta\gamma_{ij}\)`is the two-way interaction effect of the scale and curvature.
 - `\(s_l \sim N(0,\sigma^2_\text{participant})\)`, random effect for participant characteristics.
 - `\(d_k \sim N(0,\sigma^2_{\text{data}})\)`, random effect for data specific characteristics. 
@@ -695,7 +748,7 @@ for:
 + point truncation `\(j = 1,2\)`,
 + scale `\(k = 1,2\)`,
 + participant  `\(l = 1,...N_{participant}\)`, and 
-+ `\(x_{ijklm}\)` value `\(m = 1, ...,4 x_{max} + 1\)`.
++ `\(x_{ijklm}\)` value `\(m = 1, ...,4 x_{max} + 1\)`. 
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + `\(e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}\)`.
@@ -740,7 +793,25 @@ class:primary
 # GAMM results
 
 .center[
-&lt;img src="images/exponential-prediction-gamm-preds-1.png" width="64%" /&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgexponentialpredictiongammpreds2' src='images/exponential-prediction-gamm-preds-2.png' alt=' ' width='64%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalexponentialpredictiongammpreds2' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalexponentialpredictiongammpreds2'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionexponentialpredictiongammpreds2' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgexponentialpredictiongammpreds3' src='images/exponential-prediction-gamm-preds-3.png' alt=' ' width='64%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalexponentialpredictiongammpreds3' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalexponentialpredictiongammpreds3'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionexponentialpredictiongammpreds3' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -818,7 +889,47 @@ class:primary
 # Questioning
 
 .center[
-&lt;img src="images/estimation-questions.png" width="65%" /&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Question type &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Tribble scenario &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Ewok scenario &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Open Ended &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; Between stardates 4530 and 4540, how does the population of Tribbles change? &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; Between 30 and 40 ABY, how does the population of Ewoks change? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Elementary Q1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; What is the population of Tribbles in stardate 4510? &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; What is the population of Ewoks in 10 ABY? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Elementary Q2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; In what stardate does the population of Tribbles reach 4,000? &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; In what ABY does the population of Ewoks reach 4,000? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Intermediate Q1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; From 4520 to 4540, the population increases by ____ Tribbles. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; From 20 ABY to 40 ABY, the population increases by ____ Ewoks. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Intermediate Q2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; How many times more Tribbles are there in 4540 than in 4520? &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; How many times more Ewoks are there in 40 ABY than in 20 ABY? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Intermediate Q3 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; How long does it take for the population of Tribbles in stardate 4510 to double? &lt;/td&gt;
+   &lt;td style="text-align:left;width: 16em; "&gt; How long does it take for the population of Ewoks in 10 ABY to double? &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 ]
 
 
@@ -1095,6 +1206,34 @@ class:primary
 # Misunderstanding of log logic
 ### Misinterpretation and miscalculations in Intermediate Q1 and Q2
 
+.pull-left[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgqi2plots1' src='images/qi2-plots-1.png' alt='Observed estimated change in population for Intermediate Q2.' width='90%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalqi2plots1' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalqi2plots1'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionqi2plots1' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+].pull-right[
+
+**Additive Increase Incorrect Logic**
+
+2048 − 1024 = 1024
+
+1024 + 512 = 1536
+
+16384 − 1536 = 14848
+
+14848/1536 = 9.67.
+
+**Multiplicative Change Incorrect Logic**
+
+16384 − 1536 = 14848
+
+]
+
 Further investigation is necessary to determine if the misunderstanding occurs due to the ambiguity of language or scale.
 
 ---
@@ -1130,6 +1269,24 @@ class:primary
 class:primary
 # Main take-aways
 
++ Understanding log logic is difficult.
+
++ Accuracy greatly depends on the location of the value being estimated in relation to the magnitude.
+
++ Strong anchoring and rounding effects.
+
+  + Participants were resistance to estimate between grid lines on the log scale.
+  
+  + Inaccurate representation of equating spatial distance to quantitative difference. 
+  
++  Inaccurate first level estimations can lead to consequences in estimations which require participants to make comparisons between two points.
+
++ Estimates were subjective to the simulated data set.
+
+???
+
++ This is also supported in following participants estimation strategies for making first level estimates in Intermediate Q3 rather than relying on their spatial awareness between grid lines on the log scale
++ For example, accuracy and variability of population estimates made on the linear scale improved as the year of interest increased and thus the magnitude of population increased, making the point more visible.
 ---
 class:inverse
 &lt;br&gt;
@@ -1148,28 +1305,45 @@ class:inverse
 class:primary
 # Conclusions
 
-**Perception**
+**Perception** <i class="fa fa-chart-line" role="presentation" aria-label="chart-line icon"></i> <i class="fa fa-chart-line" role="presentation" aria-label="chart-line icon"></i> <i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i>
 
-**Prediction**
++ Perceptual differences result from the contextual appearance (depends on choice of scale) of the trends.
 
-**Estimation**
+**Prediction** <i class="fa fa-pen" role="presentation" aria-label="pen icon"></i>
 
-**Overall**
++ Clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
 
-The studies conducted in this research relied on graphical tasks of varying
-complexity in order to help us understand the perceptual and cognitive advantages
-and disadvantages of displaying exponentially increasing data on the log scale. Our
-results showed there are perceptual advantages of the use of log scales due to the
-change in contextual appearance; however, our understanding of log logic is flawed
-when translating the information into context. We recommend consideration of
-both user needs and graph specific tasks when presenting data on the log scale;
-caution should be taken when interpretation of large magnitudes is required, but
-advantages may appear when it is necessary to visually identify and interpret small
-magnitudes on the chart. 
+
+**Estimation** <i class="fa fa-ruler" role="presentation" aria-label="ruler icon"></i>
+
++ Log logic is difficult and that we often misinterpret and miscalculate multiplicative reasoning.
++ Estimation accuracy for small magnitudes was improved by the use of the log scale, but sacrifices in accuracy on the log scale became apparent as magnitudes increased leading to advantages on the linear scale.
+
 
 ---
 class:primary
-# Challenges
+# Overall Recommendations
+
+<i class="fa fa-eye" role="presentation" aria-label="eye icon"></i> Perceptual advantages of the use of log scales due to the change in contextual appearance.
+
+<i class="fa fa-brain" role="presentation" aria-label="brain icon"></i> Our understanding of log logic is flawed when translating the information into context. 
+
+<i class="fa fa-list" role="presentation" aria-label="list icon"></i> We recommend consideration of both user needs and graph specific tasks when presenting data on the log scale.
+
+<i class="fa fa-exclamation" role="presentation" aria-label="exclamation icon"></i> Caution should be taken when interpretation of large magnitudes is required, but
+advantages may appear when it is necessary to visually identify and interpret small
+magnitudes on the chart. 
+
+???
+This research evaluated the use of log scales to display exponentially increasing
+data from three different angles and levels of complexity: perception, prediction,
+and estimation. Each study provided us insight into the advantages and
+disadvantages of displaying exponentially increasing data on a log scale and in what
+context each choice of scale might be more appropriate.
+
+The studies conducted in this research relied on graphical tasks of varying
+complexity in order to help us understand the perceptual and cognitive advantages
+and disadvantages of displaying exponentially increasing data on the log scale. 
 
 ---
 class:primary
@@ -1181,7 +1355,7 @@ class:primary
 
 + Expand the use of log scales to data which does not follow an exponential trend, but where log scales are otherwise appropriate.
 
-+ Evaluate the implications of transforming or displaying the x-axis on a log scale.
++ Evaluate the implications of transforming or displaying the `\(x\)`-axis on a log scale.
 
 + More widespread use of comprehensive graphical studies conducted on the same type of data and plot.
 
@@ -1192,7 +1366,17 @@ class:primary
 ---
 class:primary
 # References
-&lt;font size="2"&gt;
+&lt;font size="1"&gt;
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-andrews_2022'&gt;&lt;/a&gt;&lt;a href="#cite-andrews_2022"&gt;Andrews, R.&lt;/a&gt;
+(2022a).
+&lt;em&gt;Standards for graphic presentation&lt;/em&gt;.
+URL: &lt;a href="https://infowetrust.com/project/1915-standards"&gt;https://infowetrust.com/project/1915-standards&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-andrews_2022'&gt;&lt;/a&gt;&lt;a href="#cite-andrews_2022"&gt;&amp;mdash;&lt;/a&gt;
+(2022b).
+&lt;em&gt;Standards for graphic presentation&lt;/em&gt;.
+URL: &lt;a href="https://infowetrust.com/project/1915-standards"&gt;https://infowetrust.com/project/1915-standards&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-curcio1987comprehension'&gt;&lt;/a&gt;&lt;a href="#cite-curcio1987comprehension"&gt;Curcio, F.&lt;/a&gt;
 (1987).
 &amp;ldquo;Comprehension of mathematical relationships expressed in graphs&amp;rdquo;.
@@ -1202,6 +1386,11 @@ In: &lt;em&gt;Journal for research in mathematics education&lt;/em&gt; 18.5, pp.
 (2008).
 &amp;ldquo;Log or linear? Distinct intuitions of the number scale in Western and Amazonian indigene cultures&amp;rdquo;.
 In: &lt;em&gt;science&lt;/em&gt; 320.5880, pp. 1217&amp;ndash;1220.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-dongarra1997top500'&gt;&lt;/a&gt;&lt;a href="#cite-dongarra1997top500"&gt;Dongarra, J. J., H. W. Meuer, E. Strohmaier, et al.&lt;/a&gt;
+(1997).
+&amp;ldquo;TOP500 supercomputer sites&amp;rdquo;.
+In: &lt;em&gt;Supercomputer&lt;/em&gt; 13, pp. 89&amp;ndash;111.&lt;/cite&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-friel2001making'&gt;&lt;/a&gt;&lt;a href="#cite-friel2001making"&gt;Friel, S., F. Curcio, and G. Bright&lt;/a&gt;
 (2001).
@@ -1236,10 +1425,20 @@ In: &lt;em&gt;Acta Psychologica&lt;/em&gt; 76.2, pp. 177&amp;ndash;191.&lt;/cite
 &amp;ldquo;Numerical development&amp;rdquo;.
 In: &lt;em&gt;Annual review of psychology&lt;/em&gt; 68, pp. 187&amp;ndash;213.&lt;/cite&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-tufte1985visual'&gt;&lt;/a&gt;&lt;a href="#cite-tufte1985visual"&gt;Tufte, E. R.&lt;/a&gt;
+(1985).
+&amp;ldquo;The visual display of quantitative information&amp;rdquo;.
+In: &lt;em&gt;The Journal for Healthcare Quality (JHQ)&lt;/em&gt; 7.3, p. 15.&lt;/cite&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-varshney_why_2013'&gt;&lt;/a&gt;&lt;a href="#cite-varshney_why_2013"&gt;Varshney, L. and J. Sun&lt;/a&gt;
 (2013).
 &amp;ldquo;Why do we perceive logarithmically?&amp;rdquo;
 In: &lt;em&gt;Significance&lt;/em&gt; 10.1, pp. 28&amp;ndash;31.&lt;/cite&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-villa_2022'&gt;&lt;/a&gt;&lt;a href="#cite-villa_2022"&gt;Villa, M.&lt;/a&gt;
+(2022).
+&lt;em&gt;The rouble collapse against US dollar&lt;/em&gt;.
+URL: &lt;a href="https://twitter.com/emmevilla/status/1498365717720223751"&gt;https://twitter.com/emmevilla/status/1498365717720223751&lt;/a&gt;.&lt;/cite&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-vonbergmann_2021'&gt;&lt;/a&gt;&lt;a href="#cite-vonbergmann_2021"&gt;Von Bergmann, J.&lt;/a&gt;
 (2021).
@@ -1251,6 +1450,11 @@ URL: &lt;a href="https://github.com/mountainMath/xkcd_exponential"&gt;https://gi
 &amp;ldquo;Misperception of exponential growth&amp;rdquo;.
 In: &lt;em&gt;Perception &amp;amp; Psychophysics&lt;/em&gt; 18.6, pp. 416&amp;ndash;422.&lt;/cite&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;cite&gt;&lt;a id='bib-wickham2013graphical'&gt;&lt;/a&gt;&lt;a href="#cite-wickham2013graphical"&gt;Wickham, H.&lt;/a&gt;
+(2013).
+&amp;ldquo;Graphical criticism: some historical notes&amp;rdquo;.
+In: &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt; 22.1, pp. 38&amp;ndash;44.&lt;/cite&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;cite&gt;&lt;a id='bib-wood1968objectives'&gt;&lt;/a&gt;&lt;a href="#cite-wood1968objectives"&gt;Wood, R.&lt;/a&gt;
 (1968).
 &amp;ldquo;Objectives in the teaching of mathematics&amp;rdquo;.
@@ -1261,7 +1465,21 @@ In: &lt;em&gt;Educational Research&lt;/em&gt; 10.2, pp. 83&amp;ndash;98.&lt;/cit
 class:primary
 # Acknowledgements
 
-+ Advisors: Dr. Susan VanderPlas and Dr. Reka Howard
+**Advisors**
+
++ Dr. Susan VanderPlas
++ Dr. Reka Howard
+
+**Committee Members**
+
++ Dr. Erin Blankenship
++ Dr. Heather Akin
+
+**Other**
++ Mentors during graduate school
++ Professors from Winona State University
++ Graduate school friends and peers
++ Family
 
 ---
 class:inverse
@@ -2237,6 +2455,1026 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgqi3density1.onclick = function() {
             modalqi3density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalmisleadinggraphicsbadformsupercomputers = document.getElementById('modalmisleadinggraphicsbadformsupercomputers');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgmisleadinggraphicsbadformsupercomputers = document.getElementById('imgmisleadinggraphicsbadformsupercomputers');
+          var modalImgmisleadinggraphicsbadformsupercomputers = document.getElementById('imgmodalmisleadinggraphicsbadformsupercomputers');
+          var captionTextmisleadinggraphicsbadformsupercomputers = document.getElementById('captionmisleadinggraphicsbadformsupercomputers');
+          imgmisleadinggraphicsbadformsupercomputers.onclick = function(){
+            modalmisleadinggraphicsbadformsupercomputers.style.display = 'block';
+            modalImgmisleadinggraphicsbadformsupercomputers.src = this.src;
+            captionTextmisleadinggraphicsbadformsupercomputers.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgmisleadinggraphicsbadformsupercomputers.onclick = function() {
+            modalmisleadinggraphicsbadformsupercomputers.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalmisleadinggraphicsbadaxesroubletodollar = document.getElementById('modalmisleadinggraphicsbadaxesroubletodollar');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgmisleadinggraphicsbadaxesroubletodollar = document.getElementById('imgmisleadinggraphicsbadaxesroubletodollar');
+          var modalImgmisleadinggraphicsbadaxesroubletodollar = document.getElementById('imgmodalmisleadinggraphicsbadaxesroubletodollar');
+          var captionTextmisleadinggraphicsbadaxesroubletodollar = document.getElementById('captionmisleadinggraphicsbadaxesroubletodollar');
+          imgmisleadinggraphicsbadaxesroubletodollar.onclick = function(){
+            modalmisleadinggraphicsbadaxesroubletodollar.style.display = 'block';
+            modalImgmisleadinggraphicsbadaxesroubletodollar.src = this.src;
+            captionTextmisleadinggraphicsbadaxesroubletodollar.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgmisleadinggraphicsbadaxesroubletodollar.onclick = function() {
+            modalmisleadinggraphicsbadaxesroubletodollar.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalstandardsofgraphicslogscale = document.getElementById('modalstandardsofgraphicslogscale');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgstandardsofgraphicslogscale = document.getElementById('imgstandardsofgraphicslogscale');
+          var modalImgstandardsofgraphicslogscale = document.getElementById('imgmodalstandardsofgraphicslogscale');
+          var captionTextstandardsofgraphicslogscale = document.getElementById('captionstandardsofgraphicslogscale');
+          imgstandardsofgraphicslogscale.onclick = function(){
+            modalstandardsofgraphicslogscale.style.display = 'block';
+            modalImgstandardsofgraphicslogscale.src = this.src;
+            captionTextstandardsofgraphicslogscale.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgstandardsofgraphicslogscale.onclick = function() {
+            modalstandardsofgraphicslogscale.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FT03 = document.getElementById('modalcovid19FT03');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FT03 = document.getElementById('imgcovid19FT03');
+          var modalImgcovid19FT03 = document.getElementById('imgmodalcovid19FT03');
+          var captionTextcovid19FT03 = document.getElementById('captioncovid19FT03');
+          imgcovid19FT03.onclick = function(){
+            modalcovid19FT03.style.display = 'block';
+            modalImgcovid19FT03.src = this.src;
+            captionTextcovid19FT03.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FT03.onclick = function() {
+            modalcovid19FT03.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlinear = document.getElementById('modalcovid19FTlinear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlinear = document.getElementById('imgcovid19FTlinear');
+          var modalImgcovid19FTlinear = document.getElementById('imgmodalcovid19FTlinear');
+          var captionTextcovid19FTlinear = document.getElementById('captioncovid19FTlinear');
+          imgcovid19FTlinear.onclick = function(){
+            modalcovid19FTlinear.style.display = 'block';
+            modalImgcovid19FTlinear.src = this.src;
+            captionTextcovid19FTlinear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlinear.onclick = function() {
+            modalcovid19FTlinear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcovid19FTlog = document.getElementById('modalcovid19FTlog');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcovid19FTlog = document.getElementById('imgcovid19FTlog');
+          var modalImgcovid19FTlog = document.getElementById('imgmodalcovid19FTlog');
+          var captionTextcovid19FTlog = document.getElementById('captioncovid19FTlog');
+          imgcovid19FTlog.onclick = function(){
+            modalcovid19FTlog.style.display = 'block';
+            modalImgcovid19FTlog.src = this.src;
+            captionTextcovid19FTlog.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcovid19FTlog.onclick = function() {
+            modalcovid19FTlog.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallinearlineupexample = document.getElementById('modallinearlineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglinearlineupexample = document.getElementById('imglinearlineupexample');
+          var modalImglinearlineupexample = document.getElementById('imgmodallinearlineupexample');
+          var captionTextlinearlineupexample = document.getElementById('captionlinearlineupexample');
+          imglinearlineupexample.onclick = function(){
+            modallinearlineupexample.style.display = 'block';
+            modalImglinearlineupexample.src = this.src;
+            captionTextlinearlineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglinearlineupexample.onclick = function() {
+            modallinearlineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalloglineupexample = document.getElementById('modalloglineupexample');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgloglineupexample = document.getElementById('imgloglineupexample');
+          var modalImgloglineupexample = document.getElementById('imgmodalloglineupexample');
+          var captionTextloglineupexample = document.getElementById('captionloglineupexample');
+          imgloglineupexample.onclick = function(){
+            modalloglineupexample.style.display = 'block';
+            modalImgloglineupexample.src = this.src;
+            captionTextloglineupexample.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgloglineupexample.onclick = function() {
+            modalloglineupexample.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalcurvaturecombinationexample1 = document.getElementById('modalcurvaturecombinationexample1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgcurvaturecombinationexample1 = document.getElementById('imgcurvaturecombinationexample1');
+          var modalImgcurvaturecombinationexample1 = document.getElementById('imgmodalcurvaturecombinationexample1');
+          var captionTextcurvaturecombinationexample1 = document.getElementById('captioncurvaturecombinationexample1');
+          imgcurvaturecombinationexample1.onclick = function(){
+            modalcurvaturecombinationexample1.style.display = 'block';
+            modalImgcurvaturecombinationexample1.src = this.src;
+            captionTextcurvaturecombinationexample1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgcurvaturecombinationexample1.onclick = function() {
+            modalcurvaturecombinationexample1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10linear = document.getElementById('modallow10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10linear = document.getElementById('imglow10linear');
+          var modalImglow10linear = document.getElementById('imgmodallow10linear');
+          var captionTextlow10linear = document.getElementById('captionlow10linear');
+          imglow10linear.onclick = function(){
+            modallow10linear.style.display = 'block';
+            modalImglow10linear.src = this.src;
+            captionTextlow10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10linear.onclick = function() {
+            modallow10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow10log = document.getElementById('modallow10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow10log = document.getElementById('imglow10log');
+          var modalImglow10log = document.getElementById('imgmodallow10log');
+          var captionTextlow10log = document.getElementById('captionlow10log');
+          imglow10log.onclick = function(){
+            modallow10log.style.display = 'block';
+            modalImglow10log.src = this.src;
+            captionTextlow10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow10log.onclick = function() {
+            modallow10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15linear = document.getElementById('modallow15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15linear = document.getElementById('imglow15linear');
+          var modalImglow15linear = document.getElementById('imgmodallow15linear');
+          var captionTextlow15linear = document.getElementById('captionlow15linear');
+          imglow15linear.onclick = function(){
+            modallow15linear.style.display = 'block';
+            modalImglow15linear.src = this.src;
+            captionTextlow15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15linear.onclick = function() {
+            modallow15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modallow15log = document.getElementById('modallow15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imglow15log = document.getElementById('imglow15log');
+          var modalImglow15log = document.getElementById('imgmodallow15log');
+          var captionTextlow15log = document.getElementById('captionlow15log');
+          imglow15log.onclick = function(){
+            modallow15log.style.display = 'block';
+            modalImglow15log.src = this.src;
+            captionTextlow15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImglow15log.onclick = function() {
+            modallow15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10linear = document.getElementById('modalhigh10linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10linear = document.getElementById('imghigh10linear');
+          var modalImghigh10linear = document.getElementById('imgmodalhigh10linear');
+          var captionTexthigh10linear = document.getElementById('captionhigh10linear');
+          imghigh10linear.onclick = function(){
+            modalhigh10linear.style.display = 'block';
+            modalImghigh10linear.src = this.src;
+            captionTexthigh10linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10linear.onclick = function() {
+            modalhigh10linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh10log = document.getElementById('modalhigh10log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh10log = document.getElementById('imghigh10log');
+          var modalImghigh10log = document.getElementById('imgmodalhigh10log');
+          var captionTexthigh10log = document.getElementById('captionhigh10log');
+          imghigh10log.onclick = function(){
+            modalhigh10log.style.display = 'block';
+            modalImghigh10log.src = this.src;
+            captionTexthigh10log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh10log.onclick = function() {
+            modalhigh10log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15linear = document.getElementById('modalhigh15linear');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15linear = document.getElementById('imghigh15linear');
+          var modalImghigh15linear = document.getElementById('imgmodalhigh15linear');
+          var captionTexthigh15linear = document.getElementById('captionhigh15linear');
+          imghigh15linear.onclick = function(){
+            modalhigh15linear.style.display = 'block';
+            modalImghigh15linear.src = this.src;
+            captionTexthigh15linear.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15linear.onclick = function() {
+            modalhigh15linear.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalhigh15log = document.getElementById('modalhigh15log');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imghigh15log = document.getElementById('imghigh15log');
+          var modalImghigh15log = document.getElementById('imgmodalhigh15log');
+          var captionTexthigh15log = document.getElementById('captionhigh15log');
+          imghigh15log.onclick = function(){
+            modalhigh15log.style.display = 'block';
+            modalImghigh15log.src = this.src;
+            captionTexthigh15log.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImghigh15log.onclick = function() {
+            modalhigh15log.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialyloessspaghettiplot1 = document.getElementById('modalexponentialyloessspaghettiplot1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialyloessspaghettiplot1 = document.getElementById('imgexponentialyloessspaghettiplot1');
+          var modalImgexponentialyloessspaghettiplot1 = document.getElementById('imgmodalexponentialyloessspaghettiplot1');
+          var captionTextexponentialyloessspaghettiplot1 = document.getElementById('captionexponentialyloessspaghettiplot1');
+          imgexponentialyloessspaghettiplot1.onclick = function(){
+            modalexponentialyloessspaghettiplot1.style.display = 'block';
+            modalImgexponentialyloessspaghettiplot1.src = this.src;
+            captionTextexponentialyloessspaghettiplot1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialyloessspaghettiplot1.onclick = function() {
+            modalexponentialyloessspaghettiplot1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalestimationsimulateddata1 = document.getElementById('modalestimationsimulateddata1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgestimationsimulateddata1 = document.getElementById('imgestimationsimulateddata1');
+          var modalImgestimationsimulateddata1 = document.getElementById('imgmodalestimationsimulateddata1');
+          var captionTextestimationsimulateddata1 = document.getElementById('captionestimationsimulateddata1');
+          imgestimationsimulateddata1.onclick = function(){
+            modalestimationsimulateddata1.style.display = 'block';
+            modalImgestimationsimulateddata1.src = this.src;
+            captionTextestimationsimulateddata1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgestimationsimulateddata1.onclick = function() {
+            modalestimationsimulateddata1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe1sketch = document.getElementById('modalqe1sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe1sketch = document.getElementById('imgqe1sketch');
+          var modalImgqe1sketch = document.getElementById('imgmodalqe1sketch');
+          var captionTextqe1sketch = document.getElementById('captionqe1sketch');
+          imgqe1sketch.onclick = function(){
+            modalqe1sketch.style.display = 'block';
+            modalImgqe1sketch.src = this.src;
+            captionTextqe1sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe1sketch.onclick = function() {
+            modalqe1sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe1densityplot10all1 = document.getElementById('modalqe1densityplot10all1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe1densityplot10all1 = document.getElementById('imgqe1densityplot10all1');
+          var modalImgqe1densityplot10all1 = document.getElementById('imgmodalqe1densityplot10all1');
+          var captionTextqe1densityplot10all1 = document.getElementById('captionqe1densityplot10all1');
+          imgqe1densityplot10all1.onclick = function(){
+            modalqe1densityplot10all1.style.display = 'block';
+            modalImgqe1densityplot10all1.src = this.src;
+            captionTextqe1densityplot10all1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe1densityplot10all1.onclick = function() {
+            modalqe1densityplot10all1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1sketch = document.getElementById('modalqi1sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1sketch = document.getElementById('imgqi1sketch');
+          var modalImgqi1sketch = document.getElementById('imgmodalqi1sketch');
+          var captionTextqi1sketch = document.getElementById('captionqi1sketch');
+          imgqi1sketch.onclick = function(){
+            modalqi1sketch.style.display = 'block';
+            modalImgqi1sketch.src = this.src;
+            captionTextqi1sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1sketch.onclick = function() {
+            modalqi1sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalspaghettidataset11 = document.getElementById('modalspaghettidataset11');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgspaghettidataset11 = document.getElementById('imgspaghettidataset11');
+          var modalImgspaghettidataset11 = document.getElementById('imgmodalspaghettidataset11');
+          var captionTextspaghettidataset11 = document.getElementById('captionspaghettidataset11');
+          imgspaghettidataset11.onclick = function(){
+            modalspaghettidataset11.style.display = 'block';
+            modalImgspaghettidataset11.src = this.src;
+            captionTextspaghettidataset11.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgspaghettidataset11.onclick = function() {
+            modalspaghettidataset11.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalspaghettidataset21 = document.getElementById('modalspaghettidataset21');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgspaghettidataset21 = document.getElementById('imgspaghettidataset21');
+          var modalImgspaghettidataset21 = document.getElementById('imgmodalspaghettidataset21');
+          var captionTextspaghettidataset21 = document.getElementById('captionspaghettidataset21');
+          imgspaghettidataset21.onclick = function(){
+            modalspaghettidataset21.style.display = 'block';
+            modalImgspaghettidataset21.src = this.src;
+            captionTextspaghettidataset21.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgspaghettidataset21.onclick = function() {
+            modalspaghettidataset21.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe2sketch = document.getElementById('modalqe2sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe2sketch = document.getElementById('imgqe2sketch');
+          var modalImgqe2sketch = document.getElementById('imgmodalqe2sketch');
+          var captionTextqe2sketch = document.getElementById('captionqe2sketch');
+          imgqe2sketch.onclick = function(){
+            modalqe2sketch.style.display = 'block';
+            modalImgqe2sketch.src = this.src;
+            captionTextqe2sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe2sketch.onclick = function() {
+            modalqe2sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe2densityplot1 = document.getElementById('modalqe2densityplot1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe2densityplot1 = document.getElementById('imgqe2densityplot1');
+          var modalImgqe2densityplot1 = document.getElementById('imgmodalqe2densityplot1');
+          var captionTextqe2densityplot1 = document.getElementById('captionqe2densityplot1');
+          imgqe2densityplot1.onclick = function(){
+            modalqe2densityplot1.style.display = 'block';
+            modalImgqe2densityplot1.src = this.src;
+            captionTextqe2densityplot1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe2densityplot1.onclick = function() {
+            modalqe2densityplot1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1density12 = document.getElementById('modalqi1density12');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1density12 = document.getElementById('imgqi1density12');
+          var modalImgqi1density12 = document.getElementById('imgmodalqi1density12');
+          var captionTextqi1density12 = document.getElementById('captionqi1density12');
+          imgqi1density12.onclick = function(){
+            modalqi1density12.style.display = 'block';
+            modalImgqi1density12.src = this.src;
+            captionTextqi1density12.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1density12.onclick = function() {
+            modalqi1density12.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1density22 = document.getElementById('modalqi1density22');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1density22 = document.getElementById('imgqi1density22');
+          var modalImgqi1density22 = document.getElementById('imgmodalqi1density22');
+          var captionTextqi1density22 = document.getElementById('captionqi1density22');
+          imgqi1density22.onclick = function(){
+            modalqi1density22.style.display = 'block';
+            modalImgqi1density22.src = this.src;
+            captionTextqi1density22.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1density22.onclick = function() {
+            modalqi1density22.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2sketch = document.getElementById('modalqi2sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2sketch = document.getElementById('imgqi2sketch');
+          var modalImgqi2sketch = document.getElementById('imgmodalqi2sketch');
+          var captionTextqi2sketch = document.getElementById('captionqi2sketch');
+          imgqi2sketch.onclick = function(){
+            modalqi2sketch.style.display = 'block';
+            modalImgqi2sketch.src = this.src;
+            captionTextqi2sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2sketch.onclick = function() {
+            modalqi2sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2density1 = document.getElementById('modalqi2density1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2density1 = document.getElementById('imgqi2density1');
+          var modalImgqi2density1 = document.getElementById('imgmodalqi2density1');
+          var captionTextqi2density1 = document.getElementById('captionqi2density1');
+          imgqi2density1.onclick = function(){
+            modalqi2density1.style.display = 'block';
+            modalImgqi2density1.src = this.src;
+            captionTextqi2density1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2density1.onclick = function() {
+            modalqi2density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3sketch = document.getElementById('modalqi3sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3sketch = document.getElementById('imgqi3sketch');
+          var modalImgqi3sketch = document.getElementById('imgmodalqi3sketch');
+          var captionTextqi3sketch = document.getElementById('captionqi3sketch');
+          imgqi3sketch.onclick = function(){
+            modalqi3sketch.style.display = 'block';
+            modalImgqi3sketch.src = this.src;
+            captionTextqi3sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3sketch.onclick = function() {
+            modalqi3sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3density1 = document.getElementById('modalqi3density1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3density1 = document.getElementById('imgqi3density1');
+          var modalImgqi3density1 = document.getElementById('imgmodalqi3density1');
+          var captionTextqi3density1 = document.getElementById('captionqi3density1');
+          imgqi3density1.onclick = function(){
+            modalqi3density1.style.display = 'block';
+            modalImgqi3density1.src = this.src;
+            captionTextqi3density1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3density1.onclick = function() {
+            modalqi3density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2plots1 = document.getElementById('modalqi2plots1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2plots1 = document.getElementById('imgqi2plots1');
+          var modalImgqi2plots1 = document.getElementById('imgmodalqi2plots1');
+          var captionTextqi2plots1 = document.getElementById('captionqi2plots1');
+          imgqi2plots1.onclick = function(){
+            modalqi2plots1.style.display = 'block';
+            modalImgqi2plots1.src = this.src;
+            captionTextqi2plots1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2plots1.onclick = function() {
+            modalqi2plots1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3sketch = document.getElementById('modalqi3sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3sketch = document.getElementById('imgqi3sketch');
+          var modalImgqi3sketch = document.getElementById('imgmodalqi3sketch');
+          var captionTextqi3sketch = document.getElementById('captionqi3sketch');
+          imgqi3sketch.onclick = function(){
+            modalqi3sketch.style.display = 'block';
+            modalImgqi3sketch.src = this.src;
+            captionTextqi3sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3sketch.onclick = function() {
+            modalqi3sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3density1 = document.getElementById('modalqi3density1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3density1 = document.getElementById('imgqi3density1');
+          var modalImgqi3density1 = document.getElementById('imgmodalqi3density1');
+          var captionTextqi3density1 = document.getElementById('captionqi3density1');
+          imgqi3density1.onclick = function(){
+            modalqi3density1.style.display = 'block';
+            modalImgqi3density1.src = this.src;
+            captionTextqi3density1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3density1.onclick = function() {
+            modalqi3density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2plots1 = document.getElementById('modalqi2plots1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2plots1 = document.getElementById('imgqi2plots1');
+          var modalImgqi2plots1 = document.getElementById('imgmodalqi2plots1');
+          var captionTextqi2plots1 = document.getElementById('captionqi2plots1');
+          imgqi2plots1.onclick = function(){
+            modalqi2plots1.style.display = 'block';
+            modalImgqi2plots1.src = this.src;
+            captionTextqi2plots1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2plots1.onclick = function() {
+            modalqi2plots1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2plots1 = document.getElementById('modalqi2plots1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2plots1 = document.getElementById('imgqi2plots1');
+          var modalImgqi2plots1 = document.getElementById('imgmodalqi2plots1');
+          var captionTextqi2plots1 = document.getElementById('captionqi2plots1');
+          imgqi2plots1.onclick = function(){
+            modalqi2plots1.style.display = 'block';
+            modalImgqi2plots1.src = this.src;
+            captionTextqi2plots1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2plots1.onclick = function() {
+            modalqi2plots1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds2 = document.getElementById('modalexponentialpredictiongammpreds2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds2 = document.getElementById('imgexponentialpredictiongammpreds2');
+          var modalImgexponentialpredictiongammpreds2 = document.getElementById('imgmodalexponentialpredictiongammpreds2');
+          var captionTextexponentialpredictiongammpreds2 = document.getElementById('captionexponentialpredictiongammpreds2');
+          imgexponentialpredictiongammpreds2.onclick = function(){
+            modalexponentialpredictiongammpreds2.style.display = 'block';
+            modalImgexponentialpredictiongammpreds2.src = this.src;
+            captionTextexponentialpredictiongammpreds2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds2.onclick = function() {
+            modalexponentialpredictiongammpreds2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds3 = document.getElementById('modalexponentialpredictiongammpreds3');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds3 = document.getElementById('imgexponentialpredictiongammpreds3');
+          var modalImgexponentialpredictiongammpreds3 = document.getElementById('imgmodalexponentialpredictiongammpreds3');
+          var captionTextexponentialpredictiongammpreds3 = document.getElementById('captionexponentialpredictiongammpreds3');
+          imgexponentialpredictiongammpreds3.onclick = function(){
+            modalexponentialpredictiongammpreds3.style.display = 'block';
+            modalImgexponentialpredictiongammpreds3.src = this.src;
+            captionTextexponentialpredictiongammpreds3.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds3.onclick = function() {
+            modalexponentialpredictiongammpreds3.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalestimationsimulateddata1 = document.getElementById('modalestimationsimulateddata1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgestimationsimulateddata1 = document.getElementById('imgestimationsimulateddata1');
+          var modalImgestimationsimulateddata1 = document.getElementById('imgmodalestimationsimulateddata1');
+          var captionTextestimationsimulateddata1 = document.getElementById('captionestimationsimulateddata1');
+          imgestimationsimulateddata1.onclick = function(){
+            modalestimationsimulateddata1.style.display = 'block';
+            modalImgestimationsimulateddata1.src = this.src;
+            captionTextestimationsimulateddata1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgestimationsimulateddata1.onclick = function() {
+            modalestimationsimulateddata1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe1sketch = document.getElementById('modalqe1sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe1sketch = document.getElementById('imgqe1sketch');
+          var modalImgqe1sketch = document.getElementById('imgmodalqe1sketch');
+          var captionTextqe1sketch = document.getElementById('captionqe1sketch');
+          imgqe1sketch.onclick = function(){
+            modalqe1sketch.style.display = 'block';
+            modalImgqe1sketch.src = this.src;
+            captionTextqe1sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe1sketch.onclick = function() {
+            modalqe1sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe1densityplot10all1 = document.getElementById('modalqe1densityplot10all1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe1densityplot10all1 = document.getElementById('imgqe1densityplot10all1');
+          var modalImgqe1densityplot10all1 = document.getElementById('imgmodalqe1densityplot10all1');
+          var captionTextqe1densityplot10all1 = document.getElementById('captionqe1densityplot10all1');
+          imgqe1densityplot10all1.onclick = function(){
+            modalqe1densityplot10all1.style.display = 'block';
+            modalImgqe1densityplot10all1.src = this.src;
+            captionTextqe1densityplot10all1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe1densityplot10all1.onclick = function() {
+            modalqe1densityplot10all1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1sketch = document.getElementById('modalqi1sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1sketch = document.getElementById('imgqi1sketch');
+          var modalImgqi1sketch = document.getElementById('imgmodalqi1sketch');
+          var captionTextqi1sketch = document.getElementById('captionqi1sketch');
+          imgqi1sketch.onclick = function(){
+            modalqi1sketch.style.display = 'block';
+            modalImgqi1sketch.src = this.src;
+            captionTextqi1sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1sketch.onclick = function() {
+            modalqi1sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalspaghettidataset11 = document.getElementById('modalspaghettidataset11');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgspaghettidataset11 = document.getElementById('imgspaghettidataset11');
+          var modalImgspaghettidataset11 = document.getElementById('imgmodalspaghettidataset11');
+          var captionTextspaghettidataset11 = document.getElementById('captionspaghettidataset11');
+          imgspaghettidataset11.onclick = function(){
+            modalspaghettidataset11.style.display = 'block';
+            modalImgspaghettidataset11.src = this.src;
+            captionTextspaghettidataset11.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgspaghettidataset11.onclick = function() {
+            modalspaghettidataset11.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalspaghettidataset21 = document.getElementById('modalspaghettidataset21');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgspaghettidataset21 = document.getElementById('imgspaghettidataset21');
+          var modalImgspaghettidataset21 = document.getElementById('imgmodalspaghettidataset21');
+          var captionTextspaghettidataset21 = document.getElementById('captionspaghettidataset21');
+          imgspaghettidataset21.onclick = function(){
+            modalspaghettidataset21.style.display = 'block';
+            modalImgspaghettidataset21.src = this.src;
+            captionTextspaghettidataset21.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgspaghettidataset21.onclick = function() {
+            modalspaghettidataset21.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe2sketch = document.getElementById('modalqe2sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe2sketch = document.getElementById('imgqe2sketch');
+          var modalImgqe2sketch = document.getElementById('imgmodalqe2sketch');
+          var captionTextqe2sketch = document.getElementById('captionqe2sketch');
+          imgqe2sketch.onclick = function(){
+            modalqe2sketch.style.display = 'block';
+            modalImgqe2sketch.src = this.src;
+            captionTextqe2sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe2sketch.onclick = function() {
+            modalqe2sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqe2densityplot1 = document.getElementById('modalqe2densityplot1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqe2densityplot1 = document.getElementById('imgqe2densityplot1');
+          var modalImgqe2densityplot1 = document.getElementById('imgmodalqe2densityplot1');
+          var captionTextqe2densityplot1 = document.getElementById('captionqe2densityplot1');
+          imgqe2densityplot1.onclick = function(){
+            modalqe2densityplot1.style.display = 'block';
+            modalImgqe2densityplot1.src = this.src;
+            captionTextqe2densityplot1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqe2densityplot1.onclick = function() {
+            modalqe2densityplot1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1density12 = document.getElementById('modalqi1density12');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1density12 = document.getElementById('imgqi1density12');
+          var modalImgqi1density12 = document.getElementById('imgmodalqi1density12');
+          var captionTextqi1density12 = document.getElementById('captionqi1density12');
+          imgqi1density12.onclick = function(){
+            modalqi1density12.style.display = 'block';
+            modalImgqi1density12.src = this.src;
+            captionTextqi1density12.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1density12.onclick = function() {
+            modalqi1density12.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi1density22 = document.getElementById('modalqi1density22');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi1density22 = document.getElementById('imgqi1density22');
+          var modalImgqi1density22 = document.getElementById('imgmodalqi1density22');
+          var captionTextqi1density22 = document.getElementById('captionqi1density22');
+          imgqi1density22.onclick = function(){
+            modalqi1density22.style.display = 'block';
+            modalImgqi1density22.src = this.src;
+            captionTextqi1density22.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi1density22.onclick = function() {
+            modalqi1density22.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2sketch = document.getElementById('modalqi2sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2sketch = document.getElementById('imgqi2sketch');
+          var modalImgqi2sketch = document.getElementById('imgmodalqi2sketch');
+          var captionTextqi2sketch = document.getElementById('captionqi2sketch');
+          imgqi2sketch.onclick = function(){
+            modalqi2sketch.style.display = 'block';
+            modalImgqi2sketch.src = this.src;
+            captionTextqi2sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2sketch.onclick = function() {
+            modalqi2sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2density1 = document.getElementById('modalqi2density1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2density1 = document.getElementById('imgqi2density1');
+          var modalImgqi2density1 = document.getElementById('imgmodalqi2density1');
+          var captionTextqi2density1 = document.getElementById('captionqi2density1');
+          imgqi2density1.onclick = function(){
+            modalqi2density1.style.display = 'block';
+            modalImgqi2density1.src = this.src;
+            captionTextqi2density1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2density1.onclick = function() {
+            modalqi2density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi2plots1 = document.getElementById('modalqi2plots1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi2plots1 = document.getElementById('imgqi2plots1');
+          var modalImgqi2plots1 = document.getElementById('imgmodalqi2plots1');
+          var captionTextqi2plots1 = document.getElementById('captionqi2plots1');
+          imgqi2plots1.onclick = function(){
+            modalqi2plots1.style.display = 'block';
+            modalImgqi2plots1.src = this.src;
+            captionTextqi2plots1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi2plots1.onclick = function() {
+            modalqi2plots1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3sketch = document.getElementById('modalqi3sketch');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3sketch = document.getElementById('imgqi3sketch');
+          var modalImgqi3sketch = document.getElementById('imgmodalqi3sketch');
+          var captionTextqi3sketch = document.getElementById('captionqi3sketch');
+          imgqi3sketch.onclick = function(){
+            modalqi3sketch.style.display = 'block';
+            modalImgqi3sketch.src = this.src;
+            captionTextqi3sketch.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3sketch.onclick = function() {
+            modalqi3sketch.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalqi3density1 = document.getElementById('modalqi3density1');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgqi3density1 = document.getElementById('imgqi3density1');
+          var modalImgqi3density1 = document.getElementById('imgmodalqi3density1');
+          var captionTextqi3density1 = document.getElementById('captionqi3density1');
+          imgqi3density1.onclick = function(){
+            modalqi3density1.style.display = 'block';
+            modalImgqi3density1.src = this.src;
+            captionTextqi3density1.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgqi3density1.onclick = function() {
+            modalqi3density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds2 = document.getElementById('modalexponentialpredictiongammpreds2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds2 = document.getElementById('imgexponentialpredictiongammpreds2');
+          var modalImgexponentialpredictiongammpreds2 = document.getElementById('imgmodalexponentialpredictiongammpreds2');
+          var captionTextexponentialpredictiongammpreds2 = document.getElementById('captionexponentialpredictiongammpreds2');
+          imgexponentialpredictiongammpreds2.onclick = function(){
+            modalexponentialpredictiongammpreds2.style.display = 'block';
+            modalImgexponentialpredictiongammpreds2.src = this.src;
+            captionTextexponentialpredictiongammpreds2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds2.onclick = function() {
+            modalexponentialpredictiongammpreds2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds3 = document.getElementById('modalexponentialpredictiongammpreds3');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds3 = document.getElementById('imgexponentialpredictiongammpreds3');
+          var modalImgexponentialpredictiongammpreds3 = document.getElementById('imgmodalexponentialpredictiongammpreds3');
+          var captionTextexponentialpredictiongammpreds3 = document.getElementById('captionexponentialpredictiongammpreds3');
+          imgexponentialpredictiongammpreds3.onclick = function(){
+            modalexponentialpredictiongammpreds3.style.display = 'block';
+            modalImgexponentialpredictiongammpreds3.src = this.src;
+            captionTextexponentialpredictiongammpreds3.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds3.onclick = function() {
+            modalexponentialpredictiongammpreds3.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds2 = document.getElementById('modalexponentialpredictiongammpreds2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds2 = document.getElementById('imgexponentialpredictiongammpreds2');
+          var modalImgexponentialpredictiongammpreds2 = document.getElementById('imgmodalexponentialpredictiongammpreds2');
+          var captionTextexponentialpredictiongammpreds2 = document.getElementById('captionexponentialpredictiongammpreds2');
+          imgexponentialpredictiongammpreds2.onclick = function(){
+            modalexponentialpredictiongammpreds2.style.display = 'block';
+            modalImgexponentialpredictiongammpreds2.src = this.src;
+            captionTextexponentialpredictiongammpreds2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds2.onclick = function() {
+            modalexponentialpredictiongammpreds2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds3 = document.getElementById('modalexponentialpredictiongammpreds3');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds3 = document.getElementById('imgexponentialpredictiongammpreds3');
+          var modalImgexponentialpredictiongammpreds3 = document.getElementById('imgmodalexponentialpredictiongammpreds3');
+          var captionTextexponentialpredictiongammpreds3 = document.getElementById('captionexponentialpredictiongammpreds3');
+          imgexponentialpredictiongammpreds3.onclick = function(){
+            modalexponentialpredictiongammpreds3.style.display = 'block';
+            modalImgexponentialpredictiongammpreds3.src = this.src;
+            captionTextexponentialpredictiongammpreds3.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds3.onclick = function() {
+            modalexponentialpredictiongammpreds3.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds2 = document.getElementById('modalexponentialpredictiongammpreds2');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds2 = document.getElementById('imgexponentialpredictiongammpreds2');
+          var modalImgexponentialpredictiongammpreds2 = document.getElementById('imgmodalexponentialpredictiongammpreds2');
+          var captionTextexponentialpredictiongammpreds2 = document.getElementById('captionexponentialpredictiongammpreds2');
+          imgexponentialpredictiongammpreds2.onclick = function(){
+            modalexponentialpredictiongammpreds2.style.display = 'block';
+            modalImgexponentialpredictiongammpreds2.src = this.src;
+            captionTextexponentialpredictiongammpreds2.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds2.onclick = function() {
+            modalexponentialpredictiongammpreds2.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalexponentialpredictiongammpreds3 = document.getElementById('modalexponentialpredictiongammpreds3');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgexponentialpredictiongammpreds3 = document.getElementById('imgexponentialpredictiongammpreds3');
+          var modalImgexponentialpredictiongammpreds3 = document.getElementById('imgmodalexponentialpredictiongammpreds3');
+          var captionTextexponentialpredictiongammpreds3 = document.getElementById('captionexponentialpredictiongammpreds3');
+          imgexponentialpredictiongammpreds3.onclick = function(){
+            modalexponentialpredictiongammpreds3.style.display = 'block';
+            modalImgexponentialpredictiongammpreds3.src = this.src;
+            captionTextexponentialpredictiongammpreds3.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgexponentialpredictiongammpreds3.onclick = function() {
+            modalexponentialpredictiongammpreds3.style.display = 'none';
           }
 </script>
 

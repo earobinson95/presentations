@@ -171,6 +171,47 @@ In order to make educated decisions when designing a chart, we need guidelines a
 class:primary
 # Graphics: the 'good' and the 'bad'
 
+.pull-left[
+**Misleading Graphics**
++ Bad Form
++ "Chartjunk"
++ Bad axes
+
+**Graphical Guidelines** 
+`r Citep(bib[[c("wickham2013graphical", "andrews_2022")]])`
++ Keep symbols to a minimum; `r Citep(bib[[c("tufte1985visual")]])` coins the term “chartjunk”.
++ Use of lengths over areas or volumes.
++ Proper use of scales such as arrangements, labels, and baselines.
+].pull-right[
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/misleading-graphics-bad-form-supercomputers.png", alt = Citep(bib[[c("dongarra1997top500")]]), other=list(width="45%"))
+i2 <- img_modal(src = "images/misleading-graphics-bad-axes-rouble-to-dollar.jpg", alt = Citep(bib[[c("villa_2022")]]), other=list(width="45%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i2, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9],
+  str_split(i2, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/standards-of-graphics-log-scale.jpg", alt = Citep(bib[[c("andrews_2022")]]), other=list(width="100%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+]
+???
+
++ Early Guidelines
+  + International Institute of Statistics in 1901, Wickham (2013) 
+  + The American Society of Mechanical Engineers (ASME) in 1915, Andrews (2022)
+
+Here we take a look at selected guidelines from these articles and connect them to work conducted almost 100 years after the recommendations were made
+
 
 ---
 class:primary
@@ -404,7 +445,7 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 ]
 **Treatment Design:** Target Panel gets model A and Null Panels get model B
 
-$3!\cdot 2!= 6$ curvature combinations
+$3!\cdot 2!= 6$ curvature combinations 
 
 $\times 2$ lineup data sets per combination $=$ **12 test data sets**
 
@@ -424,7 +465,7 @@ $$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_
 where
 - $\eta$ is the beaseline average probability of selecting the target plot. 
 - $\delta_i$ is the effect of the log/linear scale.
-- $\gamma_j$ is the effect of the curvature combination.
+- $\gamma_j$ is the effect of the curvature combination. 
 - $\delta\gamma_{ij}$is the two-way interaction effect of the scale and curvature.
 - $s_l \sim N(0,\sigma^2_\text{participant})$, random effect for participant characteristics.
 - $d_k \sim N(0,\sigma^2_{\text{data}})$, random effect for data specific characteristics. 
@@ -548,7 +589,7 @@ for:
 + point truncation $j = 1,2$,
 + scale $k = 1,2$,
 + participant  $l = 1,...N_{participant}$, and 
-+ $x_{ijklm}$ value $m = 1, ...,4 x_{max} + 1$.
++ $x_{ijklm}$ value $m = 1, ...,4 x_{max} + 1$. 
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + $e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}$.
@@ -591,8 +632,20 @@ class:primary
 # GAMM results
 
 .center[
-```{r, out.width = "64%"}
-knitr::include_graphics("images/exponential-prediction-gamm-preds-1.png")
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/exponential-prediction-gamm-preds-2.png", alt = " ", other=list(width="64%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/exponential-prediction-gamm-preds-3.png", alt = " ", other=list(width="64%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
 ```
 ]
 
@@ -672,7 +725,15 @@ class:primary
 
 .center[
 ```{r, out.width = "65%"}
-knitr::include_graphics("images/estimation-questions.png")
+estimation_questions <- read_csv("data/estimation-questions.csv")
+estimation_questions %>%
+  filter(q_id != "scenario") %>%
+  pivot_wider(id_cols = "q_id",
+              names_from = "creature",
+              values_from = "qtext") %>%
+  mutate(q_id = c("Open Ended", "Elementary Q1", "Elementary Q2", "Intermediate Q1", "Intermediate Q2", "Intermediate Q3")) %>%
+  kableExtra::kable("html", booktabs = T, col.names = c("Question type", "Tribble scenario", "Ewok scenario"))  %>%
+  kableExtra::column_spec(2:3, width = "16em")
 ```
 ]
 
@@ -930,6 +991,32 @@ class:primary
 # Misunderstanding of log logic
 ### Misinterpretation and miscalculations in Intermediate Q1 and Q2
 
+.pull-left[
+```{r results='asis', echo = F, include = T, cache = T, eval = TRUE}
+i1 <- img_modal(src = "images/qi2-plots-1.png", alt = 'Observed estimated change in population for Intermediate Q2.', other=list(width="90%"))
+
+c(str_split(i1, "\\n", simplify = T)[1:2],
+  str_split(i1, "\\n", simplify = T)[3:9]
+  ) %>% paste(collapse = "\n") %>% cat()
+```
+].pull-right[
+
+**Additive Increase Incorrect Logic**
+
+2048 − 1024 = 1024
+
+1024 + 512 = 1536
+
+16384 − 1536 = 14848
+
+14848/1536 = 9.67.
+
+**Multiplicative Change Incorrect Logic**
+
+16384 − 1536 = 14848
+
+]
+
 Further investigation is necessary to determine if the misunderstanding occurs due to the ambiguity of language or scale.
 
 ---
@@ -961,6 +1048,24 @@ c(str_split(i1, "\\n", simplify = T)[1:2],
 class:primary
 # Main take-aways
 
++ Understanding log logic is difficult.
+
++ Accuracy greatly depends on the location of the value being estimated in relation to the magnitude.
+
++ Strong anchoring and rounding effects.
+
+  + Participants were resistance to estimate between grid lines on the log scale.
+  
+  + Inaccurate representation of equating spatial distance to quantitative difference. 
+  
++  Inaccurate first level estimations can lead to consequences in estimations which require participants to make comparisons between two points.
+
++ Estimates were subjective to the simulated data set.
+
+???
+
++ This is also supported in following participants estimation strategies for making first level estimates in Intermediate Q3 rather than relying on their spatial awareness between grid lines on the log scale
++ For example, accuracy and variability of population estimates made on the linear scale improved as the year of interest increased and thus the magnitude of population increased, making the point more visible.
 ---
 class:inverse
 <br>
@@ -979,28 +1084,45 @@ class:inverse
 class:primary
 # Conclusions
 
-**Perception**
+**Perception** `r fa_i("chart-line")` `r fa_i("chart-line")` `r fa_i("chart-bar")`
 
-**Prediction**
++ Perceptual differences result from the contextual appearance (depends on choice of scale) of the trends.
 
-**Estimation**
+**Prediction** `r fa_i("pen")`
 
-**Overall**
++ Clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
 
-The studies conducted in this research relied on graphical tasks of varying
-complexity in order to help us understand the perceptual and cognitive advantages
-and disadvantages of displaying exponentially increasing data on the log scale. Our
-results showed there are perceptual advantages of the use of log scales due to the
-change in contextual appearance; however, our understanding of log logic is flawed
-when translating the information into context. We recommend consideration of
-both user needs and graph specific tasks when presenting data on the log scale;
-caution should be taken when interpretation of large magnitudes is required, but
-advantages may appear when it is necessary to visually identify and interpret small
-magnitudes on the chart. 
+
+**Estimation** `r fa_i("ruler")`
+
++ Log logic is difficult and that we often misinterpret and miscalculate multiplicative reasoning.
++ Estimation accuracy for small magnitudes was improved by the use of the log scale, but sacrifices in accuracy on the log scale became apparent as magnitudes increased leading to advantages on the linear scale.
+
 
 ---
 class:primary
-# Challenges
+# Overall Recommendations
+
+`r fa_i("eye")` Perceptual advantages of the use of log scales due to the change in contextual appearance.
+
+`r fa_i("brain")` Our understanding of log logic is flawed when translating the information into context. 
+
+`r fa_i("list")` We recommend consideration of both user needs and graph specific tasks when presenting data on the log scale.
+
+`r fa_i("exclamation")` Caution should be taken when interpretation of large magnitudes is required, but
+advantages may appear when it is necessary to visually identify and interpret small
+magnitudes on the chart. 
+
+???
+This research evaluated the use of log scales to display exponentially increasing
+data from three different angles and levels of complexity: perception, prediction,
+and estimation. Each study provided us insight into the advantages and
+disadvantages of displaying exponentially increasing data on a log scale and in what
+context each choice of scale might be more appropriate.
+
+The studies conducted in this research relied on graphical tasks of varying
+complexity in order to help us understand the perceptual and cognitive advantages
+and disadvantages of displaying exponentially increasing data on the log scale. 
 
 ---
 class:primary
@@ -1012,7 +1134,7 @@ class:primary
 
 + Expand the use of log scales to data which does not follow an exponential trend, but where log scales are otherwise appropriate.
 
-+ Evaluate the implications of transforming or displaying the x-axis on a log scale.
++ Evaluate the implications of transforming or displaying the $x$-axis on a log scale.
 
 + More widespread use of comprehensive graphical studies conducted on the same type of data and plot.
 
@@ -1023,9 +1145,9 @@ class:primary
 ---
 class:primary
 # References
-<font size="2">
+<font size="1">
 ```{r, print_refs1, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-print(bib[[c("vonbergmann_2021", "dehaene2008log", "siegler_numerical_2017", "varshney_why_2013", "jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975", "curcio1987comprehension", "friel2001making", "glazer2011challenges", "jolliffe1991assessment", "wood1968objectives")]], 
+print(bib[[c("vonbergmann_2021", "dehaene2008log", "siegler_numerical_2017", "varshney_why_2013", "jones_generalized_1979", "mackinnon_feedback_1991", "wagenaar_misperception_1975", "curcio1987comprehension", "friel2001making", "glazer2011challenges", "jolliffe1991assessment", "wood1968objectives", "wickham2013graphical", "andrews_2022", "tufte1985visual", "dongarra1997top500", "villa_2022", "andrews_2022")]], 
       .opts = list(check.entries = FALSE, style = "html", bib.style = "authoryear")
       )
 ```
@@ -1035,7 +1157,21 @@ print(bib[[c("vonbergmann_2021", "dehaene2008log", "siegler_numerical_2017", "va
 class:primary
 # Acknowledgements
 
-+ Advisors: Dr. Susan VanderPlas and Dr. Reka Howard
+**Advisors**
+
++ Dr. Susan VanderPlas
++ Dr. Reka Howard
+
+**Committee Members**
+
++ Dr. Erin Blankenship
++ Dr. Heather Akin
+
+**Other**
++ Mentors during graduate school
++ Professors from Winona State University
++ Graduate school friends and peers
++ Family
 
 ---
 class:inverse
