@@ -217,6 +217,10 @@ class:primary
 
 **How?** `r2d3`!
 
+<br>
+.pull-right[.pull-right[
+.medium[*Modified from* [*Kiegan Rice.*](https://kiegan.github.io/talks/graphics-group-r2d3/graphics-group-r2d3.html#1)
+]]]
 ???
 
 Data Driven Documents (D3) is a JavaScript-based graphing framework that facilitates user interaction. It is used by major news and research organizations such as the New York Times, FiveThirtyEight, Washington Post, and the Pew Research Center to create and customize graphics.
@@ -262,6 +266,11 @@ r2d3(data = data,
      d3_version= "5")
 ```
 ]
+
+<br><br><br>
+.pull-right[.pull-right[
+.medium[*Modified from* [*Kiegan Rice.*](https://kiegan.github.io/talks/graphics-group-r2d3/graphics-group-r2d3.html#1)
+]]]
 
 ???
 
@@ -634,7 +643,7 @@ class:primary
 2 x 2 x 2 factorial:
 + **growth rate:** low and high.
 + **points truncated:** $50\%$ and $75\%$ of the domain.
-+ **scale:** log and linear.
++ **scale:** log and linear. 
 
 ].pull-right[
 .center[
@@ -692,11 +701,11 @@ For each participant, the final data set used for analysis contains:
 + $x_{ijklm}$, $y_{ijklm,drawn}$, and $\hat y_{ijklm,NLS}$  
  
 for:
-+ growth rate $i = 1,2$,
++ growth rate $i = 1,2$, 
 + point truncation $j = 1,2$,
 + scale $k = 1,2$,
-+ participant  $l = 1,...N_{participant}$, and 
-+ $x_{ijklm}$ value $m = 1, ...,4 x_{max} + 1$. 
++ participant  $l = 1,...,N_\text{participant}$, and
++ $x_{ijklm}$ value $m = 1, ...,4 x_\text{max} + 1$. 
 
 Vertical residuals between the drawn and fitted values were calculated as: 
 + $e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}$.
