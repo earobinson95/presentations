@@ -226,7 +226,7 @@ body {
 
 ???
 
-Thank you for coming to my talk at whatever time it is where you are joining from. I am going to be sharing some of my work on using R2D3 and Shiny to test statistical graphics.
+Thank you everyone for coming, it's great to see you at this session. Today, I am going to be sharing some of my work on using R2D3 and Shiny to test statistical graphics.
 
 ---
 class:primary
@@ -429,9 +429,9 @@ Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
 Here you see an example of 'You Draw It' interactive plots. In graphical testing, participants are prompted to: "Use your mouse to fill in the trend in the yellow box region". The yellow box region then moves along as the participant draws their trend-line until the yellow region disappears.
 
-In the chat, you can follow the link provided to use your mouse and test out your drawing skills.
+I am going to give everyone a few minutes to scan the QR code on your mobile device or tablet to test out your drawing skills.
 
-You can feel free to take a look at the working pieces behind the scenes with showcase display mode and we will talk a little more about this on the next slide as well.
+If you have a laptop, you can visit the link on the slide to take a look at the working pieces behind the scenes with showcase display mode. We will talk a little more about this on the next slides as well.
 
 ---
 class:primary
@@ -446,7 +446,40 @@ class:primary
 ???
 
 We conduct all data simulation and processing in R and output two data sets - point data and line data -
-containing (x, y) coordinates corresponding to either a simulated point or fitted value predicted by a statistical model respectively. Then, the r2d3 package converts the data sets in R to JSON to be interpreted by the D3.js code. We define functions in D3.js to draw the initial plot and set up drawable points for the user drawn line. Drag events in D3.js are utilized to observe and react to user input. Shiny Messages are used to communicate the user interaction between the D3 code and the R environment. The plot is then rendered and updated on user interaction into the R shiny application with the `RenderD3` and `d3Output` functions. Parameters for aesthetic design choices are defined in a list of options and r2d3 passes these to the D3.js code. For instance, we can specify the buffer space allowed for the x and y axes to avoid users to anchor their lines to the axes limits.
+containing (x, y) coordinates corresponding to either a simulated point or fitted value predicted by a statistical model respectively. Then, the r2d3 package converts the data sets in R to JSON to be interpreted by the D3.js code. We define functions in D3.js to draw the initial plot and set up drawable points for the user drawn line. Drag events in D3.js are utilized to observe and react to user input. Shiny Messages are used to communicate the user interaction between the D3 code and the R environment. The plot is then rendered and updated on user interaction into the R shiny application with the `RenderD3` and `d3Output` functions. Once the user is done drawing the line, we can save the results of the drawn line to a database for analysis.
+
+---
+class:primary
+# Challenges
+
+.pull-left[
++ Converting between pixels and coordinate points.
+
++ Passing two data sets into `r2d3()` requires converting to json first.
+
++ Layering elements with opacity.
+
++ D3 version matters!
+
++ Only works with a one-to-one function.
+]
+.pull-right[
+ &lt;img src="images/d3-v5-commit-frustrations-2.png" width="100%"/&gt;
+]
+
+???
+
+During the development process, there were a few challenges we had to overcome. Afer looking back at my GitHub commits, I outlined a few places where I found frustrations. 
+
++ One thing to know when working with D3 is that because it uses SVG's (scalble vector graphics), you need to convert between pixels and coordinates. 
+
++ On the slide previously, I talked about how we had "point data" and "line data" - this was a challenge to read in both data sets and be able to reference them within the JavaScript code. 
+
++ I had challenges trying to get the layers in the right order so that the yellow box region would show up under the points while still allowing the grid lines to appear. 
+
++ At one point during the process I updated my R and packages - this in turn updated my D3 version and I really thought I broke everything for a few days.
+
++ Something we are still thinking through for the future is that this only works with a one-to-one function and does not allow multiple estimates or predictions for one x-value.
 
 ---
 class:primary
@@ -676,7 +709,7 @@ for
 &lt;/div&gt;
 ]
 
-**Vertical residuals** between the drawn and fitted values were calculated as: 
+**Vertical residuals** between the drawn and fitted values were calculated as:
 + `\(e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}\)`
 + `\(e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}\)`.
 
