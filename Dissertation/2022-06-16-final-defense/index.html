@@ -719,7 +719,9 @@ class:primary
 
 .pull-left[
 
-Data were simulated based on a one-parameter exponential model: `\(N = 30\)` points `\((x_i,y_i), i = 1,...,N\)` where `\(y_i = e^{\beta x_i + e_i}\)` with `\(e_i \sim N(0,\sigma^2)\)`.
+Data were simulated based on a one-parameter exponential model: `\(N = 30\)` points `\((x_i,y_i), i = 1,...,N\)` where 
+`$$y_i = e^{\beta x_i + e_i}$$`
+with `\(e_i \sim N(0,\sigma^2)\)`.
 
 2 x 2 x 2 factorial:
 + **growth rate:** low and high.
@@ -858,7 +860,7 @@ where
 + `\(s_{ijk}\)` is the smoothing spline for the `\(ijk^{th}\)` treatment combination
 + `\(x_{ijklm}\)` is the x-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
 + `\(p_{l} \sim N(0, \sigma^2_{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
-+ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
++ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant. 
 
 ???
 
@@ -1010,7 +1012,6 @@ class:primary
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
-
 
 ---
 class:primary
