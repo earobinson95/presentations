@@ -863,17 +863,20 @@ Out of the study, we save the participant feedback data to a data base for analy
 class:primary 
 # Generalized Additive Mixed Model
 
-Fit separate for each growth rate `\(i=1,2\)`, the GAMM equation for residuals is given by:
+Fit separate for each growth rate (low = 1, high = 2), the GAMM equations for residuals are given by:
 `\begin{equation}
-e_{ijklm,NLS} = \tau_{ijk} + s_{ijk}(x_{ijklm}) + p_{l} + s_{l}(x_{ijklm})
+e_{1jklm,NLS} = \tau_{1jk} + s_{1jk}(x_{1jklm}) + p_{l} + s_{l}(x_{1jklm})
+\end{equation}`
+`\begin{equation}
+e_{2jklm,NLS} = \tau_{2jk} + s_{2jk}(x_{2jklm}) + p_{l} + s_{l}(x_{2jklm})
 \end{equation}`
 
 where
 
-+ `\(e_{ijklm,NLS}\)` is the residual between the drawn `\(y\)`-value and fitted `\(y\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
-+ `\(\tau_{ijk}\)` is the intercept for the `\(i^{th}\)` growth rate, `\(j^{th}\)` point truncation, and `\(k^{th}\)` scale treatment combination
-+ `\(s_{ijk}\)` is the smoothing spline for the `\(ijk^{th}\)` treatment combination
-+ `\(x_{ijklm}\)` is the `\(x\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(e_{\cdot jklm,NLS}\)` is the residual between the drawn `\(y\)`-value and fitted `\(y\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(\cdot jk^{th}\)` treatment combination 
++ `\(\tau_{\cdot jk}\)` is the intercept for the `\(j^{th}\)` point truncation, and `\(k^{th}\)` scale treatment combination
++ `\(s_{\cdot jk}\)` is the smoothing spline for the `\(\cdot jk^{th}\)` treatment combination
++ `\(x_{\cdot jklm}\)` is the `\(x\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(\cdot jk^{th}\)` treatment combination 
 + `\(p_{l} \sim N(0, \sigma^2_\text{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
 + `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
 
@@ -1731,6 +1734,52 @@ Hi, we’re Ewoks! We are native to the forest moon of Endor. After the Galactic
 
 *Fictional illustrations of the figures were modified from artwork
 by Allison Horst (2021) and included on the main page for each scenario.*
+
+---
+class:primary
+# Demographic summaries
+
+Previous results have found few differences between expert and non-expert participants in this context (VanderPlas and Hofmann, 2015). 
+
+.center[
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgagedemplot' src='images/age-demplot.png' alt='' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imggenderdemplot' src='images/gender-demplot.png' alt='' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalagedemplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalagedemplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionagedemplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalgenderdemplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalgenderdemplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captiongenderdemplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgeducationdemplot' src='images/education-demplot.png' alt='' width='45%'&gt;
+&lt;!-- Trigger the Modal --&gt;
+&lt;img id='imgmousedemplot' src='images/mouse-demplot.png' alt='' width='45%'&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modaleducationdemplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodaleducationdemplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captioneducationdemplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id='modalmousedemplot' class='modal'&gt;
+  &lt;!-- Modal Content (The Image) --&gt;
+  &lt;img class='modal-content' id='imgmodalmousedemplot'&gt;
+  &lt;!-- Modal Caption (Image Text) --&gt;
+  &lt;div id='captionmousedemplot' class='modal-caption'&gt;&lt;/div&gt;
+&lt;/div&gt;
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -2398,6 +2447,142 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
           /* When the user clicks on the modalImg, close it*/
           modalImgqi3density1.onclick = function() {
             modalqi3density1.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalage_demplot = document.getElementById('modalage_demplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgage_demplot = document.getElementById('imgage_demplot');
+          var modalImgage_demplot = document.getElementById('imgmodalage_demplot');
+          var captionTextage_demplot = document.getElementById('captionage_demplot');
+          imgage_demplot.onclick = function(){
+            modalage_demplot.style.display = 'block';
+            modalImgage_demplot.src = this.src;
+            captionTextage_demplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgage_demplot.onclick = function() {
+            modalage_demplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalgenderdemplot = document.getElementById('modalgenderdemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imggenderdemplot = document.getElementById('imggenderdemplot');
+          var modalImggenderdemplot = document.getElementById('imgmodalgenderdemplot');
+          var captionTextgenderdemplot = document.getElementById('captiongenderdemplot');
+          imggenderdemplot.onclick = function(){
+            modalgenderdemplot.style.display = 'block';
+            modalImggenderdemplot.src = this.src;
+            captionTextgenderdemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImggenderdemplot.onclick = function() {
+            modalgenderdemplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleducation_demplot = document.getElementById('modaleducation_demplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeducation_demplot = document.getElementById('imgeducation_demplot');
+          var modalImgeducation_demplot = document.getElementById('imgmodaleducation_demplot');
+          var captionTexteducation_demplot = document.getElementById('captioneducation_demplot');
+          imgeducation_demplot.onclick = function(){
+            modaleducation_demplot.style.display = 'block';
+            modalImgeducation_demplot.src = this.src;
+            captionTexteducation_demplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeducation_demplot.onclick = function() {
+            modaleducation_demplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalmousedemplot = document.getElementById('modalmousedemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgmousedemplot = document.getElementById('imgmousedemplot');
+          var modalImgmousedemplot = document.getElementById('imgmodalmousedemplot');
+          var captionTextmousedemplot = document.getElementById('captionmousedemplot');
+          imgmousedemplot.onclick = function(){
+            modalmousedemplot.style.display = 'block';
+            modalImgmousedemplot.src = this.src;
+            captionTextmousedemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgmousedemplot.onclick = function() {
+            modalmousedemplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalagedemplot = document.getElementById('modalagedemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgagedemplot = document.getElementById('imgagedemplot');
+          var modalImgagedemplot = document.getElementById('imgmodalagedemplot');
+          var captionTextagedemplot = document.getElementById('captionagedemplot');
+          imgagedemplot.onclick = function(){
+            modalagedemplot.style.display = 'block';
+            modalImgagedemplot.src = this.src;
+            captionTextagedemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgagedemplot.onclick = function() {
+            modalagedemplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalgenderdemplot = document.getElementById('modalgenderdemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imggenderdemplot = document.getElementById('imggenderdemplot');
+          var modalImggenderdemplot = document.getElementById('imgmodalgenderdemplot');
+          var captionTextgenderdemplot = document.getElementById('captiongenderdemplot');
+          imggenderdemplot.onclick = function(){
+            modalgenderdemplot.style.display = 'block';
+            modalImggenderdemplot.src = this.src;
+            captionTextgenderdemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImggenderdemplot.onclick = function() {
+            modalgenderdemplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modaleducationdemplot = document.getElementById('modaleducationdemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgeducationdemplot = document.getElementById('imgeducationdemplot');
+          var modalImgeducationdemplot = document.getElementById('imgmodaleducationdemplot');
+          var captionTexteducationdemplot = document.getElementById('captioneducationdemplot');
+          imgeducationdemplot.onclick = function(){
+            modaleducationdemplot.style.display = 'block';
+            modalImgeducationdemplot.src = this.src;
+            captionTexteducationdemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgeducationdemplot.onclick = function() {
+            modaleducationdemplot.style.display = 'none';
+          }
+</script>
+<script>
+        /* Get the modal*/
+          var modalmousedemplot = document.getElementById('modalmousedemplot');
+        /* Get the image and insert it inside the modal - use its 'alt' text as a caption*/
+          var imgmousedemplot = document.getElementById('imgmousedemplot');
+          var modalImgmousedemplot = document.getElementById('imgmodalmousedemplot');
+          var captionTextmousedemplot = document.getElementById('captionmousedemplot');
+          imgmousedemplot.onclick = function(){
+            modalmousedemplot.style.display = 'block';
+            modalImgmousedemplot.src = this.src;
+            captionTextmousedemplot.innerHTML = this.alt;
+          }
+          /* When the user clicks on the modalImg, close it*/
+          modalImgmousedemplot.onclick = function() {
+            modalmousedemplot.style.display = 'none';
           }
 </script>
 
