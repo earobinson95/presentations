@@ -870,12 +870,12 @@ e_{ijklm,NLS} = \tau_{ijk} + s_{ijk}(x_{ijklm}) + p_{l} + s_{l}(x_{ijklm})
 
 where
 
-+ `\(e_{ijklm,NLS}\)` is the residual between the drawn y-value and fitted y-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(e_{ijklm,NLS}\)` is the residual between the drawn `\(y\)`-value and fitted `\(y\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
 + `\(\tau_{ijk}\)` is the intercept for the `\(i^{th}\)` growth rate, `\(j^{th}\)` point truncation, and `\(k^{th}\)` scale treatment combination
 + `\(s_{ijk}\)` is the smoothing spline for the `\(ijk^{th}\)` treatment combination
-+ `\(x_{ijklm}\)` is the x-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
-+ `\(p_{l} \sim N(0, \sigma^2_{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
-+ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant. 
++ `\(x_{ijklm}\)` is the `\(x\)`-value for the `\(l^{th}\)` participant, `\(m^{th}\)` increment, and `\(ijk^{th}\)` treatment combination 
++ `\(p_{l} \sim N(0, \sigma^2_\text{participant})\)` is the error due to the `\(l^{th}\)` participant's characteristics 
++ `\(s_{l}\)` is the random smoothing spline for the `\(l^{th}\)` participant.
 
 ???
 
@@ -1410,6 +1410,8 @@ class:primary
 16384 − 1536 = 14848
 
 ]
+
+???
 
 Overall, there seemed to be misunderstanding of log logic as demonstrated by misinterpretations and miscalculations of the previous two questions. 
 
