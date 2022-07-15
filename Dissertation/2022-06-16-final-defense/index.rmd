@@ -102,7 +102,7 @@ write("", file = "js-addins.html")
 
 <br><br><br>
 ## Human Perception of Exponentially Increasing Data Displayed on a Log Scale Evaluated Through Experimental Graphics Tasks
-### Ph.D. Final Exmaination
+### Ph.D. Final Examination
 #### Emily A. Robinson
 #### Department of Statistics, University of Nebraska - Lincoln
 <!-- ##### `r fa("envelope", fill = "black")` [emily.robinson@huskers.unl.edu](emily.robinson@huskers.unl.edu) -->
