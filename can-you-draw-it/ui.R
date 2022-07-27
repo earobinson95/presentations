@@ -7,6 +7,7 @@ library(purrr)
 library(gridSVG)
 library(lubridate)
 library(readxl)
+library(renv)
 
 
 ui <- navbarPage(

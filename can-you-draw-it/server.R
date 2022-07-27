@@ -68,7 +68,7 @@ drawr <- function(data,
   }
   
   r2d3::r2d3(data   = data_to_json(data), 
-             script = "www/main-d3v5.js",
+             script = "www/you-draw-it.js",
              d3_version = "5",
              dependencies = c("d3-jetpack"),
              options = list(draw_start        = draw_start, 
