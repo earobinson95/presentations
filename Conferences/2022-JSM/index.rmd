@@ -114,14 +114,6 @@ img_modal <- function(src, alt = "", id = clean_file_name(src), other = "") {
 write("", file = "js-addins.html")
 ```
 
-```{r eyefitting-data, cache = F}
-eyefitting_model_data <- read.csv("data/eyefitting-model-data.csv")
-
-factorCols <- c("nick_name", "study_starttime", "age", "gender", "academic_study",
-                "recruitment", "participant_id", "parm_id", "plot_id")
-eyefitting_model_data[,factorCols] <- lapply(eyefitting_model_data[,factorCols], factor)
-```
-
 <br><br>
 # Eye Fitting Straight Lines in the Modern Era
 ## Joint Statistical Meetings, Washington, D.C.
