@@ -1,0 +1,431 @@
+---
+title: "Introduction to R/RStudio"
+author: "Dr. Robinson"
+format: 
+  revealjs:
+    theme: [default, ../../slide_custom.scss]
+    auto-stretch: false
+editor: source
+self-contained: true
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+```
+
+## Follow along with me! 
+
+:::: {.columns}
+::: {.column width=60%}
+Visit <https://posit.cloud/content/5458223> to access the workshop material.
+:::
+::: {.column width=40%}
+```{r}
+#| fig-align: center
+#| out-width: 100%
+#| fig-subcap: "Image source: https://posit.cloud/"
+knitr::include_graphics("images/posit-cloud-logo.jpg")
+```
+:::
+::::
+
+::: callout-note
+If you do not yet have a [posit Cloud](https://posit.cloud/) (previously known as Rstudio Cloud) account, you will have to sign up!
+:::
+
++ *Illustrations used throughout this presentation by Allison Horst*
++ *Sketches used throughout this presentation by Susan VanderPlas*
+
+## Outline
+
+## What is R? Why R?
+
+## R vs RStudio
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+knitr::include_graphics("images/rvsrstudio.jpg")
+```
+
+## RStudio *Integrated Development Environment* (IDE)
+
+```{r}
+#| out-width: 85%
+#| fig-align: center
+#| fig-alt: "An RStudio window is by default divided into 4 panes, each of which may contain several tabs. You can reconfigure the locations of these tabs based on your preferences by selecting the toolbar button with 4 squares (just left of the Addins dropdown menu)."
+knitr::include_graphics("https://srvanderplas.github.io/stat-computing-r-python/images/tools/Rstudio-important-buttons.png")
+```
+
+## R Scripts
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+#| fig-alt: "The logo on the script file indicates the file type. When an R file is open, there are Run and Source buttons on the top which allow you to run selected lines of code (Run) or source (run) the entire file. Code line numbers are provided on the left (this is a handy way to see where in the code the errors occur), and you can see line:character numbers at the bottom left. At the bottom right, there is another indicator of what type of file Rstudio thinks this is."
+knitr::include_graphics("https://srvanderplas.github.io/stat-computing-r-python/images/tools/Rstudio-editor-pane-buttons.png")
+```
+
+## Quarto Documents
+```{r}
+#| out-width: 100%
+#| fig-align: center
+#| fig-alt: "The logo on the script file indicates the file type. When a quarto markdown file is open, there is a render button at the top which allows you to compile the file to see its “pretty”, non-markup form. In the same toolbar, there are buttons to add a code chunk as well as to run a selcted line of code or chunk of code. You can toggle between source (shown) and visual mode to see a more word-like rendering of the quarto markdown file. Code line numbers are provided on the left (this is a handy way to see where in the code the errors occur), and you can see line:character numbers at the bottom left. At the bottom right, there is another indicator of what type of file Rstudio thinks this is."
+knitr::include_graphics("https://srvanderplas.github.io/stat-computing-r-python/images/tools/Rstudio-editor-pane-buttons-quarto.png")
+```
+
+## Variable Assignment `<-`
+
+We assign objects in R using the syntax `object_name <- value`
+
+```{r}
+#| echo: true
+message <- "So long and thanks for all the fish"
+year <- 2025
+the_answer <- 42L
+earth_demolished <- FALSE
+```
+
+::: callout-note
+This is analogous to object type. We can assign names to variables, vectors, matrices, dataframes, graphs, statistical models, etc. with `<-`.
+:::
+
+## Base R
+
+ 
+
+## Packages
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+```{r}
+#| out-width: 65%
+#| fig-align: center
+#| fig-cap: "Image by Michela Cameletti"
+knitr::include_graphics("https://bookdown.org/michela_cameletti/rcodingfordatascience/images/4_tidyverse-packages.png")
+```
+
+# Create a graph with me!
+
+## Graphics in R
+
+```{r}
+#| out-width: 70%
+#| fig-align: center
+#| fig-alt: "A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads “ggplot2: build a data masterpiece.” Learn more about ggplot2."
+knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/9a306c0a-dac8-413d-ba2e-cc7fd4c4d5c8_rw_1920.png?h=c802991088a9623f1f7aa18c470797ee")
+```
+
+## Palmer Penguins Data
+
+```{r}
+#| echo: true
+library(palmerpenguins)
+data(penguins)
+penguins
+```
+
+::: callout-note
+### Learn more about the data!
+Learn more about the palmer penguins data set [here](https://allisonhorst.github.io/palmerpenguins/).
+:::
+
+## Start with an empty canvas
+
+```{r}
+#| echo: true
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+library(ggplot2)
+ggplot(data = penguins)
+```
+
+## Add $x$ and $y$ aesthetics
+
+```{r}
+#| echo: true
+#| code-line-numbers: 2-4
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm
+                     )
+       )
+```
+
+## Add a geometric layer
+
+```{r}
+#| echo: true
+#| code-line-numbers: 6
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm
+                     )
+       ) +
+  geom_point()
+```
+
+## Fix the axis labels and add a title
+
+```{r}
+#| echo: true
+#| code-line-numbers: 7-10
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm
+                     )
+       ) +
+  geom_point() +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size"
+       )
+```
+
+## Add another layer -- line of best fit
+
+```{r}
+#| echo: true
+#| code-line-numbers: 7
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size"
+       )
+```
+
+. . .
+
+Okay, but that's kind of boring and doesn't look quite right...
+
+## Add color and shape to differentiate the species
+
+```{r}
+#| echo: true
+#| code-line-numbers: 4-5,13-14
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species,
+                     shape = species
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size",
+       color = "Species",
+       shape = "Species"
+       )
+```
+
+## Change the color scale and adjust the axis scales
+
+```{r}
+#| echo: true
+#| code-line-numbers: 16-22
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species,
+                     shape = species
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size",
+       color = "Species",
+       shape = "Species"
+       ) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_x_continuous(limits = c(30, 60), 
+                     breaks = seq(30,60,10)
+                     ) +
+  scale_y_continuous(limits = c(10, 25), 
+                     breaks = seq(10,25,5)
+                     )
+```
+
+## Pick a theme
+
+```{r}
+#| echo: true
+#| code-line-numbers: 23
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species,
+                     shape = species
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size",
+       color = "Species",
+       shape = "Species"
+       ) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_x_continuous(limits = c(30, 60), 
+                     breaks = seq(30,60,10)
+                     ) +
+  scale_y_continuous(limits = c(10, 25), 
+                     breaks = seq(10,25,5)
+                     ) +
+  theme_bw()
+```
+
+## Facet to include island
+
+```{r}
+#| echo: true
+#| code-line-numbers: 10
+#| output-location: column
+#| fig-width: 6
+#| fig-height: 4
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species,
+                     shape = species
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ island) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size",
+       color = "Species",
+       shape = "Species"
+       ) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_x_continuous(limits = c(30, 60), 
+                     breaks = seq(30,60,10)
+                     ) +
+  scale_y_continuous(limits = c(10, 25), 
+                     breaks = seq(10,25,5)
+                     ) +
+  theme_bw()
+```
+
+## Final Graphic
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 6
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species,
+                     shape = species
+                     )
+       ) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~ island) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill depth (mm)",
+       title = "Penguin Bill Size",
+       color = "Species",
+       shape = "Species"
+       ) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_x_continuous(limits = c(30, 60), 
+                     breaks = seq(30,60,10)
+                     ) +
+  scale_y_continuous(limits = c(10, 25), 
+                     breaks = seq(10,25,5)
+                     ) +
+  theme_bw()
+```
+
+## Be creative with R!
+
++ [RShiny Interactive Dashboards](https://shiny.rstudio.com/gallery/)
+
++ [Package Development](https://r-pkgs.org/)
+
++ Create a personal website with [{Blogdown}](https://bookdown.org/yihui/blogdown/) or [{Porfoliodown}](https://business-science.github.io/portfoliodown/)
+
++ Write a book with [{Bookdown}](https://bookdown.org/yihui/bookdown/)
+
+And so much more!
+
+
+## Download R/RStudio
+
+1.  Download and run the R installer for your operating system from CRAN:
+
+    -   Windows: <https://cran.rstudio.com/bin/windows/base/>
+    -   Mac: <https://cran.rstudio.com/bin/macosx/> (double check your macOS version)
+    -   Linux: <https://cran.rstudio.com/bin/linux/> (pick your distribution)
+
+    If you are on Windows, you should also install the [Rtools4 package](https://cran.rstudio.com/bin/windows/Rtools/); this will ensure you get fewer warnings later when installing packages.
+
+    More detailed instructions for Windows are available [here](https://owi.usgs.gov/R/training-curriculum/installr/)
+
+2.  Download and install the [latest version of RStudio](https://www.rstudio.com/products/rstudio/download/#download) for your operating system.
+
+## Welcome to the R Community!
+
+:::: columns
+::: column
+
+:::
+::: column
+```{r}
+#| out-width: 100%
+#| fig-align: center
+#| fig-alt: "Two fuzzy monsters standing side-by-side outside of a door frame through which is a magical wonderland of different R communities, with a “mind blown” rainbow coming out of the one closest to the door. A welcome mat says “Welcome.”"
+knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/ef5356a8-a9ee-4a54-9b62-7e1c4cb9f723_rw_1920.png?h=2da8ae510b02b70f895d2a79946c5f3d")
+```
+:::
+::::
+
+## Classes at Cal Poly
+
++ Stat 331/531: Introduction to Statistical Computing
+
+  
