@@ -1,0 +1,86 @@
+---
+title: "Introduction to R Workshop"
+subtitle: "Cal Poly Quantitative Analysis Club"
+format: 
+  pdf:
+    self-contained: true
+editor: visual
+execute:
+  message: false
+  warning: false
+  error: true
+---
+
+[Link to workshop slides](file:///C:/Users/erobin17/Documents/presentations/Seminars/2023.03.02-quantiative-analysis-intro-to-r/intro-to-r.html#/title-slide)
+
+# Introduction to R
+
+R is a programming language designed originally for *statistical analyses.*
+
+# Variable Assignment 
+
+We assign objects in R using the syntax `object_name <- value`
+
+```{r}
+message <- "So long and thanks for all the fish"
+message
+year <- 2025
+year
+
+## Add the answer and earth_demolished below
+
+```
+
+# Functions & Function Arguments
+
++ `vec` -- object name
++ `seq` -- function name
++ `from`, `to`, `by` -- function arguments
+
+```{r}
+vec <- seq(from = 1, to = 10, by = 2)
+vec
+```
+
+```{r}
+# Other example base functionality
+
+```
+
+# Packages
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+# Create a graph with me! `ggplot`
+
+Let's load in the data -- learn more about the Palmer Penguins data [here](https://allisonhorst.github.io/palmerpenguins/).
+
+```{r}
+library(palmerpenguins)
+data(penguins)
+head(penguins)
+```
+Add the `ggplot` layers to the code below:
+
+```{r}
+library(ggplot2)
+ggplot(data = penguins)
+
+```
+# Download R/RStudio
+
+1.  Download and run the R installer for your operating system from CRAN:
+
+    -   Windows: <https://cran.rstudio.com/bin/windows/base/>
+    -   Mac: <https://cran.rstudio.com/bin/macosx/> (double check your macOS version)
+    -   Linux: <https://cran.rstudio.com/bin/linux/> (pick your distribution)
+
+    If you are on Windows, you should also install the [Rtools4 package](https://cran.rstudio.com/bin/windows/Rtools/); this will ensure you get fewer warnings later when installing packages.
+
+    More detailed instructions for Windows are available [here](https://owi.usgs.gov/R/training-curriculum/installr/)
+
+2.  Download and install the [latest version of RStudio](https://www.rstudio.com/products/rstudio/download/#download) for your operating system.
+

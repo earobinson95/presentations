@@ -15,39 +15,60 @@ self-contained: true
 library(tidyverse)
 ```
 
-## Follow along with me! 
+## Follow along with me!
 
 :::: {.columns}
 ::: {.column width=60%}
-Visit <https://posit.cloud/content/5458223> to access the workshop material.
+Visit <https://posit.cloud/content/5458223> to access the workshop material.^[Illustrations used throughout this presentation by Allison Horst; Sketches used throughout this presentation by Susan VanderPlas]
 :::
 ::: {.column width=40%}
 ```{r}
 #| fig-align: center
 #| out-width: 100%
-#| fig-subcap: "Image source: https://posit.cloud/"
 knitr::include_graphics("images/posit-cloud-logo.jpg")
 ```
 :::
 ::::
 
 ::: callout-note
-If you do not yet have a [posit Cloud](https://posit.cloud/) (previously known as Rstudio Cloud) account, you will have to sign up!
+If you do not yet have a [posit Cloud](https://posit.cloud/)^[Image source: https://posit.cloud/] (previously known as Rstudio Cloud) account, you will have to sign up!
 :::
-
-+ *Illustrations used throughout this presentation by Allison Horst*
-+ *Sketches used throughout this presentation by Susan VanderPlas*
 
 ## Outline
 
++ Intro to R/RStudio
++ Packages
++ Create a graph with me!
++ Continuing with R
+
 ## What is R? Why R?
+
+R is a programming language designed originally for *statistical analyses.*
+
+:::: columns
+::: column
+**Strengths**
+
++ handle data with a lot of different types of variables.
++ make nice and complex data visualizations.
++ have cutting-edge statistical methods available to users.
++ automate reporting with R Markdown / Quarto documents.
+:::
+::: column
+**Weaknesses**
+
++ performing non-analysis programming tasks, like website creation.
++ hyper-efficient numerical computation.
++ being a simple tool for all audiences.
+:::
+::::
 
 ## R vs RStudio
 
 ```{r}
 #| out-width: 100%
 #| fig-align: center
-knitr::include_graphics("images/rvsrstudio.jpg")
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png")
 ```
 
 ## RStudio *Integrated Development Environment* (IDE)
@@ -92,8 +113,31 @@ earth_demolished <- FALSE
 This is analogous to object type. We can assign names to variables, vectors, matrices, dataframes, graphs, statistical models, etc. with `<-`.
 :::
 
-## Base R
+## Base R & Function Arguments
 
+::: callout-note
+### R Core Group
+R was formally released by the **R Core Group** in 1997: <https://www.r-project.org/contributors.html>
+
+This group of 20-ish volunteers are the only people who can change the base (built-in) functionality of R.
+:::
+
++ Base functions are a set of functions in the R programming language that are included in the base package.
+
++ These functions provide a wide range of functionality, including mathematical operations, statistical functions, data manipulation, and input/output operations.
+
+```{r}
+#| echo: true
+vec <- seq(from = 1, to = 10, by = 2)
+vec
+mean(x = vec)
+new_vec <- vec*2
+new_vec
+```
+
+::: {.notes}
+Base functions are a set of functions in the R programming language that are included in the base package, which is automatically installed and loaded when the R problem executes. These functions provide a wide range of functionality, including mathematical operations, statistical functions, data manipulation, and input/output operations.
+:::
  
 
 ## Packages
@@ -111,6 +155,14 @@ library(tidyverse)
 #| fig-cap: "Image by Michela Cameletti"
 knitr::include_graphics("https://bookdown.org/michela_cameletti/rcodingfordatascience/images/4_tidyverse-packages.png")
 ```
+
+::: {.notes}
+The heart and soul of R is packages.
+
++ These are "extra" sets of code that add new functionality to R when installed.
++ "Official" R packages live on the Comprehensive R Archive Network, or CRAN
++ But anyone can write and share new code in "package form"
+:::
 
 # Create a graph with me!
 
@@ -381,7 +433,7 @@ ggplot(data = penguins,
   theme_bw()
 ```
 
-## Be creative with R!
+## Be creative with R!  {background-image="https://www.topuniversities.com/sites/default/files/articles/lead-images/creative_thinking.jpg" background-opacity="0.1"}
 
 + [RShiny Interactive Dashboards](https://shiny.rstudio.com/gallery/)
 
@@ -408,11 +460,40 @@ And so much more!
 
 2.  Download and install the [latest version of RStudio](https://www.rstudio.com/products/rstudio/download/#download) for your operating system.
 
+## Getting Help
+
+:::: columns
+::: column
++ In `R`, you can access help with a `?` or `help()`
+
+```{r}
+#| echo: true
+#| eval: false
+?mean
+help(mean)
+```
+
++ w3schools has an excellent `R` [help on basic functions](https://www.w3schools.com/r/r_for_loop.asp)
++ Google is your friend!
+:::
+::: column
+![](https://media3.giphy.com/media/3oKIPmM4hkQIf4p5T2/source.gif)
+:::
+::::
+
 ## Welcome to the R Community!
 
 :::: columns
 ::: column
++ [R-bloggers](https://www.r-bloggers.com/)
 
++ [Posit Community Forum](https://community.rstudio.com/)
+
++ [r4ds Online Learning Community](https://www.rfordatasci.com/)
+
++ [R Ladies](https://www.rladies.org/)
+
++ [Rstats Twitter](https://twitter.com/rstatstweet?lang=en)
 :::
 ::: column
 ```{r}
@@ -426,6 +507,13 @@ knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b14
 
 ## Classes at Cal Poly
 
-+ Stat 331/531: Introduction to Statistical Computing
+Classes in the Department of Statistics with a focus on learning R:
 
++ STAT 331/531: Introduction to Statistical Computing
++ STAT 431/541: Advanced Statistical Computing with R
++ STAT 551: Statistical Learning with R
+
+Many other courses in the department make use of R software for the purpose of learning statistical concepts.
+
+# Questions?
   
