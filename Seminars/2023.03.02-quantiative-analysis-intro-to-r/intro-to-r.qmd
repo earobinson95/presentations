@@ -77,7 +77,7 @@ knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147
 #| out-width: 85%
 #| fig-align: center
 #| fig-alt: "An RStudio window is by default divided into 4 panes, each of which may contain several tabs. You can reconfigure the locations of these tabs based on your preferences by selecting the toolbar button with 4 squares (just left of the Addins dropdown menu)."
-knitr::include_graphics("https://srvanderplas.github.io/stat-computing-r-python/images/tools/Rstudio-important-buttons.png")
+knitr::include_graphics("images/Rstudio-important-buttons.png")
 ```
 
 ## R Scripts
@@ -186,7 +186,7 @@ penguins
 
 ::: callout-note
 ### Learn more about the data!
-Learn more about the palmer penguins data set [here](https://allisonhorst.github.io/palmerpenguins/).
+Learn more about the Palmer Penguins data set [here](https://allisonhorst.github.io/palmerpenguins/).
 :::
 
 ## Start with an empty canvas
@@ -509,7 +509,7 @@ knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b14
 
 Classes in the Department of Statistics with a focus on learning R:
 
-+ STAT 331/531: Introduction to Statistical Computing
++ STAT 331/531: Introduction to Statistical Computing with R
 + STAT 431/541: Advanced Statistical Computing with R
 + STAT 551: Statistical Learning with R
 
