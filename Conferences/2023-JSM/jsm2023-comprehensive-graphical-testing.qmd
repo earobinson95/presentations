@@ -1,0 +1,58 @@
+---
+title: "Comprehensive Graphical Testing for Exponentially Increasing Data"
+title-slide-attributes:
+    data-background-image: images/linear-log-scales.png
+    data-background-size: contain
+    data-background-opacity: "0.1"
+author: "Emily Robinson, Reka Howard, Susan VanderPlas"
+date: August 8, 2023
+format:
+  revealjs:
+    theme: [default, ../../slide_custom.scss]
+    auto-stretch: false
+editor: source
+embed-resources: true
+execute:
+  echo: false
+width: 1244.445
+height: 700
+---
+
+```{r setup}
+#| include: false
+# Packages
+library(emoji)
+library(purrr)
+library(tidyverse)
+library(gridExtra)
+library(nullabor)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(RefManageR)
+library(iconr)
+library(fontawesome)
+
+# References
+# bib <- ReadBib("bib/thesis.bib", check = FALSE)
+# ui <- "- "
+```
+
+## Outline {background-color="#003831" background-opacity=0.5}
+
+## Testing statistical graphics
+
+Evaluate design choices and understand cognitive biases through the use of visual tests.
+
+Could ask participants to:
+
+- identify differences in graphs.
+- read information off of a chart accurately.
+- use data to make correct real-world decisions.
+- predict the next few observations.
+
+All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+
+# {background-image="images/study-homepage.jpg" background-size=contain}
+
+## Future Work
