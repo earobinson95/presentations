@@ -1,21 +1,26 @@
 ---
 title: "Comprehensive Graphical Testing for Exponentially Increasing Data"
+subtitle: "JSM 2023, Toronto, CA"
 title-slide-attributes:
-    data-background-image: images/linear-log-scales.png
+    # data-background-color: "#FFFFFF"
+    # data-background-color: "#003831"
+    data-background-image: images/study-homepage.jpg
     data-background-size: contain
-    data-background-opacity: "0.1"
+    data-background-opacity: "0.25"
 author: "Emily Robinson, Reka Howard, Susan VanderPlas"
-date: August 8, 2023
+# date: August 8, 2023
 format:
   revealjs:
     theme: [default, ../../slide_custom.scss]
     auto-stretch: false
+    logo: "images/cp_hex_logo.png"
 editor: source
 embed-resources: true
 execute:
   echo: false
 width: 1244.445
 height: 700
+bibliography: references.bib
 ---
 
 ```{r setup}
@@ -38,7 +43,64 @@ library(fontawesome)
 # ui <- "- "
 ```
 
-## Outline {background-color="#003831" background-opacity=0.5}
+## Outline
+
+## Log scales
+
+<!-- **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic. -->
+
+<!-- **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially. -->
+
+::: r-stack
+```{r}
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-03.23.2020-log.png")
+```
+
+::: fragment
+```{r}
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-linear.png")
+```
+:::
+
+::: fragment
+```{r}
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-log.png")
+```
+:::
+:::
+
+::: notes
+The motivation for this work came from the large impact graphics and charts have had during the COVID-19 pandemic. Many of these graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing, as well as facilitated communication with the public to increase compliance.
+
+As graphics began to play an important role in sharing information with the public, it was crucial to start asking what made some of these charts better than others? Creators of the graphics were faced with many design choices in order to ensure their charts were effective at accurately communicating the current status of the pandemic.
+
+In order to make educated decisions when designing a chart, we need to establish guidelines through experimentation in order to ensure the graphic is effective at communicating the intended results.
+
+A major issue we encountered in the creation of COVID-19 plots was how to display data from a wide range of values.
+
+-   **Problem:** Data which spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
+-   **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+
+-   Large magnitude discrepancies in case counts at a given time point between different geographic regions.
+-   Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart.
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+-   Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
+-   The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
+
+While this is one such example, there is a long history of using log scales to display results in ecology, psychophysics, engineering, and physics. Given the widespread use of logarithmic scales, it is important to understand the implications of their use in order to provide guidelines for best use.
+:::
+
+# {background-image="images/exponential-stages-comic.jpg" background-size="contain"}
 
 ## Testing statistical graphics
 
@@ -46,13 +108,538 @@ Evaluate design choices and understand cognitive biases through the use of visua
 
 Could ask participants to:
 
-- identify differences in graphs.
-- read information off of a chart accurately.
-- use data to make correct real-world decisions.
-- predict the next few observations.
+-   identify differences in graphs.
+-   read information off of a chart accurately.
+-   use data to make correct real-world decisions.
+-   predict the next few observations.
 
 All of these types of tests require different levels of use and manipulation of the information presented in the chart.
 
-# {background-image="images/study-homepage.jpg" background-size=contain}
+::: notes
+One way in which we establish guidelines is through the use of graphical testing methods. This allows researchers to conduct studies geared at understanding human ability to conduct tasks related to the perception of statistical charts. These tests may take many forms such as identifying differences in graphs, accurately reading information off a chart, using data to make correct real-world decisions, or predicting the next few observations. All of these types of tests require different levels of use and manipulation of the information presented in the chart.
+:::
 
-## Future Work
+## Task complexity
+
+[@carpenter] identifies pattern recognition, interpretative processes, and integrative processes as strategies and processes required to complete tasks of varying degrees of complexity.
+
+-   **Pattern recognition** requires the viewer to encode graphic patterns.
+
+-   **Interpretive processes** operate on those patterns to construct meaning.
+
+-   **Integrative processes** then relate the meanings to the contextual scenario as inferred from labels and titles.
+
+::: notes
+In this section, we will take a look at how different graphical tasks are related to different levels of cognition and how that relates to my research objectives.
+
+In order to understand how our visual system perceives statistical charts, we must first consider the complexity of the graphic and how viewers are interacting with the data and information being displayed. Pattern recognition requires the viewer to encode graphic patterns while interpretive processes operate on those patterns to construct meaning. Integrative processes then relate the meanings to the contextual scenario as inferred from labels and titles. We will see how these three levels of task complexity relate to the research objectives of our study.
+:::
+
+## Research objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+::: incremental
+1.  **Perception through Lineups** -- tests an individual's ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+
+2.  **Prediction with 'You Draw It'** -- tests an individual's ability to make predictions for exponentially increasing data.
+
+3.  **Estimation by Numerical Translation** -- tests an individual's ability to translate a graph of exponentially increasing data into real value quantities.
+:::
+
+::: notes
+In this research, we conducted a series of three graphical studies to evaluate the impact displaying data on the log scale has on human perception of exponentially increasing trends compared to displaying data on the linear scale. Each study was related to a different graphical task, each requiring a different level of interaction and cognitive use of the data being presented.
+
+1.  The first experiment evaluated whether our ability to perceptually notice differences in exponentially increasing trends is impacted by the choice of scale. These perceptual differences are identified through pattern recognition.
+2.  The second study tested an individuals ability to make predictions for exponentially increasing data and required integrative processes by operate on the patterns to construct meaning.
+3.  The last and third study tested an individual's ability to translate a graph of exponentially increasing data into real value quantitites and extend these estmiates by making comparisons.
+
+Combined, the three studies provide a comprehensive evaluation of the impact of displaying exponentially increasing data on a log scale as it relates to perception, prediction, and estimation. The results of these studies help us make recommendations and provide guidelines for the use of log scales.
+:::
+
+#  {background-image="images/study-homepage.jpg" background-size="contain"}
+
+::: notes
+-   About 300 participants were recruited via Prolific in March 2022.
+-   The series of graphical tests were conducted through an RShiny application found [here](https://shiny.srvanderplas.com/perception-of-statistical-graphics/).
+
+The final participant recruitment and study deployment were conducted via Prolific, a crowd sourcing website, in March 2022. Participants were provided a link to an R Shiny application that asked them demographic information and then guided them through all three studies. For the final data collection, we collected data for about 300 participants for each study; this was the final data set used for analysis in my research.
+:::
+
+# Perception through lineups {background-color="#003831" background-opacity="0.5"}
+
+## Lineup experimental task
+
+Study Participant Prompt: *Which plot is most different?*
+
+::: r-stack
+```{r}
+#| out-width: 55%
+#| fig-align: center
+knitr::include_graphics("images/linear-lineup-example.png")
+```
+
+::: fragment
+```{r}
+#| out-width: 55%
+#| fig-align: center
+knitr::include_graphics("images/log-lineup-example.png")
+```
+:::
+:::
+
+::: notes
+We used statistical lineups to test participants perception of exponentially increasing data. 'Lineups' are named after the 'police lineup' of criminal investigations where witnesses are asked to identify the criminal from a set of individuals. Similarly, a statistical lineup is a plot consisting of smaller panels where the viewer is asked to identify the panel containing the real data from among a set of decoy null plots.
+
+Here we see an example of statistical lineups as shown in the first study. Notice how it is much easier to pick out panel 13 as being most different when displayed on the log scale (right) than on the linear scale (left).
+:::
+
+## Lineup study design
+
+```{r}
+#| fig-align: center
+#| out-width: 100%
+knitr::include_graphics("images/lineup-trt-design.PNG")
+```
+
+::: {.notes}
+
+**Treatment Design:** Target Panel gets model A and Null Panels get model B
+
+$3!\cdot 2!= 6$ curvature combinations
+ 
+$\times 2$ lineup data sets per combination $=$ **12 test data sets**
+
+$\times 2$ scales (log & linear) $=$ **24 different lineup plots**
+
+**Experimental Design:** 12 lineup plots per participant
+
+$6$ test parameter combinations per participant $\times 2$ scales $= 12$ test lineups
+
+We used a 'goldilocks' type of approach to select coefficients related to three levels of curvature (low, medium, and high) for our data simulation. 
+
+The lineups were then created by looking at combinations of each of these curvature levels where the data in the target panel was simulated with equation A and the data in the null panels were simulated with equation B for a total of 6 curvature combinations.
+
+We simulated 2 replicate data sets of each curvature combinations and each data set was plotted on botht he log and linear scales for a total of 24 different lineup plots to select from. Each participant ended up evaluating 12 lineup plots and ideally saw one of each of the 6 curvature combinations on both scales.
+:::
+
+## Lineup results
+
+```{r}
+#| fig-align: center
+#| out-width: 75%
+knitr::include_graphics("images/lineup-results.png")
+```
+
+::: notes
+Estimated (log) odds ratio of successfully identifying the target panel on the log scale compared to the linear scale. The y-axis indicates the the model parameters used to simulate the null plots with the target plot model parameter selection designated by shape and shade of green. The thumbnail figures on the right display the curvature combination as shown previously on both scales (linear - left, log - right).
+
+The results indicated the choice of scale changes the contextual appearance of the data leading to slight perceptual advantages for both scales depending on the curvatures of the trend lines being compared.
+:::
+
+# Prediction through 'You Draw It' {background-color="#003831" background-opacity="0.5"}
+
+::: notes
+The second study evaluated participants ability to make forecast predictions of exponentially increasing data.
+:::
+
+## 'You Draw It' experimental task
+
+Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+```{r}
+#| out-width: 50%
+#| fig-align: center
+knitr::include_graphics("images/exponential_example.gif")
+```
+
+::: notes
+In 2015, the New York Times introduced an interactive feature, called 'You Draw It', where readers input their own assumptions about various metrics and compare how these assumptions relate to reality. The Times team utilizes Data Driven Documents (D3) that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse. We adapted this feature as a way to measure the patterns we see in data and compare intuitive visual model fitting and statistical model fitting. In the study, participants were shown a series of 'You Draw It' interactive task plots and asked to "Use your mouse to fill in the trend in the yellow box region." The yellow box region moves along as the participant draws their trend-line until the yellow region disappears, providing a visual cue for the task.
+:::
+
+## 'You Draw It' study design
+
+:::: {.columns}
+::: {.column width="25%"}
+```{r}
+knitr::include_graphics("images/low-10-linear.png")
+```
+
+```{r}
+knitr::include_graphics("images/low-10-log.png")
+```
+
+Low Growth Rate
+
+50% Truncation
+:::
+::: {.column width="25%"}
+```{r}
+knitr::include_graphics("images/low-15-linear.png")
+```
+
+```{r}
+knitr::include_graphics("images/low-15-log.png")
+```
+
+Low Growth Rate
+
+75% Truncation
+:::
+::: {.column width="25%"}
+
+```{r}
+knitr::include_graphics("images/high-10-linear.png")
+```
+
+```{r}
+knitr::include_graphics("images/high-10-log.png")
+```
+
+High Growth Rate
+
+50% Truncation
+:::
+::: {.column width="25%"}
+```{r}
+knitr::include_graphics("images/high-15-linear.png")
+```
+
+```{r}
+knitr::include_graphics("images/high-15-log.png")
+```
+
+High Growth Rate
+
+75% Truncation
+:::
+::::
+
+::: {.notes}
+For this study, data were simulated based on a one-parameter exponential model. We designed a 2x2x2 factorial treatment design where we are looking at the effect of growth rate, having the aid of points, and of course the effect of scale. This creates a total of 8 treatment combinations for 'You Draw It' plots in which participants were shown in random order.
+:::
+
+## 'You Draw It' prediction results
+
+```{r}
+#| out-width: 53%
+#| fig-align: center
+knitr::include_graphics("images/exponential-yloess-spaghetti-plot-1.png")
+```
+
+## 'You Draw It' prediction results
+
+```{r}
+#| out-width: 55%
+#| fig-align: center
+knitr::include_graphics("images/exponential-prediction-gamm-preds-1.png")
+```
+
+<!-- ::: r-stack -->
+<!-- ```{r} -->
+<!-- knitr::include_graphics("images/exponential-prediction-gamm-preds-2.png") -->
+<!-- ``` -->
+
+<!-- ::: fragment -->
+<!-- ```{r} -->
+<!-- knitr::include_graphics("images/exponential-prediction-gamm-preds-3.png") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+
+::: notes
+The results from the analysis showed a clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
+:::
+
+# Numerical Translation and Estimation {background-color="#003831" background-opacity="0.5"}
+
+::: notes
+The previous two studies explored the use of log scales through differentiation and visual prediction of trends. These did not depend on context and instead focused on how our visual system perceives and identifies patterns in exponential growth.
+
+In order to understand the cognitive implications of displaying exponentially increasing data on a log scale, we evaluated graph comprehension as it relates to the contextual scenario of the data shown.
+:::
+
+# Integrative processes
+
+**Graph Comprehension**
+
+The three behaviors related to graph comprehension involve "curcio1987comprehension", "friel2001making", "glazer2011challenges", "jolliffe1991assessment", "wood1968objectives".
+
+1.  literal reading of the data (elementary level)
+2.  reading between the data (intermediate level)
+3.  reading beyond the data (advanced level).
+
+**Estimation Biases**
+
+-   Anchoring "tan1990processing" and rounding to multiples of five or ten "myers1954accuracy" arise in open-ended estimation tasks.
+-   Scale and axis labels are other critical factors in estimation accuracy "dunham1991learning", "beeby1973well", "leinhardt1990functions".
+
+::: notes
+This study involved integrative processes which required viewers to translate the visual features into conceptual relations by interpreting titles, labels, and scales.
+
+An important consideration in understanding graph comprehension is the questions being asked of the viewer. Three levels of graph comprehension have emerged from mathematics education research: literal reading of the data (elementary level), reading between the data (intermediate level), and reading beyond the data (advanced level).
+
+While not exclusive to extracting numerical values from charts, mathematics education also places an emphasis on quantitative estimation skills such as providing an estimated length of a string or weight of a box.
+
+With open ended estimation tasks, certain biases including anchoring and rounding to multiples of five or ten arise.
+
+-   Beeby & Taylor (1973) found that when asked to read data from line graphs, viewers consistently misread the y-axis scale; when alternate grid lines were labeled, the unlabeled grid lines were read as halves.
+-   The choice of scale can change the shape of a graph, thus creating a conceptual demand for the viewer when constructing a mental image of the graph (Leinhardt, Zaslavsky, & Stein, 1990)
+:::
+
+## Simulated Data
+
+::: r-stack
+```{r}
+knitr::include_graphics("images/estimation-simulated-data-1.jpg")
+```
+
+::: fragment
+```{r}
+knitr::include_graphics("images/estimation-simulated-data-2.jpg")
+```
+:::
+:::
+
+::: notes
+
+The time unit labels on the x-axis reflected 0 to 50 ABY (After Battle of Yavin) for the Ewok scenario and were adjusted to 4500 to 4550 stardates for the Tribble Scenario to align with the associated popular media depiction of each figure.
+s
+Two unique data sets were generated with the same underlying parameter coefficients, but different errors randomly generated from the same error distribution. Notice in particular that some of the simulated points fall farther from the "true value" or underlying curve. *For example, year 40 in data set 2.*
+
+This figure displays scatter plots of the two unique data sets on both the linear and log base two scales. A log base two was selected in order to aid in participants estimation of time until the population doubled in the third intermediate question.
+
+I will refer to the time unit as year, but during the study, the time unit labels on the x-axis aligned with the associated popular media depiction of each figure. This was also meant to disguise the use of the same underlying data simulation model and estimation questions across both scenarios.
+:::
+
+## Questioning
+
+```{r}
+#| out-width: 65%
+estimation_questions <- read_csv("images/estimation-questions.csv")
+estimation_questions %>%
+  filter(q_id != "scenario") %>%
+  pivot_wider(id_cols = "q_id",
+              names_from = "creature",
+              values_from = "qtext") %>%
+  mutate(q_id = c("Open Ended", "Elementary Q1", "Elementary Q2", "Intermediate Q1", "Intermediate Q2", "Intermediate Q3")) %>%
+  kableExtra::kable("html", booktabs = T, col.names = c("Question type", "Tribble scenario", "Ewok scenario"))  %>%
+  kableExtra::column_spec(2:3, width = "16em")
+```
+
+::: notes
+We selected two scenarios and provided text to participants describing a context in which populations of fuzzy fictional characters from star trek and star wars are growing exponentially over periods of time. We wanted to go with a fun context to avoid any personal opinions or biases affecting the results.
+
+We then selected 6 questions related to each scenario. The open ended question was meant to prompt the participants to take time to inspect the graph while the two intermediate questions are related to the literal reading and estimation of population and year respectively. There were three intermediate questions selected to address the additive increase in population between two years, the multiplicative change in population between two years, and the amount of time it took the population to double from a certain year.
+
+We did not focus on advanced level questioning since extrapolation and interpolation were addressed in the second study.
+
+Each of these questions will again be presented in the following slides of results.
+:::
+
+## Estimation strategy
+
+```{r}
+#| out-width: 50%
+#| fig-align: center
+knitr::include_graphics("images/estimation-scratchwork-app.png")
+```
+
+
+::: notes
+For quantitative estimation questions, we provided basic calculator and scratch pad resources for participants to use. We recorded the inputted and evaluated calculations and scratch work of each participant in order to better understand participant strategies for estimation.
+:::
+
+## Estimation results
+
+::: notes
+The data set used for analysis contained the unique participant identification and indicated the scenario, scale, data set, and estimation question along with the participant text response or quantitative estimate, calculation input and evaluation, and associated scratch work.
+
+An array of graphical displays allow for visual inspection of participant responses and provide suggestions about the cognitive implications of displaying exponentially increasing data on the log scale.
+
+I am now going to present results from the study as they relate to each of the six questions asked.
+:::
+
+## Main take-aways
+
+-   Understanding log logic is difficult.
+
+-   Accuracy greatly depends on the location of the value being estimated in relation to the magnitude.
+
+-   Strong anchoring and rounding effects.
+
+    -   Participants were resistance to estimate between grid lines on the log scale.
+
+    -   Inaccurate representation of equating spatial distance to quantitative difference.
+
+-   Inaccurate first level estimations can lead to consequences in estimations which require participants to make comparisons between two points.
+
+-   Estimates were subjective to the simulated data set.
+
+::: notes
+This study was intended to aid in understanding the cognitive implications of displaying exponentially increasing data on a log scale.
+
+Some of the main take aways from this study are shown here. Overall, we provide argument that understanding log logic is difficult and that the accuracy greatly depends on the location of the value being estimated in relation to the magnitude.
+
+We found biases related to strong anchoring and rounding effects as participants were resistant to estimate between grid lines on the log scale and had inaccurate representations of equating that spatial distance to the quantitative difference.
+
+This inaccuracy in first-level estimations showed a clear consequence in estimations which required participants to make comparisons between two points.
+
+The use of two unique data sets allowed us to look at how estimates are very subjective to the simulated data set as some participants are actually reading the data off of the plot and not basing estimates off the underlying trend.
+:::
+
+# Conclusion and Discussion {background-color="#003831" background-opacity="0.5"}
+
+## Conclusions
+
+**Perception**
+
+-   Perceptual differences result from the contextual appearance (depends on choice of scale) of the trends.
+
+**Prediction**
+
+-   Clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
+
+**Estimation**
+
+-   Log logic is difficult and that we often misinterpret and miscalculate multiplicative reasoning.
+-   Estimation accuracy for small magnitudes was improved by the use of the log scale, but sacrifices in accuracy on the log scale became apparent as magnitudes increased leading to advantages on the linear scale.
+
+::: notes
+This research evaluated the use of log scales to display exponentially increasing data from three different angles and levels of complexity: perception, prediction, and estimation. Each study provided us insight into the advantages and disadvantages of displaying exponentially increasing data on a log scale and in what context each choice of scale might be more appropriate.
+
+The first study laid the foundation for the future studies. Results from this study indicated the choice of scale changes the contextual appearance of the data leading to slight perceptual advantages for both scales depending on the curvatures of the trend lines being compared.
+
+The second study tested participant's abilities to make forecast predictions for exponentially increasing trends on both scales. The results from the analysis showed a clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale and improvements in forecasts were made when participants were asked to make predictions on the log scale.
+
+The third study evaluated graph comprehension as it relates to the contextual scenario of the data shown. Overall, our results suggested that log logic is difficult and that anchoring and rounding biases result in a sacrifice in accuracy in estimates made on the log scale for large magnitudes.
+:::
+
+## Overall Recommendations
+
+-   Perceptual advantages of the use of log scales due to the change in contextual appearance.
+
+-   Our understanding of log logic is flawed when translating the information into context.
+
+-   We recommend consideration of both user needs and graph specific tasks when presenting data on the log scale.
+
+-   Caution should be taken when interpretation of large magnitudes is required, but advantages may appear when it is necessary to visually identify and interpret small magnitudes on the chart.
+
+::: notes
+This research evaluated the use of log scales to display exponentially increasing data from three different angles and levels of complexity: perception, prediction, and estimation. Each study provided us insight into the advantages and disadvantages of displaying exponentially increasing data on a log scale and in what context each choice of scale might be more appropriate.
+
+The results are instrumental in establishing guidelines for making design choices about scale which result in data visualizations effective at communicating the intended results.
+
+We recommend understanding the contextual appearance log scales have on the data being displayed and the perceptual advantages and disadvantages that come with each. It is also important to recognize that our understanding of log logic is flawed when translating this information into context.
+
+In general, it is important to consideration of both user needs and graph specific tasks when presenting data on the log scale. Caution should be taken when interpretation of large magnitudes is required, but advantages may appear when it is necessary to visually identify and interpret small magnitudes on the chart.
+:::
+
+# Future work {background-color="#003831" background-opacity="0.5"}
+
+<!-- -   Combine participant data across all three studies to conduct a comprhensive analysis. -->
+
+<!-- -   Potential follow-up studies: -->
+
+<!--     -   Providing users the ability to interact with the graph with visual aids in order to better understand strategies of estimation. -->
+<!--     -   Additional study which focuses on how we make decisions based on data displayed on a log scale in order to evaluate the effect of scale on risk adversity. -->
+
+<!-- -   Expand the use of log scales to data which does not follow an exponential trend, but where log scales are otherwise appropriate. -->
+
+<!-- -   Evaluate the implications of transforming or displaying the $x$-axis on a log scale. -->
+
+<!-- -   More widespread use of comprehensive graphical studies conducted on the same type of data and plot. -->
+
+::: notes
+Follow-up studies for this research could provide further insight into the strategies of estimation by providing users the ability to interact with the graph with visual aids such as the arrows shown in sketches from the estimation study and how we make decisions based on data displayed on a log scale to evaluate the effect of scale on risk adversity.
+
+This research stands as a model for conducting an extensive series of graphical tasks on the same type of data and plot in order to gain a comprehensive understanding of both the perceptual and cognitive implications of the design choices.
+
+
+-   Combine participant data across all three studies to conduct a comprhensive analysis.
+
+-   Potential follow-up studies:
+
+    -   Providing users the ability to interact with the graph with visual aids in order to better understand strategies of estimation.
+    -   Additional study which focuses on how we make decisions based on data displayed on a log scale in order to evaluate the effect of scale on risk adversity.
+
+-   Expand the use of log scales to data which does not follow an exponential trend, but where log scales are otherwise appropriate.
+
+-   Evaluate the implications of transforming or displaying the $x$-axis on a log scale.
+
+-   More widespread use of comprehensive graphical studies conducted on the same type of data and plot.
+:::
+
+## References
+
+# Appendix {background-color="#003831" background-opacity="0.5"}
+
+## Lineup GLMM
+
+Define $Y_{ijkl}$ to be the event that participant $l$ correctly identifies the target plot for data set $k$ with curvature $j$ plotted on scale $i$.
+
+$$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$
+
+where
+
+- $\eta$ is the baseline average probability of selecting the target plot. 
+- $\delta_i$ is the effect of the log/linear scale.
+- $\gamma_j$ is the effect of the curvature combination.
+- $\delta\gamma_{ij}$is the two-way interaction effect of the scale and curvature.
+- $s_l \sim N(0,\sigma^2_\text{participant})$, random effect for participant characteristics.
+- $d_k \sim N(0,\sigma^2_{\text{data}})$, random effect for data specific characteristics.
+
+We assume that random effects for data set and participant are independent.
+
+::: {.notes}
+
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function. Here we included both main effects and interactions for the curvature combination and scale while account for the participant and data specific characteristics with random effects.
+
+:::
+
+## Feedback data
+
+For each participant, the final data set used for analysis contains:
+
++ $x_{ijklm}$, $y_{ijklm,drawn}$, and $\hat y_{ijklm,NLS}$  
+
+for:
+
++ growth rate $i = 1,2$,
++ point truncation $j = 1,2$,
++ scale $k = 1,2$,
++ participant  $l = 1,...N_{participant}$, and 
++ $x_{ijklm}$ value $m = 1, ...,4 x_{max} + 1$. 
+
+Vertical residuals between the drawn and fitted values were calculated as: 
++ $e_{ijklm,NLS} = y_{ijklm,drawn} - \hat y_{ijklm,NLS}$.
+
+::: {.notes}
+Out of the study, we save the participant feedback data to a data base for analysis. Here we see a spaghetti plots of results. Participants drawn lines on the linear scale are shown in blue and the log scale are shown in orange. Variability in the statistically fitted regression lines occurred due to a unique data set being simulated for each individual; the gray band shows the range fitted values from the statistically fitted regression lines. Here we can see a strong underestimation on the linear scale (blue lines).
+:::
+
+
+## Prediction GAMM
+
+Fit separate for each growth rate (low = 1, high = 2), the GAMM equations for residuals are given by:
+
+\begin{equation}
+e_{1jklm,NLS} = \tau_{1jk} + s_{1jk}(x_{1jklm}) + p_{l} + s_{l}(x_{1jklm})
+\end{equation}
+\begin{equation}
+e_{2jklm,NLS} = \tau_{2jk} + s_{2jk}(x_{2jklm}) + p_{l} + s_{l}(x_{2jklm})
+\end{equation}
+
+where
+
++ $e_{\cdot jklm,NLS}$ is the residual between the drawn $y$-value and fitted $y$-value for the $l^{th}$ participant, $m^{th}$ increment, and $\cdot jk^{th}$ treatment combination 
++ $\tau_{\cdot jk}$ is the intercept for the $j^{th}$ point truncation, and $k^{th}$ scale treatment combination
++ $s_{\cdot jk}$ is the smoothing spline for the $\cdot jk^{th}$ treatment combination
++ $x_{\cdot jklm}$ is the $x$-value for the $l^{th}$ participant, $m^{th}$ increment, and $\cdot jk^{th}$ treatment combination 
++ $p_{l} \sim N(0, \sigma^2_\text{participant})$ is the error due to the $l^{th}$ participant's characteristics 
++ $s_{l}$ is the random smoothing spline for the $l^{th}$ participant.
+
+::: {.notes}
+
+Allowing for flexibility, the we fit a Generalized Additive Mixed Model to estimate smoothing splines for the vertical residuals from the participant drawn line in relation to the NLS fitted values. We included an intercept related to each treatment combination along with a smoothing spline adjustment for each treatment combination. We accounted for participant variability with random intercept and random spline effects.
+:::
