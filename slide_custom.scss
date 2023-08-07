@@ -8,3 +8,10 @@ $presentation-font-size-root: 30px;
   border-left: 3px solid $text-muted;
   padding-left: 0.5em;
 }
+
+.reveal .slide-logo {
+  height: 100px !important;
+  width: 100px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}

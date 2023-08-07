@@ -7,13 +7,22 @@ title-slide-attributes:
     data-background-image: images/study-homepage.jpg
     data-background-size: contain
     data-background-opacity: "0.25"
-author: "Emily Robinson, Reka Howard, Susan VanderPlas"
+author: 
+  - name: Emily Robinson
+    affiliation: Cal Poly - San Luis Obispo
+  - name: Reka Howard
+    affiliation: University of Nebraska - Lincoln
+  - name: Susan VanderPlas
+    affiliation: University of Nebraska - Lincoln
 # date: August 8, 2023
 format:
   revealjs:
+    slide-number: false
+    transition: fade
     theme: [default, ../../slide_custom.scss]
     auto-stretch: false
-    logo: "images/cp_hex_logo.png"
+    footer: "[bit.ly/jsm23-graphical-testing-for-log-scales](bit.ly/jsm23-graphical-testing-for-log-scales)"
+    # logo: "images/cp_hex_logo.png"
 editor: source
 embed-resources: true
 execute:
@@ -43,9 +52,17 @@ library(fontawesome)
 # ui <- "- "
 ```
 
-## Outline
+## Outline {background-color="#003831" background-opacity="0.5"}
 
-#  Exponential Growth
++ Motivation and Background
++ Comprehensive Graphical Testing
++ Research Goals
+  + Perception through Lineups
+  + Prediction through 'You Draw It'
+  + Numerical Translation and Estimation
++ Overall Conclusions and Discussion
+
+##  Exponential Growth
 @vonbergmann_2021
 ```{r}
 #| fig-align: center
@@ -782,19 +799,19 @@ The use of two unique data sets allowed us to look at how estimates are very sub
 ## Conclusions
 
 ::: fragment
-**1. Perception**
+**1. Perception through Lineups**
 
 -   Perceptual differences result from the contextual appearance (depends on choice of scale) of the trends.
 :::
 
 ::: fragment
-**2. Prediction**
+**2. Prediction through 'You Draw It'**
 
 -   Clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
 :::
 
 ::: fragment
-**3. Estimation**
+**3. Numerical Translation and Estimation**
 
 -   Log logic is difficult and that we often misinterpret and miscalculate multiplicative reasoning.
 -   Estimation accuracy for small magnitudes was improved by the use of the log scale, but sacrifices in accuracy on the log scale became apparent as magnitudes increased leading to advantages on the linear scale.
