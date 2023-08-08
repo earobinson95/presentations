@@ -21,10 +21,11 @@ format:
     transition: fade
     theme: [default, ../../slide_custom.scss]
     auto-stretch: false
-    footer: "[bit.ly/jsm23-graphical-testing-for-log-scales](bit.ly/jsm23-graphical-testing-for-log-scales)"
+    footer: "[bit.ly/jsm23-graphical-testing-for-log-scales](https://earobinson95.github.io/presentations/Conferences/2023-JSM/jsm2023-comprehensive-graphical-testing.html#/title-slide)"
     # logo: "images/cp_hex_logo.png"
 editor: source
 embed-resources: true
+self-contained: true
 execute:
   echo: false
 width: 1244.445
