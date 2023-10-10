@@ -1,0 +1,543 @@
+---
+title: "Human Perception of Statistical Charts: An Introduction to Graphical Testing Methods"
+subtitle: "Nevada State Math Colloquium"
+title-slide-attributes:
+    # data-background-color: "#FFFFFF"
+    # data-background-color: "#003831"
+    data-background-image: images/study-homepage.jpg
+    data-background-size: contain
+    data-background-opacity: "0.25"
+author: 
+  - name: Emily Robinson
+    affiliation: Cal Poly - San Luis Obispo
+  - name: Reka Howard
+    affiliation: University of Nebraska - Lincoln
+  - name: Susan VanderPlas
+    affiliation: University of Nebraska - Lincoln
+# date: August 8, 2023
+format:
+  revealjs:
+    slide-number: false
+    transition: fade
+    theme: [default, ../../slide_custom.scss]
+    auto-stretch: false
+    footer: "[bit.ly/nevada-state-graphical-testing](https://earobinson95.github.io/presentations/Seminars/2023.10.10-nevada-colloquium)"
+    # logo: "images/cp_hex_logo.png"
+editor: source
+embed-resources: true
+execute:
+  echo: false
+width: 1244.445
+height: 700
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+# Packages
+library(emoji)
+library(purrr)
+library(tidyverse)
+library(gridExtra)
+library(nullabor)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(RefManageR)
+library(iconr)
+library(fontawesome)
+```
+
+## Outline {background-color="#003831" background-opacity="0.5"}
+
+`r fa("chart-bar")` Motivation and Background
+
+`r fa("brain")` Comprehensive Graphical Testing
+
+`r fa("list")` Research Goals
+
+`r fa("chart-line")` Perception through Lineups
+
+`r fa("pencil")` Prediction through 'You Draw It'
+
+`r fa("ruler")` Numerical Translation and Estimation
+
+`r fa("check-double")` Overall Conclusions and Discussion
+
+::: notes
+Thank you, Tyler. Today I will be sharing my work on the human perception of exponentially increasing data displayed on a log scale, as evaluated through experimental graphics tasks.
+
+I will first start with the motivation and background of this work and I will introduce the research objectives. Next, I will give an overview of the three studies related to perception, prediction, and estimation. Lastly, I will provide an overall conclusion and discuss future directions for this work.
+:::
+
+## Introduction to Graphics
+
+Data visualization is defined as the art of drawing **graphical charts** in order to display data @unwin2020.
+
+::: fragment
+
+
+**What are graphics useful for?** @lewandowsky1989
+
+`r emo::ji("graph")` Data cleaning.
+
+`r emo::ji("magnifying")` Exploring data structure.
+
+`r emo::ji("bubble")` Communicating information.
+:::
+::: fragment
+
+**Who uses graphics?**
+
+-   Governments [@harms1991august; @playfair1801statistical; @walker2013statistical].
+
+-   Companies [@chandar2012graph; @yates1985graphs].
+
+-   News sources and mass media [@Aisch_NYTimes_presidential_forecast].
+
+-   Scientific publications [@gouretski2007much].
+
+:::
+
+::: notes
+To get started, we are first going to lay the foundation of graphics. Data visualization has become central tool in modern data science and statistics. Unwin 2020 defines data visualization as the art of drawing graphical charts in order to display data.
+
+Graphics are useful for data cleaning, exploring data structure, and communicating information.
+
+In the 18th and 19th century, governments began using graphics to understand population and economic interests. In the 20th century, we saw companies using graphics to understand the inner workings of their business and support their business decision. We often see news source displaying graphics of weather forecasts such as hurricane trajectories. Today, we see graphics everywhere from scientific journals to mass media in the newspapers, TV, and internet.
+
+Despite the popularity of graphics, we are too accepting of them as default without asking critical questions about the graphics we create or view (Unwin, 2020). We must begin asking ourselves **How effective is this graph at communicating useful information?**
+
+Higher quality of technology has influenced the creation, replication, and complexity of graphics. We now have an infinitely many number design choices: + variables displayed, type of graphic, size of graphic, aspect ratio, colors, symbols, scales, limits, ordering of categorical variables
+
+There is a need for an established set of concepts and terminology to build their graphics from so they can actively choose which of many possible graphics to draw in order to ensure their charts are effective at communicating the intended result.
+:::
+
+## History of Graphics
+
+Visit the [Timeline of Infographics](https://history.infowetrust.com/) by RJ Andrews (Info We Trust Data Storyteller).
+
+```{r}
+#| out-width: 70%
+#| fig-align: center
+knitr::include_graphics("images/infowetrust-history.PNG")
+```
+
+
+## Grammar of Graphics [@wilkinson2012grammar]
+
+Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
+
+```{r}
+#| out-width: 45%
+#| fig-align: center
+#| fig-cap: Building a masterpiece, by Allison Horst
+knitr::include_graphics("images/building-a-masterpiece-Allison-Horst.png")
+```
+
+::: notes
+Graphics are viewed as a mapping **from variables** in the data set **to visual attributes** on the chart.
+
+-   **aesthetics:** links between data variables and graphical features (position, color, shape, size)
+-   **layers:** geometric elements (points, lines, rectangles, text, ...)
+-   **transformations:** transformations specify a functional link between the data and the displayed information (identity, count, bins, density, regression). Transformations act on the variables.
+-   **scales:** scales map values in data space to values in the aesthetic space. Scales change the coordinate space of an aesthetic, but don't change the underlying value (so the change is at the visual level, not the mathematical level).
+-   **coordinate system:** e.g.polar or Cartesian
+-   **faceting:** facets allow you to split plots by other variables to produce many sub-plots.
+-   **theme:** formatting items, such as background color, fonts, margins...
+
+Software, such as Hadley Wickham's `ggplot2`, aims to implement the framework of creating charts as the Grammar of Graphics recommends.
+:::
+
+## Testing Statistical Graphics
+
+Evaluate design choices and understand cognitive biases through the use of **visual tests**.
+
+Could ask participants to:
+
+`r emo::ji("graph")` identify differences in graphs.
+
+`r emo::ji("book")` read information off of a chart accurately.
+
+`r emo::ji("international")` use data to make correct real-world decisions.
+
+`r emo::ji("pencil2")` predict the next few observations.
+
+::: notes
+In establishing guidlines, we began to consider how we wanted participants and users to interact with the charts. Our tests could take many forms such as identifying differences in graphs, accurately reading information off a chart, using data to make correct real-world decisions, or predicting the next few observations. All of these types of tests would require different levels of use and manipulation of the information presented in the chart.
+:::
+
+## Task complexity
+
+@carpenter identifies pattern recognition, interpretative processes, and integrative processes as strategies and processes required to complete tasks of varying degrees of complexity.
+
+-   **Pattern recognition** requires the viewer to encode graphic patterns.
+
+-   **Interpretive processes** operate on those patterns to construct meaning.
+
+-   **Integrative processes** then relate the meanings to the contextual scenario as inferred from labels and titles.
+
+::: notes
+In order to understand how our visual system perceives statistical charts, we must first consider the complexity of the graphic and how viewers are interacting with the data and information being displayed. Pattern recognition requires the viewer to encode graphic patterns while interpretive processes operate on those patterns to construct meaning. Integrative processes then relate the meanings to the contextual scenario as inferred from labels and titles. We will see how these three levels of task complexity relate to the research objectives of our study.
+:::
+
+# Lineup Protocal [@buja2009statistical]  {background-color="#003831" background-opacity="0.5"}
+
+::: notes
+Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
+:::
+
+## Introduction to Visual Inference
+
+When doing exploratory data analysis, how do we know if what we see is actually there?
+
+```{r}
+#| out-width: 80%
+#| fig-align: center
+data(banknote, package = "mclust")
+ggplot(banknote) + 
+  geom_jitter(aes(x = Left, y = Right, color = Status)) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+::: notes
+When inspecting a plot, how do we know if what we are seeing is actually there?
+:::
+
+## Lineup Protocol (Buja et. al, 2009)
+
+Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
+
+```{r}
+#| out-width: 80%
+#| fig-align: center
+library(nullabor)
+lineup(null_permute("Status"), banknote, pos = 8) %>%
+ggplot() + 
+  geom_jitter(aes(x = Left, y = Right, color = Status), shape = 1) + 
+  facet_wrap(~.sample) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+::: notes
+One way of answering this question is to embed the true data plot (called target plot) into a set of randomly permuted data sets (called null plots). This is what we call a lineup.
+
+This is similar to the law-enforcement procedure to line up a suspect among a set of innocents to check if a victim can identify the suspect as the perpetrator of the crime.
+
+Here, visual evaluation of the lineup is conducted by a person. If the viewers detect the target plot, we can conclude the plots are distinguishable.
+
+The lineup protocol is one such example of the development of tools designed for statistical graphical testing. The advancement of graphing software provides the tools necessary to develop new methods of testing graphics.
+:::
+
+## Introduction to Visual Inference
+
+```{r}
+#| out-width: 40%
+#| fig-align: center
+knitr::include_graphics("images/visual-inference-flowchart.png")
+```
+
+::: notes
+The main idea behind visual inference is that graphs are visual statistics or summaries of the data sets generated by mathematical functions. In a standard statistical analysis, a test statistic is generated from the data set and compared to the null distribution of that test statistic. Similarly, the visual statistic (target plot) is compared by a human viewer to other plots generated under the assumption of the null.
+
+The main benefit of using visual inference is that visual tests tend to be more comprehensive. Since individuals are being asked to select one or more plots from a the lineup which are different but the difference is left unspecified the individual eye is actually spotting many differences at once. An equivalent numerical assessment may involved multiple tests using different test statistics.
+:::
+
+## Lineup Studies `r emo::ji("graph")` `r emo::ji("graph")` `r emo::ji("graph")`
+
++ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) [@buja2009statistical]
++ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) [@majumder2013validation]
++ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) [@majumder2014human]
++ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) [@loy2016variations]
++ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) [@vanderplas2015spatial]
++ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) [@vanderplas2017clusters]
++ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) [@vanderplas2021statistical]
+
+# "You Draw It" [@robinson2023you] {background-color="#003831" background-opacity="0.5"}
+
+## "You Draw It" for News Media
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/nyt-caraccidents-frame4.png")
+```
+
+New York Times [@aisch_cox_quealy_2015]
+
+## "You Draw It" for Graphical Testing
+
+```{r}
+#| fig-align: center
+#| out-width: 45%
+knitr::include_graphics("images/eyefitting_example.gif")
+```
+[Eye Fitting Straight Lines in the Modern Era](https://www.tandfonline.com/doi/abs/10.1080/10618600.2022.2140668) [@robinson2022eye]
+
+# Perception of Logarithmic Scales {background-color="#003831" background-opacity="0.5"}
+
+## Exponential Growth
+
+@vonbergmann_2021
+
+```{r}
+#| fig-align: center
+#| out-width: 75%
+knitr::include_graphics("images/exponential-stages-comic.jpg")
+```
+
+::: notes
+The motivation for this work came largly from the impact graphics and charts have had during the COVID-19 pandemic. Many of these graphics helped guide decision makers to implement policies such as shut-downs or mandated mask wearing, as well as facilitated communication with the public to increase compliance.
+
+As graphics began to play an important role in sharing information with the public, it was crucial to start asking what made some of these charts better than others? Creators of the graphics were faced with many design choices in order to ensure their charts were effective at accurately communicating the current status of the pandemic.
+
+A major issue we encountered in the creation of COVID-19 plots was how to display data from a wide range of values.
+
+-   **Problem:** Data which spans several orders of magnitude shown on its original scale compresses the smaller magnitudes into relatively little area.
+-   **Solution:** Use of a log scale transformation; alters the contextual appearance of the data.
+
+However, as shown here, there is a **general misinterpretation of exponential growth**. This visual illustrates how individuals in public health may interpret exponential growth distinctly different from scientists during early, middle, and late stages of growth.
+
+As Susan indicated, in order to make educated decisions when designing a chart, we need to establish guidelines through experimentation in order to ensure the graphic is effective at communicating the intended results.
+:::
+
+## Benefits and pitfalls of log scales
+
+@burnmurdoch_2020 <!-- **Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic. -->
+
+<!-- **Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially. -->
+
+::: r-stack
+```{r}
+#| out-width: 70%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-03.23.2020-log.png")
+```
+
+::: fragment
+```{r}
+#| out-width: 70%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-linear.png")
+```
+:::
+
+::: fragment
+```{r}
+#| out-width: 70%
+#| fig-align: center
+knitr::include_graphics("images/covid19-FT-log.png")
+```
+:::
+:::
+
+::: notes
+**Benefits** were seen in spring 2020, during the early stages of the COVID-19 pandemic.
+
+-   Large magnitude discrepancies in case counts at a given time point between different geographic regions.
+-   Log scale transformations were usefulness for showing case count curves for areas with few cases and areas with many cases within one chart.
+
+**Pitfalls** were exposed as the pandemic evolved, and the case counts were no longer spreading exponentially.
+
+-   Graphs with linear scales seemed more effective at spotting early increases in case counts that signaled more localized outbreaks.
+-   The effect of the linear scale appears to evoke a stronger reaction from the public than the log scale.
+
+While this is one such example, there is a long history of using log scales to display results in ecology, psychophysics, engineering, and physics. Given the widespread use of logarithmic scales, it is important to understand the implications of their use in order to provide guidelines for best use.
+:::
+
+## Research objectives
+
+**Big Idea:** Are there benefits to displaying exponentially increasing data on a log scale rather than a linear scale?
+
+::: incremental
+1.  **Perception through Lineups** `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")` -- tests an individual's ability to perceptually differentiate exponentially increasing data with differing rates of change on both the linear and log scale.
+
+2.  **Prediction with 'You Draw It'** `r fa("pencil")` -- tests an individual's ability to make predictions for exponentially increasing data.
+
+3.  **Estimation by Numerical Translation** `r fa("ruler")` -- tests an individual's ability to translate a graph of exponentially increasing data into real value quantities.
+:::
+
+::: fragment
+The series of graphical tests were conducted through an RShiny application found at <https://emily-robinson.shinyapps.io/perception-of-statistical-graphics-log/>.
+:::
+
+::: notes
+In this research, we conducted a series of three graphical studies to evaluate the impact displaying data on the log scale has on human perception of exponentially increasing trends compared to displaying data on the linear scale. Each study was related to a different graphical task, each requiring a different level of interaction and cognitive use of the data being presented.
+
+1.  The first experiment evaluated whether our ability to perceptually notice differences in exponentially increasing trends is impacted by the choice of scale. These perceptual differences are identified through pattern recognition.
+2.  The second study tested an individuals ability to make predictions for exponentially increasing data and required integrative processes by operate on the patterns to construct meaning.
+3.  The last and third study tested an individual's ability to translate a graph of exponentially increasing data into real value quantitites and extend these estmiates by making comparisons.
+
+Combined, the three studies provide a comprehensive evaluation of the impact of displaying exponentially increasing data on a log scale as it relates to perception, prediction, and estimation. The results of these studies help us make recommendations and provide guidelines for the use of log scales.
+:::
+
+#  {background-image="images/study-homepage.jpg" background-size="contain"}
+
+::: notes
+The final participant recruitment and study deployment were conducted via Prolific, a crowd sourcing website, in March 2022. Participants were provided a link to an R Shiny application that asked them demographic information and then guided them through all three studies. For the final data collection, we collected data for about 300 participants for each study; this was the final data set used for analysis in my research.
+:::
+
+## Graphical Tasks
+
+::: panel-tabset
+
+### Perception `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")`
+
+Study Participant Prompt: *Which plot is most different?*
+
+::: r-stack
+```{r}
+#| out-width: 40%
+#| fig-align: center
+knitr::include_graphics("images/linear-lineup-example.png")
+```
+::: fragment
+```{r}
+#| out-width: 40%
+#| fig-align: center
+knitr::include_graphics("images/log-lineup-example.png")
+```
+:::
+:::
+
+### Prediction `r fa("pencil")`
+
+Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+```{r}
+#| out-width: 40%
+#| fig-align: center
+knitr::include_graphics("images/exponential_example.gif")
+```
+
+### Estimation `r fa("ruler")`
+
+Study Participant Prompt:  *From 4520 to 4540, the population increases by ____ Tribbles [Ewoks].*
+
+```{r}
+#| out-width: 37%
+#| fig-align: center
+knitr::include_graphics("images/qi1-sketch.png")
+```
+
+:::
+
+::: notes
+We used statistical lineups to test participants perception of exponentially increasing data.
+
+Here we see an example of statistical lineups as shown in the first study. Notice how it is much easier to pick out panel 13 as being most different when displayed on the log scale (right) than on the linear scale (left).
+
+In 2015, the New York Times introduced an interactive feature, called 'You Draw It', where readers input their own assumptions about various metrics and compare how these assumptions relate to reality. The Times team utilizes Data Driven Documents (D3) that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse. We adapted this feature as a way to measure the patterns we see in data and compare intuitive visual model fitting and statistical model fitting. In the study, participants were shown a series of 'You Draw It' interactive task plots and asked to "Use your mouse to fill in the trend in the yellow box region." The yellow box region moves along as the participant draws their trend-line until the yellow region disappears, providing a visual cue for the task.
+:::
+
+## Study Results
+
+::: panel-tabset
+
+## Perception `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")`
+
+```{r}
+#| fig-align: center
+#| out-width: 60%
+knitr::include_graphics("images/lineup-results.png")
+```
+
+## Prediction `r fa("pencil")`
+
+```{r}
+#| out-width: 40%
+#| fig-align: center
+knitr::include_graphics("images/exponential-yloess-spaghetti-plot-1.png")
+```
+
+## Estimation `r fa("ruler")`
+
+```{r}
+#| out-width: 45%
+#| fig-align: center
+knitr::include_graphics("images/qi1-density-1-2.png")
+```
+
+:::
+
+::: notes
+Each lineup plot evaluated was assigned a value based on the participant response (correct = 1, not correct = 0). The binary response was analyzed using generalized linear mixed model following a binomial distribution with a logit link function. Here we included both main effects and interactions for the curvature combination and scale while account for the participant and data specific characteristics with random effects.
+
+Estimated (log) odds ratio of successfully identifying the target panel on the log scale compared to the linear scale. The y-axis indicates the the model parameters used to simulate the null plots with the target plot model parameter selection designated by shape and shade of green. The thumbnail figures on the right display the curvature combination as shown previously on both scales (linear - left, log - right).
+
+The results indicated the choice of scale changes the contextual appearance of the data leading to slight perceptual advantages for both scales depending on the curvatures of the trend lines being compared.
+
+Out of the study, we save the participant feedback data to a data base for analysis. Here we see a spaghetti plots of results. Participants drawn lines on the linear scale are shown in blue and the log scale are shown in orange. Variability in the statistically fitted regression lines occurred due to a unique data set being simulated for each individual; the gray band shows the range fitted values from the statistically fitted regression lines. Here we can see a strong underestimation on the linear scale (blue lines).
+
+Allowing for flexibility, the we fit a Generalized Additive Mixed Model to estimate smoothing splines for the vertical residuals from the participant drawn line in relation to the NLS fitted values while accounting for participant variability.
+
+The results from the analysis showed a clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
+:::
+
+## Conclusions
+
+::: fragment
+**1. Perception through Lineups** `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")`
+
+-   Perceptual differences result from the contextual appearance (depends on choice of scale) of the trends.
+:::
+
+::: fragment
+**2. Prediction through 'You Draw It'** `r fa("pencil")`
+
+-   Clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
+:::
+
+::: fragment
+**3. Numerical Translation and Estimation** `r fa("ruler")`
+
+-   Log logic is difficult and that we often misinterpret and miscalculate multiplicative reasoning.
+-   Estimation accuracy for small magnitudes was improved by the use of the log scale, but sacrifices in accuracy on the log scale became apparent as magnitudes increased leading to advantages on the linear scale.
+:::
+
+::: notes
+This research evaluated the use of log scales to display exponentially increasing data from three different angles and levels of complexity: perception, prediction, and estimation. Each study provided us insight into the advantages and disadvantages of displaying exponentially increasing data on a log scale and in what context each choice of scale might be more appropriate.
+
+The first study laid the foundation for the future studies. Results from this study indicated the choice of scale changes the contextual appearance of the data leading to slight perceptual advantages for both scales depending on the curvatures of the trend lines being compared.
+
+The second study tested participant's abilities to make forecast predictions for exponentially increasing trends on both scales. The results from the analysis showed a clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale and improvements in forecasts were made when participants were asked to make predictions on the log scale.
+
+The third study evaluated graph comprehension as it relates to the contextual scenario of the data shown. Overall, our results suggested that log logic is difficult and that anchoring and rounding biases result in a sacrifice in accuracy in estimates made on the log scale for large magnitudes.
+:::
+
+## Overall Recommendations
+
+-   Perceptual advantages of the use of log scales due to the change in contextual appearance.
+
+-   Our understanding of log logic is flawed when translating the information into context.
+
+-   We recommend consideration of both user needs and graph specific tasks when presenting data on the log scale.
+
+-   Caution should be taken when interpretation of large magnitudes is required, but advantages may appear when it is necessary to visually identify and interpret small magnitudes on the chart.
+
+::: notes
+This research evaluated the use of log scales to display exponentially increasing data from three different angles and levels of complexity: perception, prediction, and estimation. Each study provided us insight into the advantages and disadvantages of displaying exponentially increasing data on a log scale and in what context each choice of scale might be more appropriate.
+
+The results are instrumental in establishing guidelines for making design choices about scale which result in data visualizations effective at communicating the intended results.
+
+We recommend understanding the contextual appearance log scales have on the data being displayed and the perceptual advantages and disadvantages that come with each. It is also important to recognize that our understanding of log logic is flawed when translating this information into context.
+
+In general, it is important to consideration of both user needs and graph specific tasks when presenting data on the log scale. Caution should be taken when interpretation of large magnitudes is required, but advantages may appear when it is necessary to visually identify and interpret small magnitudes on the chart.
+:::
+
+## References
+
+::: {#refs}
+:::
+
+## Emily A. Robinson {background-color="#003831" background-opacity="0.5"}
+
+### `r fa("envelope", fill = "white")` [erobin17\@calpoly.edu](mailto:erobin17@calpoly.edu){.email}
+
+### `r fa("github", fill = "white")` [github.com/earobinson95](https://github.com/earobinson95)
