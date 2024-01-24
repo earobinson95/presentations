@@ -1,0 +1,493 @@
+---
+title: "Testing Statistical Graphics: Eye Fitting Straight Lines in the Modern Era"
+subtitle: "Cal Poly Masters Seminar"
+title-slide-attributes:
+    data-background-image: images/study-homepage.png
+    data-background-size: contain
+    data-background-opacity: "0.25"
+author: 
+  - name: Emily Robinson
+    affiliation: Cal Poly - San Luis Obispo
+  - name: Reka Howard
+    affiliation: University of Nebraska - Lincoln
+  - name: Susan VanderPlas
+    affiliation: University of Nebraska - Lincoln
+date: July 29, 2024
+format:
+  revealjs:
+    slide-number: false
+    transition: fade
+    theme: [default, ../../slide_custom.scss]
+    auto-stretch: false
+    footer: "[]()"
+    # logo: "images/cp_hex_logo.png"
+editor: source
+embed-resources: true
+execute:
+  echo: false
+width: 1244.445
+height: 700
+bibliography: references.bib
+---
+
+```{r setup}
+#| include: false
+
+# Packages
+library(tidyverse)
+library(nullabor)
+library(scales)
+library(knitr)
+library(fontawesome)
+```
+
+## Outline {background-color="#003831" background-opacity="0.5"}
+
+`r fontawesome::fa("person")` Introduction to Graphical Testing
+
+`r fontawesome::fa("chart-simple")` Statistical Lineups
+
+`r fontawesome::fa("pencil")` 'You Draw It' Method
+
+`r fontawesome::fa("book-open-reader")` Recap: Eye Fitting Straight Lines in the Modern Era
+
+`r fontawesome::fa("spinner")` Subsequent + Future Work
+
+`r fontawesome::fa("comments")` Discussion
+
+## Introduction to Graphics
+
+Data visualization is defined as the art of drawing **graphical charts** in order to display data @unwin2020.
+
+::: fragment
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/infowetrust-history.PNG")
+```
+
+[Timeline of Infographics](https://history.infowetrust.com/) by RJ Andrews (Info We Trust Data Storyteller).
+:::
+
+## Testing Statistical Graphics
+
+Evaluate design choices and understand cognitive biases through the use of **visual tests**.
+
+Could ask participants to:
+
+`r fontawesome::fa("eye")`   identify differences in graphs.
+
+`r fontawesome::fa("book")`  read information off of a chart accurately.
+
+`r fontawesome::fa("earth-americas")`  use data to make correct real-world decisions.
+
+`r fontawesome::fa("wand-sparkles")`   predict the next few observations.
+
+## Task complexity
+
+@carpenter identifies pattern recognition, interpretative processes, and integrative processes as strategies and processes required to complete tasks of varying degrees of complexity.
+
+-   **Pattern recognition** requires the viewer to encode graphic patterns.
+
+-   **Interpretive processes** operate on those patterns to construct meaning.
+
+-   **Integrative processes** then relate the meanings to the contextual scenario as inferred from labels and titles.
+
+# Lineup Protocal [@buja2009statistical] {background-color="#003831" background-opacity="0.5"}
+
+## Introduction to Visual Inference
+
+When doing exploratory data analysis, how do we know if what we see is actually there?
+
+```{r}
+#| out-width: 85%
+#| fig-align: center
+data(banknote, package = "mclust")
+ggplot(banknote) + 
+  geom_jitter(aes(x = Left, y = Right, color = Status)) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+## Lineup Protocol [@buja2009statistical] `r fontawesome::fa("chart-simple")` `r fontawesome::fa("chart-simple")` `r fontawesome::fa("chart-line")`
+
+Embed a **target plot** (actual data) in a lineup of **null plots** (randomly permuted data sets).
+
+```{r}
+#| out-width: 85%
+#| fig-align: center
+library(nullabor)
+lineup(null_permute("Status"), banknote, pos = 8) %>%
+ggplot() + 
+  geom_jitter(aes(x = Left, y = Right, color = Status), shape = 1) + 
+  facet_wrap(~.sample) + 
+  coord_fixed() + 
+  theme_bw() +
+  theme(axis.text = element_blank()) +
+  scale_color_manual(values = c("orange", "steelblue"))
+```
+
+## Introduction to Visual Inference
+
+```{r}
+#| out-width: 45%
+#| fig-align: center
+knitr::include_graphics("images/visual-inference-flowchart.png")
+```
+
+## Lineup Studies
+
+-   [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) [@buja2009statistical]
+-   [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) [@majumder2013validation]
+-   [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) [@majumder2014human]
+-   [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) [@loy2016variations]
+-   [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) [@vanderplas2015spatial]
+-   [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) [@vanderplas2017clusters]
+-   [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) [@vanderplas2021statistical]
+
+# Eye Fitting Straight Lines in the Modern Era {background-color="#003831" background-opacity="0.5"}
+
+## Linear Regression
+
+The principle of simple linear regression is to **find the line** (i.e., determine its equation) which passes as close as possible to the observations, that is, the set of points.
+
+```{r linear-regression}
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4.5
+#| out-width: 60%
+#| fig-align: center
+
+set.seed(2)
+corrCoef = 0.5 # sample from a multivariate normal, 10 datapoints
+dat = MASS::mvrnorm(10,c(0,0),Sigma = matrix(c(1,corrCoef,2,corrCoef),2,2))
+dat[,1] = dat[,1] - mean(dat[,1]) # it makes life easier for the princomp
+dat[,2] = dat[,2] - mean(dat[,2])
+
+dat = data.frame(x1 = dat[,1],x2 = dat[,2])
+
+dat |> 
+ggplot(aes(x1,x2))+
+  geom_point()+
+  geom_abline(intercept = -0.1, slope = 0.8, color = "black", linetype = "solid") +
+  geom_abline(intercept = 0, slope = 0.4, color = "black", linetype = "solid") +
+  geom_abline(intercept = -0.2, slope = 1.1, color = "black", linetype = "solid") +
+  coord_equal()+
+  scale_x_continuous("x") +
+  scale_y_continuous("y") +
+  theme_bw(base_size = 14) +
+  theme(aspect.ratio = 1,
+        legend.position = "none",
+        axis.text    = element_text(size = 12),
+        axis.title   = element_text(size = 12),
+        legend.title = element_blank(),
+        legend.key.size = unit(1, "line")
+        )
+```
+
+## Let's see your drawing skills!
+
+::: columns
+::: column
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/eyefitting_example.gif")
+```
+:::
+
+::: column
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/can-you-draw-it-mobile-qrcode.png")
+```
+
+OR VISIT [bit.ly/3BF56Zj](https://bit.ly/3BF56Zj)
+:::
+:::
+
+## Did it looks something like this?
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/can-you-draw-it-example.png")
+```
+
+## Linear Regression
+
+The principle of simple linear regression is to **find the line** (i.e., determine its equation) **which passes as close as possible to the observations**, that is, the set of points.
+
+```{r}
+#| fig-align: center
+#| out-width: 60%
+knitr::include_graphics("images/pca-plot.jpg")
+```
+
+**Big Idea:** How do statistical regression results compare to intuitive, visually fitted results?
+
+## Eye Fitting Straight Lines
+
+@mosteller1981
+
+::: columns
+::: column
+-   **Big Idea:** Students fitted lines by eye to four sets of points.
+-   **Method:** 8.5 x 11 inch transparency with a straight line etched across the middle.
+-   **Sample:** 153 graduate students and post docs in Introductory Biostatistics.
+-   **Experimental Design:** Latin square.
+-   **Findings:** Students tended to fit the slope of the first principal component.
+:::
+
+::: column
+```{r}
+#| fig-align: center
+#| out-width: 80%
+knitr::include_graphics("images/eyefitting-straight-lines-plots.png")
+```
+:::
+:::
+
+## 'You Draw It' Feature
+
+### (New York Times, 2015)
+
+::: columns
+::: column
+```{r}
+#| fig-align: center
+#| out-width: 100%
+knitr::include_graphics("images/nyt-caraccidents-frame4.png")
+```
+:::
+
+::: column
+Readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
+-   [Family Income affects college chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html) [@aisch_cox_quealy_2015]
+-   [Just How Bad Is the Drug Overdose Epidemic?](https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html) [@katz_2017]
+-   [What Got Better or Worse During Obama’s Presidency](https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html?_r=0) [@buchanan_park_pearce_2017]
+:::
+:::
+
+::: notes
+In 2015, the New York Times developed a You Draw it feature where readers are asked to input their own assumptions about various metrics and compare how these assumptions relate to reality.
+
+The New York Times team utilizes **Data Driven Documents (D3)** that allows readers to predict these metrics through the use of drawing a line on their computer screen with their mouse.
+:::
+
+## 'You Draw It' Task
+
+Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
+
+```{r}
+#| fig-align: center
+#| out-width: 55%
+knitr::include_graphics("images/eyefitting_example.gif")
+```
+
+## Development & Implementation
+
++ @robinson2023you provides details on the development and [implementation of the 'You Draw It'](https://jds-online.org/journal/JDS/article/1317/info) method in `R`.
+
++ [`youdrawitR`](https://earobinson95.github.io/youdrawitR/) package (Dillon Murphy, Google Summer of Code 2023).
+
+:::: columns
+::: column
+```{r}
+#| fig-align: right
+#| out-width: 50%
+knitr::include_graphics("images/r2d3-hex.png")
+```
+:::
+::: column
+```{r}
+#| fig-align: left
+#| out-width: 50%
+knitr::include_graphics("images/youdrawitR-hex.png")
+```
+:::
+::::
+
+## Tips on getting started with D3.js
+
+`D3.js` is to JavaScript as `ggplot2` is to R (kind of...)
+
+:::: columns
+::: column
+`r fontawesome::fa("js")` [Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+`r fontawesome::fa("image")` Understand [SVG](http://tutorials.jenkov.com/svg/g-element.html) elements: inspect elements in web browser!
+
+`r fontawesome::fa("book-open")` Amelia Wattenberger's [Full Stack D3 and Data Visualization Book](https://www.newline.co/fullstack-d3)
+
+`r fontawesome::fa("chart-bar")` Build a basic graphic using [r2d3](https://rstudio.github.io/r2d3/articles/introduction.html)
+
+`r fontawesome::fa("grimace")` Modify `D3.js` code until it does what you want!
+:::
+::: column
+**Additional Resources**
+
+`r fontawesome::fa("code")` [How to learn D3 with no coding experience](https://www.heshameissa.com/blog/learn-d3)
+
+`r fontawesome::fa("file")` [Kiegan's ISU Graphics Group Presentation from Mar 25, 2021](https://kiegan.github.io/talks/graphics-group-r2d3/graphics-group-r2d3.html#1)
+
+`r fontawesome::fa("twitter")` Amelia Wattenberger on [Twitter](https://twitter.com/Wattenberger) (or "X" now?)
+:::
+::::
+
+## Research Objectives
+
+1.  Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in Mosteller et al. (1981).
+
+2.  Extend the study with formal statistical analysis methods in order to better understand the perception of linear regression.
+
+## Data Generation
+
+::: columns
+::: column
+$N = 30$ points $(x_i, y_i), i = 1,...N$ were generated for $x_i \in [x_{min}, x_{max}]$.
+
+Data were simulated based on linear model with additive errors: \begin{equation}
+y_i = \beta_0 + \beta_1 x_i + e_i
+\end{equation}
+
+where $e_i \sim N(0, \sigma^2).$
+
+Parameters $\beta_0$ and $\beta_1$ were selected to reflect the four data sets used in @mosteller1981.
+:::
+
+::: column
+```{r}
+knitr::include_graphics("images/eyefitting-example-simplot.png")
+```
+:::
+:::
+
+## Study Design
+
+-   Participants recruited through Twitter, Reddit, and direct email in May 2021.
+
+-   A total of 35 individuals completed 119 unique you draw it task plots.
+
+-   Data sets were generated randomly, independently for each participant at the start of the experiment.
+
+-   Participants shown 2 practice plots followed by 4 task plots randomly assigned for each individual in a completely randomized design.
+
+## Study Design
+
+```{r}
+#| fig-align: center
+#| out-width: 70%
+knitr::include_graphics("images/study-homepage.png")
+```
+
+Experiment conducted and distributed through an RShiny application found [**here**](https://emily-robinson.shinyapps.io/you-draw-it-validation-applet/).
+
+## Model Data
+
+::: columns
+::: column
+For each participant, the final data set used for analysis contains: + $x_{ijk}$, $y_{ijk,drawn}$, $\hat y_{ijk,OLS}$, $\hat y_{ijk,PCA}$
+
+for + parameter choice $i = 1,2,3,4$, + participant j = $1,...N_{participant}$ + $x_{ijk}$ value corresponding to increment $k = 1, ...,4 x_{max} + 1$.
+
+**Vertical residuals** between the drawn and fitted values were calculated as: + $e_{ijk,OLS} = y_{ijk,drawn} - \hat y_{ijk,OLS}$ + $e_{ijk,PCA} = y_{ijk,drawn} - \hat y_{ijk,PCA}$.
+:::
+
+::: column
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/eyefitting-trial-plot.png")
+```
+:::
+:::
+
+## Linear Trend Constraint
+
+The **Linear Mixed Model** equation for each fit (OLS and PCA) residuals is given by: \begin{equation}
+e_{ijk,fit} = \left[\gamma_0 + \alpha_i\right] + \left[\gamma_{1} x_{ijk} + \gamma_{2i} x_{ijk}\right] + p_{j} + \epsilon_{ijk}
+\end{equation}
+
+-   $e_{ijk,fit}$ is the residual between the drawn and fitted y-values for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment of x-value corresponding to either the OLS or PCA fit
+-   $\gamma_0$ is the overall intercept
+-   $\alpha_i$ is the effect of the $i^{th}$ parameter choice (F, S, V, N) on the intercept
+-   $\gamma_1$ is the overall slope for $x$
+-   $\gamma_{2i}$ is the effect of the parameter choice on the slope
+-   $x_{ijk}$ is the x-value for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment
+-   $p_{j} \sim N(0, \sigma^2_{participant})$ is the random error due to the $j^{th}$ participant's characteristics
+-   $\epsilon_{ijk} \sim N(0, \sigma^2)$ is the residual error.
+
+## Linear Trend Constraint
+
+```{r}
+#| fig-align: center
+#| out-width: 65%
+knitr::include_graphics("images/eyefitting-lmer-plot.png")
+```
+
+## Smoothing Spline Trend
+
+The **Generalized Additive Mixed Model** equation for each fit (OLS and PCA) residuals is given by: \begin{equation}
+e_{ijk,fit} = \alpha_i + s_{i}(x_{ijk}) + p_{j} + s_{j}(x_{ijk})
+\end{equation} where
+
+-   $e_{ijk,fit}$ is the residual between the drawn and fitted y-values for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment of x-value corresponding to either the OLS or PCA fit
+-   $\alpha_i$ is the intercept for the parameter choice $i$
+-   $s_{i}$ is the smoothing spline for the $i^{th}$ parameter choice
+-   $x_{ijk}$ is the x-value for the $i^{th}$ parameter choice, $j^{th}$ participant, and $k^{th}$ increment
+-   $p_{j} \sim N(0, \sigma^2_{participant})$ is the error due to participant variation
+-   $s_{j}$ is the random smoothing spline for each participant.
+
+## Smoothing Spline Trend
+
+```{r}
+#| fig-align: center
+#| out-width: 65%
+knitr::include_graphics("images/eyefitting-gamm-plot.png")
+```
+
+## Conclusion
+
+**Research Objectives:**
+
+1.  Validate ‘You Draw It’ as a method for graphical testing, comparing results to the less technological method utilized in @mosteller1981.
+
+2.  Extend the study found in @mosteller1981 with formal statistical analysis methods for understanding the perception of linear regression.
+
+**Results:**
+
+-   Estimated drawn trend-lines followed closer to the regression line based on the principal axes than the OLS regression line.
+
+-   Most prominent in data simulated with large variances.
+
+-   Humans perform “ensemble perception” in a statistical graphic setting.
+
+**The reproducibility of these results serve as validation of the 'You Draw It' tool and method.**
+
+## Subsequent & Future Work
+
+`r fontawesome::fa("person")` Collected large crowd sourced sample via Prolific
+
+`r fontawesome::fa("pencil")` Implemented 'You Draw It' method to measure predictions for exponential growth on log and linear scales
+
+`r fontawesome::fa("cube")` [`youdrawitR`](https://earobinson95.github.io/youdrawitR/index.html) package -- Goal to publish on CRAN
+
+`r fontawesome::fa("chart-line")`One-to-many function relationships
+
+  + [`youdrawitR` Cats](https://docs.google.com/presentation/d/1prNX34FKP45x9FkRH_f35ejHhDUAdrfRHWAjY_hacQU/edit#slide=id.p)
+  + [ShinyApp](https://earobinson95.github.io/youdrawitR/articles/web_only/ShinyApp.html)
+  
+`r fontawesome::fa("school")` Use of 'You Draw It' in the classroom as an educational tool
+
+## Reference
+
+::: {#refs}
+:::
+
+## Emily A. Robinson {background-color="#003831" background-opacity="0.5"}
+
+### `r fa("envelope", fill = "white")` [erobin17\@calpoly.edu](mailto:erobin17@calpoly.edu){.email}
+
+### `r fa("github", fill = "white")` [github.com/earobinson95](https://github.com/earobinson95)

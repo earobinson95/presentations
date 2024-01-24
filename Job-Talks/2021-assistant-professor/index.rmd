@@ -482,15 +482,17 @@ class:primary
 
 Study Participant Prompt: *Use your mouse to fill in the trend in the yellow box region.*
 
-.center[
-<img src="images/eyefitting_example.gif" width="60%"/>
-]
+```{r}
+#| fig-align: center
+#| out-width: 60%
+knitr::include_graphics("images/eyefitting_example.gif")
+```
 
-???
-
-Here we see an example of a "You Draw It" task plot used in the study. Participants are prompted to "Use your mouse to fill in the trend in the yellow box region. The yellow box region moves along as the participant draws their trend-line until the yellow region disappears." 
+::: notes
+Here we see an example of a 'You Draw It' task plot used in the study. Participants are prompted to "Use your mouse to fill in the trend in the yellow box region. The yellow box region moves along as the participant draws their trend-line until the yellow region disappears." 
 
 Task plots were created using Data Driven Documents (D3), a JavaScript-based graphing framework that facilitates user interaction. We then integrate this into RShiny using the r2d3 package.
+:::
 
 ---
 class:primary
@@ -991,7 +993,7 @@ class:primary
 
 + Participants recruited through Twitter, Reddit, and direct email in May 2021.
 
-+ A total of 35 individuals completed 280 unique you draw it task plots.
++ A total of 35 individuals completed 280 unique 'You Draw It' task plots.
 
 + Data sets were generated randomly, independently for each participant at the start of the experiment. 
 

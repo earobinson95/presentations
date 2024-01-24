@@ -75,8 +75,6 @@ I will first start with the motivation and background of this work and I will in
 Data visualization is defined as the art of drawing **graphical charts** in order to display data @unwin2020.
 
 ::: fragment
-
-
 **What are graphics useful for?** @lewandowsky1989
 
 `r emo::ji("graph")` Data cleaning.
@@ -85,8 +83,8 @@ Data visualization is defined as the art of drawing **graphical charts** in orde
 
 `r emo::ji("bubble")` Communicating information.
 :::
-::: fragment
 
+::: fragment
 **Who uses graphics?**
 
 -   Governments [@harms1991august; @playfair1801statistical; @walker2013statistical].
@@ -96,7 +94,6 @@ Data visualization is defined as the art of drawing **graphical charts** in orde
 -   News sources and mass media [@Aisch_NYTimes_presidential_forecast].
 
 -   Scientific publications [@gouretski2007much].
-
 :::
 
 ::: notes
@@ -122,7 +119,6 @@ Visit the [Timeline of Infographics](https://history.infowetrust.com/) by RJ And
 #| fig-align: center
 knitr::include_graphics("images/infowetrust-history.PNG")
 ```
-
 
 ## Grammar of Graphics [@wilkinson2012grammar]
 
@@ -181,7 +177,7 @@ In establishing guidlines, we began to consider how we wanted participants and u
 In order to understand how our visual system perceives statistical charts, we must first consider the complexity of the graphic and how viewers are interacting with the data and information being displayed. Pattern recognition requires the viewer to encode graphic patterns while interpretive processes operate on those patterns to construct meaning. Integrative processes then relate the meanings to the contextual scenario as inferred from labels and titles. We will see how these three levels of task complexity relate to the research objectives of our study.
 :::
 
-# Lineup Protocal [@buja2009statistical]  {background-color="#003831" background-opacity="0.5"}
+# Lineup Protocal [@buja2009statistical] {background-color="#003831" background-opacity="0.5"}
 
 ::: notes
 Efforts in the field of graphics have developed graphical testing tools and methods such as the lineup protocol to provide a framework for inferential testing.
@@ -251,13 +247,13 @@ The main benefit of using visual inference is that visual tests tend to be more 
 
 ## Lineup Studies `r emo::ji("graph")` `r emo::ji("graph")` `r emo::ji("graph")`
 
-+ [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) [@buja2009statistical]
-+ [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) [@majumder2013validation]
-+ [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) [@majumder2014human]
-+ [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) [@loy2016variations]
-+ [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) [@vanderplas2015spatial]
-+ [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) [@vanderplas2017clusters]
-+ [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) [@vanderplas2021statistical]
+-   [Statistical inference for exploratory data analysis and model diagnostics](https://scholar.google.com/scholar_url?url=https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2009.0120%3Fcasa_token%3DebiI2xSnDhwAAAAA:kWGCok2CLw5KQZ4_cYh_ymZwPpiJcXUc5TImyvwzBBn6C0jYtFgnYEOc0dR0kPvlajIvsuOULZpTia64&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10347521957724374176&ei=W11jYaXsKYWM6rQPo_eDyAg&scisig=AAGBfm2AEQHjQU5lNQB4Lc4o81tg3SeWkQ) [@buja2009statistical]
+-   [Validation of Visual Statistical Inference, Applied to Linear Models](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3DGwA4wLBPDpsAAAAA:acfwFasv03i-MlmZ7cUcD9NYkjsk2hFroGKp4SbK1ZljNN6wVBUzJyhicqplDmhMmD4LURWeqS5qm_g&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=a11jYe6GFJ2N6rQPrdWZ4A0&scisig=AAGBfm2pYvdJa0OVNuzPLcU7ceZxogmE8w) [@majumder2013validation]
+-   [Human Factors Influencing Visual Statistical Inference](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.808157%3Fcasa_token%3Dy-x3yREurLYAAAAA:n2T18c7npd7rwui0SHzcmu2aa-zbeM66G7RWuPUgXG88nKzkqstOACzexskq0QhJ19yg8F2qky5w5NU&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=3201506009084463478&ei=gV1jYYt-gtDJBMHbsVg&scisig=AAGBfm2ZxHiHoOvYZQOJLkY9boUVKKUNvQ) [@majumder2014human]
+-   [Variations of *Q*–*Q* Plots: The Power of Our Eyes!](https://scholar.google.com/scholar_url?url=https://www.tandfonline.com/doi/pdf/10.1080/00031305.2015.1077728%3Fcasa_token%3DzQIJhjnFyLkAAAAA:tKCYURplVofdEuwasvxeS3UEVUMrTYsNKDhCQ2pBkkAhyXSI-Rv9vF00OqfRi5qPYwmqZBuTKjcSdO0&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=10678752834182219121&ei=kF1jYdL3L4i5yQTj8oqgCg&scisig=AAGBfm0_2MwYhtf65JQetFCfaf8pTBN_1Q) [@loy2016variations]
+-   [Spatial Reasoning and Data Displays](https://scholar.google.com/scholar_url?url=https://ieeexplore.ieee.org/iel7/2945/4359476/07217849.pdf%3Fcasa_token%3DXZQihG8m_RkAAAAA:twbOtOXzriTbFGFvUvrXE8dOirkb-g8boUHl-_BqoRvAfoh4pOFNPaTpWw4N-ILRlaJG8njCPf9u&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=1511166849179793238&ei=oF1jYY7gA5LSyQT4lJigBw&scisig=AAGBfm2lpsX7rCa8i1nFQqaMCQKkWxIqhg) [@vanderplas2015spatial]
+-   [Clusters beat trend!? testing feature hierarchy in statistical graphics](https://www.tandfonline.com/doi/full/10.1080/10618600.2016.1209116?casa_token=ZTotcyTpAekAAAAA:0ZJcegDldgPo53zNw5581EKGYr5b2mtUj393V7v4OjIjhiOPN9MuiRjPdVrBvYzAoCGX3fbSpAMt5Bw) [@vanderplas2017clusters]
+-   [Statistical Significance Calculations for Scenarios in Visual Inference](https://scholar.google.com/scholar_url?url=https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.337%3Fcasa_token%3Dl3liRM4W_tcAAAAA:RM0pP8pMkbSvUvKjtCA3aQ3IBS1PfKUKyDrp62dikvMnSWdnVvWZkjqbUKVKt-uFaeZ4CLXhCnIisLhK&hl=en&sa=T&oi=gsb-gga&ct=res&cd=0&d=18231836572357450482&ei=v11jYaauD4i5yQTj8oqgCg&scisig=AAGBfm30K-gRzHdAIegMH0DH2gyiL4DfcA) [@vanderplas2021statistical]
 
 # "You Draw It" [@robinson2023you] {background-color="#003831" background-opacity="0.5"}
 
@@ -278,6 +274,7 @@ New York Times [@aisch_cox_quealy_2015]
 #| out-width: 45%
 knitr::include_graphics("images/eyefitting_example.gif")
 ```
+
 [Eye Fitting Straight Lines in the Modern Era](https://www.tandfonline.com/doi/abs/10.1080/10618600.2022.2140668) [@robinson2022eye]
 
 # Perception of Logarithmic Scales {background-color="#003831" background-opacity="0.5"}
@@ -386,7 +383,6 @@ The final participant recruitment and study deployment were conducted via Prolif
 ## Graphical Tasks
 
 ::: panel-tabset
-
 ### Perception `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")`
 
 Study Participant Prompt: *Which plot is most different?*
@@ -397,6 +393,7 @@ Study Participant Prompt: *Which plot is most different?*
 #| fig-align: center
 knitr::include_graphics("images/linear-lineup-example.png")
 ```
+
 ::: fragment
 ```{r}
 #| out-width: 40%
@@ -418,14 +415,13 @@ knitr::include_graphics("images/exponential_example.gif")
 
 ### Estimation `r fa("ruler")`
 
-Study Participant Prompt:  *From 4520 to 4540, the population increases by ____ Tribbles [Ewoks].*
+Study Participant Prompt: *From 4520 to 4540, the population increases by \_\_\_\_ Tribbles \[Ewoks\].*
 
 ```{r}
 #| out-width: 37%
 #| fig-align: center
 knitr::include_graphics("images/qi1-sketch.png")
 ```
-
 :::
 
 ::: notes
@@ -439,7 +435,6 @@ In 2015, the New York Times introduced an interactive feature, called 'You Draw 
 ## Study Results
 
 ::: panel-tabset
-
 ## Perception `r fa("chart-line")` `r fa("chart-line")` `r fa("chart-line")`
 
 ```{r}
@@ -463,7 +458,6 @@ knitr::include_graphics("images/exponential-yloess-spaghetti-plot-1.png")
 #| fig-align: center
 knitr::include_graphics("images/qi1-density-1-2.png")
 ```
-
 :::
 
 ::: notes
