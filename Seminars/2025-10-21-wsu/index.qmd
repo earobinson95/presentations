@@ -213,7 +213,7 @@ END ORIGINAL NOTES -->
 
 ## Introduction to Graphics
 
-Data visualization is defined as the art of drawing **graphical charts** in order to display data @unwin2020.
+Data visualization is defined as the art of drawing graphical charts in order to display data @unwin2020.
 
 ::: fragment
 **What are graphics useful for?** @lewandowsky1989
@@ -365,7 +365,7 @@ That gives us a starting point for thinking about effective graphics. The next q
 
 ## Testing Statistical Graphics
 
-Evaluate design choices and understand cognitive biases through the use of **visual tests**.
+Evaluate design choices and understand cognitive biases through the use of visual tests.
 
 Could ask participants to:
 
@@ -1065,6 +1065,37 @@ For this study, data were simulated based on a one-parameter exponential model. 
 
 END ORIGINAL NOTES -->
 
+
+## 'You Draw It' Treatment Design (continued)
+
+:::: {.columns .figure-grid}
+
+::: {.column width="50%"}
+### Low growth · Linear
+![](images/low-15-linear.png)
+
+### High growth · Linear
+![](images/high-15-linear.png)
+:::
+
+::: {.column width="50%"}
+### Low growth · Log
+![](images/low-15-log.png)
+
+### High growth · Log
+![](images/high-15-log.png)
+:::
+
+::::
+
+::: notes
+<!-- Dissertation basis: §3.4.1, printed p. 68; Appendix B -->
+These examples show the condition where points remained visible through 75% of the domain. Participants still began drawing at the midpoint, so they initially had points available to guide their drawing before continuing beyond them.
+
+Comparing these with the 50% condition helps separate the effect of additional visual guidance from the effect of scale and growth rate.
+:::
+
+
 ## Prediction Feedback Data
 
 ::: {.figure-wide}
@@ -1131,7 +1162,7 @@ END ORIGINAL NOTES -->
 <!-- Dissertation basis: §3.4.2, printed pp. 70–72; Figure 3.12. Supplied HTML confirms this slide contains Growth Rate: Low. -->
 These are the fitted residual trends for the low-growth condition. The dashed horizontal line at zero represents agreement with the nonlinear least squares reference fit. Individual participant residuals are shown faintly in the background.
 
-Here, the departures are relatively small. We see some underestimation on the linear display and some overestimation on the log display toward the end of the domain. The scale difference is more pronounced for the high-growth condition, which we saw in the spaghetti plot and which is also included in the additional results.
+Here, the departures are relatively small. We see some underestimation on the linear display and some overestimation on the log display toward the end of the domain. The scale difference is more pronounced for the high-growth condition.
 
 So I’d be careful about describing the log scale as uniformly better in every condition.
 
@@ -1145,6 +1176,22 @@ For a question about the main prediction finding, the high-growth residual figur
 The results from the analysis showed a clear underestimation of forecasting trends with high exponential growth rates when participants were asked to make predictions on the linear scale.
 
 END ORIGINAL NOTES -->
+
+## GAMM Results (continued)
+
+::: {.figure-wide}
+![](images/exponential-prediction-gamm-preds-3.png)
+:::
+
+::: notes
+<!-- Dissertation basis: §3.4.2, printed pp. 70–73; Figure 3.12 -->
+This is the high-growth residual result. Again, zero represents agreement with the nonlinear least squares reference fit, blue is the linear display, and orange is the log display.
+
+Here the underestimation on the linear scale is much more pronounced. When points end at 50% of the domain, the blue fitted residual trend starts moving below zero earlier. When points remain through 75%, that departure happens later.
+
+The log-scale fitted trend stays closer to zero. This is the clearest support for improved forecasts on the log display in the exponential-prediction study.
+:::
+
 
 ## Numerical Translation and Estimation: Data and Plot Generation
 
@@ -1263,13 +1310,35 @@ END ORIGINAL NOTES -->
 
 *“What is the population in year 10?”*
 
+::: {.columns}
+
+::: {.column}
+
+::: {.figure-wide}
+![](images/qe1-sketch.png)
+:::
+
+:::
+
+::: {.column}
+
 ::: {.figure-wide}
 ![](images/qe1-density-plot-10-all-1.png)
 :::
 
+:::
+
+:::
+
 ::: notes
 <!-- Dissertation basis: §4.4.2, printed pp. 83–90; Figure 4.4 and supplied HTML figure checked -->
-For the first elementary question, participants estimated the population in year 10. These density plots show the estimates for the two data sets separately, with blue for the linear scale and orange for the log scale.
+For the first elementary question, participants estimated the population in year 10. 
+
+This sketch shows the elementary population-estimation task. A participant first locates year 10 along the x-axis, moves up to the point or perceived trend, and then reads across to the y-axis for a population estimate.
+
+It’s useful to break the task down because error can occur at several stages: locating the point, choosing whether to follow a point or a trend, and translating the position between grid lines into a number. Those first-level estimates then feed into the intermediate comparison questions.
+
+These density plots show the estimates for the two data sets separately, with blue for the linear scale and orange for the log scale.
 
 The estimates on the linear scale are much more variable. On the log scale, we see strong anchoring around the labeled grid value of 512, as well as the round value of 500.
 
@@ -1586,7 +1655,8 @@ END ORIGINAL NOTES -->
 Define $Y_{ijkl}$ to be the event that participant $l$ correctly identifies the target plot for data set $k$ with curvature $j$ plotted on scale $i$.
 
 $$\text{logit }P(Y_{ijk}) = \eta + \delta_i + \gamma_j + \delta \gamma_{ij} + s_l + d_k$$
-where
+where:
+
 - $\eta$ is the baseline intercept on the logit scale. 
 - $\delta_i$ is the effect of the log/linear scale.
 - $\gamma_j$ is the effect of the curvature combination.
@@ -1803,49 +1873,6 @@ The peaks in participant responses suggest that some viewers based their estimat
 
 The dissertation describes an advantage for the linear display in locating those reference differences, while also showing that responses depend on the particular simulated data set.
 :::
-
-## GAMM Results (continued)
-
-::: {.figure-wide}
-![](images/exponential-prediction-gamm-preds-3.png)
-:::
-
-::: notes
-<!-- Dissertation basis: §3.4.2, printed pp. 70–73; Figure 3.12 -->
-This is the high-growth residual result. Again, zero represents agreement with the nonlinear least squares reference fit, blue is the linear display, and orange is the log display.
-
-Here the underestimation on the linear scale is much more pronounced. When points end at 50% of the domain, the blue fitted residual trend starts moving below zero earlier. When points remain through 75%, that departure happens later.
-
-The log-scale fitted trend stays closer to zero. This is the clearest support for improved forecasts on the log display in the exponential-prediction study.
-:::
-
-## Estimation of Population: Procedure
-
-::: {.figure-wide}
-![](images/qe1-sketch.png)
-:::
-
-::: notes
-<!-- Dissertation basis: §4.4.2, printed pp. 83–85; Figure 4.3 -->
-This sketch shows the elementary population-estimation task. A participant first locates year 10 along the x-axis, moves up to the point or perceived trend, and then reads across to the y-axis for a population estimate.
-
-It’s useful to break the task down because error can occur at several stages: locating the point, choosing whether to follow a point or a trend, and translating the position between grid lines into a number. Those first-level estimates then feed into the intermediate comparison questions.
-:::
-
-<!-- ORIGINAL NOTES RETAINED FOR REFERENCE
-<!-- Original speaker notes: index.rmd / Estimation of population --&gt;
-In order to examine the effect of scale on literal reading of the data, participants were asked, “What is the population in year 10?”
-
-Here we see a sketch of the estimation procedure. Participants first locate 10 along the x-axis and move upward until they believe they have found the correct location on the curve; then participants look to the y-axis for their estimated population.
-
-We used density plots were to illustrate the distribution of the quantitative estimates for the population in year 10 provided by participants. The colors are associated to the scale - linear (blue) and log (orange) - and vertical lines indicate the true value based on the underlying model equation (black solid), closest point value based on the simulated data set (black dashed), and grid lines shown on the graphs (blue/orange dotted). A jittered rug plot along the x-axis shows where participant estimates were made. The two unique data sets are shown separately.
-
-
-The figure reveals a larger variance in quantitative population estimates made on the linear scale compared to the log scale. As expected, it is clear that participants were anchoring to grid lines and base ten values as highlighted by the high density of estimates at 512 and 500 on the log scale as well as local maximums near multiples of ten such as 500 and 1,000.
-
-One such explanation for this difference might be the location of year 10 along the x-axis. This year corresponds to a low magnitude where the population is condensed in a small region on the linear scale as opposed to later in time when larger magnitudes in population can be seen. Thus, it is important to evaluate the accuracy of estiamtes along the full domain.
-
-END ORIGINAL NOTES -->
 
 ## References {.refs-slide}
 
