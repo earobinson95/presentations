@@ -22,6 +22,7 @@ format:
     - default
     - ../../slide_custom.scss
     auto-stretch: false
+    footer: "[bit.ly/wsu-graphical-testing](https://earobinson95.github.io/presentations/Seminars/2025-10-21-wsu)"
     width: 1280
     height: 720
     center: false
