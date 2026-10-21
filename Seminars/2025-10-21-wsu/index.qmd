@@ -1024,7 +1024,7 @@ END ORIGINAL NOTES -->
 
 $y_i=e^{\beta x_i+e_i},\quad e_i\sim N(0,\sigma^2),\quad N=30$
 
-**2 × 2 × 2:** growth rate × point truncation × display scale.
+2 $\times$ 2 $\times$ 2: growth rate $\times$ point truncation $\times$ display scale.
 
 :::: {.columns .figure-grid}
 
@@ -1156,9 +1156,9 @@ Two simulated data sets:
 $$y_i=\alpha e^{\beta x_i+\epsilon_i}+\theta,$$
 $$\epsilon_i\sim N(0,\sigma^2).$$
 
-Fictional population scenarios: **Ewoks and Tribbles**.
+Fictional population scenarios: Ewoks and Tribbles.
 
-The log display uses **base 2**.
+The log display uses base 2.
 :::
 
 ::: {.column width="55%"}
@@ -1506,7 +1506,7 @@ END ORIGINAL NOTES -->
 
 + Our recent JDS paper, [*Clusters, Trends, and Choices*](https://doi.org/10.6339/26-JDS1221), explores how viewers use interactive features in statistical lineups.
 
-+ The [**youdrawitR package**](https://alisa-krasilnikov.github.io/youdrawitR/) makes drawing tasks available for graphical studies.
++ The [`youdrawitR` package](https://alisa-krasilnikov.github.io/youdrawitR/) makes drawing tasks available for graphical studies.
 
 + I’m also advising an MS project on data narratives, comparing author-driven and reader-driven approaches, including scrollytelling.
 
