@@ -908,11 +908,11 @@ END ORIGINAL NOTES -->
 ::: {.column width="42%"}
 **Treatment design**
 
-Three curvature levels give **six ordered comparisons**.
+Three curvature levels resulting in six curvature combinations.
 
-Two replicates × two scales give 24 candidate lineups.
+Two data replicates $\times$ two scales give 24 candidate lineups.
 
-Each participant evaluates **12 lineups**.
+Each participant evaluates 12 lineups.
 :::
 
 ::: {.column width="58%" .math-slide}
